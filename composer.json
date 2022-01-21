@@ -5,8 +5,7 @@
     "type": "project",
     "keywords": ["winter", "cms", "wintercms", "laravel", "cmf"],
     "license": "MIT",
-    "authors": [
-        {
+    "authors": [{
             "name": "Alexey Bobkov",
             "email": "aleksey.bobkov@gmail.com",
             "role": "Original Author"
