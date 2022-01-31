@@ -1,8 +1,11 @@
 <?php
 
-return [
+/*
+ * (c) Boosteur.com - 2022
+ */
 
-    /*
+return [
+  /*
     |--------------------------------------------------------------------------
     | PDO Fetch Style
     |--------------------------------------------------------------------------
@@ -13,9 +16,9 @@ return [
     |
     */
 
-    'fetch' => PDO::FETCH_CLASS,
+  'fetch' => PDO::FETCH_CLASS,
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Default Database Connection Name
     |--------------------------------------------------------------------------
@@ -26,9 +29,9 @@ return [
     |
     */
 
-    'default' => 'mysql',
+  'default' => 'mysql',
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Database Connections
     |--------------------------------------------------------------------------
@@ -43,61 +46,59 @@ return [
     |
     */
 
-    'connections' => [
+  'connections' => [
+    'sqlite' => [
+      'driver' => 'sqlite',
+      // 'url'                  => env('DATABASE_URL'),
+      'database'                => base_path('storage/database.sqlite'),
+      'prefix'                  => '',
+      'foreign_key_constraints' => true,
+    ],
 
-        'sqlite' => [
-            'driver'                  => 'sqlite',
-            // 'url'                  => env('DATABASE_URL'),
-            'database'                => base_path('storage/database.sqlite'),
-            'prefix'                  => '',
-            'foreign_key_constraints' => true,
-        ],
+    'mysql' => [
+      'driver' => 'mysql',
+      // 'url'         => env('DATABASE_URL'),
+      'engine'         => 'InnoDB',
+      'host'           => 'host_ip',
+      'port'           => 3306,
+      'database'       => 'database',
+      'username'       => 'user',
+      'password'       => 'pw',
+      'charset'        => 'utf8mb4',
+      'collation'      => 'utf8mb4_unicode_ci',
+      'prefix'         => '',
+      'prefix_indexes' => true,
+      'strict'         => true,
+      'varcharmax'     => 191,
+    ],
 
-        'mysql' => [
-            'driver'         => 'mysql',
-            // 'url'         => env('DATABASE_URL'),
-            'engine'         => 'InnoDB',
-            'host'           => '127.0.0.1',
-            'port'           => 3306,
-            'database'       => 'prepa',
-            'username'       => 'homestead',
-            'password'       => 'secret',
-            'charset'        => 'utf8mb4',
-            'collation'      => 'utf8mb4_unicode_ci',
-            'prefix'         => '',
-            'prefix_indexes' => true,
-            'strict'         => true,
-            'varcharmax'     => 191,
-        ],
+    'pgsql' => [
+      'driver' => 'pgsql',
+      // 'url'         => env('DATABASE_URL'),
+      'host'           => '127.0.0.1',
+      'port'           => 5432,
+      'database'       => 'database',
+      'username'       => 'root',
+      'password'       => '',
+      'charset'        => 'utf8',
+      'prefix'         => '',
+      'prefix_indexes' => true,
+      'schema'         => 'public',
+      'sslmode'        => 'prefer',
+    ],
 
-        'pgsql' => [
-            'driver'         => 'pgsql',
-            // 'url'         => env('DATABASE_URL'),
-            'host'           => '127.0.0.1',
-            'port'           => 5432,
-            'database'       => 'database',
-            'username'       => 'root',
-            'password'       => '',
-            'charset'        => 'utf8',
-            'prefix'         => '',
-            'prefix_indexes' => true,
-            'schema'         => 'public',
-            'sslmode'        => 'prefer',
-        ],
-
-        'sqlsrv' => [
-            'driver'         => 'sqlsrv',
-            // 'url'         => env('DATABASE_URL'),
-            'host'           => '127.0.0.1',
-            'port'           => 1433,
-            'database'       => 'database',
-            'username'       => 'root',
-            'password'       => '',
-            'charset'        => 'utf8',
-            'prefix'         => '',
-            'prefix_indexes' => true,
-        ],
-
+    'sqlsrv' => [
+      'driver' => 'sqlsrv',
+      // 'url'         => env('DATABASE_URL'),
+      'host'           => '127.0.0.1',
+      'port'           => 1433,
+      'database'       => 'database',
+      'username'       => 'root',
+      'password'       => '',
+      'charset'        => 'utf8',
+      'prefix'         => '',
+      'prefix_indexes' => true,
+    ],
     ],
 
     /*
@@ -125,22 +126,20 @@ return [
     */
 
     'redis' => [
+      'client' => 'predis',
 
-        'client' => 'predis',
+      'options' => [
+        'cluster' => 'redis',
+        'prefix'  => '',
+      ],
 
-        'options' => [
-            'cluster' => 'redis',
-            'prefix'  => '',
-        ],
-
-        'default' => [
-            // 'url'   => env('REDIS_URL'),
-            'host'     => '127.0.0.1',
-            'password' => null,
-            'port'     => 6379,
-            'database' => 0,
-        ],
-
+      'default' => [
+        // 'url'   => env('REDIS_URL'),
+        'host'     => '127.0.0.1',
+        'password' => null,
+        'port'     => 6379,
+        'database' => 0,
+      ],
     ],
 
     /*
@@ -159,5 +158,4 @@ return [
     */
 
     'useConfigForTesting' => false,
-
 ];

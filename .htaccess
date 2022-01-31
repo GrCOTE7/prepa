@@ -4,6 +4,11 @@
         Options -MultiViews
     </IfModule>
 
+    # En attendant de faire le .env
+    # Dans lequel il faudra inclure:
+    # APP_ENV=dev
+    # SetEnv APP_ENV "dev"
+
     RewriteEngine On
 
     ##
