@@ -1,8 +1,11 @@
 <?php
 
-return [
+/*
+ * (c) Boosteur.com - 2022
+ */
 
-    /*
+return [
+  /*
     |--------------------------------------------------------------------------
     | Specifies the default CMS theme.
     |--------------------------------------------------------------------------
@@ -11,9 +14,9 @@ return [
     |
     */
 
-    'activeTheme' => 'demo',
+  'activeTheme' => 'demo',
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Bleeding edge updates
     |--------------------------------------------------------------------------
@@ -24,9 +27,9 @@ return [
     |
     */
 
-    'edgeUpdates' => false,
+  'edgeUpdates' => true,
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Back-end URI prefix
     |--------------------------------------------------------------------------
@@ -36,9 +39,9 @@ return [
     |
     */
 
-    'backendUri' => 'be',
+  'backendUri' => 'be',
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Back-end force HTTPS security
     |--------------------------------------------------------------------------
@@ -49,9 +52,9 @@ return [
     |
     */
 
-    'backendForceSecure' => false,
+  'backendForceSecure' => false,
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Back-end login remember
     |--------------------------------------------------------------------------
@@ -67,9 +70,9 @@ return [
     |
     */
 
-    'backendForceRemember' => true,
+  'backendForceRemember' => true,
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Back-end timezone
     |--------------------------------------------------------------------------
@@ -80,9 +83,9 @@ return [
     |
     */
 
-    'backendTimezone' => 'Europe/Paris',
+  'backendTimezone' => 'Europe/Paris',
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Back-end Skin
     |--------------------------------------------------------------------------
@@ -91,9 +94,9 @@ return [
     |
     */
 
-    'backendSkin' => 'Backend\Skins\Standard',
+  'backendSkin' => 'Backend\Skins\Standard',
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Automatically run migrations on login
     |--------------------------------------------------------------------------
@@ -106,9 +109,9 @@ return [
     |
     */
 
-    'runMigrationsOnLogin' => null,
+  'runMigrationsOnLogin' => null,
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Determines which modules to load
     |--------------------------------------------------------------------------
@@ -117,9 +120,9 @@ return [
     |
     */
 
-    'loadModules' => ['System', 'Backend', 'Cms'],
+  'loadModules' => ['System', 'Backend', 'Cms'],
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Prevents application updates
     |--------------------------------------------------------------------------
@@ -131,9 +134,9 @@ return [
     |
     */
 
-    'disableCoreUpdates' => false,
+  'disableCoreUpdates' => false,
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Specific plugins to disable
     |--------------------------------------------------------------------------
@@ -142,9 +145,9 @@ return [
     |
     */
 
-    'disablePlugins' => [],
+  'disablePlugins' => [],
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Determines if the routing caching is enabled.
     |--------------------------------------------------------------------------
@@ -156,9 +159,9 @@ return [
     |
     */
 
-    'enableRoutesCache' => false,
+  'enableRoutesCache' => false,
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Time to live for the URL map.
     |--------------------------------------------------------------------------
@@ -169,9 +172,9 @@ return [
     |
     */
 
-    'urlCacheTtl' => 10,
+  'urlCacheTtl' => 10,
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Time to live for parsed CMS objects.
     |--------------------------------------------------------------------------
@@ -182,9 +185,9 @@ return [
     |
     */
 
-    'parsedPageCacheTTL' => 10,
+  'parsedPageCacheTTL' => 10,
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Determines if the asset caching is enabled.
     |--------------------------------------------------------------------------
@@ -196,9 +199,9 @@ return [
     |
     */
 
-    'enableAssetCache' => false,
+  'enableAssetCache' => false,
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Determines if the asset minification is enabled.
     |--------------------------------------------------------------------------
@@ -210,9 +213,9 @@ return [
     |
     */
 
-    'enableAssetMinify' => null,
+  'enableAssetMinify' => null,
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Check import timestamps when combining assets
     |--------------------------------------------------------------------------
@@ -224,9 +227,9 @@ return [
     |
     */
 
-    'enableAssetDeepHashing' => null,
+  'enableAssetDeepHashing' => null,
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Database-driven Themes
     |--------------------------------------------------------------------------
@@ -250,9 +253,9 @@ return [
     |
     */
 
-    'databaseTemplates' => false,
+  'databaseTemplates' => false,
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Public plugins path
     |--------------------------------------------------------------------------
@@ -262,9 +265,9 @@ return [
     |
     */
 
-    'pluginsPath' => '/plugins',
+  'pluginsPath' => '/plugins',
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Public themes path
     |--------------------------------------------------------------------------
@@ -274,9 +277,9 @@ return [
     |
     */
 
-    'themesPath' => '/themes',
+  'themesPath' => '/themes',
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Resource storage
     |--------------------------------------------------------------------------
@@ -311,27 +314,25 @@ return [
     | the path for the media disk.
     */
 
-    'storage' => [
+  'storage' => [
+    'uploads' => [
+      'disk'            => 'local',
+      'folder'          => 'uploads',
+      'path'            => '/storage/app/uploads',
+      'temporaryUrlTTL' => 3600,
+    ],
 
-        'uploads' => [
-            'disk'            => 'local',
-            'folder'          => 'uploads',
-            'path'            => '/storage/app/uploads',
-            'temporaryUrlTTL' => 3600,
-        ],
+    'media' => [
+      'disk'   => 'local',
+      'folder' => 'media',
+      'path'   => '/storage/app/media',
+    ],
 
-        'media' => [
-            'disk'   => 'local',
-            'folder' => 'media',
-            'path'   => '/storage/app/media',
-        ],
-
-        'resized' => [
-            'disk'   => 'local',
-            'folder' => 'resized',
-            'path'   => '/storage/app/resized',
-        ],
-
+    'resized' => [
+      'disk'   => 'local',
+      'folder' => 'resized',
+      'path'   => '/storage/app/resized',
+    ],
     ],
 
     /*
@@ -466,5 +467,4 @@ return [
     */
 
     'enableBackendServiceWorkers' => false,
-
 ];
