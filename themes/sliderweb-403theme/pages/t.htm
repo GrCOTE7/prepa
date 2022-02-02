@@ -1,0 +1,16 @@
+title = "T"
+url = "/t"
+description = "Page de Test"
+is_hidden = 0
+==
+<?php
+function onStart(){
+    $this['myVar'] = 123;
+}
+?>
+==
+<h1>
+    Test
+    <hr>
+    <p>{{ myVar }}</p>
+</h1>
