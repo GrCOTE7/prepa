@@ -29,7 +29,7 @@ return [
     |
     */
 
-  'default' => 'mysql',
+  'default' => env('DB_CONNECTION', 'mysql'),
 
   /*
     |--------------------------------------------------------------------------
@@ -50,7 +50,7 @@ return [
     'sqlite' => [
       'driver' => 'sqlite',
       // 'url'                  => env('DATABASE_URL'),
-      'database'                => base_path('storage/database.sqlite'),
+      'database' => env('DB_DATABASE', '/home/vagrant/code/prepa/storage/database.sqlite'),
       'prefix'                  => '',
       'foreign_key_constraints' => true,
     ],
@@ -59,11 +59,11 @@ return [
       'driver' => 'mysql',
       // 'url'         => env('DATABASE_URL'),
       'engine'         => 'InnoDB',
-      'host'           => 'host_ip',
-      'port'           => 3306,
-      'database'       => 'database',
-      'username'       => 'user',
-      'password'       => 'pw',
+      'host' => env('DB_HOST', 'host_ip'),
+      'port' => env('DB_PORT', 3306),
+      'database' => env('DB_DATABASE', 'database'),
+      'username' => env('DB_USERNAME', ''),
+      'password' => env('DB_PASSWORD', ''),
       'charset'        => 'utf8mb4',
       'collation'      => 'utf8mb4_unicode_ci',
       'prefix'         => '',
@@ -75,11 +75,11 @@ return [
     'pgsql' => [
       'driver' => 'pgsql',
       // 'url'         => env('DATABASE_URL'),
-      'host'           => '127.0.0.1',
-      'port'           => 5432,
-      'database'       => 'database',
-      'username'       => 'root',
-      'password'       => '',
+      'host' => env('DB_HOST', '127.0.0.1'),
+      'port' => env('DB_PORT', 5432),
+      'database' => env('DB_DATABASE', 'database'),
+      'username' => env('DB_USERNAME', ''),
+      'password' => env('DB_PASSWORD', ''),
       'charset'        => 'utf8',
       'prefix'         => '',
       'prefix_indexes' => true,
@@ -90,11 +90,11 @@ return [
     'sqlsrv' => [
       'driver' => 'sqlsrv',
       // 'url'         => env('DATABASE_URL'),
-      'host'           => '127.0.0.1',
-      'port'           => 1433,
-      'database'       => 'database',
-      'username'       => 'root',
-      'password'       => '',
+      'host' => env('DB_HOST', '127.0.0.1'),
+      'port' => env('DB_PORT', 5432),
+      'database' => env('DB_DATABASE', 'database'),
+      'username' => env('DB_USERNAME', ''),
+      'password' => env('DB_PASSWORD', ''),
       'charset'        => 'utf8',
       'prefix'         => '',
       'prefix_indexes' => true,
@@ -135,9 +135,9 @@ return [
 
       'default' => [
         // 'url'   => env('REDIS_URL'),
-        'host'     => '127.0.0.1',
-        'password' => null,
-        'port'     => 6379,
+        'host' => env('REDIS_HOST', '127.0.0.1'),
+        'password' => env('REDIS_PASSWORD', null),
+        'port' => env('REDIS_PORT', 6379),
         'database' => 0,
       ],
     ],
@@ -157,5 +157,5 @@ return [
     |
     */
 
-    'useConfigForTesting' => false,
+    'useConfigForTesting' => env('DB_USE_CONFIG_FOR_TESTING', false),
 ];
