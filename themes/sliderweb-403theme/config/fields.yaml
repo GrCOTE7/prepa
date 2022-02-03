@@ -4,3 +4,7 @@ fields:
         comment: The website name as it should appear on the front-end
         default: Boosteur 2.0
 
+    gc7_flashy:
+        label: GC7 Flashy
+        type: colorpicker
+        assetVar: 'gc7flashy'
