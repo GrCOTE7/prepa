@@ -1,0 +1,6 @@
+fields:
+    site_name2:
+        label: Site name2
+        comment: The website name as it should appear on the front-end
+        default: Boosteur 2.0
+
