@@ -1,0 +1,29 @@
+name: Squad Bootstrap Template
+code: Squad
+description: "Squad is a free Bootstrap template from BootstrapTaste for creatives, with a simple and modern layout. Nice CSS3 animation added on each section scroll and navigatio. This template uses wow.js animation script to animate section elements. Ported to OctoberCMS"
+author: Fabricio Rabelo & Bootstrap Zero
+homepage: 'http://fabriciorabelo.com/'
+
+# [...]
+
+form:
+    fields:
+        site_name:
+            label: Site name
+            comment: The website name as it should appear on the front-end
+            default: Squad
+    tabs:
+        fields:
+            meta_title:
+                label: Meta title
+                tab: Metadata
+                default: Squad
+
+            meta_keywords:
+                label: Meta keywords
+                tab: Metadata
+
+            meta_description:
+                label: Meta description
+                tab: Metadata
+                default: Squad Bootstrap Template

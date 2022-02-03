@@ -1,0 +1,53 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Space Bootstrap 5 Template</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/themes/pkurg-spacebootstrap5/assets/img/favicon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- ========================= CSS here ========================= -->	
+    <link rel="stylesheet" href="{{ 'assets/css/bootstrap-5.0.0-alpha.min.css'|theme }}">
+    <link rel="stylesheet" href="{{ 'assets/css/LineIcons.2.0.css'|theme }}">
+    <link rel="stylesheet" href="{{ 'assets/css/animate.css'|theme }}">
+    <link rel="stylesheet" href="{{ 'assets/css/main.css'|theme }}">
+    {% styles %}
+</head>
+<body>            
+
+    <div class="preloader">
+        <div class="loader">
+            <div class="ytp-spinner">
+                <div class="ytp-spinner-container">
+                    <div class="ytp-spinner-rotator">
+                        <div class="ytp-spinner-left">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                        <div class="ytp-spinner-right">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    {% page %}
+
+
+    <a href="#" class="scroll-top">
+        <i class="lni lni-arrow-up"></i>
+    </a>
+
+    <!-- ========================= JS here ========================= -->
+    <script src="{{ 'assets/js/bootstrap.bundle-5.0.0.alpha-min.js'|theme }}"></script>
+    <script src="{{ 'assets/js/wow.min.js'|theme }}"></script>
+    <script src="{{ 'assets/js/imagesloaded.min.js'|theme }}"></script>
+    <script src="{{ 'assets/js/main.js'|theme }}"></script>
+    {% scripts %}
+</body>
+</html>

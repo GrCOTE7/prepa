@@ -1,0 +1,39 @@
+name: 'Bootstrap 4 with Bootswatch'
+description: 'Latest Bootstrap with Bootswatch themes'
+author: 'Gregor Laan'
+homepage: ''
+code: ''
+
+form:
+    fields:
+        site_name:
+            label: Site name
+            default: Bootstrap 4
+        theme_name:
+            label: Bootswatch theme
+            type: dropdown
+            default: default
+            options:
+                default: Default
+                cerulean: Cerulean
+                cosmo: Cosmo
+                cyborg: Cyborg
+                darkly: Darkly
+                flatly: Flatly
+
+                jornal: Journal
+                litera: Litera
+                lumen: Lumen
+                lux: Lux
+                materia: Materia
+                minty: Minty
+                pulse: Pulse
+                sandstone: Sandstone
+                simplex: Simplex
+                sketchy: Sketchy
+                slate: Slate
+                solar: Solar
+                spacelab: Spacelab
+                superhero: Superhero
+                united: United
+                yeti: Yeti

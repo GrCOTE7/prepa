@@ -1,0 +1,42 @@
+description = "Default layout"
+==
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+        <meta charset="utf-8">
+        <title>{{ this.theme.site_name }} - {{ this.page.title }}</title>
+        <meta name="description" content="{{ this.page.meta_description }}">
+        <meta name="title" content="{{ this.page.meta_title }}">
+        <meta name="author" content="{{ this.theme.config.author }}">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="generator" content="OctoberCMS">
+        <link rel="icon" type="image/png" href="{{ 'assets/images/favicon.ico'|theme }}">
+        <link href="{{ ['assets/vendor/bootswatch/' ~ (this.theme.theme_name ? this.theme.theme_name : 'default') ~ '.min.css']|theme }}" rel="stylesheet">
+        <link href="{{ ['assets/vendor/bootswatch/' ~ this.theme.theme_name ~ '.min.css']|theme }}" rel="stylesheet">
+        <link href="{{ 'assets/css/theme.css'|theme }}" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+
+        <!-- Header -->
+        <header id="layout-header" class="fixed-top">
+            {% partial 'site/header' %}
+        </header>
+
+        <!-- Content -->
+        <section id="layout-content">
+            {% page %}
+        </section>
+
+        <!-- Footer -->
+        <footer id="layout-footer">
+            {% partial 'site/footer' %}
+        </footer>
+
+        <!-- Scripts -->
+        <script src="{{ 'assets/vendor/jquery.slim.min.js'|theme }}"></script>
+        <script src="{{ 'assets/vendor/bootstrap.bundle.min.js'|theme }}"></script>
+        <script src="{{ 'assets/js/app.js'|theme }}"></script>
+
+    </body>
+</html>
