@@ -204,7 +204,7 @@ CREATE TABLE IF NOT EXISTS `cms_theme_data` (
 -- Listage des données de la table prepa.cms_theme_data : ~0 rows (environ)
 /*!40000 ALTER TABLE `cms_theme_data` DISABLE KEYS */;
 INSERT INTO `cms_theme_data` (`id`, `theme`, `data`, `created_at`, `updated_at`) VALUES
-	(1, 'sliderweb-403theme', '{"site_name":"Prepa Boosteur 2.0","site_name2":"Boosteur 2.0","gc7_flashy":"#FFF008"}', '2022-01-21 17:00:23', '2022-02-03 16:49:51'),
+	(1, 'sliderweb-403theme', '{"site_name":"Prepa Boosteur 2.0","site_name2":"Boosteur 2.0","gc7_flashy":"#FFF000"}', '2022-01-21 17:00:23', '2022-02-03 16:55:17'),
 	(2, 'fabriciorabelo-squad', '{"site_name":"Squad","meta_title":"Squad","meta_description":"Squad Bootstrap Template"}', '2022-02-03 11:13:16', '2022-02-03 11:13:16'),
 	(3, 'gregorlaan-bootstrap4withbootswatch', '{"site_name":"Bootstrap 4","theme_name":"default"}', '2022-02-03 11:14:11', '2022-02-03 11:14:11');
 /*!40000 ALTER TABLE `cms_theme_data` ENABLE KEYS */;
