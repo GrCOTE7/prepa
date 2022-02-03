@@ -1,5 +1,5 @@
 name: 403 Theme
-description: Maintaince mode OctoberCMS template. For "Under Construction" or "Coming Soon" pages 
+description: Maintaince mode OctoberCMS template. For "Under Construction" or "Coming Soon" pages
 author: SLIDER.WEB studio
 homepage: 'http://sliderweb.ru'
 form:
@@ -7,4 +7,5 @@ form:
         site_name:
             label: Site name
             comment: The website name as it should appear on the front-end
-            default: Coming Soon...
+            default: Prepa Boosteur 2.0
+
