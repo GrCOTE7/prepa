@@ -3,3 +3,19 @@ url = "/"
 layout = "maintain"
 hidden = "0"
 ==
+<?php
+function onStart(){
+    $this['FlashMsgDuration'] = 7;
+}
+?>
+==
+<div class="row" id="gc7">
+    <div class="content">
+        <p data-control="flash-message" data-interval="{{ FlashMsgDuration }}" class="success">
+            This message is created from a static element. It will go away in {{ FlashMsgDuration }} seconds.
+        </p>
+        <p>Oki</p>
+    </div>
+</div>
+
+<hr>
