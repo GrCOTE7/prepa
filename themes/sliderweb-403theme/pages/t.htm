@@ -3,6 +3,9 @@ url = "/"
 layout = "t/t"
 description = "Page T"
 is_hidden = 0
+
+[demoTodo]
+max = 3
 ==
 <?php
 function onStart(){
@@ -14,6 +17,10 @@ function onStart(){
 {#% put head %}
     <link href="/themes/sliderweb-403theme/assets/css/t.css" rel="stylesheet">
 {% endput %#}
+
+{% component 'demoTodo' %}
+
+<div id="result"></div>
 
 <h1>{{ this.page.title }}</h1>
 <hr>
