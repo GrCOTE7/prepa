@@ -1,6 +1,0 @@
-1643974367a:1:{s:13:"t/partial.htm";a:6:{s:8:"fileName";s:13:"t/partial.htm";s:7:"content";s:158:"description = "Test de partial"
-==
-<p>This is a simple partial de GC7,<br>
-    here in the page <strong>{{ this.page.title }}</strong> (By {{ author }}).</p>
-";s:5:"mtime";i:1643967626;s:6:"markup";s:122:"<p>This is a simple partial de GC7,<br>
-    here in the page <strong>{{ this.page.title }}</strong> (By {{ author }}).</p>";s:4:"code";N;s:11:"description";s:15:"Test de partial";}}
