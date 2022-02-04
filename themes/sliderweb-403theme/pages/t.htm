@@ -1,16 +1,24 @@
 title = "T"
 url = "/"
-description = "Page de Test"
+layout = "t/t"
+description = "Page T"
 is_hidden = 0
 ==
 <?php
 function onStart(){
-    $this['myVar'] = 123;
+    $this->addCss(['~/themes/sliderweb-403theme/assets/css/page-t.less']);
+    $this['maVar']=$this->page->title;
 }
 ?>
 ==
-<h1>
-    Test
-    <hr>
-    <p>{{ myVar }}</p>
-</h1>
+{#% put head %}
+    <link href="/themes/sliderweb-403theme/assets/css/t.css" rel="stylesheet">
+{% endput %#}
+
+<h1>{{ this.page.title }}</h1>
+<hr>
+<h2>{{ maVar }}</h2>
+<hr>
+<div class="red">Texte en rouge.</div>
+<hr>
+{% partial "t/partial" author = "Lionel" %}

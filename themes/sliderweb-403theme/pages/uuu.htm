@@ -1,9 +1,31 @@
 title = "Uuu"
-url = "/uuu"
-layout = "maintain"
-description = "Uuu"
-is_hidden = 1
+url = "/t/:t_id?7"
+description = "Page de Test UUU"
+is_hidden = 0
 ==
-<div class="content">
-<h1>Uuu</h1>
-</div>
+<?php
+function onStart(){
+    $this['myVar'] = 123;
+    $this['tId'] = $this->param('t_id');
+    // return Redirect::to('http://google.com');
+}
+function onHandleForm()
+{
+    $this['lastValue'] = post('value');
+}
+?>
+==
+<h1>
+    Test
+    <hr>
+    <p>{{ myVar }}</p>
+    <hr>
+    <p>tId = {{ tId }}</p>
+</h1>
+<hr>
+{{ form_open({ request: 'onHandleForm' }) }}
+    Please enter a string: <input type="text" name="value"/>
+    <input type="submit" value="Submit me!"/>
+{{ form_close() }}
+<p>Last submitted value: {{ lastValue }}</p>
+{% partial "t/partial" author = "Lionel" %}

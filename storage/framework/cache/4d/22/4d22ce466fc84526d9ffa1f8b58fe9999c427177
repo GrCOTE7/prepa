@@ -1,0 +1,37 @@
+1643974366a:1:{s:10:"home_o.htm";a:10:{s:8:"fileName";s:10:"home_o.htm";s:7:"content";s:631:"title = "The launch time..."
+url = "/o"
+layout = "construction/maintain"
+description = "Page Accueil Boosteur 2.0"
+is_hidden = 0
+==
+<?php
+function onStart(){
+    $this['FlashMsgDuration'] = 7;
+}
+?>
+==
+<div class="row" id="gc7">
+    <div class="content">
+        <p data-control="flash-message" data-interval="{{ FlashMsgDuration }}" class="success">
+            This message is created from a static element. It will go away in {{ FlashMsgDuration }} seconds.
+        </p>
+        <h1>Welcome to {{ this.theme.site_name2 }} !</h1>
+        <p class="gc7403">Oki</p>
+        <i class="flag-fr"></i>
+    </div>
+</div>
+
+<hr>";s:5:"mtime";i:1643968378;s:6:"markup";s:430:"<div class="row" id="gc7">
+    <div class="content">
+        <p data-control="flash-message" data-interval="{{ FlashMsgDuration }}" class="success">
+            This message is created from a static element. It will go away in {{ FlashMsgDuration }} seconds.
+        </p>
+        <h1>Welcome to {{ this.theme.site_name2 }} !</h1>
+        <p class="gc7403">Oki</p>
+        <i class="flag-fr"></i>
+    </div>
+</div>
+
+<hr>";s:4:"code";s:56:"function onStart(){
+    $this['FlashMsgDuration'] = 7;
+}";s:5:"title";s:18:"The launch time...";s:3:"url";s:2:"/o";s:6:"layout";s:21:"construction/maintain";s:11:"description";s:25:"Page Accueil Boosteur 2.0";s:9:"is_hidden";s:1:"0";}}
