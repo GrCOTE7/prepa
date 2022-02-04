@@ -1,0 +1,47 @@
+description = "Simple minimalist layout"
+==
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Title: Change the title and description to suit your needs. -->
+    <title>{{ this.page.title }} | {{ this.theme.site_name }} </title>
+    <meta name="description" content="{{ this.page.description }}">
+
+    <!-- Viewport Meta: Just taming mobile devices like iPads and iPhones. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0" />
+
+    <!-- Styles: The primary styles for this template. -->
+    <link rel="stylesheet" type="text/css" href="../vendor/twbs/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ [
+        'assets/css/test.css',
+		]|theme }}">
+
+    {% placeholder head %}
+    {% styles %}
+
+</head>
+
+<body>
+    <div class="content">
+        {% page %}
+
+    </div>
+
+    <!-- Required Scripts: Not too much needed for Launch.
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
+     -->
+    <script src="node_modules\jquery\dist\jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="vendor/twbs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="vendor/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="{{ 'assets/js/main.js'|theme }}"></script>
+
+    <hr>
+
+    {% framework extras %}
+    {% scripts %}
+</body>
+
+</html>
