@@ -11,12 +11,20 @@ max = 3
 function onStart(){
     $this->addCss(['~/themes/sliderweb-403theme/assets/css/page-t.less']);
     $this['maVar']=$this->page->title;
+    return phpinfo();
+    // return memory_get_usage() . "\n";
+    // $unit=array('b','kb','mb','gb','tb','pb');
+    // $size = memory_get_usage();
+    // return @round($size/pow(1024,($i=floor(log($size,1024)))),2).' '.$unit[$i];
 }
 ?>
 ==
 {#% put head %}
     <link href="/themes/sliderweb-403theme/assets/css/t.css" rel="stylesheet">
 {% endput %#}
+
+
+<hr>
 
 {% component 'demoTodo' %}
 
