@@ -30,6 +30,12 @@ description = "Simple minimalist layout"
 </head>
 
 <body>
+    {% flash %}
+    <div class="alert alert-{{ type }}">
+        {{ message }}ooo
+    </div>
+    {% endflash %}
+
     <div class="content">
         {% page %}
 
