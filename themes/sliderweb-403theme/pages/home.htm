@@ -45,10 +45,15 @@ function onStart(){
 {{ price ? 'Yes' : 'No' }}<br>
 {{ 'The price is ' ~price }}<br>
 {{  N**2  }}<br>
-{{  this.page.id }}
+{{  this.environment }}
 <hr>
 <div class="red">Fin</div>
 <hr>
+{% content "welcome.htm" likes=[
+    {name:'Dogs'},
+    {name:'Fishing'},
+    {name:'Golf'}
+] %}
 <!--
 <div class="spinner-grow text-primary" role="status">
     <span class="visually-hidden">Loading...</span>
