@@ -11,6 +11,7 @@ max = 3
 function onStart(){
     $this->addCss(['~/themes/sliderweb-403theme/assets/css/page-t.less']);
     $this['maVar']=$this->page->title;
+    $this['N']=123.456;
     // return phpinfo();
     // return memory_get_usage() . "\n";
     // $unit=array('b','kb','mb','gb','tb','pb');
@@ -30,11 +31,23 @@ function onStart(){
 
 <div id="result"></div>
 
-<h1>{{ this.page.title }}</h1>
+<h1>{{ this.page.title|lower }}</h1>
 <hr>
 <h2>{{ maVar }}</h2>
 <hr>
-<div class="red">Texte en rouge.</div>
+<div class="red">Début</div>
+<hr>
+{% set price = 777 %}
+
+{#{ price |format_currency('USD') }#}
+
+{{ dump(price) }}
+{{ price ? 'Yes' : 'No' }}<br>
+{{ 'The price is ' ~price }}<br>
+{{  N**2  }}<br>
+{{  this.page.id }}
+<hr>
+<div class="red">Fin</div>
 <hr>
 <!--
 <div class="spinner-grow text-primary" role="status">
