@@ -11,6 +11,7 @@ max = 3
 function onStart(){
     $this->addCss(['~/themes/sliderweb-403theme/assets/css/page-t.less']);
     $this['noms']=['MP', 'Lionel', 'Gugu'];
+    $this['noms']=['MP'];
 }
 ?>
 ==
@@ -29,11 +30,23 @@ function onStart(){
 
 {% for nom in noms %}
 <ul>
+    {%if loop.first and loop.lenght >1 %}
+    Premier membre
+    {% endif %}
+    {%if loop.last and loop.lenght >1 %}
+    Dernier membre
+    {% endif %}
     <li>{{  loop.index}} - {{ nom }}</li>
 </ul>
 {% set nbr = loop.length %}
+{% if loop.last %}
+{{ loop.length }} membre
+{% endif %}
+{% if loop.last %}
+    {% if loop.length > 1 %}s
+    {% endif %}
+{% endif %}
 {% endfor %}
-<h2>{{ nbr }} membres.</h2>
 
 <hr>
 <div class="red">Fin</div>
