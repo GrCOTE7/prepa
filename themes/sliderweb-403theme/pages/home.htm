@@ -48,8 +48,22 @@ function onSave()
 <hr>
 <div class="red">Début</div>
 <hr>
-{% verbatim %}<p>Hello, {{ name }}</p>{% endverbatim %}
+
+{% macro input(name, value, type, size) %}
+    <input
+        type="{{ type|default('text') }}"
+        name="{{ name }}"
+        value="{{ value|e }}"
+        size="{{ size|default(20) }}" />
+{% endmacro %}
+
+{% import _self as form %}
+
+<p>Username : {{ form.input('username') }}</p>
+<p>PassWord : {{ form.input('password', null, 'password') }}</p
+
 <hr>
+
 <div class="red">Fin</div>
 
 {% partial "t/partial" author = "Lionel" %}
