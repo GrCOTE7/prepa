@@ -26,13 +26,14 @@ function onStart(){
 <hr>
 <div class="red">Début</div>
 <hr>
-{% for nom in noms if 1 %} {# For avec Test 0/1 #}
 
+{% for nom in noms %}
 <ul>
     <li>{{  loop.index}} - {{ nom }}</li>
 </ul>
-
+{% set nbr = loop.length %}
 {% endfor %}
+<h2>{{ nbr }} membres.</h2>
 
 <hr>
 <div class="red">Fin</div>
