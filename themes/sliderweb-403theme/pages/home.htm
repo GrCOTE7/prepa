@@ -47,9 +47,10 @@ function onSave()
 <h2>{{ maVar }}</h2>
 <hr>
 <div class="red">Début</div>
-
-
-
+<hr>
+{% if  this.environment == 'dev' %}
+{{ this.environment }}
+{% endif %}
 <hr>
 <div class="red">Fin</div>
 
