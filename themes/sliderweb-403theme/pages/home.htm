@@ -10,33 +10,11 @@ max = 3
 <?php
 function onStart(){
     $this->addCss(['~/themes/sliderweb-403theme/assets/css/page-t.less']);
-    $this['maVar']=$this->page->title;
-    $this['N']=123.456;
-    // return phpinfo();
-    // return memory_get_usage() . "\n";
-    // $unit=array('b','kb','mb','gb','tb','pb');
-    // $size = memory_get_usage();
-    // return @round($size/pow(1024,($i=floor(log($size,1024)))),2).' '.$unit[$i];
-}
-function onSave()
-{
-    // Sets a successful message
-    Flash::success('Settings successfully saved!');
-
-    // Sets an error message
-    Flash::error('Error saving settings');
-
-    // Sets a warning message
-    Flash::warning('There was a problem but no worries');
-
-    // Sets an informative message
-    Flash::info('Just a heads up about the settings');
+    $this['noms']=['MP', 'Lionel', 'Gugu'];
 }
 ?>
 ==
-{#% put head %}
-    <link href="/themes/sliderweb-403theme/assets/css/t.css" rel="stylesheet">
-{% endput %#}
+
 
 {#% component 'demoTodo' %#}
 
@@ -44,26 +22,19 @@ function onSave()
 
 <h1>{{ this.page.title }}</h1>
 <hr>
-<h2>{{ maVar }}</h2>
+<h2>...</h2>
 <hr>
 <div class="red">Début</div>
 <hr>
+{% for nom in noms if 1 %} {# For avec Test 0/1 #}
 
-{% macro input(name, value, type, size) %}
-    <input
-        type="{{ type|default('text') }}"
-        name="{{ name }}"
-        value="{{ value|e }}"
-        size="{{ size|default(20) }}" />
-{% endmacro %}
+<ul>
+    <li>{{  loop.index}} - {{ nom }}</li>
+</ul>
 
-{% import _self as form %}
-
-<p>Username : {{ form.input('username') }}</p>
-<p>PassWord : {{ form.input('password', null, 'password') }}</p
+{% endfor %}
 
 <hr>
-
 <div class="red">Fin</div>
 
 {% partial "t/partial" author = "Lionel" %}
