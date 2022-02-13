@@ -48,9 +48,7 @@ function onSave()
 <hr>
 <div class="red">Début</div>
 <hr>
-{% if  this.environment == 'dev' %}
-{{ this.environment }}
-{% endif %}
+{% verbatim %}<p>Hello, {{ name }}</p>{% endverbatim %}
 <hr>
 <div class="red">Fin</div>
 
