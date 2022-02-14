@@ -29,9 +29,9 @@ function onStart(){
 <div class="d-flex justify-content-center">
 </div>
 
-{{ str_camel('marie-pierre') }}
+{{ str_limit('The long quick brown fox...', 17, '... Read more!') }}
 <br>
-{{ str }}
+{{ str_words('The long quick brown fox...', 4, '... Read more!') }}
 
 <hr>
 <div class="red">Fin</div>
