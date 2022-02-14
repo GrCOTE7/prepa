@@ -27,14 +27,31 @@ function onStart(){
 <hr>
 <div class="d-flex justify-content-center">
 </div>
+{#
+// En PHP:
+<?= Form::open(array('id' => 'example', 'class' => 'something')) ?>
+    // ..
+<?= Form::close() ?>
+// En Twig:
+#}
 
-<h3>str_plural():</h3>
-foot → {{ str_plural('foot') }}<br>
-<div class="red">
-    NB: Ne fonctionne qu'en anglais.
-</div>
+{{ form_open({ class: 'form-horizontal', id: 'idExample' }) }}
 
+    {% macro input(name, value, type, size) %}
+        <input
+            type="{{ type|default('text') }}"
+            name="{{ name }}"
+            value="{{ value|e }}"
+            size="{{ size|default(20) }}" />
+    {% endmacro %}
+
+    {% import _self as form %}
+
+    <p>Username : {{ form.input('username') }}</p>
+    <p>PassWord : {{ form.input('password', null, 'password') }}</p>
+
+    <button type="submit" class='btn btn-primary'>Envoyer</button>
+
+{{ form_close() }}
 <hr>
 <div class="red">Fin</div>
-
-{% partial "t/partial" author = "Lionel" %}
