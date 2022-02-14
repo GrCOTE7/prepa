@@ -11,7 +11,7 @@ max = 3
 function onStart(){
     $this->addCss(['~/themes/sliderweb-403theme/assets/css/page-t.less']);
     $this['noms']=['MP', 'Lionel', 'Gugu'];
-    // $this['noms']=['MP'];
+     $this['noms']=['MP'];
 }
 ?>
 ==
@@ -38,6 +38,8 @@ function onStart(){
 <ul>
     {%if loop.first and nbr >1 %}
     Premier membre
+    {% elseif nbr==1 %}
+    Un membre unique :
     {% endif %}
     {%if der and nbr>1 %}
     Dernier membre
