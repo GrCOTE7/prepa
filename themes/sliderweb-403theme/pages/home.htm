@@ -11,6 +11,7 @@ max = 3
 function onStart(){
     $this->addCss(['~/themes/sliderweb-403theme/assets/css/page-t.less']);
     $this['currentUrl'] = $this->pageUrl('');
+    $this['str'] = Str::camel('marie-pierre');
 }
 ?>
 ==
@@ -27,16 +28,10 @@ function onStart(){
 <hr>
 <div class="d-flex justify-content-center">
 </div>
-{{ variable | default('The variable is not defined') }}<br>
 
-{{ variable.foo | default('The foo property on variable is not defined') }}<br>
-
-{{ variable['foo'] | default('The foo key in variable is not defined') }}<br>
-
-{{ '' | default('The variable is empty')  }}<br>
-
-{{ currentUrl | default("S'il n'y avait pas d'URL ?!?") }}<br>
-{{ falseCurrentUrl | default("S'il n'y avait pas d'URL ?!?") }}
+{{ str_camel('marie-pierre') }}
+<br>
+{{ str }}
 
 <hr>
 <div class="red">Fin</div>
