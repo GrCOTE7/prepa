@@ -10,8 +10,6 @@ max = 3
 <?php
 function onStart(){
     $this->addCss(['~/themes/sliderweb-403theme/assets/css/page-t.less']);
-    $this['noms']=['MP', 'Lionel', 'Gugu'];
-    // $this['noms']=['MP'];
     $this['currentUrl'] = $this->pageUrl('');
 }
 ?>
@@ -23,38 +21,13 @@ function onStart(){
 <h1>{{ this.page.title }}</h1>
 <hr>
 <h2>{{ currentUrl }}</h2>
+
 <div class="d-flex justify-content-center">
-    <img src="{{ 'test/EB_Boutique001.png' | media | resize(500) }}" />
 </div>
-<hr>
-{% set resizedImage = 'test/EB_Boutique001.png' | media | resize(500) %}
-<img src="{{ resizedImage }}" width="{{ resizedImage | imageWidth }}" />
-Chemin: {{ resizedImage }}<br>
-Dimensions: {{ resizedImage | imageWidth }} x {{ resizedImage | imageHeight }}
-<hr>
+
 <div class="red">Début</div>
 <hr>
-
-{% for nom in noms %}
-{% set nbr = loop.length %}
-{% set der = loop.last %}
-{#
-{{dump (nbr) }}
-{{dump (der) }}
-#}
-<ul>
-    {%if loop.first and nbr >1 %}
-    Premier membre
-    {% elseif nbr==1 %}
-    Un membre unique :
-    {% endif %}
-    {%if der and nbr>1 %}
-    Dernier membre
-    {% endif %}
-    <li>{{  loop.index}} - {{ nom }}</li>
-</ul>
-{% if der %}{{ nbr }} membre{% endif %}{% if der %}{% if nbr > 1 %}s{% endif %}{% endif %}{% endfor %}
-
+{{ '**Text** is bold.' | md }}
 <hr>
 <div class="red">Fin</div>
 
