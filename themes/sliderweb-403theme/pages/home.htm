@@ -30,6 +30,7 @@ function onStart(){
 {% set hello = '<strong>Hello</strong>' %}
 {% set hola = '<strong>Hola</strong>' %}
 
+{{ false ? '<strong>Hola</strong>' : hello }}
 {{ false ? '<strong>Hola</strong>' : hello | raw }}
 
 {# The above will not render the same as #}
