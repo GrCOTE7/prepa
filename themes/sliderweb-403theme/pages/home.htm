@@ -27,14 +27,21 @@ function onStart(){
 <hr>
 <div class="d-flex justify-content-center">
 </div>
-Removes the HTLM tags from a string<br>
-{{ html_strip('<strong>Hello world</strong>') }}
+{{ 1 + (4 + 1 * 2) }}
 <hr>
-{{ html_clean('<script>window.location = "http://google.com"</script>') }}
+Avec décimales :
+10 / 3 = {{ 10 / 3 }}
+<br>
+Arrondi auto:
+10 // 3 = {{ 10 // 3 }}
 <hr>
-<a href="mailto: {{ html_email('a@b.c') | raw }}">Email me</a>
-→
-<!-- The above will output -->
-<a href="mailto: &#109;&#97;&#105;&#108;&#x74;o&#x3a;&#97;&#64;b.&#x63;">Email me</a>
+{{ (1..5)|join(', ') }}
+<hr>
+{% set arr = [] %}
+{% for i in 1..3 %}
+{% set arr = arr|merge( [i] ) %}
+{% endfor %}
+{{ arr|join(', ') }} → {{ 'La dernière valeur est ' ~ arr|last }}
+
 <hr>
 <div class="red">Fin</div>
