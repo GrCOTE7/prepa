@@ -22,12 +22,21 @@ function onStart(){
 <hr>
 <h2>{{ currentUrl }}</h2>
 
-<div class="d-flex justify-content-center">
-</div>
 
 <div class="red">Début</div>
 <hr>
-{{ '**Text** is bold.' | md }}
+<div class="d-flex justify-content-center">
+</div>
+{% set hello = '<strong>Hello</strong>' %}
+{% set hola = '<strong>Hola</strong>' %}
+
+{{ false ? '<strong>Hola</strong>' : hello | raw }}
+
+{# The above will not render the same as #}
+{{ false ? hola : hello | raw }}
+
+{# But renders the same as #}
+{{ (false ? hola : hello) | raw }}
 <hr>
 <div class="red">Fin</div>
 
