@@ -11,7 +11,7 @@ max = 3
 function onStart(){
     $this->addCss(['~/themes/sliderweb-403theme/assets/css/page-t.less']);
     $this['currentUrl'] = $this->pageUrl('');
-    $this['str'] = Str::camel('marie-pierre');
+    $this['str'] = Str::snake('Marie Pierre');
 }
 ?>
 ==
@@ -29,9 +29,9 @@ function onStart(){
 <div class="d-flex justify-content-center">
 </div>
 
-{{ str_limit('The long quick brown fox...', 17, '... Read more!') }}
+{{ str_snake('Marie Pierre') }}
 <br>
-{{ str_words('The long quick brown fox...', 4, '... Read more!') }}
+{{ str }}
 
 <hr>
 <div class="red">Fin</div>
