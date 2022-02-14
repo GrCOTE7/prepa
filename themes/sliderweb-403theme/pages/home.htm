@@ -12,6 +12,7 @@ function onStart(){
     $this->addCss(['~/themes/sliderweb-403theme/assets/css/page-t.less']);
     $this['noms']=['MP', 'Lionel', 'Gugu'];
     // $this['noms']=['MP'];
+    $this['currentUrl'] = $this->pageUrl('');
 }
 ?>
 ==
@@ -23,7 +24,7 @@ function onStart(){
 
 <h1>{{ this.page.title }}</h1>
 <hr>
-<h2>...</h2>
+<h2>{{ currentUrl }}</h2>
 <hr>
 <div class="red">Début</div>
 <hr>
