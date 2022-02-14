@@ -30,4 +30,11 @@ function onStart(){
 Removes the HTLM tags from a string<br>
 {{ html_strip('<strong>Hello world</strong>') }}
 <hr>
+{{ html_clean('<script>window.location = "http://google.com"</script>') }}
+<hr>
+<a href="mailto: {{ html_email('a@b.c') | raw }}">Email me</a>
+→
+<!-- The above will output -->
+<a href="mailto: &#109;&#97;&#105;&#108;&#x74;o&#x3a;&#97;&#64;b.&#x63;">Email me</a>
+<hr>
 <div class="red">Fin</div>
