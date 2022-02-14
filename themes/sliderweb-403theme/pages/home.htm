@@ -27,17 +27,17 @@ function onStart(){
 <hr>
 <div class="d-flex justify-content-center">
 </div>
-{% set hello = '<strong>Hello</strong>' %}
-{% set hola = '<strong>Hola</strong>' %}
+{{ variable | default('The variable is not defined') }}<br>
 
-{{ false ? '<strong>Hola</strong>' : hello }}
-{{ false ? '<strong>Hola</strong>' : hello | raw }}
+{{ variable.foo | default('The foo property on variable is not defined') }}<br>
 
-{# The above will not render the same as #}
-{{ false ? hola : hello | raw }}
+{{ variable['foo'] | default('The foo key in variable is not defined') }}<br>
 
-{# But renders the same as #}
-{{ (false ? hola : hello) | raw }}
+{{ '' | default('The variable is empty')  }}<br>
+
+{{ currentUrl | default("S'il n'y avait pas d'URL ?!?") }}<br>
+{{ falseCurrentUrl | default("S'il n'y avait pas d'URL ?!?") }}
+
 <hr>
 <div class="red">Fin</div>
 
