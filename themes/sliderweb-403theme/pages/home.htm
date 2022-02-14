@@ -27,6 +27,11 @@ function onStart(){
     <img src="{{ 'test/EB_Boutique001.png' | media | resize(500) }}" />
 </div>
 <hr>
+{% set resizedImage = 'test/EB_Boutique001.png' | media | resize(500) %}
+<img src="{{ resizedImage }}" width="{{ resizedImage | imageWidth }}" />
+Chemin: {{ resizedImage }}<br>
+Dimensions: {{ resizedImage | imageWidth }} x {{ resizedImage | imageHeight }}
+<hr>
 <div class="red">Début</div>
 <hr>
 
