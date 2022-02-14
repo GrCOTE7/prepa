@@ -23,7 +23,9 @@ function onStart(){
 <h1>{{ this.page.title }}</h1>
 <hr>
 <h2>{{ currentUrl }}</h2>
-<img src="{{ 'test/EB_Boutique001.png' | media }}" />
+<div class="d-flex justify-content-center">
+    <img src="{{ 'test/EB_Boutique001.png' | media | resize(500) }}" />
+</div>
 <hr>
 <div class="red">Début</div>
 <hr>
