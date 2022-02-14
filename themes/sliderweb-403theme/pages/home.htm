@@ -27,31 +27,7 @@ function onStart(){
 <hr>
 <div class="d-flex justify-content-center">
 </div>
-{#
-// En PHP:
-<?= Form::open(array('id' => 'example', 'class' => 'something')) ?>
-    // ..
-<?= Form::close() ?>
-// En Twig:
-#}
-
-{{ form_open({ class: 'form-horizontal', id: 'idExample' }) }}
-
-    {% macro input(name, value, type, size) %}
-        <input
-            type="{{ type|default('text') }}"
-            name="{{ name }}"
-            value="{{ value|e }}"
-            size="{{ size|default(20) }}" />
-    {% endmacro %}
-
-    {% import _self as form %}
-
-    <p>Username : {{ form.input('username') }}</p>
-    <p>PassWord : {{ form.input('password', null, 'password') }}</p>
-
-    <button type="submit" class='btn btn-primary'>Envoyer</button>
-
-{{ form_close() }}
+Removes the HTLM tags from a string<br>
+{{ html_strip('<strong>Hello world</strong>') }}
 <hr>
 <div class="red">Fin</div>
