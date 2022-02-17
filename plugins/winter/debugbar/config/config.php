@@ -33,7 +33,7 @@ return [
      |
      */
 
-  'allow_public_access' => false,
+  'allow_public_access' => true,
 
   /*
      |--------------------------------------------------------------------------
