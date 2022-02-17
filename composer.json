@@ -36,7 +36,8 @@
         "laravel/framework": "~6.0",
         "wikimedia/composer-merge-plugin": "~2.0.1",
         "twbs/bootstrap": "5.1.3",
-        "twig/intl-extra": "^3.3"
+        "twig/intl-extra": "^3.3",
+        "winter/wn-debugbar-plugin": "^4.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^8.4|^9.3.3",
