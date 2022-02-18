@@ -1,19 +1,46 @@
-<?php namespace GrCote7\WinterLearning\Components;
+<?php
+
+/*
+ * (c) Boosteur.com - 2022
+ */
+
+namespace GrCote7\WinterLearning\Components;
 
 use Cms\Classes\ComponentBase;
 
 class TwigTips extends ComponentBase
 {
-    public function componentDetails()
-    {
-        return [
-            'name'        => 'TwigTips Component',
-            'description' => 'Some tips for Twig'
-        ];
-    }
+  public $var = 123;
 
-    public function defineProperties()
-    {
-        return [];
+  public function componentDetails()
+  {
+    return [
+      'name'        => 'TwigTips Component',
+      'description' => 'Some tips for Twig',
+    ];
+  }
+
+  public function defineProperties()
+  {
+    return [];
+  }
+
+  public function content()
+  {
+    //  {
+    //   $ii[] = $i;
+    // }
+
+    echo 'Boucle for:<br>';
+    for ($i = 1; $i <= 5; ++$i) {
+      echo $i.' ';
     }
+    $listing = range(0, 7);
+
+    // print_r($listing);
+
+    echo '<hr>abc ';
+
+    return $listing;
+  }
 }

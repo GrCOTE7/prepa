@@ -16,3 +16,9 @@ Arrondi auto:
 {% endfor %}
 {{ arr|join(', ') }} →
 {{ 'La dernière valeur est ' ~ arr|last }}
+<hr>
+{# Pour renvoyer directement ce que produit le component
+    {{ # __SELF__.content|raw  }}
+#}
+
+{{ __SELF__.content|join(', ', ' and ') }}

@@ -55,10 +55,8 @@ class Plugin extends PluginBase
    */
   public function registerComponents()
   {
-    // return []; // Remove this line to activate
-
     return [
-      'GrCote7\WinterLearning\Components\TwigTips' => 'twigtips',
+      '\GrCote7\WinterLearning\Components\TwigTips' => 'twigtips',
     ];
   }
 
