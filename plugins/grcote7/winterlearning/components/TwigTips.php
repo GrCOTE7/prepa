@@ -27,10 +27,6 @@ class TwigTips extends ComponentBase
 
   public function content()
   {
-    //  {
-    //   $ii[] = $i;
-    // }
-
     echo 'Boucle for:<br>';
     for ($i = 1; $i <= 5; ++$i) {
       echo $i.' ';
