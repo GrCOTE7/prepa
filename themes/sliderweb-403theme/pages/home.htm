@@ -6,6 +6,8 @@ is_hidden = 0
 
 [demoTodo]
 max = 3
+
+[twigtips]
 ==
 <?php
 function onStart(){
@@ -21,27 +23,9 @@ function onStart(){
 <h1>{{ this.page.title }}</h1>
 <hr>
 <h2>{{ currentUrl }}</h2>
-
-
+<hr>
 <div class="red">Début</div>
 <hr>
-<div class="d-flex justify-content-center">
-</div>
-{{ 1 + (4 + 1 * 2) }}
-<hr>
-Avec décimales :
-10 / 3 = {{ 10 / 3 }} assez précisément
-<br>
-Arrondi auto:
-10 // 3 = {{ 10 // 3 }} environ
-<hr>
-{{ (1..5)|join(', ') }}
-<hr>
-{% set arr = [] %}
-{% for i in 1..3 %}
-{% set arr = arr|merge( [i] ) %}
-{% endfor %}
-{{ arr|join(', ') }} → {{ 'La dernière valeur est ' ~ arr|last }}
-
+{% component 'twigtips' %}
 <hr>
 <div class="red">Fin</div>
