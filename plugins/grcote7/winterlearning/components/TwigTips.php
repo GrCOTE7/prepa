@@ -31,11 +31,11 @@ class TwigTips extends ComponentBase
     for ($i = 1; $i <= 5; ++$i) {
       echo $i.' ';
     }
-    $listing = range(0, 7);
+    $listing = range(1, 7);
 
     // print_r($listing);
 
-    echo '<hr>abc ';
+    echo '<hr>Liste : ';
 
     return $listing;
   }
