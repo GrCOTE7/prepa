@@ -97,4 +97,28 @@ class Plugin extends PluginBase
       ],
         ];
   }
+
+  public function registerMarkupTags()
+  {
+    return [
+      'filters' => [
+        // A global function, i.e str_plural()
+        'plural' => 'str_plural',
+        'allmaj' => 'strtoupper',
+
+        // A local method, i.e $this->makeTextAllCaps()
+        'uppercase' => [$this, 'makeTextAllCaps'],
+        ],
+
+        'functions' => [
+          // Using an inline closure
+          'helloW  orld' => function () { return 'Bonjour tout le monde !'; },
+        ],
+    ];
+  }
+
+  public function makeTextAllCaps($text)
+  {
+    return strtoupper($text);
+  }
 }
