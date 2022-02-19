@@ -112,7 +112,8 @@ class Plugin extends PluginBase
 
         'functions' => [
           // Using an inline closure
-          'helloW  orld' => function () { return 'Bonjour tout le monde !'; },
+          'helloWorld' => function () { return 'Bonjour tout le monde !'; },
+          'double' => function ($i) { return $i * 2; },
         ],
     ];
   }
