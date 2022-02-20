@@ -24,7 +24,7 @@ class Plugin extends PluginBase
   {
     return [
       'name'        => 'Tests',
-      'description' => 'No description provided yet...',
+      'description' => 'Tests divers...',
       'author'      => 'GrCote7',
       'icon'        => 'icon-leaf',
     ];
@@ -55,10 +55,8 @@ class Plugin extends PluginBase
    */
   public function registerComponents()
   {
-    return []; // Remove this line to activate
-
     return [
-      'GrCote7\Tests\Components\MyComponent' => 'myComponent',
+      'GrCote7\Tests\Components\Variables' => 'variables',
     ];
   }
 
@@ -98,5 +96,20 @@ class Plugin extends PluginBase
         'order'       => 500,
       ],
         ];
+  }
+
+  public function registerSettings()
+  {
+    return [
+      'location' => [
+        'label'       => 'Locations',
+        'description' => 'Manage available user countries and states.',
+        'category'    => 'Users',
+        'icon'        => 'icon-globe',
+        'url'         => Backend::url('acme/user/locations'),
+        'order'       => 500,
+        'keywords'    => 'geography place placement',
+      ],
+    ];
   }
 }

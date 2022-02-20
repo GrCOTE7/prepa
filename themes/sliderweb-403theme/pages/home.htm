@@ -3,7 +3,10 @@ url = "/"
 layout = "t/bootstrap513"
 description = "Page Home pour T"
 is_hidden = 0
-twigtips[] = ""
+
+[twigtips]
+
+[variables]
 ==
 <?php
 function onStart(){
@@ -23,5 +26,6 @@ function onStart(){
 <div class="red">Début</div>
 <hr>
 {# % component 'twigtips' % #}
+{% component 'variables' %}
 <hr>
 <div class="red">Fin</div>
