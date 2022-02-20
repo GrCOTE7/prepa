@@ -26,6 +26,11 @@ function onStart(){
 <div class="red">Début</div>
 <hr>
 {# % component 'twigtips' % #}
-{% component 'variables' %}
+{# % component 'variables' % #}
+{% if user %}
+    <p>Hello {{ user.name }}</p>
+{% else %}
+    <p>Nobody is logged in</p>
+{% endif %}
 <hr>
 <div class="red">Fin</div>
