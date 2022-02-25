@@ -8,6 +8,7 @@ namespace GrCote7\Tests;
 
 use Backend;
 use Backend\Models\UserRole;
+use Illuminate\Support\Facades\Event;
 use System\Classes\PluginBase;
 
 /**
@@ -46,6 +47,9 @@ class Plugin extends PluginBase
    */
   public function boot()
   {
+    Event::listen('winter.user.login', function ($user) {
+      mail('gc7@cote7.com', 'test mail login', 'login');
+    });
   }
 
   /**
