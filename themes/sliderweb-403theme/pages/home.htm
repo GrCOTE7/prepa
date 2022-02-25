@@ -40,5 +40,9 @@ function onStart(){
 <hr>
 
 <div class="red">Fin</div>
-
-<a data-request="onLogout" data-request-data="redirect: '/'">Sign out</a>
+<br>
+{% if user %}
+    <a data-request="onLogout" data-request-data="redirect: '/'" class="btn btn-danger">Sign out</a>
+{% else %}
+    <a href = "compte" class="btn btn-primary">Sign in</a>
+{% endif %}
