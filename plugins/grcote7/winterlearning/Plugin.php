@@ -57,6 +57,7 @@ class Plugin extends PluginBase
   {
     return [
       '\GrCote7\WinterLearning\Components\TwigTips' => 'twigtips',
+      '\GrCote7\WinterLearning\Components\Ajax'     => 'ajax',
     ];
   }
 
