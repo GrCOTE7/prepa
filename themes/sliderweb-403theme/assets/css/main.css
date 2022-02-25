@@ -1,22 +1,22 @@
 
 /***********************************************************************************
-  
+
 Setup
-  
+
 ************************************************************************************/
 
 html,
 body {
     width: 100%;
     height: auto;
-    
+
     overflow: auto;
 }
 
 /***********************************************************************************
-  
+
 Typography
-  
+
 ************************************************************************************/
 
 body {
@@ -31,19 +31,19 @@ h1, h2, h3 {
 
 h1 {
     font-size: 38px;
-    
+
     margin-bottom: 22px;
 }
 
 h2 {
     font-size: 28px;
-    
+
     margin-bottom: 10px;
 }
 
 h3 {
     font-size: 18px;
-    
+
     margin-bottom: 5px;
 }
 
@@ -56,13 +56,13 @@ h3 a {
 
 p {
     line-height: 1.4;
-    
+
     margin-bottom: 20px;
 }
 
 a {
     text-decoration: none;
-    
+
     transition-duration: 0.25s;
 }
 
@@ -76,35 +76,35 @@ p a {
 }
 
 /***********************************************************************************
-  
+
 Icons
-  
+
 ************************************************************************************/
 
-@font-face { 
-    font-family: "ionicons"; 
-    src: url("../icons/ionicons.eot?v=1.4.1"); 
-    src: url("../icons/ionicons.eot?v=1.4.1#iefix") format("embedded-opentype"), 
-         url("../icons/ionicons.ttf?v=1.4.1") format("truetype"), 
-         url("../icons/ionicons.woff?v=1.4.1") format("woff"), 
-         url("../icons/ionicons.svg?v=1.4.1#Ionicons") format("svg"); 
-    font-weight: normal; 
-    font-style: normal; 
+@font-face {
+    font-family: "ionicons";
+    src: url("../icons/ionicons.eot?v=1.4.1");
+    src: url("../icons/ionicons.eot?v=1.4.1#iefix") format("embedded-opentype"),
+         url("../icons/ionicons.ttf?v=1.4.1") format("truetype"),
+         url("../icons/ionicons.woff?v=1.4.1") format("woff"),
+         url("../icons/ionicons.svg?v=1.4.1#Ionicons") format("svg");
+    font-weight: normal;
+    font-style: normal;
 }
 
-.icon { 
-    font-family: "ionicons"; 
-    speak: none; 
-    font-style: normal; 
-    font-weight: normal; 
-    font-variant: normal; 
-    text-transform: none; 
-    text-rendering: auto; 
-    line-height: 1; 
-    -webkit-font-smoothing: antialiased; 
-    -moz-osx-font-smoothing: grayscale; 
-    
-    display: inline-block; 
+.icon {
+    font-family: "ionicons";
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    text-rendering: auto;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    display: inline-block;
 }
 
 .icon.twitter:before { content: "\f243"; }
@@ -115,9 +115,9 @@ Icons
 .icon.success:before { content: "\f3fd"; }
 
 /***********************************************************************************
-  
+
 Containers
-  
+
 ************************************************************************************/
 
 .row {
@@ -128,14 +128,14 @@ Containers
 
 .content {
     width: 500px;
-    
+
     margin-left: 200px;
 }
 
 /***********************************************************************************
-  
+
 Body
-  
+
 ************************************************************************************/
 
 body {
@@ -147,29 +147,29 @@ body {
 
 body::after {
     border-right: 1px dashed;
-    
+
     width: 1px;
     height: 100%;
-    
+
     position: fixed;
     top: 0;
     left: 100px;
     z-index: -1;
-    
+
     content: "";
 }
 
 /***********************************************************************************
-  
+
 Header
-  
+
 ************************************************************************************/
 
 #header {
     border-bottom: 1px dashed;
-    
+
     line-height: 200px;
-    
+
     display: none;
 }
 
@@ -178,15 +178,15 @@ Header
     background-repeat: no-repeat;
     background-position: left center;
     background-size: 80px;
-    
+
     display: block;
-    
+
     padding-left: 100px;
 }
 
 #header .status {
     height: 1px;
-    
+
     position: absolute;
     bottom: -1px;
     left: 0;
@@ -194,36 +194,36 @@ Header
 
 #header .status span {
     border-left: 1px solid;
-    
+
     font-size: 12px;
     line-height: 20px;
-    
+
     width: 1px;
     height: 21px;
-    
+
     padding-left: 5px;
-    
+
     position: absolute;
     top: -10px;
     right: -6px;
 }
 
 /***********************************************************************************
-  
+
 Intro
-  
+
 ************************************************************************************/
 
 #intro {
     padding: 83px 0 100px;
-    
+
     display: none;
 }
 
 /***********************************************************************************
-  
+
 Post Subscribe
-  
+
 ************************************************************************************/
 
 #post-subscribe h1 {
@@ -231,9 +231,9 @@ Post Subscribe
 }
 
 /***********************************************************************************
-  
+
 Subscribe
-  
+
 ************************************************************************************/
 
 #subscribe {
@@ -244,21 +244,21 @@ input[type="text"],
 input[type="email"] {
     background: none;
     outline: none;
-    
+
     border-radius: 20px 0 0 20px;
     border: none;
     border: 1px solid;
-    
+
     font-family: "Source Sans Pro", sans-serif;
     font-weight: 300;
     font-size: 14px;
     line-height: 38px;
-    
+
     width: 200px;
     height: 38px;
-    
+
     padding: 0 20px;
-    
+
     -webkit-appearance: none;
 }
 
@@ -268,25 +268,25 @@ input:focus {
 
 .button {
     outline: none;
-    
+
     border-radius: 50%;
     border: none;
-    
+
     font-size: 38px;
     line-height: 19px;
     text-align: center;
-    
+
     width: 40px;
     height: 40px;
-    
+
     padding: 0;
-    
+
     position: absolute;
     top: 0;
     left: 221px;
-    
+
     cursor: pointer;
-    
+
     transition-duration: 0.25s;
 }
 
@@ -295,59 +295,77 @@ input:focus {
 }
 
 /***********************************************************************************
-  
+
 Social
-  
+
 ************************************************************************************/
 
 #social a.icon {
     border-radius: 50%;
-    
+
     font-size: 18px;
     line-height: 40px;
     text-align: center;
-    
+
     width: 40px;
     height: 40px;
-    
+
     float: left;
     margin-right: -5px;
 }
 
 /***********************************************************************************
-  
+
 Status
-  
+
 ************************************************************************************/
 
 #loading {
     width: 100%;
     height: 100%;
-    
+
     position: fixed;
     top: 0;
     left: 0;
     z-index: 100;
-    
+
     display: none;
 }
 
 #loading .status {
     border-radius: 50%;
-    
+
     font-size: 80px;
     line-height: 120px;
     text-align: center;
-    
+
     width: 120px;
     height: 120px;
-    
+
     position: absolute;
     top: 50%;
     left: 50%;
     z-index: 200;
-    
+
     margin: -60px 0 0 -60px;
-    
+
     display: none;
 }
+
+.screen-darken{
+    content: '';
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.5);
+    pointer-events: none;
+    z-index:10; opacity:1;
+    visibility:visible;
+    position: fixed;
+  }
+
+  .navbar{
+    position: relative;
+    z-index: 15;
+  }

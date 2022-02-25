@@ -10,7 +10,7 @@ is_hidden = 0
 ==
 <?php
 function onStart(){
-    $this->addCss(['~/themes/sliderweb-403theme/assets/css/page-t.less']);
+    //$this->addCss(['~/themes/sliderweb-403theme/assets/css/page-t.less']);
     $this['currentUrl'] = $this->pageUrl('');
 }
 ?>
@@ -21,16 +21,19 @@ function onStart(){
 
 <h1>{{ this.page.title }}</h1>
 <hr>
-<h2>{{ currentUrl }}</h2>
+<h2 id="intro">{{ currentUrl }}</h2>
 <hr>
 <div class="red">Début</div>
+
 <hr>
 {# % component 'twigtips' % #}
 {# % component 'variables' % #}
+
 {% if user %}
     <p>Hello {{ user.name }}</p>
 {% else %}
     <p>Nobody is logged in</p>
 {% endif %}
 <hr>
+
 <div class="red">Fin</div>
