@@ -8,5 +8,15 @@ redirect = "home"
 paramCode = "code"
 forceSecure = 0
 requirePassword = 0
+
+[resetPassword]
+paramCode = "code"
+
+[session]
+security = "all"
 ==
 {% component 'account' %}
+<hr>
+{% component 'resetPassword' %}
+<hr>
+<a data-request="onLogout" data-request-data="redirect: '/'" class="btn btn-danger">Sign out</a>

@@ -7,6 +7,9 @@ is_hidden = 0
 [twigtips]
 
 [variables]
+
+[session]
+security = "all"
 ==
 <?php
 function onStart(){
@@ -37,3 +40,5 @@ function onStart(){
 <hr>
 
 <div class="red">Fin</div>
+
+<a data-request="onLogout" data-request-data="redirect: '/'">Sign out</a>
