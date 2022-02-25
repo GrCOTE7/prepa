@@ -8,7 +8,7 @@ namespace GrCote7\Tests;
 
 use Backend;
 use Backend\Models\UserRole;
-use Illuminate\Support\Facades\Event;
+use Event;
 use System\Classes\PluginBase;
 
 /**
