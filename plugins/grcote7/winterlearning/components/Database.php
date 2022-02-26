@@ -26,10 +26,13 @@ class Database extends ComponentBase
 
   public function users()
   {
-    $titles = Db::table('users')->lists('email');
+    $users = Db::table('users')->lists('email', 'name');
 
-    foreach ($titles as $title) {
-    echo $title.'<br>';
+    echo '<pre>';
+    print_r($users);
+    echo '</pre>';
+    foreach ($users as $name => $email) {
+      echo $name.' : '.$email.'<br>';
     }
   }
 }
