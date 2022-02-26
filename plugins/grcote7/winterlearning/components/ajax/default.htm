@@ -1,5 +1,7 @@
-<!-- AJAX enabled form -->
-<form data-request="onTest" data-request-update="{ajax/mypartial: '#myDiv'">
+<!-- AJAX enabled form
+    <form data-request="onTest" data-request-update="{ajax/mypartial: '#myDiv'">
+-->
+<form data-request="onTest" data-request-update="'{{ __SELF__ }}::mypartial': '^#myDiv'" data-request-success="console.log('Calcul réalisé !')">
 
     <!-- Input two values -->
     <input name="value1" value=2> + <input name="value2" value=3>
