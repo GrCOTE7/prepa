@@ -26,13 +26,6 @@ class Database extends ComponentBase
 
   public function content()
   {
-    Db::table('cms_theme_logs')->chunkById(5, function ($logs) {
-      foreach ($logs as $log) {
-        echo $log->id.' ('.$log->theme.') : '.$log->template.'<br>';
-      }
-      echo str_repeat('*', 62);
-      echo '<br>';
-    });
-    exit;
+    return Db::table('users')->select('id', 'name', 'email')->get();
   }
 }
