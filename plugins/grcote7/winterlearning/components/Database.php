@@ -28,8 +28,7 @@ class Database extends ComponentBase
   {
     // return ['MP', 'Lionel'];
     // dd(Db::select('select * from users'));
-    $deleted = Db::delete('delete from users where id>2');
-    $users   = Db::select('select * from users');
+    $users = Db::select('select * from users');
     foreach ($users as $user) {
       $all[] = $user->name.' ('.$user->email.')';
     }
