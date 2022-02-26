@@ -24,13 +24,15 @@ class Database extends ComponentBase
     return [];
   }
 
-  public function users()
+  public function content()
   {
-    $logs = Db::table('cms_theme_logs')->lists('template', 'id');
-
-    foreach ($logs as $id => $template) {
-      echo $id.' : '.$template;
-      echo '<hr>';
-    }
+    Db::table('cms_theme_logs')->chunkById(5, function ($logs) {
+      foreach ($logs as $log) {
+        echo $log->id.' ('.$log->theme.') : '.$log->template.'<br>';
+      }
+      echo str_repeat('*', 62);
+      echo '<br>';
+    });
+    exit;
   }
 }
