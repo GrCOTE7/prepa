@@ -7,6 +7,7 @@
 namespace GrCote7\WinterLearning\Components;
 
 use Cms\Classes\ComponentBase;
+use Flash;
 
 class Ajax extends ComponentBase
 {
@@ -26,5 +27,6 @@ class Ajax extends ComponentBase
   public function onTest()
   {
     $this->page['result'] = input('value1') + input('value2');
+    Flash::success('Calcul réalisé !');
   }
 }
