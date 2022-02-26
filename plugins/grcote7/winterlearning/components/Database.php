@@ -28,7 +28,7 @@ class Database extends ComponentBase
   {
     // return ['MP', 'Lionel'];
     // dd(Db::select('select * from users'));
-
+    Db::insert('insert into users (id, name, email, password) values (?, ?, ?, ?)', [4, 'Jo2e', 'Joe2@C7.com', 123123123]);
     $users = Db::select('select * from users');
     foreach ($users as $user) {
       $all[] = $user->name.' ('.$user->email.')';
