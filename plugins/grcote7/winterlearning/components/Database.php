@@ -26,13 +26,11 @@ class Database extends ComponentBase
 
   public function users()
   {
-    $users = Db::table('users')->lists('email', 'name');
+    $logs = Db::table('cms_theme_logs')->lists('template', 'id');
 
-    echo '<pre>';
-    print_r($users);
-    echo '</pre>';
-    foreach ($users as $name => $email) {
-      echo $name.' : '.$email.'<br>';
+    foreach ($logs as $id => $template) {
+      echo $id.' : '.$template;
+      echo '<hr>';
     }
   }
 }
