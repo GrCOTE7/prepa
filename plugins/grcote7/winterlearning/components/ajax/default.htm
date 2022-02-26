@@ -1,7 +1,8 @@
 <!-- AJAX enabled form
     <form data-request="onTest" data-request-update="{ajax/mypartial: '#myDiv'">
 -->
-<form data-request="onTest" data-request-update="'{{ __SELF__ }}::mypartial': '^#myDiv'" data-request-success="console.log('Calculé !')" data-request-flash>
+<form data-request="onTest" data-request-update="'{{ __SELF__ }}::mypartial': '^#myDiv'"
+    data-request-success="console.log('Calculé !')" data-request-flash>
 
     <!-- Input two values -->
     <input name="value1" value=2> + <input name="value2" value=3>
@@ -17,3 +18,24 @@
 <hr>
 
 
+<form data-request="onDoSomething" data-request-validate data-request-flash>
+
+    <div>Name:
+        <input name="name" />
+        <span data-validate-for="name"></span>
+    </div>
+    <br>
+    <div>Email :
+        <input name="email" />
+        <span data-validate-for="email"></span>
+    </div>
+    <br>
+    <button data-attach-loading>
+        Submit
+    </button>
+
+    <div class="alert alert-danger" data-validate-error>
+        <p data-message></p>
+    </div>
+
+</form>
