@@ -1,13 +1,13 @@
 <!-- AJAX enabled form
     <form data-request="onTest" data-request-update="{ajax/mypartial: '#myDiv'">
 -->
-<form data-request="onTest" data-request-update="'{{ __SELF__ }}::mypartial': '^#myDiv'" data-request-success="alert('Calculé !')">
+<form data-request="onTest" data-request-update="'{{ __SELF__ }}::mypartial': '^#myDiv'" data-request-success="console.log('Calculé !')" data-request-flash>
 
     <!-- Input two values -->
     <input name="value1" value=2> + <input name="value2" value=3>
 
     <!-- Action button -->
-    <button type="submit" class="btn-primary">Calculate</button>
+    <button type="submit" class="btn-primary" data-attach-loading>Calculate</button>
 
 </form>
 <br>
