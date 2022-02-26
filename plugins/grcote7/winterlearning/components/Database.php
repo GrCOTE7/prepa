@@ -8,7 +8,6 @@ namespace Grcote7\WinterLearning\Components;
 
 use Cms\Classes\ComponentBase;
 use Db;
-use Winter\Storm\Support\Facades\Schema;
 
 class Database extends ComponentBase
 {
@@ -27,21 +26,10 @@ class Database extends ComponentBase
 
   public function users()
   {
-    Schema::table('users', function ($table) {
-      $table->string('name', 50)->change();
-    });
+    $titles = Db::table('users')->lists('email');
 
-    // return ['MP', 'Lionel'];
-    // dd(Db::select('select * from users'));
-    // $users = Db::select('select * from users');
-    $user = Db::table('users')->where('name', 'MP')->value('email');
-    // dd($users);
-    echo $user;
-    exit;
-    foreach ($users as $user) {
-      $all[] = $user->name.' ('.$user->email.')';
+    foreach ($titles as $title) {
+    echo $title.'<br>';
     }
-
-    return $all;
   }
 }
