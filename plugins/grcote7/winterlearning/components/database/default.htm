@@ -3,13 +3,14 @@
 {# {{ dump(users) }} #}
 
 {# {{ __SELF__.users|join(', ', ' et ') }} #}
-{# {{ __SELF__.content|raw }} #}
+{# {{ __SELF__.content|raw }}
 
 {% for user in __SELF__.content %}
 {{ user.id }} {{ user.name }} {{ user.email }}<br>
 {% endfor %}
 
 {{ users }}
+#}
 
 <hr>
 <h2>Sortie directe ( {{'{{'}} __SELF__.content|raw {{'}}'}} )</h2>

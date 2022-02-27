@@ -26,16 +26,7 @@ class Database extends ComponentBase
 
   public function content()
   {
-    $users = Db::table('users')->select('id', 'name', 'email')->get();
-
-    // dd($users);
-    echo '<u><b>Depuis le code PHP dans le component :</b></u><br>';
-    foreach ($users as $user) {
-      echo $user->id.' '.$user->name.' '.$user->email.'<br>';
-    }
-    echo '<hr><u><b>Depuis le template du component (default.htm) :</b></u><br>';
-
-    return $users;
-    // var_dump($users);
+    $data = Db::table('system_plugin_history')->distinct()->select('code')->where('type', 'script')->get();
+    var_dump($data);
   }
 }
