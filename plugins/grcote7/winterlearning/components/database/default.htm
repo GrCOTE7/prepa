@@ -8,4 +8,5 @@
 {{ __SELF__.content|raw }}
 {{  data }}
 #}
-{{ __SELF__.content.name }}
+{% set data = __SELF__.content %}
+{{ data.id }} {{ data.name }}

@@ -28,7 +28,7 @@ class Database extends ComponentBase
   {
     return Db::table('users')
       ->select('id', 'name')
-      ->oldest()
+      ->latest()
       ->first();
 
     // print_r($data);
