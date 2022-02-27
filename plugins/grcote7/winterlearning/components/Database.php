@@ -26,13 +26,11 @@ class Database extends ComponentBase
 
   public function content()
   {
-    $sortBy = 'email'; // null, or 'id' or 'email', ...
-
     return Db::table('users')
       ->select('id', 'name')
-      ->orderBy('name', 'desc')
-      ->get();
+      ->oldest()
+      ->first();
 
-    // var_dump($data);
+    // print_r($data);
   }
 }
