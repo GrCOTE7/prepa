@@ -26,24 +26,14 @@ class Database extends ComponentBase
 
   public function content()
   {
+    $ope = -1;
+
     $data = Db::table('users')
       ->select('id', 'name')
-      ->whereExists(function ($query) {
-        $query->select(Db::raw(1))
-          ->from('user_throttle')
-          ->whereRaw('user_throttle.user_id = users.id');
-      })->get();
-    /*
-    Same request as :
-
-    select id, name
-    from users as u
-    where exists (
-        select 1
-        from user_throttle as ut
-        where ut.user_id = u.id
-      )
-    */
+      ->when($ope, function ($query, $ope) {
+        return $query->where('id', $ope);
+      })
+      ->get();
 
     // var_dump($data);
     return $data;
