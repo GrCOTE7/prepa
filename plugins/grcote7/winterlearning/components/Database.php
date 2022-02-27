@@ -28,8 +28,8 @@ class Database extends ComponentBase
   {
     return Db::table('users')
       ->select('id', 'name')
-      ->latest()
-      ->get();
+      ->inRandomOrder()
+      ->first();
 
     // print_r($data);
   }
