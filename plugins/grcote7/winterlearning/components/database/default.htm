@@ -1,6 +1,16 @@
 <h1>Database</h1>
 
-{# { dump(AllUsers) } #}
+{# {{ dump(users) }} #}
 
-{# { __SELF__.users|join(', ', ' et ') } #}
+{# {{ __SELF__.users|join(', ', ' et ') }} #}
+{# {{ __SELF__.content|raw }} #}
+
+{% for user in __SELF__.content %}
+{{ user.id }} {{ user.name }} {{ user.email }}<br>
+{% endfor %}
+
+{{ users }}
+
+<hr>
 {{ __SELF__.content|raw }}
+<hr>

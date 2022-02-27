@@ -26,6 +26,14 @@ class Database extends ComponentBase
 
   public function content()
   {
-    return Db::table('users')->select('id', 'name', 'email')->get();
+    $users = Db::table('users')->select('id', 'name', 'email')->get();
+
+    // dd($users);
+    foreach ($users as $user) {
+      //   echo $user->name;
+    }
+
+    return $users;
+    // var_dump($users);
   }
 }
