@@ -9,4 +9,6 @@
 {{  data }}
 #}
 {% set data = __SELF__.content %}
-{{ data.id }} {{ data.name }}
+{% for datu in data %}
+{{ datu.id }} {{ datu.name }}<br>
+{% endfor %}

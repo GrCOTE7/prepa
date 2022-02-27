@@ -29,7 +29,7 @@ class Database extends ComponentBase
     return Db::table('users')
       ->select('id', 'name')
       ->latest()
-      ->first();
+      ->get();
 
     // print_r($data);
   }
