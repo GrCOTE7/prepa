@@ -6,12 +6,19 @@
 {% endfor %}
 {{ users }}
 {{  data }}
+{% set data = __SELF__.content %}
+{{ data.id }} {{ data.name }}<br>
 {{ __SELF__.content|raw }}
+
+
 {% set data = __SELF__.content %}
 {% for datu in data %}
 {{ datu.id }} {{ datu.name }}<br>
 {% endfor %}
-#}
 
+{% set data = 'abc' %}
+{% set data = [1,2,3] %}
+#}
 {% set data = __SELF__.content %}
-{{ data.id }} {{ data.name }}<br>
+
+{{ data }}
