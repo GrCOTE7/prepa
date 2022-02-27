@@ -26,13 +26,19 @@ class Database extends ComponentBase
 
   public function content()
   {
-    $ope = -1;
+    $sortBy = 'email'; // null, or 'id' or 'email', ...
 
     $data = Db::table('users')
       ->select('id', 'name')
-      ->when($ope, function ($query, $ope) {
-        return $query->where('id', $ope);
-      })
+      ->when(
+        $sortBy,
+        function ($query, $sortBy) {
+          return $query->orderBy($sortBy);
+        },
+        function ($query, $sortBy) {
+          return $query->orderBy('name');
+        }
+      )
       ->get();
 
     // var_dump($data);
