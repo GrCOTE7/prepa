@@ -28,20 +28,11 @@ class Database extends ComponentBase
   {
     $sortBy = 'email'; // null, or 'id' or 'email', ...
 
-    $data = Db::table('users')
+    return Db::table('users')
       ->select('id', 'name')
-      ->when(
-        $sortBy,
-        function ($query, $sortBy) {
-          return $query->orderBy($sortBy);
-        },
-        function ($query, $sortBy) {
-          return $query->orderBy('name');
-        }
-      )
+      ->orderBy('name', 'desc')
       ->get();
 
     // var_dump($data);
-    return $data;
   }
 }
