@@ -26,7 +26,26 @@ class Database extends ComponentBase
 
   public function content()
   {
-    $data = Db::table('system_plugin_history')->distinct()->select('code')->where('type', 'script')->get();
-    var_dump($data);
+    $data = Db::table('users')
+      ->select('id', 'name')
+      ->whereExists(function ($query) {
+        $query->select(Db::raw(1))
+          ->from('user_throttle')
+          ->whereRaw('user_throttle.user_id = users.id');
+      })->get();
+    /*
+    Same request as :
+
+    select id, name
+    from users as u
+    where exists (
+        select 1
+        from user_throttle as ut
+        where ut.user_id = u.id
+      )
+    */
+
+    // var_dump($data);
+    return $data;
   }
 }
