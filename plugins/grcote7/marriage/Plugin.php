@@ -58,7 +58,7 @@ class Plugin extends PluginBase
     return []; // Remove this line to activate
 
     return [
-      'Grcote7\Marriage\Components\MyComponent' => 'myComponent',
+      'Grcote7\Marriage\Components\Guests' => 'guests',
     ];
   }
 
@@ -93,7 +93,7 @@ class Plugin extends PluginBase
       'marriage' => [
         'label'       => 'Marriage',
         'url'         => Backend::url('grcote7/marriage/mycontroller'),
-        'icon'        => 'icon-leaf',
+        'icon'        => 'icon-heart',
         'permissions' => ['grcote7.marriage.*'],
         'order'       => 500,
       ],
