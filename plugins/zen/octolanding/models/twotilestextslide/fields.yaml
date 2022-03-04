@@ -1,0 +1,65 @@
+tabs:
+    fields:
+        name:
+            label: 'zen.octolanding::lang.block2.model.name.name'
+            span: full
+            type: text
+            comment: 'zen.octolanding::lang.block2.model.name.comment'
+            tab: Разное
+        descr:
+            label: 'zen.octolanding::lang.block2.model.descr.name'
+            size: small
+            span: full
+            type: richeditor
+            comment: 'zen.octolanding::lang.block1.model.descr.comment'
+            tab: Разное
+        full_display:
+            label: 'zen.octolanding::lang.block2.model.full_display.name'
+            span: auto
+            type: switch
+            comment: 'zen.octolanding::lang.block2.model.full_display.comment'
+            tab: Разное
+        blocks:
+            label: 'zen.octolanding::lang.block2.model.block.name'
+            prompt: 'zen.octolanding::lang.block1.model.add_item'
+            span: full
+            type: repeater
+            tab: Разное
+            form:
+                fields:
+                    is_inverse:
+                        label: 'zen.octolanding::lang.block2.model.block.fields.is_inverse.name'
+                        span: auto
+                        type: switch
+                        comment: 'zen.octolanding::lang.block2.model.block.fields.is_inverse.comment'
+                    name:
+                        label: 'zen.octolanding::lang.block2.model.block.fields.name.name'
+                        span: left
+                        type: text
+                        comment: 'zen.octolanding::lang.block2.model.block.fields.name.comment'
+                    slider_id:
+                        label: 'zen.octolanding::lang.block2.model.block.fields.slider_id.name'
+                        span: right
+                        type: dropdown
+                        comment: 'zen.octolanding::lang.block2.model.block.fields.slider_id.comment'
+                    text:
+                        label: 'zen.octolanding::lang.block2.model.block.fields.text.name'
+                        size: large
+                        span: full
+                        type: richeditor
+                        comment: 'zen.octolanding::lang.block2.model.block.fields.text.comment'
+                    link:
+                        label: 'zen.octolanding::lang.block2.model.block.fields.link.name'
+                        span: auto
+                        type: text
+                        comment: 'zen.octolanding::lang.block2.model.block.fields.link.comment'
+                    link_button:
+                        label: 'zen.octolanding::lang.block2.model.block.fields.link_button.name'
+                        span: auto
+                        type: text
+                        comment: 'zen.octolanding::lang.block2.model.block.fields.link_button.comment'
+                    color:
+                        label: 'zen.octolanding::lang.block2.model.block.fields.color.name'
+                        span: auto
+                        type: colorpicker
+                        comment: 'zen.octolanding::lang.block2.model.block.fields.color.comment'

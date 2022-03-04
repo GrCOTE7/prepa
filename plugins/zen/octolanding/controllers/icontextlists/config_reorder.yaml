@@ -1,0 +1,4 @@
+title: IconTextLists
+modelClass: Zen\Octolanding\Models\IconTextList
+toolbar:
+    buttons: reorder_toolbar

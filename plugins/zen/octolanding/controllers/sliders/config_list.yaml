@@ -1,0 +1,12 @@
+list: $/zen/octolanding/models/slider/columns.yaml
+modelClass: Zen\Octolanding\Models\Slider
+title: Sliders
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'zen/octolanding/sliders/update/:id'

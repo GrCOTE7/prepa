@@ -1,0 +1,7 @@
+scopes:
+
+    slider:
+        label: Slider
+        modelClass: Zen\Octolanding\Models\Slider
+        scope: SliderFilter
+        nameFrom: name

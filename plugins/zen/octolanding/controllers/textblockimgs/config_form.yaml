@@ -1,0 +1,10 @@
+name: Textblockimgs
+form: $/zen/octolanding/models/textblockimg/fields.yaml
+modelClass: Zen\Octolanding\Models\TextBlockImg
+defaultRedirect: zen/octolanding/textblockimgs
+create:
+    redirect: 'zen/octolanding/textblockimgs/update/:id'
+    redirectClose: zen/octolanding/textblockimgs
+update:
+    redirect: zen/octolanding/textblockimgs
+    redirectClose: zen/octolanding/textblockimgs

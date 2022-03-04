@@ -1,0 +1,50 @@
+fields:
+    name:
+        label: 'zen.octolanding::lang.block5.model.name.name'
+        span: full
+        type: text
+        comment: 'zen.octolanding::lang.block5.model.name.comment'
+    descr:
+        label: 'zen.octolanding::lang.block5.model.descr.name'
+        size: small
+        span: full
+        type: richeditor
+        comment: 'zen.octolanding::lang.block5.model.descr.comment'
+tabs:
+    fields:
+        blocks:
+            label: 'zen.octolanding::lang.block5.model.block.name'
+            prompt: 'zen.octolanding::lang.block5.model.block.add'
+            span: full
+            type: repeater
+            tab: 'zen.octolanding::lang.block5.model.tab.name'
+            form:
+                fields:
+                    margin:
+                        label: 'zen.octolanding::lang.block5.model.block.fields.margin.name'
+                        span: auto
+                        type: switch
+                        comment: 'zen.octolanding::lang.block5.model.block.fields.margin.comment'
+                    link:
+                        label: 'zen.octolanding::lang.block5.model.block.fields.link.name'
+                        span: auto
+                        type: text
+                        comment: 'zen.octolanding::lang.block5.model.block.fields.link.comment'
+                    text1:
+                        label: 'zen.octolanding::lang.block5.model.block.fields.text1.name'
+                        size: large
+                        span: full
+                        type: richeditor
+                        comment: 'zen.octolanding::lang.block5.model.block.fields.text1.comment'
+                    image:
+                        label: 'zen.octolanding::lang.block5.model.block.fields.image.name'
+                        mode: image
+                        span: full
+                        type: mediafinder
+                        comment: 'zen.octolanding::lang.block5.model.block.fields.image.comment'
+                    text2:
+                        label: 'zen.octolanding::lang.block5.model.block.fields.text2.name'
+                        size: large
+                        span: full
+                        type: richeditor
+                        comment: 'zen.octolanding::lang.block5.model.block.fields.text2.comment'

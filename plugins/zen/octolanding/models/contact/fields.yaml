@@ -1,0 +1,69 @@
+fields:
+    name:
+        label: 'zen.octolanding::lang.contacts.model.name.name'
+        span: auto
+        type: text
+        comment: 'zen.octolanding::lang.contacts.model.name.comment'
+tabs:
+    fields:
+        active_color:
+            label: 'zen.octolanding::lang.contacts.model.active_color.name'
+            span: auto
+            type: switch
+            tab: 'zen.octolanding::lang.block1.model.tab.name'
+            comment: 'zen.octolanding::lang.contacts.model.active_color.comment'
+        color:
+            label: 'zen.octolanding::lang.contacts.model.color.name'
+            span: auto
+            trigger:
+                action: show
+                field: active_color
+                condition: checked
+            type: colorpicker
+            tab: 'zen.octolanding::lang.block1.model.tab.name'
+            comment: 'zen.octolanding::lang.contacts.model.color.comment'
+        active_text:
+            label: 'zen.octolanding::lang.contacts.model.active_text.name'
+            span: full
+            type: switch
+            tab: 'zen.octolanding::lang.block1.model.tab.name'
+            comment: 'zen.octolanding::lang.contacts.model.active_text.comment'
+        text:
+            label: 'zen.octolanding::lang.contacts.model.text.name'
+            size: small
+            span: full
+            trigger:
+                action: show
+                field: active_text
+                condition: checked
+            type: richeditor
+            tab: 'zen.octolanding::lang.block1.model.tab.name'
+            comment: 'zen.octolanding::lang.contacts.model.text.comment'
+        content:
+            label: 'zen.octolanding::lang.contacts.model.content.name'
+            prompt: 'zen.octolanding::lang.block1.model.add_item'
+            span: full
+            type: repeater
+            tab: 'zen.octolanding::lang.block1.model.tab.name'
+            form:
+                fields:
+                    name:
+                        label: 'zen.octolanding::lang.contacts.model.content.fields.name.name'
+                        span: auto
+                        type: text
+                        comment: 'zen.octolanding::lang.contacts.model.content.fields.name.comment'
+                    type:
+                        label: 'zen.octolanding::lang.contacts.model.content.fields.type.name'
+                        options:
+                            phone: Phone
+                            email: Email
+                            other: Other
+                        span: auto
+                        type: dropdown
+                        comment: 'zen.octolanding::lang.contacts.model.content.fields.type.comment'
+                    text:
+                        label: 'zen.octolanding::lang.contacts.model.content.fields.text.name'
+                        size: small
+                        span: full
+                        type: textarea
+                        comment: 'zen.octolanding::lang.contacts.model.content.fields.text.comment'

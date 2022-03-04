@@ -1,0 +1,4 @@
+title: FourImgSlideBgcs
+modelClass: Zen\Octolanding\Models\FourImgSlideBgc
+toolbar:
+    buttons: reorder_toolbar

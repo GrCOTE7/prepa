@@ -1,0 +1,44 @@
+fields:
+    active:
+        label: 'zen.octolanding::lang.block1.model.active.name'
+        span: full
+        type: switch
+        comment: 'zen.octolanding::lang.block1.model.active.comment'
+    name:
+        label: 'zen.octolanding::lang.block1.model.name.name'
+        span: full
+        type: text
+        comment: 'zen.octolanding::lang.block1.model.name.comment'
+    descr:
+        label: 'zen.octolanding::lang.block1.model.descr.name'
+        size: small
+        span: full
+        type: richeditor
+        comment: 'zen.octolanding::lang.block1.model.descr.comment'
+tabs:
+    fields:
+        block:
+            label: 'zen.octolanding::lang.block1.model.block.name'
+            prompt: 'zen.octolanding::lang.block1.model.add_item'
+            span: full
+            type: repeater
+            tab: 'zen.octolanding::lang.block1.model.tab.name'
+            form:
+                fields:
+                    name:
+                        label: 'zen.octolanding::lang.block1.model.block.fields.name.name'
+                        span: auto
+                        type: text
+                        comment: 'zen.octolanding::lang.block1.model.block.fields.name.comment'
+                    image:
+                        label: 'zen.octolanding::lang.block1.model.block.fields.image.name'
+                        mode: file
+                        span: auto
+                        type: mediafinder
+                        comment: 'zen.octolanding::lang.block1.model.block.fields.image.comment'
+                    text:
+                        label: 'zen.octolanding::lang.block1.model.block.fields.text.name'
+                        size: small
+                        span: full
+                        type: richeditor
+                        comment: 'zen.octolanding::lang.block1.model.block.fields.text.comment'

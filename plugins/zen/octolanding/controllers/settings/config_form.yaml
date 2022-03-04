@@ -1,0 +1,10 @@
+name: Settings
+form: $/zen/octolanding/models/setting/fields.yaml
+modelClass: Zen\Octolanding\Models\Setting
+defaultRedirect: zen/octolanding/settings
+create:
+    redirect: 'zen/octolanding/settings/update/:id'
+    redirectClose: zen/octolanding/settings
+update:
+    redirect: zen/octolanding/settings
+    redirectClose: zen/octolanding/settings

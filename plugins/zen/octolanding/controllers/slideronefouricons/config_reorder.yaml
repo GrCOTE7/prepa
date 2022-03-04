@@ -1,0 +1,4 @@
+title: SliderOneFourIcons
+modelClass: Zen\Octolanding\Models\SliderOneFourIcon
+toolbar:
+    buttons: reorder_toolbar

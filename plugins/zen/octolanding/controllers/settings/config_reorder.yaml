@@ -1,0 +1,4 @@
+title: Settings
+modelClass: Zen\Octolanding\Models\Setting
+toolbar:
+    buttons: reorder_toolbar

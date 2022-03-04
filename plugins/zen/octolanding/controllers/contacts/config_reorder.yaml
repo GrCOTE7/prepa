@@ -1,0 +1,4 @@
+title: Contacts
+modelClass: Zen\Octolanding\Models\Contact
+toolbar:
+    buttons: reorder_toolbar

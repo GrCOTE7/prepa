@@ -1,0 +1,24 @@
+columns:
+    id:
+        label: id
+        type: number
+        sortable: true
+    name:
+        label: 'zen.octolanding::lang.feedback.model.name.name'
+        type: text
+        searchable: true
+        sortable: true
+    phone:
+        label: 'zen.octolanding::lang.feedback.model.phone.name'
+        type: text
+        searchable: true
+        sortable: true
+    created_at:
+        label: 'zen.octolanding::lang.feedback.model.created_at.name'
+        type: date
+        searchable: true
+        sortable: true
+    active:
+        label: 'zen.octolanding::lang.feedback.model.active.name'
+        type: partial
+        sortable: true

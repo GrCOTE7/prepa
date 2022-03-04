@@ -1,0 +1,31 @@
+{% if slider %}
+    <section id="SliderWrap">
+        <div id="Slider" class="owl-carousel owl-theme">
+            {% for slide in slider %}
+                {% if slide.code %}
+                    <div class="item">
+                        {{ slide.code|raw }}
+                    </div>
+                {% else %}
+                    <div class="item" style="background-image:url({{ slide.image|media }});"></div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="descWrap">
+            {% for slide in slider %}
+                <div class="desc">
+                    {#<span class="title">{{ slide.name }}:</span>#}
+                    {{ slide.desc|raw }}
+                </div>
+            {% endfor %}
+            {#<div class="sliderControl">
+	            <div class="prev">
+	            	<i class="fa fa-angle-left"></i>
+	            </div>
+	            <div class="next"> 
+	            	<i class="fa fa-angle-right"></i>
+	            </div>
+	        </div>#}
+        </div>
+    </section>
+{% endif %}

@@ -1,0 +1,10 @@
+name: Subscriptions
+form: $/zen/octolanding/models/subscription/fields.yaml
+modelClass: Zen\Octolanding\Models\Subscription
+defaultRedirect: zen/octolanding/subscriptions
+create:
+    redirect: 'zen/octolanding/subscriptions/update/:id'
+    redirectClose: zen/octolanding/subscriptions
+update:
+    redirect: zen/octolanding/subscriptions
+    redirectClose: zen/octolanding/subscriptions

@@ -1,0 +1,4 @@
+title: TwoTilesTextSlides
+modelClass: Zen\Octolanding\Models\TwoTilesTextSlide
+toolbar:
+    buttons: reorder_toolbar

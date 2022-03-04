@@ -19,6 +19,5 @@
 {% set data = 'abc' %}
 {% set data = [1,2,3] %}
 #}
-{% set data = __SELF__.content %}
+{{ __SELF__.content|raw }}
 
-{{ data }}

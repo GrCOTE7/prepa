@@ -1,0 +1,11 @@
+columns:
+    id:
+        label: id
+        type: number
+        searchable: false
+        sortable: true
+    name:
+        label: 'zen.octolanding::lang.block2.model.name.name'
+        type: text
+        searchable: true
+        sortable: true

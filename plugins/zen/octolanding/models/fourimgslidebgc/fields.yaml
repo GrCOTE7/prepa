@@ -1,0 +1,34 @@
+tabs:
+    fields:
+        name:
+            label: 'zen.octolanding::lang.block3.model.name.name'
+            span: auto
+            type: text
+            comment: 'zen.octolanding::lang.block3.model.name.comment'
+        slider_id:
+            label: 'zen.octolanding::lang.block3.model.slider_id.name'
+            span: auto
+            type: dropdown
+            comment: 'zen.octolanding::lang.block3.model.slider_id.comment'
+        descr:
+            label: 'zen.octolanding::lang.block3.model.descr.name'
+            size: small
+            span: full
+            type: richeditor
+            comment: 'zen.octolanding::lang.block3.model.descr.comment'
+        section1:
+            label: 'zen.octolanding::lang.block3.model.section1.name'
+            span: full
+            type: section
+        backgorund:
+            label: 'zen.octolanding::lang.block3.model.backgorund.name'
+            mode: image
+            span: auto
+            type: mediafinder
+            comment: 'zen.octolanding::lang.block3.model.backgorund.comment'
+        color:
+            label: 'zen.octolanding::lang.block3.model.color.name'
+            span: auto
+            default: '#fff'
+            type: colorpicker
+            comment: 'zen.octolanding::lang.block3.model.color.comment'

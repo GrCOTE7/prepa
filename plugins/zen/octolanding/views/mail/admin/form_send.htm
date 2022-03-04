@@ -1,0 +1,196 @@
+subject = "{{ 'zen.octolanding::lang.mail.title'|trans }} - (№{{ form.id }})"
+layout = "art_layout"
+==
+
+<tr>
+    <td align="center" valign="top" id="templateBody"
+        style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #FFFFFF;background-image: none;background-repeat: no-repeat;background-position: center;background-size: cover;border-top: 0;border-bottom: 0;padding-top: 0;padding-bottom: 0;">
+
+        <table align="center" border="0" cellspacing="0" cellpadding="0" width="600" style="width:600px;">
+            <tr>
+                <td align="center" valign="top" width="600" style="width:600px;">
+
+                    <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%"
+                           class="templateContainer"
+                           style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-width: 600px !important;">
+                        <tr>
+                            <td valign="top" class="bodyContainer"
+                                style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock"
+                                       style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                    <tbody class="mcnTextBlockOuter">
+                                    <tr>
+                                        <td valign="top" class="mcnTextBlockInner"
+                                            style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+
+                                            <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%"
+                                                   style="width:100%;">
+                                                <tr>
+
+                                                    <td valign="top" width="600" style="width:600px;">
+
+                                                        <table align="left" border="0" cellpadding="0" cellspacing="0"
+                                                               style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"
+                                                               width="100%" class="mcnTextContentContainer">
+                                                            <tbody>
+                                                            <tr>
+
+                                                                <td valign="top" class="mcnTextContent"
+                                                                    style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #202020;font-family: Helvetica;font-size: 16px;line-height: 150%;text-align: left;">
+
+                                                                    <h1 style="display: block;margin: 0;padding: 0;color: #202020;font-family: Helvetica;font-size: 26px;font-style: normal;font-weight: bold;line-height: 125%;letter-spacing: normal;text-align: left;">
+                                                                        <br>{{ 'zen.octolanding::lang.mail.application_header'|trans }}</h1>
+                                                                    <p style="margin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #202020;font-family: Helvetica;font-size: 16px;line-height: 150%;text-align: left;">
+                                                                        {{ 'zen.octolanding::lang.mail.application_text'|trans }}</p>
+                                                                </td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+
+                                                    </td>
+
+                                                </tr>
+                                            </table>
+
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+
+                </td>
+            </tr>
+        </table>
+
+    </td>
+</tr>
+<tr>
+    <td align="center" valign="top" id="templateColumns"
+        style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #FFFFFF;background-image: none;background-repeat: no-repeat;background-position: center;background-size: cover;border-top: 0;border-bottom: 2px solid #EAEAEA;padding-top: 0;padding-bottom: 9px;">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" class="templateContainer"
+               style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-width: 600px !important;">
+
+            <tr>
+                        <td valign="top" class="columnContainer"
+                            style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%"
+                                   class="mcnCodeBlock"
+                                   style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                <tbody class="mcnTextBlockOuter">
+                                <tr>
+                                    <td valign="top" class="mcnTextBlockInner"
+                                        style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+
+                                        <div class="mix" style="text-align: center;">
+											{% if review.rating > 0 %}
+                                            	{% set img = ('/plugins/artdark/easymarket/views/mail/assets/star.png')|app %}
+											
+                                            	{% set em_img  = message.embed(img) %}
+
+                                                <a href="{{ ('/backend/artdark/easymarket/reviews/update/'~review.id)|app }}"
+                                                   style="mso-line-height-rule: exactly;color: #fff; -ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                    {% set start = 0 %}
+                                                    {% for star in 1..5  if start < review.rating %}
+                                                    <div class="catgImg" style="background-image: url('{{ em_img }}');display: inline-block;min-height: 170px;width: 15%;margin: 25px 0;background-position: center;-webkit-background-size: contain;background-size: contain;background-repeat: no-repeat;"></div>
+                                                        {% set start = start + 1%}
+                                                    {% endfor %}
+                                                </a>
+                                          
+											{% endif %}
+
+
+                                            </div>
+
+                                        </div>
+
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+
+
+
+            <tr>
+                <td valign="top"
+                    style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+
+                    <table align="center" border="0" cellspacing="0" cellpadding="0" width="600" style="width:600px;">
+                        <tr>
+
+                            <td align="center" valign="top" width="100%" style="width:300px;">
+
+                                <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%"
+                                       class="columnWrapper"
+                                       style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                    <tr>
+                                        <td valign="top" class="columnContainer"
+                                            style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                            <table border="0" cellpadding="0" cellspacing="0" width="100%"
+                                                   class="mcnTextBlock"
+                                                   style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                <tbody class="mcnTextBlockOuter">
+                                                <tr>
+                                                    <td valign="top" class="mcnTextBlockInner"
+                                                        style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+
+                                                        <table align="left" border="0" cellspacing="0" cellpadding="0"
+                                                               width="100%" style="width:100%;">
+                                                            <tr>
+
+                                                                <td valign="top" width="300" style="width:300px;">
+
+                                                                    <table align="left" border="0" cellpadding="0"
+                                                                           cellspacing="0"
+                                                                           style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"
+                                                                           width="100%" class="mcnTextContentContainer">
+                                                                        <tbody>
+                                                                        <tr>
+
+                                                                            <td valign="top" class="mcnTextContent"
+                                                                                style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #202020;font-family: Helvetica;font-size: 16px;line-height: 150%;text-align: left;">
+
+                                                                                <h3 class="null"
+                                                                                    style="display: block;margin: 0;padding: 0;color: #202020;font-family: Helvetica;font-size: 20px;font-style: normal;font-weight: bold;line-height: 125%;letter-spacing: normal;text-align: left;">
+                                                                                    {{ 'zen.octolanding::lang.mail.application_info'|trans }} (№{{ form.id }}):</h3>
+                                                                                <br>
+                                                                                <strong>{{ 'zen.octolanding::lang.form.field.name'|trans }}</strong>:
+                                                                                {{ form.name }}
+                                                                                <br>
+                                                                                <strong>{{ 'zen.octolanding::lang.form.field.phone'|trans }}:</strong>
+                                                                                {{ form.phone }}
+                                                                                <br>
+                                                                                <strong>{{ 'zen.octolanding::lang.form.field.created_at'|trans }}:</strong>
+                                                                                {{ form.created_at|date('d M Y') }}
+                                                                                <br>
+                                                                            </td>
+                                                                        </tr>
+                                                                        </tbody>
+                                                                    </table>
+
+                                                                </td>
+
+                                                            </tr>
+                                                        </table>
+
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                            </td>
+                        </tr>
+                    </table>
+
+                </td>
+            </tr>
+
+        </table>
+    </td>
+</tr>

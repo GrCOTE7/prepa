@@ -1,0 +1,18 @@
+columns:
+    id:
+        label: id
+        type: number
+        sortable: true
+    name:
+        label: 'zen.octolanding::lang.slider.model.slide.name.name'
+        type: text
+        searchable: true
+        sortable: true
+    sort_order:
+        label: 'zen.octolanding::lang.slider.model.slide.position.name'
+        type: number
+    slider_id:
+        label: 'zen.octolanding::lang.slider.model.menu-name'
+        type: text
+        relation: slider
+        valueFrom: name

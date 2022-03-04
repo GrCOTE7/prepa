@@ -1,0 +1,10 @@
+name: Contacts
+form: $/zen/octolanding/models/contact/fields.yaml
+modelClass: Zen\Octolanding\Models\Contact
+defaultRedirect: zen/octolanding/contacts
+create:
+    redirect: 'zen/octolanding/contacts/update/:id'
+    redirectClose: zen/octolanding/contacts
+update:
+    redirect: zen/octolanding/contacts
+    redirectClose: zen/octolanding/contacts

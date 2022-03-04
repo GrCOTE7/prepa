@@ -1,0 +1,7 @@
+fields:
+    name:
+        label: 'zen.octolanding::lang.slider.model.slider.name.name'
+        oc.commentPosition: ''
+        span: full
+        type: text
+        comment: 'zen.octolanding::lang.slider.model.slide.name.comment'

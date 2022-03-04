@@ -1,0 +1,47 @@
+fields:
+    name:
+        label: 'zen.octolanding::lang.slider.model.slide.name.name'
+        span: auto
+        type: text
+        comment: 'zen.octolanding::lang.slider.model.slide.name.comment'
+    slider_id:
+        label: 'zen.octolanding::lang.slider.model.slide.slider.name'
+        span: auto
+        type: dropdown
+        comment: 'zen.octolanding::lang.slider.model.slide.slider.comment'
+    image:
+        label: 'zen.octolanding::lang.slider.model.slide.image.name'
+        mode: image
+        span: auto
+        trigger:
+            action: show
+            field: isvideo
+            condition: ''
+        type: mediafinder
+        comment: 'zen.octolanding::lang.slider.model.slide.image.comment'
+    sort_order:
+        label: 'zen.octolanding::lang.slider.model.slide.sort_order.name'
+        span: right
+        type: number
+        comment: 'zen.octolanding::lang.slider.model.slide.sort_order.comment'
+    desc:
+        label: 'zen.octolanding::lang.slider.model.slide.desc.name'
+        size: small
+        span: full
+        type: richeditor
+        comment: 'zen.octolanding::lang.slider.model.slide.desc.comment'
+    section1:
+        label: 'zen.octolanding::lang.slider.model.slide.sections1.name'
+        span: full
+        type: section
+        comment: 'zen.octolanding::lang.slider.model.slide.sections1.comment'
+    desc_more:
+        label: 'zen.octolanding::lang.slider.model.slide.desc_more.name'
+        size: small
+        span: full
+        type: richeditor
+    link:
+        label: 'zen.octolanding::lang.slider.model.slide.link.name'
+        span: full
+        type: text
+        comment: 'zen.octolanding::lang.slider.model.slide.link.comment'

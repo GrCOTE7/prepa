@@ -1,0 +1,14 @@
+columns:
+    id:
+        label: id
+        type: number
+        sortable: true
+    name:
+        label: 'zen.octolanding::lang.block1.model.block.fields.name.name'
+        type: text
+        searchable: true
+        sortable: true
+    active:
+        label: 'zen.octolanding::lang.block1.model.active.name'
+        type: partial
+        sortable: true

@@ -1,0 +1,10 @@
+name: Sliders
+form: $/zen/octolanding/models/slider/fields.yaml
+modelClass: Zen\Octolanding\Models\Slider
+defaultRedirect: zen/octolanding/sliders
+create:
+    redirect: 'zen/octolanding/sliders/update/:id'
+    redirectClose: zen/octolanding/sliders
+update:
+    redirect: zen/octolanding/sliders
+    redirectClose: zen/octolanding/sliders

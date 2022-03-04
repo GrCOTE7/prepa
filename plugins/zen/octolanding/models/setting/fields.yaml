@@ -1,0 +1,342 @@
+fields:
+    active:
+        label: 'zen.octolanding::lang.settings.model.active.name'
+        span: left
+        default: 1
+        type: switch
+        comment: 'zen.octolanding::lang.settings.model.active.comment'
+    created_at:
+        label: 'zen.octolanding::lang.settings.model.created_at.name'
+        mode: datetime
+        span: auto
+        disabled: 1
+        type: datepicker
+        comment: 'zen.octolanding::lang.settings.model.created_at.comment'
+    section1:
+        label: 'zen.octolanding::lang.settings.model.name.name'
+        span: full
+        type: section
+    name:
+        label: 'zen.octolanding::lang.settings.model.name.name'
+        span: auto
+        type: text
+        comment: 'zen.octolanding::lang.settings.model.name.comment'
+    site_name:
+        label: 'zen.octolanding::lang.settings.model.site_name.name'
+        span: right
+        type: text
+        comment: 'zen.octolanding::lang.settings.model.site_name.comment'
+tabs:
+    fields:
+        color_main:
+            label: 'zen.octolanding::lang.settings.model.color_main.name'
+            span: full
+            type: colorpicker
+            tab: 'zen.octolanding::lang.settings.model.tabs.color'
+            comment: 'zen.octolanding::lang.settings.model.color_main.comment'
+        text_background:
+            label: 'zen.octolanding::lang.settings.model.text_background.name'
+            span: full
+            default: '#fff'
+            type: colorpicker
+            tab: 'zen.octolanding::lang.settings.model.tabs.color'
+            comment: 'zen.octolanding::lang.settings.model.text_background.comment'
+        section2:
+            label: 'zen.octolanding::lang.settings.model.section2'
+            span: full
+            type: section
+            tab: 'zen.octolanding::lang.settings.model.tabs.color'
+        bgc_custom:
+            label: 'zen.octolanding::lang.settings.model.bgc_custom.name'
+            span: full
+            type: switch
+            tab: 'zen.octolanding::lang.settings.model.tabs.color'
+            comment: 'zen.octolanding::lang.settings.model.bgc_custom.comment'
+        bgc_custom_image:
+            label: 'zen.octolanding::lang.settings.model.bgc_custom_image.name'
+            span: full
+            trigger:
+                action: show
+                field: bgc_custom
+                condition: checked
+            type: switch
+            tab: 'zen.octolanding::lang.settings.model.tabs.color'
+            comment: 'zen.octolanding::lang.settings.model.bgc_custom_image.comment'
+        bgc_custom_color:
+            label: 'zen.octolanding::lang.settings.model.bgc_custom_color.name'
+            span: full
+            trigger:
+                action: show
+                field: bgc_custom
+                condition: checked
+            type: colorpicker
+            tab: 'zen.octolanding::lang.settings.model.tabs.color'
+            comment: 'zen.octolanding::lang.settings.model.bgc_custom_color.comment'
+        bgc_custom_images:
+            label: 'zen.octolanding::lang.settings.model.bgc_custom_images.comment'
+            mode: image
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: auto
+            trigger:
+                action: show
+                field: bgc_custom_image
+                condition: checked
+            type: fileupload
+            tab: 'zen.octolanding::lang.settings.model.tabs.color'
+            comment: 'zen.octolanding::lang.settings.model.bgc_custom_images.comment'
+        bgc_custom_images_options:
+            label: 'zen.octolanding::lang.settings.model.bgc_custom_images_options.name'
+            options:
+                'background-position: center': 'background-position: center'
+                'background-repeat: no-repeat': 'background-repeat: no-repeat'
+                'background-size: cover': 'background-size: cover'
+            span: auto
+            trigger:
+                action: show
+                field: bgc_custom_image
+                condition: checked
+            type: checkboxlist
+            tab: 'zen.octolanding::lang.settings.model.tabs.color'
+            comment: 'zen.octolanding::lang.settings.model.bgc_custom_images_options.comment'
+        header_id:
+            span: full
+            path: $/zen/octolanding/controllers/settings/headers.htm
+            type: partial
+            tab: 'zen.octolanding::lang.settings.model.tabs.header'
+        column_contact:
+            label: 'zen.octolanding::lang.settings.model.column_contact.name'
+            span: auto
+            type: switch
+            comment: 'zen.octolanding::lang.settings.model.column_contact.comment'
+            tab: 'zen.octolanding::lang.settings.model.tabs.header'
+        contact_mail_active:
+            label: 'zen.octolanding::lang.settings.model.contact_mail_active.name'
+            span: full
+            default: 1
+            type: switch
+            comment: 'zen.octolanding::lang.settings.model.contact_mail_active.comment'
+            tab: 'zen.octolanding::lang.settings.model.tabs.header'
+        contact_mail:
+            label: 'zen.octolanding::lang.settings.model.contact_mail.name'
+            span: full
+            type: text
+            comment: 'zen.octolanding::lang.settings.model.contact_mail.comment'
+            tab: 'zen.octolanding::lang.settings.model.tabs.header'
+        contact_phone_active:
+            label: 'zen.octolanding::lang.settings.model.contact_phone_active.name'
+            span: full
+            default: 1
+            type: switch
+            comment: 'zen.octolanding::lang.settings.model.contact_phone_active.comment'
+            tab: 'zen.octolanding::lang.settings.model.tabs.header'
+        contact_phone:
+            label: 'zen.octolanding::lang.settings.model.contact_phone.name'
+            span: full
+            type: text
+            comment: 'zen.octolanding::lang.settings.model.contact_phone.comment'
+            tab: 'zen.octolanding::lang.settings.model.tabs.header'
+        footer_small:
+            label: 'zen.octolanding::lang.settings.model.footer_small.name'
+            span: auto
+            type: switch
+            tab: 'zen.octolanding::lang.settings.model.tabs.footer'
+            comment: 'zen.octolanding::lang.settings.model.footer_small.comment'
+        footer_small_logo:
+            label: 'zen.octolanding::lang.settings.model.footer_small_logo.name'
+            span: full
+            trigger:
+                action: show
+                field: footer_small
+                condition: checked
+            type: switch
+            comment: 'zen.octolanding::lang.settings.model.footer_small_logo.comment'
+            tab: 'zen.octolanding::lang.settings.model.tabs.footer'
+        footer_date:
+            label: 'zen.octolanding::lang.settings.model.footer_date.name'
+            span: left
+            default: 1
+            type: switch
+            comment: 'zen.octolanding::lang.settings.model.footer_date.comment'
+            tab: 'zen.octolanding::lang.settings.model.tabs.footer'
+        footer_date_custom:
+            label: 'zen.octolanding::lang.settings.model.footer_date_custom.name'
+            span: auto
+            trigger:
+                action: show
+                field: footer_date
+                condition: checked
+            type: switch
+            comment: 'zen.octolanding::lang.settings.model.footer_date_custom.comment'
+            tab: 'zen.octolanding::lang.settings.model.tabs.footer'
+        footer_date_start:
+            label: 'zen.octolanding::lang.settings.model.footer_date_start.name'
+            mode: date
+            span: auto
+            trigger:
+                action: show
+                field: footer_date_custom
+                condition: checked
+            type: datepicker
+            tab: 'zen.octolanding::lang.settings.model.tabs.footer'
+            comment: 'zen.octolanding::lang.settings.model.footer_date_start.comment'
+        footer_date_end:
+            label: 'zen.octolanding::lang.settings.model.footer_date_end.name'
+            mode: date
+            span: auto
+            trigger:
+                action: show
+                field: footer_date_custom
+                condition: checked
+            type: datepicker
+            tab: 'zen.octolanding::lang.settings.model.tabs.footer'
+            comment: 'zen.octolanding::lang.settings.model.footer_date_end.comment'
+        footer_text_rights:
+            label: 'zen.octolanding::lang.settings.model.footer_text_rights.name'
+            span: full
+            type: text
+            comment: 'zen.octolanding::lang.settings.model.footer_text_rights.comment'
+            tab: 'zen.octolanding::lang.settings.model.tabs.footer'
+        s_admin_send:
+            label: 'zen.octolanding::lang.settings.model.s_admin_send.name'
+            span: left
+            default: 1
+            type: switch
+            comment: 'zen.octolanding::lang.settings.model.s_admin_send.comment'
+            tab: 'zen.octolanding::lang.settings.model.tabs.forms'
+        emails:
+            label: 'zen.octolanding::lang.settings.model.emails.name'
+            prompt: 'zen.octolanding::lang.settings.model.emails.add'
+            span: left
+            trigger:
+                action: show
+                field: s_admin_send
+                condition: checked
+            type: repeater
+            tab: 'zen.octolanding::lang.settings.model.tabs.forms'
+            form:
+                fields:
+                    email:
+                        label: 'zen.octolanding::lang.settings.model.emails.name'
+                        span: full
+                        type: text
+                        comment: 'zen.octolanding::lang.settings.model.emails.comment'
+        svg_logo:
+            label: 'zen.octolanding::lang.settings.model.svg_logo.name'
+            span: left
+            type: switch
+            comment: 'zen.octolanding::lang.settings.model.svg_logo.comment'
+            tab: 'zen.octolanding::lang.settings.model.tabs.logos'
+        favicon:
+            label: 'zen.octolanding::lang.settings.model.favicon.name'
+            mode: file
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: right
+            type: fileupload
+            comment: 'zen.octolanding::lang.settings.model.favicon.comment'
+            tab: 'zen.octolanding::lang.settings.model.tabs.logos'
+        img_logo:
+            label: 'zen.octolanding::lang.settings.model.img_logo.name'
+            mode: image
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: auto
+            trigger:
+                action: show
+                field: svg_logo
+                condition: unchecked
+            type: fileupload
+            comment: 'zen.octolanding::lang.settings.model.img_logo.comment'
+            tab: 'zen.octolanding::lang.settings.model.tabs.logos'
+        logo_filter:
+            label: 'zen.octolanding::lang.settings.model.logo_filter.name'
+            span: right
+            default: 0
+            type: switch
+            comment: 'zen.octolanding::lang.settings.model.logo_filter.comment'
+            tab: 'zen.octolanding::lang.settings.model.tabs.logos'
+        svg_logo_code:
+            label: 'zen.octolanding::lang.settings.model.svg_logo_code.name'
+            size: large
+            language: html
+            span: full
+            type: codeeditor
+            tab: 'zen.octolanding::lang.settings.model.tabs.logos'
+            trigger:
+                action: show
+                field: svg_logo
+                condition: checked
+            comment: 'zen.octolanding::lang.settings.model.svg_logo_code.comment'
+        section4:
+            label: 'Og tag'
+            span: full
+            type: section
+            tab: 'zen.octolanding::lang.settings.model.tabs.tag'
+        og_site_name:
+            label: 'og:site_name'
+            span: left
+            default: null
+            type: text
+            comment: 'zen.octolanding::lang.settings.model.og_site_name'
+            tab: 'zen.octolanding::lang.settings.model.tabs.tag'
+        og_title:
+            label: 'og:title'
+            span: right
+            default: null
+            type: text
+            comment: 'zen.octolanding::lang.settings.model.og_title'
+            tab: 'zen.octolanding::lang.settings.model.tabs.tag'
+        og_type:
+            label: 'og:type'
+            span: left
+            default: null
+            type: text
+            comment: 'zen.octolanding::lang.settings.model.og_type'
+            tab: 'zen.octolanding::lang.settings.model.tabs.tag'
+        og_url:
+            label: 'og:url'
+            span: right
+            default: null
+            type: text
+            comment: 'zen.octolanding::lang.settings.model.og_url'
+            tab: 'zen.octolanding::lang.settings.model.tabs.tag'
+        og_image:
+            label: 'og:image'
+            mode: image
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: left
+            type: fileupload
+            comment: 'zen.octolanding::lang.settings.model.og_image'
+            tab: 'zen.octolanding::lang.settings.model.tabs.tag'
+        section3:
+            label: 'Meta tag'
+            span: full
+            type: section
+            tab: 'zen.octolanding::lang.settings.model.tabs.tag'
+        seo_title:
+            label: Title
+            span: full
+            type: text
+            tab: 'zen.octolanding::lang.settings.model.tabs.tag'
+        seo_descriptions:
+            label: Descriptions
+            size: small
+            span: full
+            type: textarea
+            tab: 'zen.octolanding::lang.settings.model.tabs.tag'
+        seo_keywords:
+            label: Keywords
+            size: small
+            span: full
+            type: textarea
+            tab: 'zen.octolanding::lang.settings.model.tabs.tag'
