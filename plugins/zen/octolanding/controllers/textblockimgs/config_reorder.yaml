@@ -1,4 +1,0 @@
-title: Textblockimgs
-modelClass: Zen\Octolanding\Models\TextBlockImg
-toolbar:
-    buttons: reorder_toolbar
