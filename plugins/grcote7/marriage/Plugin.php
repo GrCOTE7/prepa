@@ -97,4 +97,16 @@ class Plugin extends PluginBase
       ],
         ];
   }
+
+  public function onRun()
+  {
+    // This code will be executed when the page or layout is
+    // loaded and the component is attached to it.
+
+    $this->page['var'] = 123; // Inject some variable to the page
+
+    // if (true) {
+    //   return 123;
+    // }
+  }
 }
