@@ -1,0 +1,20 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+        searchable: true
+    name:
+        label: fytinnovations.contacts::lang.contact.name
+        searchable: true
+    surname:
+        label: fytinnovations.contacts::lang.contact.surname
+        searchable: true
+    email:
+        label: fytinnovations.contacts::lang.contact.email
+        searchable: true
+    mobile:
+        label: fytinnovations.contacts::lang.contact.mobile
+        searchable: true

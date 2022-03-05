@@ -61,7 +61,6 @@ class Plugin extends PluginBase
   {
     return [
       'GrCote7\Tests\Components\Variables' => 'variables',
-      'GrCote7\Tests\Components\Guests'    => 'guests',
     ];
   }
 
