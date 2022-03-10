@@ -19,4 +19,6 @@ security = "all"
 <hr>
 {% component 'resetPassword' %}
 <hr>
-<a data-request="onLogout" data-request-data="redirect: '/'" class="btn btn-danger">Sign out</a>
+{% if user %}
+    <a data-request="onLogout" data-request-data="redirect: '/'" class="btn btn-danger">Sign out</a>
+{% endif %}
