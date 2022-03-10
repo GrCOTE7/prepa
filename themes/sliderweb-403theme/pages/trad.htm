@@ -1,0 +1,30 @@
+title = "Trans"
+url = "/trans"
+layout = "t/bootstrap513"
+description = "Page for tests of translation"
+is_hidden = 0
+
+[viewBag]
+localeTitle[fr] = "Trad"
+localeUrl[fr] = "/trad"
+localeDescription[fr] = "Page de test de traduction"
+
+[localePicker]
+forceUrl = 0
+
+[alternateHrefLangElements]
+==
+<h1>{{ 'GC7&apos;s tests for dynamical translations'|_ }}</h1>
+<hr>
+<h2>{{ 'Translation'|_ }}</h2>
+
+{# % component 'localePicker' % #}
+
+<p>
+    {{ 'Please select your language' |_ }} :
+    <a href="/trans" data-request="onSwitchLocale" data-request-data="locale: 'en'">English</a>,
+    <a href="/trad" data-request="onSwitchLocale" data-request-data="locale: 'fr'">French</a>
+</p>
+
+<hr>
+{{ 'Hey, hello... How do you do ?'|_ }}
