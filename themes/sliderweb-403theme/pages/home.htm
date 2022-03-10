@@ -33,16 +33,16 @@ function onStart(){
 {# % component 'variables' % #}
 
 {% if user %}
-    <p>Hello {{ user.name }}</p>
+    <p>Salut, {{ user.name }} !</p>
 {% else %}
-    <p>Nobody is logged in</p>
+    <p>Pertsonne n'est logué</p>
 {% endif %}
 <hr>
 
 <div class="red">Fin</div>
 <br>
 {% if user %}
-    <a data-request="onLogout" data-request-data="redirect: '/'" class="btn btn-danger">Sign out</a>
+    <a data-request="onLogout" data-request-data="redirect: '/'" class="btn btn-danger">Sortir</a>
 {% else %}
-    <a href = "compte" class="btn btn-primary">Sign in</a>
+    <a href = "compte" class="btn btn-primary">Se loguer</a>
 {% endif %}

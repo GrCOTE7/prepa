@@ -1,8 +1,11 @@
 <?php
 
-return [
+/*
+ * (c) Boosteur.com - 2022
+ */
 
-    /*
+return [
+  /*
     |--------------------------------------------------------------------------
     | Application Debug Mode
     |--------------------------------------------------------------------------
@@ -16,9 +19,9 @@ return [
     |
     */
 
-    'debug' => env('APP_DEBUG', true),
+  'debug' => env('APP_DEBUG', true),
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Application Name
     |--------------------------------------------------------------------------
@@ -28,9 +31,9 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => 'Prepa',
+  'name' => 'Prepa',
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Application URL
     |--------------------------------------------------------------------------
@@ -41,9 +44,9 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://prepa'),
+  'url' => env('APP_URL', 'http://prepa'),
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Trusted hosts
     |--------------------------------------------------------------------------
@@ -71,9 +74,9 @@ return [
     | on the Backend password reset flow for security reasons.
     */
 
-    'trustedHosts' => false,
+  'trustedHosts' => false,
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Trusted proxies
     |--------------------------------------------------------------------------
@@ -99,9 +102,9 @@ return [
     |      'trustedProxies' => ['192.168.1.1', '192.168.1.2']
     */
 
-    'trustedProxies' => null,
+  'trustedProxies' => null,
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Trusted proxy headers
     |--------------------------------------------------------------------------
@@ -132,9 +135,9 @@ return [
     |   - Amazon ELB users should always use the "HEADER_X_FORWARDED_AWS_ELB" option.
     */
 
-    'trustedProxyHeaders' => Illuminate\Http\Request::HEADER_X_FORWARDED_ALL,
+  'trustedProxyHeaders' => Illuminate\Http\Request::HEADER_X_FORWARDED_ALL,
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Application Timezone
     |--------------------------------------------------------------------------
@@ -153,9 +156,9 @@ return [
     |
     */
 
-    'timezone' => 'Europe/Paris',
+  'timezone' => 'Europe/Paris',
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Application Locale Configuration
     |--------------------------------------------------------------------------
@@ -172,9 +175,9 @@ return [
     |
     */
 
-    'locale' => 'fr',
+  'locale' => 'fr',
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Application Fallback Locale
     |--------------------------------------------------------------------------
@@ -185,9 +188,9 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+  'fallback_locale' => 'en',
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Encryption Key
     |--------------------------------------------------------------------------
@@ -198,11 +201,11 @@ return [
     |
     */
 
-    'key' => env('APP_KEY', ''),
+  'key' => env('APP_KEY', ''),
 
-    'cipher' => 'AES-256-CBC',
+  'cipher' => 'AES-256-CBC',
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
     |--------------------------------------------------------------------------
@@ -213,14 +216,13 @@ return [
     |
     */
 
-    'providers' => array_merge(include(base_path('modules/system/providers.php')), [
+  'providers' => array_merge(include(base_path('modules/system/providers.php')), [
+    // 'Illuminate\Html\HtmlServiceProvider', // Example
 
-        // 'Illuminate\Html\HtmlServiceProvider', // Example
+    'System\ServiceProvider',
+  ]),
 
-        'System\ServiceProvider',
-    ]),
-
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Load automatically discovered packages
     |--------------------------------------------------------------------------
@@ -238,9 +240,9 @@ return [
     |
     */
 
-    'loadDiscoveredPackages' => false,
+  'loadDiscoveredPackages' => false,
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Class Aliases
     |--------------------------------------------------------------------------
@@ -251,10 +253,7 @@ return [
     |
     */
 
-    'aliases' => array_merge(include(base_path('modules/system/aliases.php')), [
-
-        // 'Str' => 'Illuminate\Support\Str', // Example
-
-    ]),
-
+  'aliases' => array_merge(include(base_path('modules/system/aliases.php')), [
+    // 'Str' => 'Illuminate\Support\Str', // Example
+  ]),
 ];
