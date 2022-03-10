@@ -6,6 +6,10 @@
 
 namespace GrCote7\Tests;
 
+/* 2do Tester et trouver comment commenter dans un fichier yaml pour découper la trad des pages
+dans lang.yaml
+*/
+
 use Backend;
 use Backend\Models\UserRole;
 use Event;
