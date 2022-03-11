@@ -15,10 +15,15 @@ security = "all"
 function onStart(){
     //$this->addCss(['~/themes/sliderweb-403theme/assets/css/page-t.less']);
     $this['currentUrl'] = $this->pageUrl('');
+    $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+    $acceptLang = ['fr', 'it', 'en'];
+    $this['lang'] = in_array($lang, $acceptLang) ? $lang : 'en';
 }
 ?>
 ==
 {#% component 'demoTodo' %#}
+
+{{  lang }}
 
 <div id="result"></div>
 
