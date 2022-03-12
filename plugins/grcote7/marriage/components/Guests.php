@@ -28,6 +28,13 @@ class Guests extends ComponentBase
   public function onRun()
   {
     //return Db::table('grcote7_marriage_guests')->get(); // ok
-    return Guest::all();
+    // return Guest::all();
+    $guests = Guest::all();
+    foreach ($guests as $guest) {
+      $gs[] = $guest->mobile;
+    }
+
+    return $gs;
+//    return Guest->mobile;
   }
 }
