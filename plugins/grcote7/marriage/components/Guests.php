@@ -29,12 +29,7 @@ class Guests extends ComponentBase
   {
     //return Db::table('grcote7_marriage_guests')->get(); // ok
     // return Guest::all();
-    $guests = Guest::all();
-    foreach ($guests as $guest) {
-      $gs[] = $guest->mobile;
-    }
-
-    return $gs;
-//    return Guest->mobile;
+    return DB::table('grcote7_marriage_guests')->count();
+    // return Guest->mobile;
   }
 }
