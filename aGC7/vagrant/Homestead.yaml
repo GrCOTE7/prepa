@@ -1,0 +1,52 @@
+---
+name: Boosteur_2022
+ip: "192.168.10.10"
+memory: 4096
+cpus: 4
+provider: virtualbox
+ssl: true
+
+authorize: ~/.ssh/id_rsa.pub
+
+keys:
+    - ~/.ssh/id_rsa
+
+folders:
+    - map: D:/Users/Li/code
+      to: /home/vagrant/code
+
+sites:
+    - map: b
+      to: /home/vagrant/code/b
+    - map: cai
+      to: /home/vagrant/code/cai
+    - map: prepa
+      to: /home/vagrant/code/prepa
+      type: apache
+    - map: wcmsdoc
+      to: /home/vagrant/code/wcmsdoc
+    - map: bootstrap
+      to: /home/vagrant/code/bootstrap
+    - map: icons
+      to: /home/vagrant/code/icons
+#    - map: c57
+#      to: /home/vagrant/code/c57
+#      type: apache
+#      schedule: true
+
+databases:
+    - b
+    - prepa
+    - cai
+    - rsx
+
+# folders:
+#    - map: ~/code
+#      to: /home/vagrant/code
+
+# ports:
+#    - send: 80
+#      to: 80
+#    - send: 443
+#      to: 443
+#   protocol: udp

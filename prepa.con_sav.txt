@@ -1,0 +1,44 @@
+Configuration de /etc/apache2/sites-enabled/prepa.conf
+Réf.: https://ishan.co/ssl-vagrant-local/
+---------------------------------------------------------------------------------
+
+<VirtualHost *:443>
+    ServerAdmin webmaster@localhost
+    ServerName prepa
+
+    DocumentRoot /home/vagrant/code/prepa
+
+        Redirect permanent / https://prepa/
+
+        #adding custom SSL cert
+        SSLEngine on
+
+     SSLCertificateFile /home/vagrant/code/prepa/prepa.cert
+     SSLCertificateKeyFile /home/vagrant/code/prepa/prepa.key
+
+    <Directory /home/vagrant/code/prepa>
+        AllowOverride All
+        Require all granted
+    </Directory>
+    <IfModule mod_fastcgi.c>
+        AddHandler php8.0-fcgi .php
+        Action php8.0-fcgi /php8.0-fcgi
+        Alias /php8.0-fcgi /usr/lib/cgi-bin/php8.0
+        FastCgiExternalServer /usr/lib/cgi-bin/php8.0 -socket /var/run/php/php8.0-fpm.sock -pass-header Authorization
+    </IfModule>
+    <IfModule !mod_fastcgi.c>
+        <IfModule mod_proxy_fcgi.c>
+            <FilesMatch ".+\.ph(ar|p|tml)$">
+                SetHandler "proxy:unix:/var/run/php/php8.0-fpm.sock|fcgi://localhost"
+            </FilesMatch>
+        </IfModule>
+    </IfModule>
+    #LogLevel info ssl:warn
+
+    ErrorLog ${APACHE_LOG_DIR}/prepa-error.log
+    CustomLog ${APACHE_LOG_DIR}/prepa-access.log combined
+
+    #Include conf-available/serve-cgi-bin.conf
+</VirtualHost>
+
+# vim: syntax=apache ts=4 sw=4 sts=4 sr noet

@@ -15,13 +15,13 @@
     ## You may need to uncomment the following line for some hosting environments,
     ## if you have installed to a subdirectory, enter the name here also.
     ##
-    # RewriteBase /
+    RewriteBase /
 
     ##
     ## Uncomment following lines to force HTTPS.
     ##
-    # RewriteCond %{HTTPS} off
-    # RewriteRule (.*) https://%{SERVER_NAME}/$1 [L,R=301]
+    RewriteCond %{HTTPS} off
+    RewriteRule (.*) https://%{SERVER_NAME}/$1 [L,R=301]
 
     ##
     ## Paths explicitly blocked from being handled by the server

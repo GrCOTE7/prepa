@@ -1,0 +1,87 @@
+---
+name: Boosteur_Tout
+ip: "192.168.10.10"
+memory: 10240
+cpus: 4
+provider: virtualbox
+
+authorize: ~/.ssh/id_rsa.pub
+
+keys:
+    - ~/.ssh/id_rsa
+
+folders:
+    - map: D:/Users/Li/code
+      to: /home/vagrant/code
+
+sites:
+    - map: cai
+      to: /home/vagrant/code/cai
+    - map: b
+      to: /home/vagrant/code/b
+    - map: manudon
+      to: /home/vagrant/code/manudon/cai/public
+    - map: jl
+      to: /home/vagrant/code/manudon/jl
+    - map: mo
+      to: /home/vagrant/code/manudon/mo
+    - map: rom
+      to: /home/vagrant/code/manudon/rom
+    - map: gc7
+      to: /home/vagrant/code/manudon/gc7
+#    - map: c57
+#      to: /home/vagrant/code/c57
+#      type: apache
+#      schedule: true
+    - map: 1a2
+      to: /home/vagrant/code/1a2/public
+    - map: vap
+      to: /home/vagrant/code/vap
+    - map: o
+      to: /home/vagrant/code/o
+    - map: bootstrap
+      to: /home/vagrant/code/manudon/tutos/bootstrap
+#      type: apache
+    - map: laravel57
+      to: /home/vagrant/code/laravel57/public
+    - map: t
+      to: /home/vagrant/code/t/public
+      # apps vuejs: npm run serve ds le dossier
+      # Url: localhost:8080
+    - map: mdb
+      to: /home/vagrant/code/mdb
+    - map: mag
+      to: /home/vagrant/code/mag/public
+    - map: ooo
+      to: /home/vagrant/code/ooo
+    - map: vh
+      to: /home/vagrant/code/vh
+
+databases:
+    - b
+    - rsx
+    - manudon
+    - jl
+    - mo
+    - rom
+    - gc7
+    - admin_mans
+    - c57
+    - 1a2
+    - vap
+    - o
+    - laravel57
+    - mag
+    - ooo
+
+
+# folders:
+#    - map: ~/code
+#      to: /home/vagrant/code
+
+# ports:
+#    - send: 80
+#      to: 80
+#    - send: 443
+#      to: 443
+#   protocol: udp
