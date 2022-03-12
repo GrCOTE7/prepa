@@ -1,74 +1,85 @@
-<?php namespace Grcote7\Marriage\Models;
+<?php
+
+/*
+ * (c) Boosteur.com - 2022
+ */
+
+namespace Grcote7\Marriage\Models;
 
 use Model;
 
 /**
- * Guest Model
+ * Guest Model.
  */
 class Guest extends Model
 {
-    use \Winter\Storm\Database\Traits\Validation;
+  use \Winter\Storm\Database\Traits\Validation;
 
-    /**
-     * @var string The database table used by the model.
-     */
-    public $table = 'grcote7_marriage_guests';
+  /**
+   * @var string the database table used by the model
+   */
+  public $table = 'grcote7_marriage_guests';
 
-    /**
-     * @var array Guarded fields
-     */
-    protected $guarded = ['*'];
+  /**
+   * @var array Validation rules for attributes
+   */
+  public $rules = [];
 
-    /**
-     * @var array Fillable fields
-     */
-    protected $fillable = [];
+  /**
+   * @var array Relations
+   */
+  public $hasOne         = [];
+  public $hasMany        = [];
+  public $hasOneThrough  = [];
+  public $hasManyThrough = [];
+  public $belongsTo      = [];
+  public $belongsToMany  = [];
+  public $morphTo        = [];
+  public $morphOne       = [];
+  public $morphMany      = [];
+  public $attachOne      = [];
+  public $attachMany     = [];
 
-    /**
-     * @var array Validation rules for attributes
-     */
-    public $rules = [];
+  /**
+   * @var array Guarded fields
+   */
+  protected $guarded = ['*'];
 
-    /**
-     * @var array Attributes to be cast to native types
-     */
-    protected $casts = [];
+  /**
+   * @var array Fillable fields
+   */
+  protected $fillable = [];
 
-    /**
-     * @var array Attributes to be cast to JSON
-     */
-    protected $jsonable = [];
+  /**
+   * @var array Attributes to be cast to native types
+   */
+  protected $casts = [];
 
-    /**
-     * @var array Attributes to be appended to the API representation of the model (ex. toArray())
-     */
-    protected $appends = [];
+  /**
+   * @var array Attributes to be cast to JSON
+   */
+  protected $jsonable = [];
 
-    /**
-     * @var array Attributes to be removed from the API representation of the model (ex. toArray())
-     */
-    protected $hidden = [];
+  /**
+   * @var array Attributes to be appended to the API representation of the model (ex. toArray())
+   */
+  protected $appends = [];
 
-    /**
-     * @var array Attributes to be cast to Argon (Carbon) instances
-     */
-    protected $dates = [
-        'created_at',
-        'updated_at'
-    ];
+  /**
+   * @var array Attributes to be removed from the API representation of the model (ex. toArray())
+   */
+  protected $hidden = [];
 
-    /**
-     * @var array Relations
-     */
-    public $hasOne = [];
-    public $hasMany = [];
-    public $hasOneThrough = [];
-    public $hasManyThrough = [];
-    public $belongsTo = [];
-    public $belongsToMany = [];
-    public $morphTo = [];
-    public $morphOne = [];
-    public $morphMany = [];
-    public $attachOne = [];
-    public $attachMany = [];
+  /**
+   * @var array Attributes to be cast to Argon (Carbon) instances
+   */
+  protected $dates = [
+    'created_at',
+    'updated_at',
+  ];
+
+  public function onRun()
+  {
+    return 'ok';
+  }
 }

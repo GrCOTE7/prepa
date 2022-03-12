@@ -8,6 +8,7 @@ namespace Grcote7\Marriage\Components;
 
 use Cms\Classes\ComponentBase;
 use Db;
+use Grcote7\Marriage\Models\Guest;
 
 class Guests extends ComponentBase
 {
@@ -26,6 +27,7 @@ class Guests extends ComponentBase
 
   public function onRun()
   {
-    //return Db::table('grcote7_marriage_guests')->get();
+    //return Db::table('grcote7_marriage_guests')->get(); // ok
+    return Guest::all();
   }
 }
