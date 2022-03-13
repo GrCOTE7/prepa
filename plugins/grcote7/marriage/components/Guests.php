@@ -26,14 +26,10 @@ class Guests extends ComponentBase
 
   public function onRun()
   {
-    $guest     = Guest::find(3);
-    $newMobile = 789;
-    $model     = $guest;
-    $guest->bindEvent('model.beforeUpdate', function () use ($guest) {
-      $oldvalue = $guest->mobile;
-    });
-    $guest->mobile = $newMobile.' (Remplace: '.$guest->mobile.')';
+    $guest         = Guest::find(3);
+    $guest->mobile = '01 23 45 67 89';
     $guest->save();
+
     $cas = $guest->mobile;
 
     // $this->page['data'] = $cas ?? '$cas est vide';
