@@ -26,10 +26,14 @@ class Guests extends ComponentBase
 
   public function onRun()
   {
-    $guests[] = Guest::select('id', 'mobile')->latest()->first();
-    $guests[] = Guest::latest()->first();
-    $a      = 1;
+    $guest          = new Guest();
+    $guest->user_id = 3;
+    $guest->mobile  = 'Num mobile JC';
+    $a              = 1;
+    // $guest->save();
 
-    return $guests;
+    // Guest::create(['user_id' => 5, 'mobile' => 'Num GSM']);
+
+    return Guest::latest()->first();
   }
 }

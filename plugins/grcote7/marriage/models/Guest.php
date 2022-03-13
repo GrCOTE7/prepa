@@ -48,7 +48,7 @@ class Guest extends Model
   /**
    * @var array Fillable fields
    */
-  protected $fillable = [];
+  protected $fillable = ['user_id', 'mobile'];
 
   /**
    * @var array Attributes to be cast to native types
