@@ -27,11 +27,7 @@ class Guests extends ComponentBase
 
   public function onRun()
   {
-    //return Db::table('grcote7_marriage_guests')->get(); // ok
-    // return Guest::all();
-    // return Guest->mobile;
-    $guests = Guest::Where('id', 2);
-    $guests = Db::table('grcote7_marriage_guests')->where('id', 2)->get('mobile'); // ok
+    $guests = Guest::Where('id', 2)->select('id', 'user_id','mobile')->get();
     $a      = 1;
 
     return $guests;
