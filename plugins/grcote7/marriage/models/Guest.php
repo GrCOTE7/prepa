@@ -77,9 +77,4 @@ class Guest extends Model
     'created_at',
     'updated_at',
   ];
-
-  public function onRun()
-  {
-    return 'ok';
-  }
 }

@@ -29,7 +29,11 @@ class Guests extends ComponentBase
   {
     //return Db::table('grcote7_marriage_guests')->get(); // ok
     // return Guest::all();
-    return DB::table('grcote7_marriage_guests')->count();
     // return Guest->mobile;
+    $guests = Guest::Where('id', 2);
+    $guests = Db::table('grcote7_marriage_guests')->where('id', 2)->get('mobile'); // ok
+    $a      = 1;
+
+    return $guests;
   }
 }
