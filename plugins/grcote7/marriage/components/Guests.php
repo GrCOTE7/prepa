@@ -26,10 +26,17 @@ class Guests extends ComponentBase
 
   public function onRun()
   {
-    $cas = Guest::hasMobile14Characters()->idSupX(1)->get();
-    $a   = 1;
+    // $cas = Guest::hasMobile14Characters()->idSupX(2)->select('id', 'mobile')->get();
+    $guest = Guest::find(3);
+    dump($guest->mobile);
+    $guest->mobile = '01 23 45 67 89 - '.now();
+    $guest->save();
+    dump($guest->mobile);
+    // $cas = $guest->original['mobile'];
+    // dd($guest);
+    $a = 1;
 
-    return $cas;
+    return $cas ?? '$cas vide';
     //return Guest::latest()->first();
   }
 }
