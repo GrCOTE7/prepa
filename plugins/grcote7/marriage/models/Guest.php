@@ -92,8 +92,9 @@ class Guest extends Model
     return $query->where('id', '>', $id);
   }
 
+  /** Create a new attribut oldvalue */
   public function afterUpdate()
   {
-    // $this->oldvalue = $this->original['mobile'];
+    $this->oldvalue = $this->original['mobile'];
   }
 }

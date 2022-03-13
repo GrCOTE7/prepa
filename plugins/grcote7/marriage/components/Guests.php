@@ -27,12 +27,11 @@ class Guests extends ComponentBase
   public function onRun()
   {
     // $cas = Guest::hasMobile14Characters()->idSupX(2)->select('id', 'mobile')->get();
-    $guest = Guest::find(3);
-    dump($guest->mobile);
+    $guest         = Guest::find(3);
     $guest->mobile = '01 23 45 67 89 - '.now();
     $guest->save();
-    dump($guest->mobile);
-    // $cas = $guest->original['mobile'];
+    dump($guest->mobile, $guest->oldvalue);
+    $cas = 'Ancienne valeur : '.$guest->oldvalue.'<br>Nouvelle valeur : '.$guest->mobile;
     // dd($guest);
     $a = 1;
 
