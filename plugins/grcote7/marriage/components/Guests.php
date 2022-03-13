@@ -26,17 +26,13 @@ class Guests extends ComponentBase
 
   public function onRun()
   {
-    $guest          = new Guest();
-    $guest->user_id = 3;
-    $guest->mobile  = 'Num mobile JC';
-    $a              = 1;
-    // $guest->save();
+    //$guest = Guest::find(7);
+    //$guest->delete();
+    //dd($guest);
 
-    Guest::create(['user_id' => 5, 'mobile' => 'Num GSM']);
-    // Guest::create(['user_id' => 5, 'mobile' => 'Num GSM']);
+    //Guest::destroy(8, 9);
 
-    $justAModel = Guest::make(['user_id' => 7, 'mobile' => 'Num GSM 777']);
-    // dd($justAModel); // Instanciated nut not saved
+    //$gs = Guest::where('id', '>', 3)->delete();
 
     return Guest::latest()->first();
   }
