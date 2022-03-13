@@ -87,8 +87,8 @@ class Guest extends Model
     return $query->whereRaw('length(mobile) = 14');
   }
 
-  public function scopeIdSup1($query)
+  public function scopeIdSupX($query, $id)
   {
-    return $query->where('id', '>', 1);
+    return $query->where('id', '>', $id);
   }
 }
