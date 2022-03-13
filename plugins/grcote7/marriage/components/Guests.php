@@ -7,7 +7,6 @@
 namespace Grcote7\Marriage\Components;
 
 use Cms\Classes\ComponentBase;
-use Db;
 use Grcote7\Marriage\Models\Guest;
 
 class Guests extends ComponentBase
@@ -27,7 +26,7 @@ class Guests extends ComponentBase
 
   public function onRun()
   {
-    $guests = Guest::Where('id', 2)->select('id', 'user_id','mobile')->get();
+    $guests = Guest::find(2);
     $a      = 1;
 
     return $guests;
