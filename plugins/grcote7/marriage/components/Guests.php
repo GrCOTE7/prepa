@@ -28,7 +28,7 @@ class Guests extends ComponentBase
   public function onRun()
   {
     $user  = User::find(3);
-    $guest = Guest::find(5);
+    $guest = Guest::where('user_id', 3)->first();
 
     $cas[] = $user->name;
     $cas[] = $user->guest->mobile;
