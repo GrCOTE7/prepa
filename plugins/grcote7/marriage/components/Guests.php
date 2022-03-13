@@ -32,7 +32,11 @@ class Guests extends ComponentBase
     $a              = 1;
     // $guest->save();
 
+    Guest::create(['user_id' => 5, 'mobile' => 'Num GSM']);
     // Guest::create(['user_id' => 5, 'mobile' => 'Num GSM']);
+
+    $justAModel = Guest::make(['user_id' => 7, 'mobile' => 'Num GSM 777']);
+    // dd($justAModel); // Instanciated nut not saved
 
     return Guest::latest()->first();
   }
