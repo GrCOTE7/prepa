@@ -10,7 +10,6 @@ use Auth;
 use Carbon\Carbon;
 use Config;
 use Event;
-use Grcote7\Marriage\Models\Guest;
 use Mail;
 use Str;
 use Winter\Storm\Auth\AuthException;
@@ -35,12 +34,10 @@ class User extends UserBase
   /**
    * @var array Relations
    */
-  public $hasOne = [
-    'guest' => 'Grcote7\Marriage\Models\Guest',
-  ];
   public $belongsToMany = [
     'groups' => [UserGroup::class, 'table' => 'users_groups'],
     ];
+
   public $attachOne = [
     'avatar' => \System\Models\File::class,
   ];
@@ -204,9 +201,9 @@ class User extends UserBase
     }
 
     return '//www.gravatar.com/avatar/'.
-          md5(strtolower(trim($this->email))).
-          '?s='.$size.
-          '&d='.urlencode($default);
+            md5(strtolower(trim($this->email))).
+            '?s='.$size.
+            '&d='.urlencode($default);
   }
 
   /**
@@ -267,8 +264,8 @@ class User extends UserBase
 
     // When the username is not used, the email is substituted.
     if (
-      (!$this->username) ||
-      ($this->isDirty('email') && $this->getOriginal('email') === $this->username)
+        (!$this->username) ||
+        ($this->isDirty('email') && $this->getOriginal('email') === $this->username)
     ) {
       $this->username = $this->email;
     }

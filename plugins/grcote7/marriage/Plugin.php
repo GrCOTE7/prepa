@@ -9,6 +9,7 @@ namespace Grcote7\Marriage;
 use Backend;
 use Backend\Models\UserRole;
 use System\Classes\PluginBase;
+use Winter\User\Models\User;
 
 /**
  * Marriage Plugin Information File.
@@ -46,6 +47,9 @@ class Plugin extends PluginBase
    */
   public function boot()
   {
+    User::extend(function ($user) {
+      $user->hasOne['guest'] = 'Grcote7\Marriage\Models\Guest';
+    });
   }
 
   /**

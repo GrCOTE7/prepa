@@ -25,21 +25,14 @@ class Guests extends ComponentBase
     return [];
   }
 
-//   public function boot()
-//   {
-//     User::extend(function ($model) {
-//       $model->hasOne['guest'] = ['Grcote7\Marriage\Models\Guest', 'key' => 'user_id'];
-//     });
-//   }
-
   public function onRun()
   {
     $user  = User::find(3);
     $guest = Guest::find(3);
 
     $cas[] = $user->name;
-    $cas[] = $user->guest->mobile;
-    // dd($user->guest->mobile);
+    // $cas[] = $user->guest->mobile;
+    dd($user->guest);
     $cas[] = str_repeat('-', 14);
     $cas[] = $guest->user->name;
     $cas[] = $guest->mobile;
