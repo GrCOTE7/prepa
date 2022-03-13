@@ -26,7 +26,7 @@ class Guests extends ComponentBase
 
   public function onRun()
   {
-    $cas = Guest::hasmobile14characters()->idsupx(1)->get();
+    $cas = Guest::hasMobile14Characters()->idSupX(1)->get();
     $a   = 1;
 
     return $cas;
