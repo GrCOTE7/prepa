@@ -77,4 +77,18 @@ class Guest extends Model
     'created_at',
     'updated_at',
   ];
+
+  /*
+   Scope les Guest dont le mobile comporte 14 caractère
+   (les 10 chiffres + 4 espaces entre les paires de chiffres)
+   */
+  public function scopeHasMobile14Characters($query)
+  {
+    return $query->whereRaw('length(mobile) = 14');
+  }
+
+  public function scopeIdSup1($query)
+  {
+    return $query->where('id', '>', 1);
+  }
 }

@@ -26,14 +26,10 @@ class Guests extends ComponentBase
 
   public function onRun()
   {
-    //$guest = Guest::find(7);
-    //$guest->delete();
-    //dd($guest);
+    $cas = Guest::hasmobile14characters()->idsup1()->get();
+    $a   = 1;
 
-    //Guest::destroy(8, 9);
-
-    //$gs = Guest::where('id', '>', 3)->delete();
-
-    return Guest::latest()->first();
+    return $cas;
+    //return Guest::latest()->first();
   }
 }
