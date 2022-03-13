@@ -7,6 +7,7 @@
 namespace Grcote7\Marriage\Models;
 
 use Model;
+use Winter\User\Models\User;
 
 /**
  * Guest Model.
@@ -32,7 +33,7 @@ class Guest extends Model
   public $hasMany        = [];
   public $hasOneThrough  = [];
   public $hasManyThrough = [];
-  public $belongsTo      = [];
+  public $belongsTo      = ['user' => User::class];
   public $belongsToMany  = [];
   public $morphTo        = [];
   public $morphOne       = [];
