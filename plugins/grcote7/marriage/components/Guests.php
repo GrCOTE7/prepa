@@ -28,11 +28,11 @@ class Guests extends ComponentBase
   public function onRun()
   {
     $user  = User::find(3);
-    $guest = Guest::find(3);
+    $guest = Guest::find(5);
 
     $cas[] = $user->name;
-    // $cas[] = $user->guest->mobile;
-    dd($user->guest);
+    $cas[] = $user->guest->mobile;
+    // dd($user->guest);
     $cas[] = str_repeat('-', 14);
     $cas[] = $guest->user->name;
     $cas[] = $guest->mobile;
