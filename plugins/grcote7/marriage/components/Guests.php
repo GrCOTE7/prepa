@@ -7,7 +7,6 @@
 namespace Grcote7\Marriage\Components;
 
 use Cms\Classes\ComponentBase;
-use Grcote7\Marriage\Models\Guest;
 use Winter\User\Models\User;
 
 class Guests extends ComponentBase
@@ -27,22 +26,8 @@ class Guests extends ComponentBase
 
   public function onRun()
   {
-    $user = User::find(3);
-    // $guest = Guest::where('user_id', 3)->first();
-
-    // $cas[] = $user->name;
-    // $cas[] = $user->guest->mobile;
-    // dd($user->guest);
-    // $cas[] = str_repeat('-', 14);
-    // $cas[] = $guest->user->name;
-    // $cas[] = $guest->mobile;
-
-    return $user->guest->mobile;
-    // dd($user);
-    // $cas[] = $user->name.' : '.$user->mobile;
-    // $cas[] = $guest->name.' : '.$guest->mobile;
-
-    // $this->page['data'] = $cas ?? '$cas est vide';
-    //return $cas ?? '<p>$cas est vide</p>';
+    // $user = User::find(3);
+    // return $user->guest->mobile;
+    return $data ?? '<p>$data est vide</p>';
   }
 }
