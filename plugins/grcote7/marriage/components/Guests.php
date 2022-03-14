@@ -27,19 +27,17 @@ class Guests extends ComponentBase
 
   public function onRun()
   {
-    $user  = User::find(3);
-    $guest = Guest::where('user_id', 3)->first();
+    $user = User::find(3);
+    // $guest = Guest::where('user_id', 3)->first();
 
-    $cas[] = $user->name;
-    $cas[] = $user->guest->mobile;
+    // $cas[] = $user->name;
+    // $cas[] = $user->guest->mobile;
     // dd($user->guest);
-    $cas[] = str_repeat('-', 14);
-    $cas[] = $guest->user->name;
-    $cas[] = $guest->mobile;
+    // $cas[] = str_repeat('-', 14);
+    // $cas[] = $guest->user->name;
+    // $cas[] = $guest->mobile;
 
-    // $data = $guest;
-    $this->page['data'] = $user->guest;
-
+    return $user->guest->mobile;
     // dd($user);
     // $cas[] = $user->name.' : '.$user->mobile;
     // $cas[] = $guest->name.' : '.$guest->mobile;
