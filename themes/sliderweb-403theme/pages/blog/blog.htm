@@ -1,0 +1,26 @@
+title = "Blog"
+url = "/blog"
+layout = "t/bootstrap513"
+is_hidden = 0
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 10
+noPostsMessage = "Aucun article trouvé"
+sortOrder = "published_at desc"
+categoryPage = "ajax"
+postPage = "ajax"
+
+[blogCategories]
+slug = "{{ :slug }}"
+displayEmpty = 0
+categoryPage = "ajax"
+==
+<div class="raw">
+    <div class="col-sm-8">
+        {% component 'blogPosts' %}
+    </div>
+</div>
+<div class="col-sm-4">
+    {% component 'blogCategories' %}
+</div>
