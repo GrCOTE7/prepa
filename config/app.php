@@ -4,6 +4,8 @@
  * (c) Boosteur.com - 2022
  */
 
+const HEADER_X_FORWARDED_ALL = 0b11110;
+
 return [
   /*
     |--------------------------------------------------------------------------
@@ -135,7 +137,7 @@ return [
     |   - Amazon ELB users should always use the "HEADER_X_FORWARDED_AWS_ELB" option.
     */
 
-  'trustedProxyHeaders' => Illuminate\Http\Request::HEADER_X_FORWARDED_ALL,
+  'trustedProxyHeaders' => HEADER_X_FORWARDED_ALL,
 
   /*
     |--------------------------------------------------------------------------

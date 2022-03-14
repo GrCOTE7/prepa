@@ -1,25 +1,31 @@
-<?php namespace System\Console;
+<?php namespace Backend\Console;
 
 use Str;
 use Backend\Models\User;
-use Illuminate\Console\Command;
+use Winter\Storm\Console\Command;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
-use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Question\Question;
 
 /**
  * Console command to change the password of a Backend user via CLI.
  *
- * @package winter\wn-system-module
+ * @package winter\wn-backend-module
  * @author Ben Thomson
  * @author Winter CMS
  */
 class WinterPasswd extends Command
 {
     /**
-     * @var string The console command name.
+     * @var string|null The default command name for lazy loading.
      */
-    protected $name = 'winter:passwd';
+    protected static $defaultName = 'winter:passwd';
+
+    /**
+     * @var string The name and signature of this command.
+     */
+    protected $signature = 'winter:passwd
+        {username? : The username or email of the Backend user. <info>(eg: admin or admin@example.com)</info>}
+        {password? : The new password to set.}';
 
     /**
      * @var string The console command description.
@@ -44,6 +50,7 @@ class WinterPasswd extends Command
 
     /**
      * Execute the console command.
+     * @return int
      */
     public function handle()
     {
@@ -57,7 +64,7 @@ class WinterPasswd extends Command
                 ->firstOrFail();
         } catch (ModelNotFoundException $e) {
             $this->error('The specified user does not exist.');
-            exit(1);
+            return 1;
         }
 
         $password = $this->argument('password')
@@ -77,18 +84,25 @@ class WinterPasswd extends Command
         if ($this->generatedPassword) {
             $this->output->writeLn('Password set to <info>' . $password . '</info>.');
         }
-        exit(0);
+        return 0;
     }
 
     /**
-     * Get the console command options.
+     * Return the 20 most recently updated users for autocompletion of the "username" argument
      */
-    protected function getArguments()
+    public function suggestUsernameValues(): array
     {
-        return [
-            ['username', InputArgument::OPTIONAL, 'The username of the Backend user'],
-            ['password', InputArgument::OPTIONAL, 'The new password']
-        ];
+        $options = [];
+        $users = User::orderBy('updated_at', 'desc')->limit(20)->get();
+        foreach ($users as $user) {
+            if ($user->email) {
+                $options[] = $user->email;
+            } elseif ($user->username) {
+                $options[] = $user->username;
+            }
+        }
+
+        return $options;
     }
 
     /**
