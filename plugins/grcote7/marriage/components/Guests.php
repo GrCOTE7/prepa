@@ -37,11 +37,14 @@ class Guests extends ComponentBase
     $cas[] = $guest->user->name;
     $cas[] = $guest->mobile;
 
+    // $data = $guest;
+    $this->page['data'] = $user->guest;
+
     // dd($user);
     // $cas[] = $user->name.' : '.$user->mobile;
     // $cas[] = $guest->name.' : '.$guest->mobile;
 
     // $this->page['data'] = $cas ?? '$cas est vide';
-    return $cas ?? '<p>$cas est vide</p>';
+    //return $cas ?? '<p>$cas est vide</p>';
   }
 }
