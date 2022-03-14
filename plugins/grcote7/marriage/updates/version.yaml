@@ -1,6 +1,6 @@
 1.0.1:
     - First version of Marriage
-    - create_guests_table.php
+    - v1.0.1/create_guests_table.php
 1.0.2:
     - Populate guests table
-    - seed_guests_table.php
+    - v1.0.2/seed_guests_table.php
