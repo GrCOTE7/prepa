@@ -28,6 +28,6 @@ class Guests extends ComponentBase
   {
     // $user = User::find(3);
     // return $user->guest->mobile;
-    return $data ?? '<p>$data est vide</p>';
+    // return $data ?? '<p>$data est vide</p>';
   }
 }
