@@ -38,7 +38,9 @@
         "twbs/bootstrap": "5.1.3",
         "twig/intl-extra": "^3.3",
         "winter/wn-debugbar-plugin": "^4.0",
-        "winter/wn-docs-plugin": "dev-main"
+        "winter/wn-docs-plugin": "dev-main",
+        "symfony/mailgun-mailer": "^6.0",
+        "symfony/http-client": "^6.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.5.8",
