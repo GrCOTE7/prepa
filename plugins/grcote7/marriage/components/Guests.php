@@ -38,8 +38,8 @@ class Guests extends ComponentBase
 
     // $data = $data->where('id', 3);
 
-    $data = Guest::find(3);
-    $data->dd();
+    $data = Guest::find(3)->user->name;
+    // $data->dd();
     // $data = $data->user->name;
 
     // $data->dump();
