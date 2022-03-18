@@ -37,7 +37,7 @@ class Guests extends ComponentBase
 
     // $data = $data->where('id', 3);
 
-    $data = Guest::select('id', 'mobile')->get()->dump();
+    $data = Guest::select('id', 'mobile')->dd();
 
     // $data = Guest::selectConcat(['Id: ', 'id'], 'numId')->dump();
     // $data = $data->addSelect('mobile');
