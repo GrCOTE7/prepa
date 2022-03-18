@@ -7,9 +7,8 @@
 namespace Grcote7\Marriage\Components;
 
 use Cms\Classes\ComponentBase;
+use DB;
 use Grcote7\Marriage\Models\Guest;
-use Illuminate\Support\Facades\DB;
-use Winter\User\Models\User;
 
 class Guests extends ComponentBase
 {
@@ -33,17 +32,29 @@ class Guests extends ComponentBase
     // return $data ?? '<p>$data est vide</p>';
     // $data = Guest::select('mobile')->where('id', 1)->first();
 
-    $data = Guest::selectConcat(['Id: ', 'id'], 'numId');
-    $data = $data->addSelect('mobile');
+    // $data = Guest::selectConcat(['Id: ', 'id'], 'numId');
+    // $data = $data->addSelect('mobile');
 
     // $data = $data->where('id', 3);
-    DB::connection()->enableQueryLog();
-    $queries = DB::getQueryLog();
 
-    $last_query = end($queries);
+    $data = Guest::select('id', 'mobile')->get()->dump();
 
-    return [$data->get(), $last_query];
+    // $data = Guest::selectConcat(['Id: ', 'id'], 'numId')->dump();
+    // $data = $data->addSelect('mobile');
+
+    // DB::connection('mysql')->enableQueryLog();
+    // $queries = DB::getQueryLog();
+    // dd($data::toSql());
+    // $last_query = end($queries);
+    // dd($queries);
+    // $data = $data->first()->mobile;
+
+    // dd($data);
+
+    return var_dump([$data, 1234]);
     // dd($data);
     // return $data ?? '<p>$data est vide</p>';
+
+    //2do fix bug bar
   }
 }
