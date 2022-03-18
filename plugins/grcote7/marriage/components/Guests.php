@@ -37,10 +37,9 @@ class Guests extends ComponentBase
 
     // $data = $data->where('id', 3);
 
-    $data = Guest::select('id', 'mobile')->dd();
-
-    // $data = Guest::selectConcat(['Id: ', 'id'], 'numId')->dump();
-    // $data = $data->addSelect('mobile');
+    $data = Guest::select('created_at');
+    $data = $data->addSelect('mobile');
+    $data = $data->selectConcat(['Id: ', 'id'], 'numId')->dump();
 
     // DB::connection('mysql')->enableQueryLog();
     // $queries = DB::getQueryLog();
@@ -51,7 +50,7 @@ class Guests extends ComponentBase
 
     // dd($data);
 
-    return var_dump([$data, 1234]);
+    return [$data->first()->mobile, 1234];
     // dd($data);
     // return $data ?? '<p>$data est vide</p>';
 
