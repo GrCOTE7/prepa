@@ -9,6 +9,7 @@ namespace Grcote7\Marriage\Components;
 use Cms\Classes\ComponentBase;
 use DB;
 use Grcote7\Marriage\Models\Guest;
+use Winter\User\Models\User;
 
 class Guests extends ComponentBase
 {
@@ -37,9 +38,11 @@ class Guests extends ComponentBase
 
     // $data = $data->where('id', 3);
 
-    $data = Guest::select('created_at');
-    $data = $data->addSelect('mobile');
-    $data = $data->selectConcat(['Id: ', 'id'], 'numId')->dump();
+    $data = Guest::find(3);
+    $data->dd();
+    // $data = $data->user->name;
+
+    // $data->dump();
 
     // DB::connection('mysql')->enableQueryLog();
     // $queries = DB::getQueryLog();
@@ -49,11 +52,11 @@ class Guests extends ComponentBase
     // $data = $data->first()->mobile;
 
     // dd($data);
-
-    return [$data->first()->mobile, 1234];
+    // var_dump($data);
+    // return $data->first()->mobile.'<br>Num GSM'.
+    // '<hr>'.$data->first()->name.'<br>Nom';
     // dd($data);
-    // return $data ?? '<p>$data est vide</p>';
-
+    return $data ?? '<p>$data est vide</p>';
     //2do fix bug bar
   }
 }
