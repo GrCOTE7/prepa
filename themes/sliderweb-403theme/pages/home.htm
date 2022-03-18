@@ -10,6 +10,8 @@ is_hidden = 0
 
 [session]
 security = "all"
+
+[variables variables2]
 ==
 <?php
 function onStart(){
@@ -50,4 +52,4 @@ function onStart(){
     <a data-request="onLogout" data-request-data="redirect: '/'" class="btn btn-danger">Sortir</a>
 {% else %}
     <a href = "compte" class="btn btn-primary">Se loguer</a>
-{% endif %}
+{% endif %}<hr>{% component 'variables2' %}
