@@ -26,9 +26,18 @@ class Guests extends ComponentBase
 
   public function onRun()
   {
-    // return User::find(3);
+    $data = User::find(3)->guest->mobile;
     // return $user->guest->mobile;
+
+    // $data = Guest::select('mobile')->where('id', 1)->first();
+
+    // $data = Guest::selectConcat(['Id: ', 'id'], 'numId');
+    // $data = $data->addSelect('mobile');
+
+    // $data = $data->where('id', 3);
+
+    $this->page['data'] = $data;
+
     // return $data ?? '<p>$data est vide</p>';
-    $this->page['data'] = User::select('name')->first()->name;
   }
 }
