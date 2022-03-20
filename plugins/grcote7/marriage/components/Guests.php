@@ -39,9 +39,13 @@ class Guests extends ComponentBase
     // $data = $data->where('id', 3);
 
     $data = Guest::select('id', 'mobile')
-      ->whereNotIn('id', [2, 3])
+      ->where('id', 1)
       ->where('user_id', 1)
-      ->get();
+
+      ->dump()
+
+      ->get()
+      ;
 
     // $data = Guest::find(3)->user->dump();
     // $data->dd();
