@@ -38,9 +38,9 @@ class Guests extends ComponentBase
 
     // $data = $data->where('id', 3);
 
-    $data = Guest::select('id', 'mobile')
-      ->where('id', 1)
-      ->where('user_id', 1)
+    $data = Guest::select('users.id', 'users.name', 'mobile')
+      ->where('users.id', 1)
+      ->leftJoin('users', 'users.id', '=', 'grcote7_marriage_guests.user_id')
 
       ->dump()
 
