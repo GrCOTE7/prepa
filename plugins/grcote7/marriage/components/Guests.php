@@ -42,11 +42,13 @@ class Guests extends ComponentBase
       ->where('users.id', 1)
       ->leftJoin('users', 'users.id', '=', 'grcote7_marriage_guests.user_id')
 
-      ->dump()
+    //   ->dump()
 
-      ->get()
+      ->first()
+      ->name
       ;
 
+    // $data = $data->name;
     // $data = Guest::find(3)->user->dump();
     // $data->dd();
     // $data = $data->user->name;
