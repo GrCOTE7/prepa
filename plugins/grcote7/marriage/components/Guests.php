@@ -38,14 +38,13 @@ class Guests extends ComponentBase
 
     // $data = $data->where('id', 3);
 
-    $data = Guest::select('users.id', 'users.name', 'mobile')
-      ->where('users.id', '>', 1)
-      ->leftJoin('users', 'users.id', '=', 'grcote7_marriage_guests.user_id')
-
+    $data = User::select('name')
+      ->where('name', 'like', 'A%')
+      ->orWhere('name', 'like', 'L%')
+      ->orderBy('name')
     //   ->dump()
 
-      ->get()[0]
-      ->name
+      ->get()
       ;
 
     // $data = $data->name;
