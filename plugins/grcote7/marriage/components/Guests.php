@@ -41,6 +41,7 @@ class Guests extends ComponentBase
     $data = Db::table('grcote7_marriage_guests')
       ->select('id', 'mobile')
       ->whereNotIn('id', [2, 3])
+      ->where('user_id', 1)
       ->get();
 
     // $data = Guest::find(3)->user->dump();
