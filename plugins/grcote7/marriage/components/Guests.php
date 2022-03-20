@@ -44,7 +44,7 @@ class Guests extends ComponentBase
 
     //   ->dump()
 
-      ->get()[1]
+      ->get()[0]
       ->name
       ;
 
@@ -68,6 +68,6 @@ class Guests extends ComponentBase
     // '<hr>'.$data->first()->name.'<br>Nom';
     // dd($data);
     return $data ?? '<p>$data est vide</p>';
-    //2do fix bug bar
+    //2do fix Debugbar: Wait a compatible version with Laravel 9
   }
 }
