@@ -38,11 +38,10 @@ class Guests extends ComponentBase
 
     // $data = $data->where('id', 3);
 
-    $data = User::selectRaw('name as Nom')
-      ->selectRaw('id as "Id User"')
-      ->whereRaw('id < ?', 3)
+    $data = User::select('id as Id User', 'name as Nom')
+      ->where('id', '<', 4)
 
-      ->dump()
+      // ->dump()
 
       ->get()
       ;
