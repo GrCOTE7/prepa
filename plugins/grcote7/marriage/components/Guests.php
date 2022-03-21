@@ -38,11 +38,15 @@ class Guests extends ComponentBase
 
     // $data = $data->where('id', 3);
 
-    $data = User::select('name')
-      ->where('name', 'like', 'A%')
-      ->orWhere('name', 'like', 'L%')
-      ->orderBy('name')
-    //   ->dump()
+    $data = DB::table('users')
+      ->select('name')
+      ->whereNotExists(function ($query) {
+        $query->select(DB::raw(1))
+          ->from('grcote7_marriage_guests')
+          ->whereRaw('grcote7_marriage_guests.user_id=users.id');
+      })
+
+      // ->dump()
 
       ->get()
       ;
