@@ -8,6 +8,7 @@ namespace Grcote7\Marriage\Components;
 
 use Cms\Classes\ComponentBase;
 use DB;
+use Grcote7\Marriage\Classes\Calcul;
 use Grcote7\Marriage\Models\Guest;
 use Winter\User\Models\User;
 
@@ -46,6 +47,8 @@ class Guests extends ComponentBase
 
       ->get()
       ;
+    $n    = 5;
+    $data = 'Le double de '.$n.' est '.Calcul::Double($n).'.';
 
     // $data = $data->name;
     // $data = Guest::find(3)->user->dump();
