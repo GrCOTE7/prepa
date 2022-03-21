@@ -38,12 +38,9 @@ class Guests extends ComponentBase
 
     // $data = $data->where('id', 3);
 
-    $data = User::select('name')
-      ->whereNotExists(function ($query) {
-        $query->select(Guest::raw(1))
-          ->from('grcote7_marriage_guests')
-          ->whereRaw('grcote7_marriage_guests.user_id=users.id');
-      })
+    $data = User::selectRaw('name as Nom')
+      ->selectRaw('id as "Id User"')
+      ->whereRaw('id < ?', 3)
 
       ->dump()
 
