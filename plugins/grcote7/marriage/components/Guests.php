@@ -41,7 +41,7 @@ class Guests extends ComponentBase
     $data = User::max('id');
     $data = Db::table('users')
       ->select('surname')
-      ->addSelect(Db::raw('count(*) as user_count'))
+      ->selectRaw('count(*) as user_count')
       ->where('id', '<>', 1)
       ->groupBy('surname')
       ->get();
