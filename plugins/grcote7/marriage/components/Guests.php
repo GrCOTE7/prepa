@@ -38,10 +38,16 @@ class Guests extends ComponentBase
     // $data = $data->addSelect('mobile');
 
     // $data = $data->where('id', 3);
-    $data = User::max('id')
+    $data = User::max('id');
+    $data = Db::table('users')
+      ->select('surname')
+      ->addSelect(Db::raw('count(*) as user_count'))
+      ->where('id', '<>', 1)
+      ->groupBy('surname')
+      ->get();
     //   ->dump()
     //   ->get()
-      ;
+
     $n = 5;
     // $data = 'Le double de '.$n.' est '.Calcul::Double($n).'.';
 
