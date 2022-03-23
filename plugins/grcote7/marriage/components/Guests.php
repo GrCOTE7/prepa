@@ -38,7 +38,7 @@ class Guests extends ComponentBase
     // $data = $data->addSelect('mobile');
 
     // $data = $data->where('id', 3);
-    $data = User::where('id', '>', 1)->count()
+    $data = User::max('id')
     //   ->dump()
     //   ->get()
       ;
