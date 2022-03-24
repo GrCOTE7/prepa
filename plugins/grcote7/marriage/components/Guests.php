@@ -30,7 +30,11 @@ class Guests extends ComponentBase
   {
     $req  = '%GrCOTE7%';
     $data = User::where('id', 3)
-      ->update(['surname' => 'MIELLE'])
+      ->update(['is_activated' => 0]);
+    $data = User::where('id', 3)
+      ->increment('is_activated', 7);
+    $data = User::where('id', 3)
+      ->decrement('is_activated', 6)
 
     // $data = User::select('name')
     //   ->whereNotExists(function ($query) {
