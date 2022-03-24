@@ -35,7 +35,8 @@ class Guests extends ComponentBase
     // $lio->mobile  = '07 83 59 27 21';
     // $lio->save();
 
-    $data = Guest::find(1)
+    // $data = User::truncate()
+
     //   ->whereNotExists(function ($query) {
     //     $query->select(DB::raw(1))
     //       ->from('grcote7_marriage_guests as gg')
@@ -43,7 +44,7 @@ class Guests extends ComponentBase
     //   })
     //   ->dump()
     //   ->get()[1]->user->name
-;
+
     // $data->name = 'Lionel';
     // $data->save();
     // dd($data);
@@ -52,6 +53,8 @@ class Guests extends ComponentBase
     // foreach ($data as $guest) {
     //   echo $guest->user->name.'<br>';
     // }
+
+    // dd($data);
 
     return $data ?? '<p>$data est vide</p>';
   }

@@ -6,29 +6,27 @@
 
 namespace Grcote7\Marriage\Updates;
 
-use DB;
-use Schema;
+// (c) Boosteur.com - 2022
+
 use Winter\Storm\Database\Schema\Blueprint;
 use Winter\Storm\Database\Updates\Migration;
+use Winter\Storm\Support\Facades\Schema;
 
-class create_guests_table extends Migration
+class create_famillies_table extends Migration
 {
   public function up()
   {
-    // DB::table('grcote7_marriage_guests')->delete();
-
-    Schema::create('grcote7_marriage_guests', function (Blueprint $table) {
+    Schema::create('grcote7_marriage_famillies', function (Blueprint $table) {
       $table->engine = 'InnoDB';
       $table->increments('id');
+      $table->string('name');
       $table->integer('user_id')->unsigned();
-      $table->integer('familly')->unsigned();
-      $table->string('mobile')->nullable();
       $table->timestamps();
     });
   }
 
   public function down()
   {
-    Schema::dropIfExists('grcote7_marriage_guests');
+    Schema::dropIfExists('grcote7_marriage_famillies');
   }
 }
