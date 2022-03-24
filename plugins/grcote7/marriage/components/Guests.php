@@ -7,7 +7,7 @@
 namespace Grcote7\Marriage\Components;
 
 use Cms\Classes\ComponentBase;
-use Grcote7\Marriage\Models\Guest;
+use DB;
 use Winter\User\Models\User;
 
 class Guests extends ComponentBase
@@ -18,6 +18,7 @@ class Guests extends ComponentBase
       'name'        => 'Guests Component',
       'description' => 'Guests Managment',
     ];
+    //2do fix Debugbar: Wait a compatible version with Laravel 9
   }
 
   public function defineProperties()
@@ -27,27 +28,16 @@ class Guests extends ComponentBase
 
   public function onRun()
   {
-    // $user = User::find(3);
-    // return $user->guest->mobile;
-    // return $data ?? '<p>$data est vide</p>';
-    // $data = Guest::select('mobile')->where('id', 1)->first();
-
-    // $data = Guest::selectConcat(['Id: ', 'id'], 'numId');
-    // $data = $data->addSelect('mobile');
-
-    // $data = $data->where('id', 3);
-
     $data = User::select('name')
-      ->where('name', 'Lionel')
-      // ->dump()
-      ->orWhere(function ($query) {
-        $query->where('email', 'like', '%COTE7%')
-          ->where('username', 'like', 'MP');
+      ->whereNotExists(function ($query) {
+        $query->select(DB::raw(1))
+          ->from('grcote7_marriage_guests as gg')
+          ->whereRaw('gg.user_id = users.id');
       })
+      // ->dump()
       ->get()
       ;
 
     return $data ?? '<p>$data est vide</p>';
-    //2do fix Debugbar: Wait a compatible version with Laravel 9
   }
 }
