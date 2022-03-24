@@ -8,6 +8,7 @@ namespace Grcote7\Marriage\Components;
 
 use Cms\Classes\ComponentBase;
 use DB;
+use Grcote7\Marriage\Models\Guest;
 use Winter\User\Models\User;
 
 class Guests extends ComponentBase
@@ -28,18 +29,29 @@ class Guests extends ComponentBase
 
   public function onRun()
   {
-    $data = DB::table('users')->update(['is_activated' => 1, 'permissions' => null]);
+    // $lio          = new Guest();
+    // $lio->id      = 1;
+    // $lio->user_id = 1;
+    // $lio->mobile  = '07 83 59 27 21';
+    // $lio->save();
 
-    // $data = User::select('name')
+    $data = Guest::find(1)
     //   ->whereNotExists(function ($query) {
     //     $query->select(DB::raw(1))
     //       ->from('grcote7_marriage_guests as gg')
     //       ->whereRaw('gg.user_id = users.id');
     //   })
-
     //   ->dump()
+    //   ->get()[1]->user->name
+;
+    // $data->name = 'Lionel';
+    // $data->save();
+    // dd($data);
+    // $data = $data->user->name;
 
-    //   ->get()
+    // foreach ($data as $guest) {
+    //   echo $guest->user->name.'<br>';
+    // }
 
     return $data ?? '<p>$data est vide</p>';
   }
