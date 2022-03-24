@@ -7,8 +7,6 @@
 namespace Grcote7\Marriage\Components;
 
 use Cms\Classes\ComponentBase;
-use DB;
-use Grcote7\Marriage\Classes\Calcul;
 use Grcote7\Marriage\Models\Guest;
 use Winter\User\Models\User;
 
@@ -38,38 +36,17 @@ class Guests extends ComponentBase
     // $data = $data->addSelect('mobile');
 
     // $data = $data->where('id', 3);
-    $data = User::max('id');
-    $data = Db::table('users')
-      ->select('surname')
-      ->selectRaw('count(*) as user_count')
-      ->where('id', '<>', 1)
-      ->groupBy('surname')
-      ->get();
-    //   ->dump()
-    //   ->get()
 
-    $n = 5;
-    // $data = 'Le double de '.$n.' est '.Calcul::Double($n).'.';
+    $data = User::select('name')
+      ->where('name', 'Lionel')
+      // ->dump()
+      ->orWhere(function ($query) {
+        $query->where('email', 'like', '%COTE7%')
+          ->where('username', 'like', 'MP');
+      })
+      ->get()
+      ;
 
-    // $data = $data->name;
-    // $data = Guest::find(3)->user->dump();
-    // $data->dd();
-    // $data = $data->user->name;
-
-    // $data->dump();
-
-    // DB::connection('mysql')->enableQueryLog();
-    // $queries = DB::getQueryLog();
-    // dd($data::toSql());
-    // $last_query = end($queries);
-    // dd($queries);
-    // $data = $data->first()->mobile;
-
-    // dd($data);
-    // var_dump($data);
-    // return $data->first()->mobile.'<br>Num GSM'.
-    // '<hr>'.$data->first()->name.'<br>Nom';
-    // dd($data);
     return $data ?? '<p>$data est vide</p>';
     //2do fix Debugbar: Wait a compatible version with Laravel 9
   }
