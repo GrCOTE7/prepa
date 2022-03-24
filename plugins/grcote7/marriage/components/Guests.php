@@ -28,13 +28,7 @@ class Guests extends ComponentBase
 
   public function onRun()
   {
-    $req  = '%GrCOTE7%';
-    $data = User::where('id', 3)
-      ->update(['is_activated' => 0]);
-    $data = User::where('id', 3)
-      ->increment('is_activated', 7);
-    $data = User::where('id', 3)
-      ->decrement('is_activated', 6)
+    $data = DB::table('users')->update(['is_activated' => 1, 'permissions' => null]);
 
     // $data = User::select('name')
     //   ->whereNotExists(function ($query) {
@@ -46,7 +40,6 @@ class Guests extends ComponentBase
     //   ->dump()
 
     //   ->get()
-      ;
 
     return $data ?? '<p>$data est vide</p>';
   }
