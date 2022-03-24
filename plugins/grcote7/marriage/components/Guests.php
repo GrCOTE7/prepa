@@ -29,18 +29,19 @@ class Guests extends ComponentBase
   public function onRun()
   {
     $req  = '%GrCOTE7%';
-    $data = User::select('name')
-      ->selectRaw(
-        'LENGTH(name)'
-      )
+    $data = User::where('id', 3)
+      ->update(['surname' => 'MIELLE'])
+
     // $data = User::select('name')
     //   ->whereNotExists(function ($query) {
     //     $query->select(DB::raw(1))
     //       ->from('grcote7_marriage_guests as gg')
     //       ->whereRaw('gg.user_id = users.id');
     //   })
-      // ->dump()
-      ->get()
+
+    //   ->dump()
+
+    //   ->get()
       ;
 
     return $data ?? '<p>$data est vide</p>';
