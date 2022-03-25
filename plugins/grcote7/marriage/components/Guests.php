@@ -32,10 +32,15 @@ class Guests extends ComponentBase
     $gdb = 'grcote7_marriage_guests';
     $fdb = 'grcote7_marriage_famillies';
 
-    $famillies = Familly::first()->guests;
+    $famillies = Familly::all();
     // $data      = $famillies;
     foreach ($famillies as $familly) {
-      $data[] = $familly->user->name;
+      $data[] = $familly->name;
+      $guests = $familly->guests;
+      foreach ($guests as $guest) {
+        $data[] = 'Invité n°'.$guest->id.' : '.$guest->user->name.' - '.$guest->mobile;
+      }
+      $data[] = str_repeat('-', 15);
     }
     //   ->whereNotExists(function ($query) {
     //     $query->select(DB::raw(1))
