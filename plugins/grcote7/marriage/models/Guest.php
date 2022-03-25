@@ -7,8 +7,7 @@
 namespace Grcote7\Marriage\Models;
 
 use Model;
-
-// use Winter\User\Models\User;
+use Winter\User\Models\User;
 
 /**
  * Guest Model.
@@ -37,14 +36,20 @@ class Guest extends Model
   public $belongsTo      = [
     'user'    => User::class,
     'familly' => Familly::class,
-    'group'   => Group::class,
   ];
-  public $belongsToMany = [];
-  public $morphTo       = [];
-  public $morphOne      = [];
-  public $morphMany     = [];
-  public $attachOne     = [];
-  public $attachMany    = [];
+  public $morphTo    = [];
+  public $morphOne   = [];
+  public $morphMany  = [];
+  public $attachOne  = [];
+  public $attachMany = [];
+
+  public $belongsToMany = [
+    'groups' => [
+      'Grcote7\Marriage\Models\Group',
+      'table' => 'grcote7_marriage_guest_group',
+      'order' => 'name',
+    ],
+  ];
 
   /**
    * @var array Guarded fields
@@ -83,4 +88,9 @@ class Guest extends Model
     'created_at',
     'updated_at',
   ];
+//   public $belongsToMany = [
+//     'groups' => 'Grcote7\Marriage\Models\Group',
+//     'table'  => 'grcote7_marriage_group_guest',
+//     // ],
+//   ];
 }

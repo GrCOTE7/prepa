@@ -27,15 +27,19 @@ class Guests extends ComponentBase
 
   public function onRun()
   {
-    $gdb = 'grcote7_marriage_guests';
-    $fdb = 'grcote7_marriage_famillies';
+    $gt  = 'grcote7_marriage_guests';
+    $ft  = 'grcote7_marriage_famillies';
+    $ggt = 'grcote7_marriage_group_guest';
 
-    $data = Guest::find(1)
+    $data = Guest::find(1);
+
     //   ->dump()
-      ->first()
+    //   ->first()
     //   ->get()
-      ->familly
 ;
+    foreach ($data->groups as $group) {
+      print_r($group->name);
+    }
 
     return $data ?? '<p>$data est vide</p>';
   }
