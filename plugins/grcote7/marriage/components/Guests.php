@@ -7,9 +7,7 @@
 namespace Grcote7\Marriage\Components;
 
 use Cms\Classes\ComponentBase;
-use DB;
 use Grcote7\Marriage\Models\Familly;
-use Winter\User\Models\User;
 
 class Guests extends ComponentBase
 {
@@ -32,35 +30,11 @@ class Guests extends ComponentBase
     $gdb = 'grcote7_marriage_guests';
     $fdb = 'grcote7_marriage_famillies';
 
-    $famillies = Familly::all();
-    // $data      = $famillies;
-    foreach ($famillies as $familly) {
-      $data[] = $familly->name;
-      $guests = $familly->guests;
-      foreach ($guests as $guest) {
-        $data[] = 'Invité n°'.$guest->id.' : '.$guest->user->name.' - '.$guest->mobile;
-      }
-      $data[] = str_repeat('-', 15);
-    }
-    //   ->whereNotExists(function ($query) {
-    //     $query->select(DB::raw(1))
-    //       ->from('grcote7_marriage_guests as gg')
-    //       ->whereRaw('gg.user_id = users.id');
-    //   })
+    $data = Familly::find(3)->guests()->where('mobile', 'like', '%23%')
     //   ->dump()
     //   ->first()
-    // echo $data;
-    // dd($data);
-
-    // $data2 = $data1->guests;
-
-    // $data3 = [$data2[0]->user->name, $data2[1]->user->name];
-
-    // $data[] = $data3;
-    // $data[] = '----------------------';
-    // $data[] = $data2;
-    // $data[] = '----------------------';
-    // $data[] = $data1;
+      ->get()
+;
 
     return $data ?? '<p>$data est vide</p>';
   }

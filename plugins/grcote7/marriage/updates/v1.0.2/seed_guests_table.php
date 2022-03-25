@@ -33,7 +33,7 @@ class seed_guests_table extends Seeder
     Guest::create([
       'user_id'    => 4,
       'familly_id' => 3,
-      'mobile'     => '01 23 45 67 89',
+      'mobile'     => '02 23 45 67 89',
     ]);
   }
 }
