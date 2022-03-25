@@ -33,7 +33,7 @@ class Guests extends ComponentBase
     $fdb = 'grcote7_marriage_famillies';
 
     // $data = Familly::find(2)->guests->first()->user->name;
-    $data1 = Familly::whereRaw($fdb.'.id=?', [1])
+    $data = User::find(3)->guest->mobile
 
     //   ->whereNotExists(function ($query) {
     //     $query->select(DB::raw(1))
@@ -41,20 +41,20 @@ class Guests extends ComponentBase
     //       ->whereRaw('gg.user_id = users.id');
     //   })
     //   ->dump()
-      ->first()
+    //   ->first()
 ;
     // echo $data;
     // dd($data);
 
-    $data2 = $data1->guests;
+    // $data2 = $data1->guests;
 
-    $data3 = [$data2[0]->user->name, $data2[1]->user->name];
+    // $data3 = [$data2[0]->user->name, $data2[1]->user->name];
 
-    $data[] = $data3;
-    $data[] = '----------------------';
-    $data[] = $data2;
-    $data[] = '----------------------';
-    $data[] = $data1;
+    // $data[] = $data3;
+    // $data[] = '----------------------';
+    // $data[] = $data2;
+    // $data[] = '----------------------';
+    // $data[] = $data1;
 
     return $data ?? '<p>$data est vide</p>';
   }
