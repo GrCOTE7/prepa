@@ -9,6 +9,7 @@ namespace Grcote7\Marriage\Components;
 use Cms\Classes\ComponentBase;
 use DB;
 use Grcote7\Marriage\Models\Familly;
+use Grcote7\Marriage\Models\Guest;
 use Winter\User\Models\User;
 
 class Guests extends ComponentBase
@@ -33,7 +34,8 @@ class Guests extends ComponentBase
     $fdb = 'grcote7_marriage_famillies';
 
     // $data = Familly::find(2)->guests->first()->user->name;
-    $data = User::find(3)->guest->mobile
+
+    $data = Guest::find(4)->user->name
 
     //   ->whereNotExists(function ($query) {
     //     $query->select(DB::raw(1))
