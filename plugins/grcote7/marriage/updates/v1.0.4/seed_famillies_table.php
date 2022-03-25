@@ -19,25 +19,25 @@ class seed_famillies_table extends Seeder
     // 1 - Lionel
     Familly::create([
       'name'    => 'COTE',
-      'user_id' => 1,
+      'guest_id' => 1,
     ]);
 
     // 2 - Jean
     Familly::create([
       'name'    => 'COTE',
-      'user_id' => 3,
+      'guest_id' => 3,
     ]);
 
     // 3 - Sam
     Familly::create([
       'name'    => 'COTE',
-      'user_id' => 5,
+      'guest_id' => 5,
     ]);
 
     // 4 - JP
     Familly::create([
       'name'    => 'BIALLE',
-      'user_id' => 6,
+      'guest_id' => 6,
     ]);
   }
 }
