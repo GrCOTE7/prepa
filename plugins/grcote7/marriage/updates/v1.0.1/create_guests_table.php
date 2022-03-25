@@ -21,7 +21,7 @@ class create_guests_table extends Migration
       $table->engine = 'InnoDB';
       $table->increments('id');
       $table->integer('user_id')->unsigned();
-      $table->integer('familly')->unsigned();
+      $table->integer('familly_id')->unsigned();
       $table->string('mobile')->nullable();
       $table->timestamps();
     });

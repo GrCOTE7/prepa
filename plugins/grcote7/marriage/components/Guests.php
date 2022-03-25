@@ -8,7 +8,7 @@ namespace Grcote7\Marriage\Components;
 
 use Cms\Classes\ComponentBase;
 use DB;
-use Grcote7\Marriage\Models\Guest;
+use Grcote7\Marriage\Models\Familly;
 use Winter\User\Models\User;
 
 class Guests extends ComponentBase
@@ -29,13 +29,11 @@ class Guests extends ComponentBase
 
   public function onRun()
   {
-    // $lio          = new Guest();
-    // $lio->id      = 1;
-    // $lio->user_id = 1;
-    // $lio->mobile  = '07 83 59 27 21';
-    // $lio->save();
+    $gdb = 'grcote7_marriage_guests';
+    $fdb = 'grcote7_marriage_famillies';
 
-    // $data = User::truncate()
+    // $data = Familly::find(2)->guests->first()->user->name;
+    $data1 = Familly::whereRaw($fdb.'.id=?', [1])
 
     //   ->whereNotExists(function ($query) {
     //     $query->select(DB::raw(1))
@@ -43,18 +41,20 @@ class Guests extends ComponentBase
     //       ->whereRaw('gg.user_id = users.id');
     //   })
     //   ->dump()
-    //   ->get()[1]->user->name
-
-    // $data->name = 'Lionel';
-    // $data->save();
+      ->first()
+;
+    // echo $data;
     // dd($data);
-    // $data = $data->user->name;
 
-    // foreach ($data as $guest) {
-    //   echo $guest->user->name.'<br>';
-    // }
+    $data2 = $data1->guests;
 
-    // dd($data);
+    $data3 = [$data2[0]->user->name, $data2[1]->user->name];
+
+    $data[] = $data3;
+    $data[] = '----------------------';
+    $data[] = $data2;
+    $data[] = '----------------------';
+    $data[] = $data1;
 
     return $data ?? '<p>$data est vide</p>';
   }
