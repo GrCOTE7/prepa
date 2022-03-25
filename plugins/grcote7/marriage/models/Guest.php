@@ -44,15 +44,11 @@ class Guest extends Model
   public $attachMany = [];
 
   public $belongsToMany = [
-    'groups' => ['Grcote7\Marriage\Models\Group', 'table' => 'grcote7_marriage_group_guest'],
+    'groups' => [
+      'Grcote7\Marriage\Models\Group',
+      'table' => 'grcote7_marriage_group_guest',
+    ],
   ];
-//   public $belongsToMany = [
-//     'groups' => [
-//       'Grcote7\Marriage\Models\Group',
-//       'table' => 'grcote7_marriage_group_guest',
-//       'order' => 'name',
-//     ],
-//   ];
 
   /**
    * @var array Guarded fields

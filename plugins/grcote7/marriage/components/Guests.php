@@ -22,24 +22,41 @@ class Guests extends ComponentBase
 
   public function defineProperties()
   {
+    // $gt  = 'grcote7_marriage_guests';
+    // $ft  = 'grcote7_marriage_famillies';
+    // $ggt = 'grcote7_marriage_group_guest';
     return [];
   }
 
   public function onRun()
   {
-    $gt  = 'grcote7_marriage_guests';
-    $ft  = 'grcote7_marriage_famillies';
-    $ggt = 'grcote7_marriage_group_guest';
+    $guests = Guest::all();
 
-    $data = Guest::find(1);
-
-    //   ->dump()
-    //   ->first()
-    //   ->get()
-
-    foreach ($data->groups as $group) {
-      //   print_r($group->name);
+    $listBrut  = [];
+    $lengthMax = 0;
+    foreach ($guests  as $guest) {
+      $listBrut[] = 'Guest <strong>'.$guest->user->name.'</strong> :';
+      $lengthMax  = max($lengthMax, \strlen('Guest '.$guest->user->name.' :'));
+      foreach ($guest->groups as $group) {
+        $listBrut[] = ' - '.$group->name;
+      }
+      $listBrut[] = 'separation';
     }
+    array_pop($listBrut);
+
+    $data = array_map(function ($separation) use ($lengthMax) {
+      if ('separation' === $separation) {
+        return  str_repeat('-', $lengthMax * 1.15);
+      }
+
+      return $separation;
+    }, $listBrut);
+
+    // ->dump()
+    // ->first()
+    // ->get()
+    // ;
+    $this->page['data'] = implode("\n<br>", $data);
 
     return $data ?? '<p>$data est vide</p>';
   }
