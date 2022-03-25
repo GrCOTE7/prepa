@@ -7,19 +7,18 @@
 namespace Grcote7\Marriage\Models;
 
 use Model;
-use Winter\User\Models\User;
 
 /**
- * Guest Model.
+ * Contact Model.
  */
-class Guest extends Model
+class Group extends Model
 {
   use \Winter\Storm\Database\Traits\Validation;
 
   /**
    * @var string the database table used by the model
    */
-  public $table = 'grcote7_marriage_guests';
+  public $table = 'grcote7_marriage_groups';
 
   /**
    * @var array Validation rules for attributes
@@ -33,26 +32,13 @@ class Guest extends Model
   public $hasMany        = [];
   public $hasOneThrough  = [];
   public $hasManyThrough = [];
-  public $belongsTo      = [
-    'user'    => User::class,
-    'familly' => Familly::class,
-  ];
-  public $morphTo    = [];
-  public $morphOne   = [];
-  public $morphMany  = [];
-  public $attachOne  = [];
-  public $attachMany = [];
-
-  public $belongsToMany = [
-    'groups' => ['Grcote7\Marriage\Models\Group', 'table' => 'grcote7_marriage_group_guest'],
-  ];
-//   public $belongsToMany = [
-//     'groups' => [
-//       'Grcote7\Marriage\Models\Group',
-//       'table' => 'grcote7_marriage_group_guest',
-//       'order' => 'name',
-//     ],
-//   ];
+  public $belongsTo      = [];
+  public $belongsToMany  = [];
+  public $morphTo        = [];
+  public $morphOne       = [];
+  public $morphMany      = [];
+  public $attachOne      = [];
+  public $attachMany     = [];
 
   /**
    * @var array Guarded fields
@@ -62,7 +48,7 @@ class Guest extends Model
   /**
    * @var array Fillable fields
    */
-  protected $fillable = ['user_id', 'mobile'];
+  protected $fillable = ['name'];
 
   /**
    * @var array Attributes to be cast to native types
