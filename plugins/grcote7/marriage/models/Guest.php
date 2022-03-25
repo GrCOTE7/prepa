@@ -33,13 +33,16 @@ class Guest extends Model
   public $hasMany        = [];
   public $hasOneThrough  = [];
   public $hasManyThrough = [];
-  public $belongsTo      = ['user' => User::class];
-  public $belongsToMany  = [];
-  public $morphTo        = [];
-  public $morphOne       = [];
-  public $morphMany      = [];
-  public $attachOne      = [];
-  public $attachMany     = [];
+  public $belongsTo      = [
+    'user'    => User::class,
+    'familly' => Familly::class,
+  ];
+  public $belongsToMany = [];
+  public $morphTo       = [];
+  public $morphOne      = [];
+  public $morphMany     = [];
+  public $attachOne     = [];
+  public $attachMany    = [];
 
   /**
    * @var array Guarded fields

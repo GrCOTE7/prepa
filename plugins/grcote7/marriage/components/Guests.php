@@ -7,7 +7,7 @@
 namespace Grcote7\Marriage\Components;
 
 use Cms\Classes\ComponentBase;
-use Grcote7\Marriage\Models\Familly;
+use Grcote7\Marriage\Models\Guest;
 
 class Guests extends ComponentBase
 {
@@ -30,10 +30,11 @@ class Guests extends ComponentBase
     $gdb = 'grcote7_marriage_guests';
     $fdb = 'grcote7_marriage_famillies';
 
-    $data = Familly::find(3)->guests()->where('mobile', 'like', '%23%')
+    $data = Guest::find(1)
     //   ->dump()
-    //   ->first()
-      ->get()
+      ->first()
+    //   ->get()
+      ->familly
 ;
 
     return $data ?? '<p>$data est vide</p>';
