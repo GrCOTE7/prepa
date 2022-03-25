@@ -35,7 +35,7 @@ class Guests extends ComponentBase
     $famillies = Familly::first()->guests;
     // $data      = $famillies;
     foreach ($famillies as $familly) {
-      $data[] = $familly->mobile;
+      $data[] = $familly->user->name;
     }
     //   ->whereNotExists(function ($query) {
     //     $query->select(DB::raw(1))
