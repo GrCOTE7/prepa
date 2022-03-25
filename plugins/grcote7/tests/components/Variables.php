@@ -7,6 +7,7 @@
 namespace GrCote7\Tests\Components;
 
 use Cms\Classes\ComponentBase;
+use Illuminate\Support\Facades\App;
 
 class Variables extends ComponentBase
 {
@@ -28,7 +29,7 @@ class Variables extends ComponentBase
     // This code will be executed when the page or layout is
     // loaded and the component is attached to it.
 
-    $this->page['var'] = 123; // Inject some variable to the page
+    $this->page['var'] = App::getLocale(); // Inject some variable to the page
 
     // if (true) {
     //   return 123;

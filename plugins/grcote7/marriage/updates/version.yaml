@@ -1,6 +1,28 @@
 1.0.1:
     - First version of Marriage
-    - create_guests_table.php
+
+    - Populate users table
+    - v1.0.1/seed_users_table.php
+
+    - Create guests table
+    - v1.0.1/create_guests_table.php
+
 1.0.2:
     - Populate guests table
-    - seed_guests_table.php
+    - v1.0.2/seed_guests_table.php
+
+1.0.3:
+    - Add Familly Model
+    - v1.0.3/create_famillies_table.php
+
+1.0.4:
+    - Populate famillies table
+    - v1.0.4/seed_famillies_table.php
+1.0.5:
+    - Create Group Model - To have a Many to Many relationship
+    - Create and populate groups table
+    - v1.0.5/create_groups_table.php
+    - v1.0.5/seed_groups_table.php
+    - Create and populate pivot table group_guest
+    - v1.0.5/create_group_guest_table.php
+    - v1.0.5/seed_group_guest_table.php

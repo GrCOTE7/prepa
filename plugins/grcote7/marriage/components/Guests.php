@@ -7,7 +7,7 @@
 namespace Grcote7\Marriage\Components;
 
 use Cms\Classes\ComponentBase;
-use Winter\User\Models\User;
+use Grcote7\Marriage\Models\Guest;
 
 class Guests extends ComponentBase
 {
@@ -17,27 +17,46 @@ class Guests extends ComponentBase
       'name'        => 'Guests Component',
       'description' => 'Guests Managment',
     ];
+    //2do fix Debugbar: Wait a compatible version with Laravel 9
   }
 
   public function defineProperties()
   {
+    // $gt  = 'grcote7_marriage_guests';
+    // $ft  = 'grcote7_marriage_famillies';
+    // $ggt = 'grcote7_marriage_group_guest';
     return [];
   }
 
   public function onRun()
   {
-    $data = User::find(3)->guest->mobile;
-    // return $user->guest->mobile;
+    $guests = Guest::all();
 
-    // $data = Guest::select('mobile')->where('id', 1)->first();
+    $listBrut  = [];
+    $lengthMax = 0;
+    foreach ($guests  as $guest) {
+      $listBrut[] = 'Guest <strong>'.$guest->user->name.'</strong> :';
+      $lengthMax  = max($lengthMax, \strlen('Guest '.$guest->user->name.' :'));
+      //   $listBrut[] = $lengthMax;
+      foreach ($guest->groups as $group) {
+        $listBrut[] = ' - '.$group->name;
+      }
+      $listBrut[] = 'separation';
+    }
+    array_pop($listBrut);
 
-    // $data = Guest::selectConcat(['Id: ', 'id'], 'numId');
-    // $data = $data->addSelect('mobile');
+    $data = array_map(function ($separation) use ($lengthMax) {
+      if ('separation' === $separation) {
+        return  str_repeat('-', $lengthMax * 1.15);
+      }
 
-    // $data = $data->where('id', 3);
+      return $separation;
+    }, $listBrut);
 
-    $this->page['data'] = $data;
-
+    //   ->dump()
+    //   ->first()
+    //   ->get()
+    $this->page['data'] = implode("\n<br>", $data);
     // return $data ?? '<p>$data est vide</p>';
   }
 }
