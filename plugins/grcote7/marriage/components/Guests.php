@@ -8,7 +8,6 @@ namespace Grcote7\Marriage\Components;
 
 use Cms\Classes\ComponentBase;
 use DB;
-use Grcote7\Marriage\Models\Familly;
 use Grcote7\Marriage\Models\Guest;
 use Winter\User\Models\User;
 
@@ -33,18 +32,18 @@ class Guests extends ComponentBase
     $gdb = 'grcote7_marriage_guests';
     $fdb = 'grcote7_marriage_famillies';
 
-    // $data = Familly::find(2)->guests->first()->user->name;
+    $guests = Guest::all();
+    foreach ($guests as $guest) {
+      $data[] = $guest->user->name;
 
-    $data = Guest::find(4)->user->name
-
-    //   ->whereNotExists(function ($query) {
+      //   ->whereNotExists(function ($query) {
     //     $query->select(DB::raw(1))
     //       ->from('grcote7_marriage_guests as gg')
     //       ->whereRaw('gg.user_id = users.id');
     //   })
     //   ->dump()
     //   ->first()
-;
+    }
     // echo $data;
     // dd($data);
 
