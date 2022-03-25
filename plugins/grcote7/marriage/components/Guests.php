@@ -36,9 +36,9 @@ class Guests extends ComponentBase
     //   ->dump()
     //   ->first()
     //   ->get()
-;
+
     foreach ($data->groups as $group) {
-      print_r($group->name);
+      //   print_r($group->name);
     }
 
     return $data ?? '<p>$data est vide</p>';
