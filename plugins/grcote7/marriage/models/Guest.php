@@ -42,7 +42,7 @@ class Guest extends Model
       Group::class,
       'table' => 'grcote7_marriage_group_guest',
     ],
-    ];
+  ];
   public $morphTo    = [];
   public $morphOne   = [];
   public $morphMany  = [];
