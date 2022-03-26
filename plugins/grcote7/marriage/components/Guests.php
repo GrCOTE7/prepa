@@ -22,42 +22,43 @@ class Guests extends ComponentBase
 
   public function defineProperties()
   {
-    // $gt  = 'grcote7_marriage_guests';
-    // $ft  = 'grcote7_marriage_famillies';
-    // $ggt = 'grcote7_marriage_group_guest';
     return [];
   }
 
   public function onRun()
   {
-    $guests = Guest::all();
+    $gt = 'grcote7_marriage_guests';
+    // $ft  = 'grcote7_marriage_famillies';
+    // $ggt = 'grcote7_marriage_group_guest';
+    $g      = Guest::find(2);
+    $data[] = $g;
+    $data[] = $g->user->name;
+    // dd($data);
+    // $data[] = $g->groups()->where('id', 1)->get();
 
-    $listBrut  = [];
-    $lengthMax = 0;
-    foreach ($guests  as $guest) {
-      $listBrut[] = 'Guest <strong>'.$guest->user->name.'</strong> :';
-      $lengthMax  = max($lengthMax, \strlen('Guest '.$guest->user->name.' :'));
-      foreach ($guest->groups as $group) {
-        $listBrut[] = ' - '.$group->name;
-      }
-      $listBrut[] = 'separation';
-    }
-    array_pop($listBrut);
+    // $data[] = $g->groups->get();
 
-    $data = array_map(function ($separation) use ($lengthMax) {
-      if ('separation' === $separation) {
-        return  str_repeat('-', $lengthMax * 1.15);
-      }
+    // foreach ($data[0]->groups as $group) {
+    //   //   $data   = $guest->groups;
+    //   $data[] = ' - '.$group->name;
+    // }
 
-      return $separation;
-    }, $listBrut);
+    // $data[] = [];
+    // $data[] = $guest->groups;
+
+    // foreach ($guests as $guest) {
+    //   $data[] = $guest->user->name;
+    //   foreach ($guest->groups as $group) {
+    //     $data[] = ' - '.$group->name;
+    //   }
+    // }
 
     // ->dump()
-    // ->first()
-    // ->get()
-    // ;
+    //   ->first()
+    //   ->get()
+
     $this->page['data'] = implode("\n<br>", $data);
 
-    return $data ?? '<p>$data est vide</p>';
+    // return $data ?? '<p>$data est vide</p>';
   }
 }

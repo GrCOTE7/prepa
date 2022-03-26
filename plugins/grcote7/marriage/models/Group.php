@@ -33,12 +33,17 @@ class Group extends Model
   public $hasOneThrough  = [];
   public $hasManyThrough = [];
   public $belongsTo      = [];
-  public $belongsToMany  = [];
-  public $morphTo        = [];
-  public $morphOne       = [];
-  public $morphMany      = [];
-  public $attachOne      = [];
-  public $attachMany     = [];
+  public $belongsToMany  = [
+    'guests' => [
+      'Grcote7\Marriage\Models\Guest',
+      'table' => 'grcote7_marriage_guests',
+    ],
+ ];
+  public $morphTo    = [];
+  public $morphOne   = [];
+  public $morphMany  = [];
+  public $attachOne  = [];
+  public $attachMany = [];
 
   /**
    * @var array Guarded fields
