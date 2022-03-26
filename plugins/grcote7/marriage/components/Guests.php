@@ -48,8 +48,8 @@ class Guests extends ComponentBase
     //! But absolutly not under WinterCMS with Laravel 9
 
     // $data   = [];
-    $data[] = $gs[0]->user->name;
-    $data[] = $gs[0]->groups;
+    // $data[] = $gs[0]->user->name;
+    // $data[] = $gs[0]->groups;
 
     return $data ?? '<p>$data est vide</p>';
     // dd($data);

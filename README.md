@@ -1,11 +1,25 @@
 
 # Prepa
-## API Key Mailchimp
-5c6a0e53173d2149c5a4fe5ea4c67c55
+## Switch WinterCMS with Laravl 8 / with Laravel 9
+
+### First install all in local:
+
+1. Fork this repository
+2. Clone YOUR depot of this, on your local server (Laragon/vagrant/Other) on your computer
+3. Import the database ("**prepa.sql**") you can find in the root folder
+
+### Use
+
+4. Switch git branch **Laravel8** or **L9**
+5. Of course, adapt the dependencies:
+6. Since time you switch, in your local folder, with console :
+```
+composer update
+```
+
+*That's all ;-) !*
 
 ---
-
-
 
 <p align="center">
     <img src="https://github.com/wintercms/winter/raw/develop/.github/assets/Github%20Banner.png?raw=true" alt="Winter CMS Logo" width="100%" />
