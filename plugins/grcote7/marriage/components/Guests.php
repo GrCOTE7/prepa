@@ -22,28 +22,65 @@ class Guests extends ComponentBase
 
   public function defineProperties()
   {
-    // $gt  = 'grcote7_marriage_guests';
-    // $ft  = 'grcote7_marriage_famillies';
-    // $ggt = 'grcote7_marriage_group_guest';
     return [];
   }
 
   public function onRun()
   {
-    $guests = Guest::all();
+    // $gt = 'grcote7_marriage_guests';
+    // $ft  = 'grcote7_marriage_famillies';
+    // $ggt = 'grcote7_marriage_group_guest';
 
-    $gs = Guest::find(1)->where('id', '<', 3)->get();
+    $gs = Guest::find(1)->where('id', '<', 2)->get();
     // dd($gs);
 
+    //@f This above works very well under WinterCMS with Laravel 8
+    //@f And under WinterCMS with Laravel 9
+
+    foreach ($gs as $guest) {
+      $data[] = $guest->user->name;
+      foreach ($guest->groups as $group) {
+        $data[] = ' - '.$group->name;
+      }
+    }
+
+    // -------------------------------------------------
+
+    //@i This above works very well under WinterCMS with Laravel 8
+    //! But absolutly not under WinterCMS with Laravel 9
+
+    // $data   = [];
     $data[] = $gs[0]->user->name;
     $data[] = $gs[0]->groups;
-    $data[] = $gs[1]->user->name;
-    $data[] = $gs[1]->groups;
 
-    //   ->dump()
+    // -------------------------------------------------
+
+    return $data ?? '<p>$data est vide</p>';
+    // dd($data);
+
+    // $data[] = $g->groups()->where('id', 1)->get();
+
+    // $data[] = $g->groups->get();
+
+    // foreach ($data[0]->groups as $group) {
+    //   //   $data   = $guest->groups;
+    //   $data[] = ' - '.$group->name;
+    // }
+
+    // $data[] = [];
+    // $data[] = $guest->groups;
+
+    // foreach ($gs as $guest) {
+    //   $data[] = $guest->user->name;
+    //   foreach ($guest->groups as $group) {
+    //     $data[] = ' - '.$group->name;
+    //   }
+    // }
+
+    // ->dump()
     //   ->first()
     //   ->get()
-    $this->page['data'] = implode("\n<br>", $data);
-    // return $data ?? '<p>$data est vide</p>';
+
+    // $this->page['data'] = implode("\n<br>", $data);
   }
 }
