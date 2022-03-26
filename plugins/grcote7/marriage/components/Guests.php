@@ -27,13 +27,36 @@ class Guests extends ComponentBase
 
   public function onRun()
   {
-    $gt = 'grcote7_marriage_guests';
+    // $gt = 'grcote7_marriage_guests';
     // $ft  = 'grcote7_marriage_famillies';
     // $ggt = 'grcote7_marriage_group_guest';
-    $g      = Guest::find(2);
-    $data[] = $g;
-    $data[] = $g->user->name;
+
+    $gs = Guest::find(1)->where('id', '<', 2)->get();
+    // dd($gs);
+
+    //@f This above works very well under winterCMS with Laravel 8
+    //@f And under winterCMS with Laravel 9
+
+    foreach ($gs as $guest) {
+      $data[] = $guest->user->name;
+      foreach ($guest->groups as $group) {
+        $data[] = ' - '.$group->name;
+      }
+    }
+
+    // -------------------------------------------------
+
+    //@i This abovbe works very well under winterCMS with Laravel 8
+    //! But absolutly no under winterCMS with Laravel 9
+
+    // $data[] = $gs[0]->user->name;
+    // $data[] = $gs[0]->groups;
+
+    // -------------------------------------------------
+
+    return $data ?? '<p>$data est vide</p>';
     // dd($data);
+
     // $data[] = $g->groups()->where('id', 1)->get();
 
     // $data[] = $g->groups->get();
@@ -46,7 +69,7 @@ class Guests extends ComponentBase
     // $data[] = [];
     // $data[] = $guest->groups;
 
-    // foreach ($guests as $guest) {
+    // foreach ($gs as $guest) {
     //   $data[] = $guest->user->name;
     //   foreach ($guest->groups as $group) {
     //     $data[] = ' - '.$group->name;
@@ -57,8 +80,6 @@ class Guests extends ComponentBase
     //   ->first()
     //   ->get()
 
-    $this->page['data'] = implode("\n<br>", $data);
-
-    // return $data ?? '<p>$data est vide</p>';
+    // $this->page['data'] = implode("\n<br>", $data);
   }
 }

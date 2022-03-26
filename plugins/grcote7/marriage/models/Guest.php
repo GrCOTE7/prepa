@@ -37,18 +37,17 @@ class Guest extends Model
     'user'    => User::class,
     'familly' => Familly::class,
   ];
+  public $belongsToMany = [
+    'groups' => [
+      Group::class,
+      'table' => 'grcote7_marriage_group_guest',
+    ],
+    ];
   public $morphTo    = [];
   public $morphOne   = [];
   public $morphMany  = [];
   public $attachOne  = [];
   public $attachMany = [];
-
-  public $belongsToMany = [
-    'groups' => [
-      'Grcote7\Marriage\Models\Group',
-      'table' => 'grcote7_marriage_group_guest',
-    ],
-  ];
 
   /**
    * @var array Guarded fields
@@ -87,5 +86,4 @@ class Guest extends Model
     'created_at',
     'updated_at',
   ];
-
 }
