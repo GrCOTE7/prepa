@@ -34,8 +34,8 @@ class Guests extends ComponentBase
     $gs = Guest::find(1)->where('id', '<', 2)->get();
     // dd($gs);
 
-    //@f This above works very well under winterCMS with Laravel 8
-    //@f And under winterCMS with Laravel 9
+    //@f This above works very well under WinterCMS with Laravel 8
+    //@f And under WinterCMS with Laravel 9
 
     foreach ($gs as $guest) {
       $data[] = $guest->user->name;
@@ -46,11 +46,13 @@ class Guests extends ComponentBase
 
     // -------------------------------------------------
 
-    //@i This abovbe works very well under winterCMS with Laravel 8
-    //! But absolutly no under winterCMS with Laravel 9
-
-    // $data[] = $gs[0]->user->name;
-    // $data[] = $gs[0]->groups;
+    /*
+     *@i This above works very well under WinterCMS with Laravel 8
+     *! But absolutly not under WinterCMS with Laravel 9
+     */
+    // $data   = [];
+    $data[] = $gs[0]->user->name;
+    $data[] = $gs[0]->groups;
 
     // -------------------------------------------------
 
