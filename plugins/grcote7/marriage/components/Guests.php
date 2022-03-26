@@ -32,26 +32,13 @@ class Guests extends ComponentBase
   {
     $guests = Guest::all();
 
-    $listBrut  = [];
-    $lengthMax = 0;
-    foreach ($guests  as $guest) {
-      $listBrut[] = 'Guest <strong>'.$guest->user->name.'</strong> :';
-      $lengthMax  = max($lengthMax, \strlen('Guest '.$guest->user->name.' :'));
-      //   $listBrut[] = $lengthMax;
-      foreach ($guest->groups as $group) {
-        $listBrut[] = ' - '.$group->name;
-      }
-      $listBrut[] = 'separation';
-    }
-    array_pop($listBrut);
+    $gs = Guest::find(1)->where('id', '<', 3)->get();
+    // dd($gs);
 
-    $data = array_map(function ($separation) use ($lengthMax) {
-      if ('separation' === $separation) {
-        return  str_repeat('-', $lengthMax * 1.15);
-      }
-
-      return $separation;
-    }, $listBrut);
+    $data[] = $gs[0]->user->name;
+    $data[] = $gs[0]->groups;
+    $data[] = $gs[1]->user->name;
+    $data[] = $gs[1]->groups;
 
     //   ->dump()
     //   ->first()
