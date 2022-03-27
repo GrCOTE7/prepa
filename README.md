@@ -1,6 +1,6 @@
 
 # Prepa
-## Switch WinterCMS with Laravl 8 / with Laravel 9
+## Switch WinterCMS with Laravel 6-8 / with Laravel 9
 
 ### First install all in local:
 
