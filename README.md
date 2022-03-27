@@ -8,6 +8,8 @@
 2. Clone YOUR depot of this, on your local server (Laragon/vagrant/Other) on your computer
 3. Import the database ("**prepa.sql**") you can find in the root folder
 
+   (You certainly 'll need to adapt database access parameters in file '**.env**' in root folder)
+
 ### Use
 
 4. Switch git branch **Laravel8** or **L9**
