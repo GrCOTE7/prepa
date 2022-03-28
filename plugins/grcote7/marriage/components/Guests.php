@@ -31,7 +31,7 @@ class Guests extends ComponentBase
     // $ft  = 'grcote7_marriage_famillies';
     // $ggt = 'grcote7_marriage_group_guest';
 
-    $gs = Guest::find(1)->where('id', '<', 2)->get();
+    $gs = Guest::find(1)->where('id', 3)->get();
     // dd($gs);
 
     //@f This above works very well under WinterCMS with Laravel 8
