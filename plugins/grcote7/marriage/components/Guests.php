@@ -9,7 +9,6 @@ namespace Grcote7\Marriage\Components;
 use Cms\Classes\ComponentBase;
 use Grcote7\Marriage\Models\Group;
 use Grcote7\Marriage\Models\Guest;
-use Winter\User\Models\User;
 
 class Guests extends ComponentBase
 {
@@ -33,12 +32,15 @@ class Guests extends ComponentBase
     // $ft  = 'grcote7_marriage_famillies';
     // $ggt = 'grcote7_marriage_group_guest';
 
-    $data[] = 'User → Has guest';
-    $data[] = User::select('name')->has('guest')->get();
+    $data[] = Guest::whereHas('groups', function ($query) {
+      $query->where('name', 'like', 'FAMILLE');
+    })
+    //   ->dump()
+      ->get();
 
     // $data[] = str_repeat('-', 45);
     return $data ?? '<p>$data est vide</p>';
-    // ->dump()
+    //   ->dump()
     //   ->first()
     //   ->get()
 
