@@ -34,7 +34,7 @@ class Guests extends ComponentBase
     // $ggt = 'grcote7_marriage_group_guest';
 
     $data[] = 'User → Has guest';
-    $data[] = user::select('name')->has('guest')->get();
+    $data[] = User::select('name')->has('guest')->get();
 
     // $data[] = str_repeat('-', 45);
     return $data ?? '<p>$data est vide</p>';
