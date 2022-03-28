@@ -35,8 +35,8 @@ class Group extends Model
   public $belongsTo      = [];
   public $belongsToMany  = [
     'guests' => [
-      'Grcote7\Marriage\Models\Guest',
-      'table' => 'grcote7_marriage_guests',
+      Guest::class,
+      'table' => 'grcote7_marriage_group_guest',
     ],
  ];
   public $morphTo    = [];

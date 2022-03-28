@@ -29,7 +29,7 @@ class Familly extends Model
    * @var array Relations
    */
   public $hasOne         = [];
-  public $hasMany        = ['guests' => 'Grcote7\Marriage\Models\Guest'];
+  public $hasMany        = ['guests' => Guest::class];
   public $hasOneThrough  = [];
   public $hasManyThrough = [];
   public $belongsTo      = [];
