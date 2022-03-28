@@ -31,17 +31,14 @@ class Guests extends ComponentBase
     // $ft  = 'grcote7_marriage_famillies';
     // $ggt = 'grcote7_marriage_group_guest';
 
-    $gs = Guest::find(1)->where('id', 3)->get();
+    $gs = Guest::find(1);
     // dd($gs);
 
     //@f This above works very well under WinterCMS with Laravel 8
     //@f And under WinterCMS with Laravel 9
 
-    foreach ($gs as $guest) {
-      $data[] = $guest->user->name;
-      foreach ($guest->groups as $group) {
-        $data[] = ' - '.$group->name;
-      }
+    foreach ($gs->groups as $group) {
+      $data[] = $group->pivot->group_id;
     }
 
     //@i This above works very well under WinterCMS with Laravel 8
