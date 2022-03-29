@@ -36,12 +36,13 @@ class Guests extends ComponentBase
      *@i Without with('relation'): Lazy loading: Every line is a request to have user->name
      *@i With with(): Eager loading: Just 1 request and all is loaded, ready tobe accessed
      */
-    $gs = Guest::with('user')->whereHas('groups', function ($query) {
+    $gs = Guest::with('user', 'familly')->whereHas('groups', function ($query) {
       $query->where('name', 'like', 'FAMILLE');
     })
     //   ->dump()
       ->get();
     foreach ($gs as $g) {
+      //   $data[] = $g->user->name.' ( '.implode('', $g->famillies).' )';
       $data[] = $g->user->name;
     }
 
