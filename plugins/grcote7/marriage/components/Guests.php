@@ -32,7 +32,7 @@ class Guests extends ComponentBase
     // $ft  = 'grcote7_marriage_famillies';
     // $ggt = 'grcote7_marriage_group_guest';
 
-    $gs = Guest::whereHas('groups', function ($query) {
+    $gs = Guest::with('user')->whereHas('groups', function ($query) {
       $query->where('name', 'like', 'FAMILLE');
     })
     //   ->dump()
