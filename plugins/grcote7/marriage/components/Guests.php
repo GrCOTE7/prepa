@@ -28,22 +28,32 @@ class Guests extends ComponentBase
 
   public function onRun()
   {
-    // $gt = 'grcote7_marriage_guests';
-    // $ft  = 'grcote7_marriage_famillies';
-    // $ggt = 'grcote7_marriage_group_guest';
+    /** //@q Works well (Note: wn with L9) */
+    $g  = Guest::find(3);
+    $gr = new Group(['name' => 'LOISIR']); // Note: Doesn't exists in the DB
+    $gr = $g->groups->add($gr);
 
-    /**
-     *@i Without with('relation'): Lazy loading: Every line is a request to have user->name
-     *@i With with(): Eager loading: Just 1 request and all is loaded, ready tobe accessed
-     */
-    $gr = new Group(['name' => 'LOISIR']);
-    $g  = Guest::find(2);
-    $gr = $g->groups->add($gr); // NB: No impact on the DB
+    $data[] = $this->getListing($g);
+    $data[] = str_repeat('-', 45);
 
-    $data[] = $g->id.' : '.$g->user->name.' '.($g->familly->name ?? 'No familly loaded');
-    foreach ($g->groups as $gu) {
-      $data[] = '    - '.($gu->id ?? 'No ID').': '.$gu->name;
-    }
+    /** //@bug Doesn't works - wn with L9) */
+    $g2  = Guest::find(4);
+    $gr1 = new Group(['name' => 'LOISIR']);
+    $gr2 = new Group(['name' => 'OTHER']);
+    // $gr  = $g2->groups->addMany([
+    //   $gr1,
+    //   $gr2,
+    // ]);
+
+    // //@bug Even if we use this syntax
+    // $g2->groups
+    //   ->addMany([
+    //     new Group(['name' => 'LOISIR']),
+    //     new Group(['name' => 'OTHER']),
+    //   ]);
+
+    $data[] = $this->getListing($g2);
+    $data[] = str_repeat('-', 45);
 
     return $data ?? '<p>$data est vide</p>';
     //   ->dump()
@@ -52,5 +62,15 @@ class Guests extends ComponentBase
     // $data[] = str_repeat('-', 45);
 
     // $this->page['data'] = implode("\n<br>", $data);
+  }
+
+  protected function getListing($g)
+  {
+    $data[] = $g->id.' : '.$g->user->name.' '.($g->familly->name ?? 'No familly loaded');
+    foreach ($g->groups as $gu) {
+      $data[] = '    - '.($gu->id ?? 'No ID').': '.$gu->name;
+    }
+
+    return $data;
   }
 }
