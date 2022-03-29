@@ -32,6 +32,10 @@ class Guests extends ComponentBase
     // $ft  = 'grcote7_marriage_famillies';
     // $ggt = 'grcote7_marriage_group_guest';
 
+    /**
+     *@i Without with('relation'): Lazy loading: Every line is a request to have user->name
+     *@i With with(): Eager loading: Just 1 request and all is loaded, ready tobe accessed
+     */
     $gs = Guest::with('user')->whereHas('groups', function ($query) {
       $query->where('name', 'like', 'FAMILLE');
     })
