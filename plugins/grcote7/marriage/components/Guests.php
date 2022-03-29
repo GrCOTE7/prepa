@@ -45,7 +45,7 @@ class Guests extends ComponentBase
       //   $data[] = $g->user->name.' ( '.implode('', $g->famillies).' )';
       //   $data[] = $g->user->name;
 
-      $data[] = ($g->user->name ?? 'no name').' '.($g->familly->name ?? 'no familly');
+      $data[] = $g->user->name.' '.($g->familly->name ?? 'No familly loaded');
     }
 
     // $data[] = str_repeat('-', 45);
