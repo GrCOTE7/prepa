@@ -36,21 +36,12 @@ class Guests extends ComponentBase
     $data[] = $this->getListing($g);
     $data[] = str_repeat('-', 45);
 
-    /** //@bug Doesn't works - wn with L9) */
-    $g2  = Guest::find(4);
-    $gr1 = new Group(['name' => 'LOISIR']);
-    $gr2 = new Group(['name' => 'OTHER']);
-    // $gr  = $g2->groups->addMany([
-    //   $gr1,
-    //   $gr2,
-    // ]);
-
-    // //@bug Even if we use this syntax
-    // $g2->groups
-    //   ->addMany([
-    //     new Group(['name' => 'LOISIR']),
-    //     new Group(['name' => 'OTHER']),
-    //   ]);
+    $g2    = Guest::find(4);
+    $gr2[] = new Group(['name' => 'LOISIR']);
+    $gr2[] = new Group(['name' => 'OTHER']);
+    foreach ($gr2 as $gru) {
+      $g2->groups->add($gru);
+    }
 
     $data[] = $this->getListing($g2);
     $data[] = str_repeat('-', 45);
