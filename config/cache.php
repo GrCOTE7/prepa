@@ -1,8 +1,11 @@
 <?php
 
-return [
+/*
+ * (c) Boosteur.com - 2022
+ */
 
-    /*
+return [
+  /*
     |--------------------------------------------------------------------------
     | Default Cache Store
     |--------------------------------------------------------------------------
@@ -18,9 +21,9 @@ return [
     |
     */
 
-    'default' => env('CACHE_DRIVER', 'file'),
+  'default' => env('CACHE_DRIVER', 'file'),
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Cache Stores
     |--------------------------------------------------------------------------
@@ -34,60 +37,58 @@ return [
     |
     */
 
-    'stores' => [
+  'stores' => [
+    'apc' => [
+      'driver' => 'apc',
+    ],
 
-        'apc' => [
-            'driver' => 'apc',
+    'array' => [
+      'driver' => 'array',
+    ],
+
+    'database' => [
+      'driver'     => 'database',
+      'table'      => 'cache',
+      'connection' => null,
+    ],
+
+    'file' => [
+      'driver' => 'file',
+      'path'   => storage_path('framework/cache'),
+    ],
+
+    'memcached' => [
+      'driver'        => 'memcached',
+      'persistent_id' => null,
+      'sasl'          => [
+        // env('MEMCACHED_USERNAME'),
+        // env('MEMCACHED_PASSWORD'),
+      ],
+      'options' => [
+        // Memcached::OPT_CONNECT_TIMEOUT => 2000,
+      ],
+      'servers' => [
+        [
+          'host'   => '127.0.0.1',
+          'port'   => 11211,
+          'weight' => 100,
         ],
-
-        'array' => [
-            'driver' => 'array',
-        ],
-
-        'database' => [
-            'driver'     => 'database',
-            'table'      => 'cache',
-            'connection' => null,
-        ],
-
-        'file' => [
-            'driver' => 'file',
-            'path'   => storage_path('framework/cache'),
-        ],
-
-        'memcached' => [
-            'driver'        => 'memcached',
-            'persistent_id' => null,
-            'sasl' => [
-                // env('MEMCACHED_USERNAME'),
-                // env('MEMCACHED_PASSWORD'),
-            ],
-            'options' => [
-                // Memcached::OPT_CONNECT_TIMEOUT => 2000,
-            ],
-            'servers' => [
-                [
-                    'host'   => '127.0.0.1',
-                    'port'   => 11211,
-                    'weight' => 100,
-                ],
-            ],
+      ],
         ],
 
         'redis' => [
-            'driver'     => 'redis',
-            'connection' => 'default',
+          'driver'     => 'redis',
+          'connection' => 'default',
         ],
 
         'dynamodb' => [
-            'driver'   => 'dynamodb',
-            'key'      => '',
-            'secret'   => '',
-            'region'   => 'us-east-1',
-            'table'    => 'cache',
-            'endpoint' => '',
+          'driver'   => 'dynamodb',
+          'key'      => '',
+          'secret'   => '',
+          'region'   => 'us-east-1',
+          'table'    => 'cache',
+          'endpoint' => '',
         ],
-
     ],
 
     /*
@@ -138,5 +139,4 @@ return [
     */
 
     'disableRequestCache' => null,
-
 ];

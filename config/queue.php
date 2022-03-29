@@ -1,8 +1,11 @@
 <?php
 
-return [
+/*
+ * (c) Boosteur.com - 2022
+ */
 
-    /*
+return [
+  /*
     |--------------------------------------------------------------------------
     | Default Queue Connection Name
     |--------------------------------------------------------------------------
@@ -13,9 +16,9 @@ return [
     |
     */
 
-    'default' => env('QUEUE_CONNECTION', 'sync'),
+  'default' => env('QUEUE_CONNECTION', 'sync'),
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Queue Connections
     |--------------------------------------------------------------------------
@@ -28,44 +31,42 @@ return [
     |
     */
 
-    'connections' => [
+  'connections' => [
+    'sync' => [
+      'driver' => 'sync',
+    ],
 
-        'sync' => [
-            'driver' => 'sync',
-        ],
+    'database' => [
+      'driver'      => 'database',
+      'table'       => 'jobs',
+      'queue'       => 'default',
+      'retry_after' => 90,
+    ],
 
-        'database' => [
-            'driver'      => 'database',
-            'table'       => 'jobs',
-            'queue'       => 'default',
-            'retry_after' => 90,
-        ],
+    'beanstalkd' => [
+      'driver'      => 'beanstalkd',
+      'host'        => 'localhost',
+      'queue'       => 'default',
+      'retry_after' => 90,
+      'block_for'   => 0,
+    ],
 
-        'beanstalkd' => [
-            'driver'      => 'beanstalkd',
-            'host'        => 'localhost',
-            'queue'       => 'default',
-            'retry_after' => 90,
-            'block_for'   => 0,
-        ],
+    'sqs' => [
+      'driver' => 'sqs',
+      'key'    => '',
+      'secret' => '',
+      'prefix' => 'https://sqs.us-east-1.amazonaws.com/your-account-id',
+      'queue'  => 'your-queue-name',
+      'region' => 'us-east-1',
+    ],
 
-        'sqs' => [
-            'driver' => 'sqs',
-            'key'    => '',
-            'secret' => '',
-            'prefix' => 'https://sqs.us-east-1.amazonaws.com/your-account-id',
-            'queue'  => 'your-queue-name',
-            'region' => 'us-east-1',
-        ],
-
-        'redis' => [
-            'driver'      => 'redis',
-            'connection'  => 'default',
-            'queue'       => 'default',
-            'retry_after' => 90,
-            'block_for'   => null,
-        ],
-
+    'redis' => [
+      'driver'      => 'redis',
+      'connection'  => 'default',
+      'queue'       => 'default',
+      'retry_after' => 90,
+      'block_for'   => null,
+    ],
     ],
 
     /*
@@ -80,8 +81,7 @@ return [
     */
 
     'failed' => [
-        'database' => 'mysql',
-        'table'    => 'failed_jobs',
+      'database' => 'mysql',
+      'table'    => 'failed_jobs',
     ],
-
 ];

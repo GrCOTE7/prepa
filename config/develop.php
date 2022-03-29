@@ -1,8 +1,11 @@
 <?php
 
-return [
+/*
+ * (c) Boosteur.com - 2022
+ */
 
-    /*
+return [
+  /*
     |--------------------------------------------------------------------------
     | Decompile backend assets
     |--------------------------------------------------------------------------
@@ -19,9 +22,9 @@ return [
     |
     */
 
-    'decompileBackendAssets' => false,
+  'decompileBackendAssets' => false,
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Allow deep-level symlinks
     |--------------------------------------------------------------------------
@@ -41,6 +44,5 @@ return [
     |
     */
 
-    'allowDeepSymlinks' => false,
-
+  'allowDeepSymlinks' => false,
 ];

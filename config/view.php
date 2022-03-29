@@ -1,8 +1,11 @@
 <?php
 
-return [
+/*
+ * (c) Boosteur.com - 2022
+ */
 
-    /*
+return [
+  /*
     |--------------------------------------------------------------------------
     | View Storage Paths
     |--------------------------------------------------------------------------
@@ -13,12 +16,12 @@ return [
     |
     */
 
-    'paths' => [
-        // Default Laravel Blade template location
-        // realpath(base_path('resources/views'))
-    ],
+  'paths' => [
+    // Default Laravel Blade template location
+    // realpath(base_path('resources/views'))
+  ],
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Compiled View Path
     |--------------------------------------------------------------------------
@@ -29,6 +32,5 @@ return [
     |
     */
 
-    'compiled' => realpath(storage_path('framework/views')),
-
+  'compiled' => realpath(storage_path('framework/views')),
 ];

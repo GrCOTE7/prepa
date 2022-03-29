@@ -1,8 +1,11 @@
 <?php
 
-return [
+/*
+ * (c) Boosteur.com - 2022
+ */
 
-    /*
+return [
+  /*
     |--------------------------------------------------------------------------
     | Default Filesystem Disk
     |--------------------------------------------------------------------------
@@ -13,9 +16,9 @@ return [
     |
     */
 
-    'default' => 'local',
+  'default' => 'local',
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Default Cloud Filesystem Disk
     |--------------------------------------------------------------------------
@@ -26,9 +29,9 @@ return [
     |
     */
 
-    'cloud' => 's3',
+  'cloud' => 's3',
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Filesystem Disks
     |--------------------------------------------------------------------------
@@ -41,32 +44,30 @@ return [
     |
     */
 
-    'disks' => [
-
-        'local' => [
-            'driver' => 'local',
-            'root'   => storage_path('app'),
-            'url'    => '/storage/app',
-        ],
-
-        's3' => [
-            'driver'      => 's3',
-            'key'         => '',
-            'secret'      => '',
-            'region'      => '',
-            'bucket'      => '',
-            // 'url'      => env('AWS_URL'),
-            // 'endpoint' => env('AWS_ENDPOINT'),
-        ],
-
-        'rackspace' => [
-            'driver'    => 'rackspace',
-            'username'  => 'your-username',
-            'key'       => 'your-key',
-            'container' => 'your-container',
-            'endpoint'  => 'https://identity.api.rackspacecloud.com/v2.0/',
-            'region'    => 'IAD',
-        ],
+  'disks' => [
+    'local' => [
+      'driver' => 'local',
+      'root'   => storage_path('app'),
+      'url'    => '/storage/app',
     ],
 
+    's3' => [
+      'driver' => 's3',
+      'key'    => '',
+      'secret' => '',
+      'region' => '',
+      'bucket' => '',
+      // 'url'      => env('AWS_URL'),
+      // 'endpoint' => env('AWS_ENDPOINT'),
+    ],
+
+    'rackspace' => [
+      'driver'    => 'rackspace',
+      'username'  => 'your-username',
+      'key'       => 'your-key',
+      'container' => 'your-container',
+      'endpoint'  => 'https://identity.api.rackspacecloud.com/v2.0/',
+      'region'    => 'IAD',
+    ],
+    ],
 ];

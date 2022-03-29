@@ -1,9 +1,12 @@
 <?php
 
-return [
+/*
+ * (c) Boosteur.com - 2022
+ */
 
-    'throttle' => [
-        /*
+return [
+  'throttle' => [
+    /*
         |--------------------------------------------------------------------------
         | Enable throttling of Backend authentication attempts
         |--------------------------------------------------------------------------
@@ -12,9 +15,9 @@ return [
         | in to the Backend before being blocked for a specified number of minutes.
         |
          */
-        'enabled' => true,
+    'enabled' => true,
 
-        /*
+    /*
         |--------------------------------------------------------------------------
         | Failed Authentication Attempt Limit
         |--------------------------------------------------------------------------
@@ -22,9 +25,9 @@ return [
         | Number of failed attempts allowed while trying to authenticate a user.
         |
          */
-        'attemptLimit' => 5,
+    'attemptLimit' => 5,
 
-        /*
+    /*
         |--------------------------------------------------------------------------
         | Suspension Time
         |--------------------------------------------------------------------------
@@ -33,7 +36,6 @@ return [
         | the attempt limit is reached.
         |
          */
-        'suspensionTime' => 15,
-    ],
-
+    'suspensionTime' => 15,
+  ],
 ];

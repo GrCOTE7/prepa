@@ -1,8 +1,11 @@
 <?php
 
-return [
+/*
+ * (c) Boosteur.com - 2022
+ */
 
-    /*
+return [
+  /*
     |--------------------------------------------------------------------------
     | Third Party Services
     |--------------------------------------------------------------------------
@@ -14,33 +17,32 @@ return [
     |
     */
 
-    'mailgun' => [
-        'domain'   => '',
-        'secret'   => '',
-        'endpoint' => 'api.mailgun.net', // api.eu.mailgun.net for EU
-    ],
+  'mailgun' => [
+    'domain'   => '',
+    'secret'   => '',
+    'endpoint' => 'api.mailgun.net', // api.eu.mailgun.net for EU
+  ],
 
-    'mandrill' => [
-        'secret' => '',
-    ],
+  'mandrill' => [
+    'secret' => '',
+  ],
 
-    'postmark' => [
-        'token' => '',
-    ],
+  'postmark' => [
+    'token' => '',
+  ],
 
-    'ses' => [
-        'key'    => '',
-        'secret' => '',
-        'region' => 'us-east-1',
-    ],
+  'ses' => [
+    'key'    => '',
+    'secret' => '',
+    'region' => 'us-east-1',
+  ],
 
-    'sparkpost' => [
-        'secret' => '',
-    ],
+  'sparkpost' => [
+    'secret' => '',
+  ],
 
-    'stripe' => [
-        'model'  => 'User',
-        'secret' => '',
-    ],
-
+  'stripe' => [
+    'model'  => 'User',
+    'secret' => '',
+  ],
 ];

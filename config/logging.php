@@ -1,8 +1,11 @@
 <?php
 
-return [
+/*
+ * (c) Boosteur.com - 2022
+ */
 
-    /*
+return [
+  /*
     |--------------------------------------------------------------------------
     | Default Log Channel
     |--------------------------------------------------------------------------
@@ -13,9 +16,9 @@ return [
     |
     */
 
-    'default' => env('LOG_CHANNEL', 'single'),
+  'default' => env('LOG_CHANNEL', 'single'),
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Log Channels
     |--------------------------------------------------------------------------
@@ -30,62 +33,61 @@ return [
     |
     */
 
-    'channels' => [
-        'stack' => [
-            'driver'            => 'stack',
-            'channels'          => ['daily'],
-            'ignore_exceptions' => false,
-        ],
+  'channels' => [
+    'stack' => [
+      'driver'            => 'stack',
+      'channels'          => ['daily'],
+      'ignore_exceptions' => false,
+    ],
 
-        'single' => [
-            'driver' => 'single',
-            'path'   => storage_path('logs/system.log'),
-            'level'  => 'debug',
-        ],
+    'single' => [
+      'driver' => 'single',
+      'path'   => storage_path('logs/system.log'),
+      'level'  => 'debug',
+    ],
 
-        'daily' => [
-            'driver' => 'daily',
-            'path'   => storage_path('logs/system.log'),
-            'level'  => 'debug',
-            'days'   => 14,
-        ],
+    'daily' => [
+      'driver' => 'daily',
+      'path'   => storage_path('logs/system.log'),
+      'level'  => 'debug',
+      'days'   => 14,
+    ],
 
-        'slack' => [
-            'driver'   => 'slack',
-            'url'      => env('LOG_SLACK_WEBHOOK_URL'),
-            'username' => 'Winter CMS Log',
-            'emoji'    => ':boom:',
-            'level'    => 'critical',
-        ],
+    'slack' => [
+      'driver'   => 'slack',
+      'url'      => env('LOG_SLACK_WEBHOOK_URL'),
+      'username' => 'Winter CMS Log',
+      'emoji'    => ':boom:',
+      'level'    => 'critical',
+    ],
 
-        'papertrail' => [
-            'driver'       => 'monolog',
-            'level'        => 'debug',
-            'handler'      => \Monolog\Handler\SyslogUdpHandler::class,
-            'handler_with' => [
-                'host' => env('PAPERTRAIL_URL'),
-                'port' => env('PAPERTRAIL_PORT'),
-            ],
+    'papertrail' => [
+      'driver'       => 'monolog',
+      'level'        => 'debug',
+      'handler'      => \Monolog\Handler\SyslogUdpHandler::class,
+      'handler_with' => [
+        'host' => env('PAPERTRAIL_URL'),
+        'port' => env('PAPERTRAIL_PORT'),
+      ],
         ],
 
         'stderr' => [
-            'driver'    => 'monolog',
-            'handler'   => \Monolog\Handler\StreamHandler::class,
-            'formatter' => env('LOG_STDERR_FORMATTER'),
-            'with' => [
-                'stream' => 'php://stderr',
-            ],
+          'driver'    => 'monolog',
+          'handler'   => \Monolog\Handler\StreamHandler::class,
+          'formatter' => env('LOG_STDERR_FORMATTER'),
+          'with'      => [
+            'stream' => 'php://stderr',
+          ],
         ],
 
         'syslog' => [
-            'driver' => 'syslog',
-            'level'  => 'debug',
+          'driver' => 'syslog',
+          'level'  => 'debug',
         ],
 
         'errorlog' => [
-            'driver' => 'errorlog',
-            'level'  => 'debug',
+          'driver' => 'errorlog',
+          'level'  => 'debug',
         ],
     ],
-
 ];

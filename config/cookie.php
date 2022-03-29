@@ -1,8 +1,11 @@
 <?php
 
-return [
+/*
+ * (c) Boosteur.com - 2022
+ */
 
-    /*
+return [
+  /*
     |--------------------------------------------------------------------------
     | Cookies that should not be encrypted
     |--------------------------------------------------------------------------
@@ -14,8 +17,7 @@ return [
     |
     */
 
-    'unencryptedCookies' => [
-        // 'my_cookie',
-    ],
-
+  'unencryptedCookies' => [
+    // 'my_cookie',
+  ],
 ];

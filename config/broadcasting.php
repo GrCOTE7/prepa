@@ -1,8 +1,11 @@
 <?php
 
-return [
+/*
+ * (c) Boosteur.com - 2022
+ */
 
-    /*
+return [
+  /*
     |--------------------------------------------------------------------------
     | Default Broadcaster
     |--------------------------------------------------------------------------
@@ -15,9 +18,9 @@ return [
     |
     */
 
-    'default' => 'pusher',
+  'default' => 'pusher',
 
-    /*
+  /*
     |--------------------------------------------------------------------------
     | Broadcast Connections
     |--------------------------------------------------------------------------
@@ -28,32 +31,29 @@ return [
     |
     */
 
-    'connections' => [
-
-        'pusher' => [
-            'driver'  => 'pusher',
-            'key'     => '',
-            'secret'  => '',
-            'app_id'  => '',
-            'options' => [
-                'cluster' => '',
-                'useTLS'  => true,
-            ],
+  'connections' => [
+    'pusher' => [
+      'driver'  => 'pusher',
+      'key'     => '',
+      'secret'  => '',
+      'app_id'  => '',
+      'options' => [
+        'cluster' => '',
+        'useTLS'  => true,
+      ],
         ],
 
         'redis' => [
-            'driver'     => 'redis',
-            'connection' => 'default',
+          'driver'     => 'redis',
+          'connection' => 'default',
         ],
 
         'log' => [
-            'driver' => 'log',
+          'driver' => 'log',
         ],
 
         'null' => [
-            'driver' => 'null',
+          'driver' => 'null',
         ],
-
     ],
-
 ];
