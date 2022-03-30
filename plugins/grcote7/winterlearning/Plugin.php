@@ -56,9 +56,10 @@ class Plugin extends PluginBase
   public function registerComponents()
   {
     return [
-      '\GrCote7\WinterLearning\Components\TwigTips' => 'twigtips',
-      '\GrCote7\WinterLearning\Components\Ajax'     => 'ajax',
-      '\GrCote7\WinterLearning\Components\Database' => 'database',
+      '\GrCote7\WinterLearning\Components\TwigTips'   => 'twigtips',
+      '\GrCote7\WinterLearning\Components\Ajax'       => 'ajax',
+      '\GrCote7\WinterLearning\Components\Database'   => 'database',
+      '\GrCote7\WinterLearning\Components\ManyToMany' => 'manytomany',
     ];
   }
 

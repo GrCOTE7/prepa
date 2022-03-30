@@ -7,8 +7,8 @@
 namespace Grcote7\Marriage\Components;
 
 use Cms\Classes\ComponentBase;
-use Grcote7\Marriage\Models\Group;
-use Grcote7\Marriage\Models\Guest;
+use Grcote7\Marriage\Classes\Calcul;
+use Winter\User\Models\User;
 
 class Guests extends ComponentBase
 {
@@ -28,23 +28,8 @@ class Guests extends ComponentBase
 
   public function onRun()
   {
-    /** //@q Works well (Note: wn with L9) */
-    $g  = Guest::find(3);
-    $gr = new Group(['name' => 'LOISIR']); // Note: Doesn't exists in the DB
-    $gr = $g->groups->add($gr);
-
-    $data[] = $this->getListing($g);
-    $data[] = str_repeat('-', 45);
-
-    $g2    = Guest::find(4);
-    $gr2[] = new Group(['name' => 'LOISIR']);
-    $gr2[] = new Group(['name' => 'OTHER']);
-    foreach ($gr2 as $gru) {
-      $g2->groups->add($gru);
-    }
-
-    $data[] = $this->getListing($g2);
-    $data[] = str_repeat('-', 45);
+    $data = User::find(2)->name;
+    $a    = new Calcul();
 
     return $data ?? '<p>$data est vide</p>';
     //   ->dump()
@@ -53,15 +38,5 @@ class Guests extends ComponentBase
     // $data[] = str_repeat('-', 45);
 
     // $this->page['data'] = implode("\n<br>", $data);
-  }
-
-  protected function getListing($g)
-  {
-    $data[] = $g->id.' : '.$g->user->name.' '.($g->familly->name ?? 'No familly loaded');
-    foreach ($g->groups as $gu) {
-      $data[] = '    - '.($gu->id ?? 'No ID').': '.$gu->name;
-    }
-
-    return $data;
   }
 }
