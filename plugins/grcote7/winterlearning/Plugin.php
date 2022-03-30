@@ -8,6 +8,7 @@ namespace GrCote7\WinterLearning;
 
 use Backend;
 use Backend\Models\UserRole;
+use Grcote7\WinterLearning\Models\Employee;
 use System\Classes\PluginBase;
 
 /**
@@ -46,6 +47,9 @@ class Plugin extends PluginBase
    */
   public function boot()
   {
+    // Employee::extend(function ($emp) {
+    //   $emp->belongsToMany['activities'] = ['Grcote7\WinterLearning\Models\Activity'];
+    // });
   }
 
   /**

@@ -14,4 +14,7 @@
 
     - Create sub activities table
     - 1.0.1/create_sub_activities_table.php
+    - Create pit activity employee table
+    - 1.0.1/create_activity_employee_table.php
+
 

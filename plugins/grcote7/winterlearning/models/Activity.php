@@ -28,17 +28,23 @@ class Activity extends Model
   /**
    * @var array Relations
    */
-  public $hasOne         = [];
-  public $hasMany        = [];
+  public $hasOne  = [];
+  public $hasMany = [
+  ];
   public $hasOneThrough  = [];
   public $hasManyThrough = [];
   public $belongsTo      = [];
-  public $belongsToMany  = [];
-  public $morphTo        = [];
-  public $morphOne       = [];
-  public $morphMany      = [];
-  public $attachOne      = [];
-  public $attachMany     = [];
+  public $belongsToMany  = [
+    'employees' => [
+      Employee::class,
+      ['table' => 'grcote7_winterlearning_employees'],
+    ],
+  ];
+  public $morphTo    = [];
+  public $morphOne   = [];
+  public $morphMany  = [];
+  public $attachOne  = [];
+  public $attachMany = [];
 
   /**
    * @var array Guarded fields

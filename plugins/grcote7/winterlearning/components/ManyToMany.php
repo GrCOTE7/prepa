@@ -36,7 +36,12 @@ class ManyToMany extends ComponentBase
     $es = Employee::all()->find(2);
     // dd($es);
 
-    $data[] = $es->id;
+    $data[] = $es->find(2);
+
+    foreach ($es->activities as $a) {
+      // code...
+      $data[] = $a->id;
+    }
 
     // return $data ?? '<p>$data est vide</p>';
 
@@ -75,7 +80,7 @@ class ManyToMany extends ComponentBase
       ]);
     }
 
-    $es->activities()->addMany($activities);
+    // $es->activities->addMany($activities);
     // $es->subActivities()->addMany($subActivities);
 
     // $cManager->save();
