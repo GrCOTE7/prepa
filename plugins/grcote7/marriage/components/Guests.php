@@ -7,7 +7,8 @@
 namespace Grcote7\Marriage\Components;
 
 use Cms\Classes\ComponentBase;
-use Grcote7\Marriage\Classes\Calcul;
+use Grcote7\Marriage\Models\Group;
+use Grcote7\Marriage\Models\Guest;
 use Winter\User\Models\User;
 
 class Guests extends ComponentBase
@@ -28,8 +29,32 @@ class Guests extends ComponentBase
 
   public function onRun()
   {
-    $data = User::find(2)->name;
-    $a    = new Calcul();
+    // Relation 1-1
+    $g      = Guest::find(2);
+    $data[] = $g->user->name;
+
+    $loisir       = new Group();
+    $loisir->name = 'Loisir';
+
+    $other       = new Group();
+    $other->name = 'Other';
+
+    $ngs = [$loisir, $other];
+
+    // $ng = $g->groups->addMany($ngs);
+
+    // $data[] = $g->groups;
+    $data[] = $g->mobile;
+
+    $data[] = str_repeat('-', 45);
+
+    // reverse relation 1-1
+    $u = User::find(1);
+
+    // $data[] = $g->groups;
+
+    $data[] = $u->name;
+    $data[] = $u->guest->mobile;
 
     return $data ?? '<p>$data est vide</p>';
     //   ->dump()
