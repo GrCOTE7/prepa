@@ -7,6 +7,7 @@
 namespace Grcote7\Marriage\Models;
 
 use Model;
+use Winter\User\Models\User;
 
 /**
  * Familly Model.
@@ -29,7 +30,7 @@ class Familly extends Model
    * @var array Relations
    */
   public $hasOne         = [];
-  public $hasMany        = ['guests' => Guest::class];
+  public $hasMany        = ['guests' => 'Grcote7\Marriage\Models\Guest'];
   public $hasOneThrough  = [];
   public $hasManyThrough = [];
   public $belongsTo      = [];
@@ -77,4 +78,20 @@ class Familly extends Model
     'created_at',
     'updated_at',
   ];
+
+  public function getThis()
+  {
+    return $this;
+  }
+
+  public function getEmailFamillyChief()
+  {
+    return User::With('guest')->find(
+      $this->guests->where('id', $this->guest_id)
+        // ->dump()
+        ->first()
+        ->user_id
+    )
+      ->email;
+  }
 }

@@ -39,7 +39,7 @@ class Guest extends Model
   ];
   public $belongsToMany = [
     'groups' => [
-      Group::class,
+      'Grcote7\Marriage\Models\Group',
       'table' => 'grcote7_marriage_group_guest',
     ],
   ];

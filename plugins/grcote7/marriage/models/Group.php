@@ -35,10 +35,10 @@ class Group extends Model
   public $belongsTo      = [];
   public $belongsToMany  = [
     'guests' => [
-      Guest::class,
+      'Grcote7\Marriage\Models\Guest',
       'table' => 'grcote7_marriage_group_guest',
     ],
- ];
+  ];
   public $morphTo    = [];
   public $morphOne   = [];
   public $morphMany  = [];
