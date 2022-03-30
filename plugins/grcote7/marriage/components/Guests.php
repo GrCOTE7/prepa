@@ -38,7 +38,7 @@ class Guests extends ComponentBase
 
     // reverse relation 1-M
     $g      = Guest::find(1);
-    $data[] = 'Familly : '.$g->familly->name.' Chief : '.$g->familly->getEmailFamillyChief();
+    $data[] = 'Familly : '.$g->familly->name.'  - Chief : '.$g->familly->getEmailFamillyChief();
 
     return $data ?? '<p>$data est vide</p>';
     //   ->dump()
