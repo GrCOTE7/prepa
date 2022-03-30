@@ -32,9 +32,17 @@ class Guests extends ComponentBase
     foreach ($letters as $letter) {
       $data[] = $this->cpl('Length of " '.$letter.' " : '.\strlen($letter));
     }
-    // //@i See each alignment of "Andrée" fails with this strange trouble
-    //@q How to have " é " is just 1 character ?
-    //@i See each alignment of "Andrée" fails with this strange trouble
+    /*
+     * //@q How to have " é " is just 1 character ?
+     * //@i See each alignment of "Andrée" fails with this strange trouble
+     * //@v Answer → All alignments are correct :-) :
+     */
+    $data[] = $this->cpl('');
+    $data[] = $this->cpl('With utf8_decode($letter) :');
+    foreach ($letters as $letter) {
+      $data[] = $this->cpl('Length of " '.$letter.' " : '.\strlen(utf8_decode($letter)));
+    }
+
     $data[] = str_repeat('-', 47);
     // Relation M-M
     $gs     = Guest::find(3);
@@ -77,7 +85,11 @@ class Guests extends ComponentBase
    */
   public function cpl($msg)
   {
-    $length = 46 - \strlen($msg);
+    $goalLength = 46;
+    // foreach($msg as $letter){
+
+    // }
+    $length = 46 - \strlen(utf8_decode($msg));
 
     return  ' '.$msg.str_repeat(' ', $length);
   }
