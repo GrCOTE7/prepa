@@ -7,6 +7,7 @@
 namespace Grcote7\Marriage\Components;
 
 use Cms\Classes\ComponentBase;
+use Grcote7\Marriage\Models\Group;
 use Grcote7\Marriage\Models\Guest;
 
 class Guests extends ComponentBase
@@ -30,9 +31,9 @@ class Guests extends ComponentBase
     // Relation M-M
     $gs     = Guest::find(2);
     $data[] = $gs->mobile;
+    $data[] = str_repeat(' ', 45);
 
-    $data[] = $gs->groups;
-
+    // $data[] = $gs->groups;
     foreach ($gs->groups as $g) {
       $data[] = $g->name;
     }
@@ -41,8 +42,12 @@ class Guests extends ComponentBase
 
     // reverse relation M-M
 
-    // $gr = Group::find(1);
+    $gr     = Group::find(2);
+    $data[] = $gr->name;
     // $data[] = $gr->guests;
+    foreach ($gr->guests as $g) {
+      $data[] = $g->user->name;
+    }
 
     return $data ?? '<p>$data est vide</p>';
     //   ->dump()

@@ -34,10 +34,10 @@ class Group extends Model
   public $hasManyThrough = [];
   public $belongsTo      = [];
   public $belongsToMany  = [
-    // 'guests' => [
-    //   'Grcote7\Marriage\Models\Guest',
-    //   'table' => 'grcote7_marriage_guests',
-    // ],
+    'guests' => [
+      'Grcote7\Marriage\Models\Guest',
+      'table' => 'grcote7_marriage_group_guest',
+    ],
   ];
   public $morphTo    = [];
   public $morphOne   = [];
