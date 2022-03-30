@@ -4,21 +4,21 @@
  * (c) Boosteur.com - 2022
  */
 
-namespace Grcote7\Marriage\Models;
+namespace Grcote7\WinterLearning\Models;
 
 use Model;
 
 /**
- * Familly Model.
+ * SubActivity Model.
  */
-class Familly extends Model
+class SubActivity extends Model
 {
   use \Winter\Storm\Database\Traits\Validation;
 
   /**
    * @var string the database table used by the model
    */
-  public $table = 'grcote7_marriage_famillies';
+  public $table = 'grcote7_winterlearning_sub_activities';
 
   /**
    * @var array Validation rules for attributes
@@ -29,7 +29,7 @@ class Familly extends Model
    * @var array Relations
    */
   public $hasOne         = [];
-  public $hasMany        = ['guests' => Guest::class];
+  public $hasMany        = [];
   public $hasOneThrough  = [];
   public $hasManyThrough = [];
   public $belongsTo      = [];
@@ -48,7 +48,16 @@ class Familly extends Model
   /**
    * @var array Fillable fields
    */
-  protected $fillable = ['name', 'user_id'];
+  protected $fillable = [
+    'name',
+    'description',
+    'color',
+    'activity_id',
+    'activity_type_id',
+    'activity_status_id',
+    'created_by_id',
+    'updated_by_id',
+  ];
 
   /**
    * @var array Attributes to be cast to native types

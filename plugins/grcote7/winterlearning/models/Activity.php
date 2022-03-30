@@ -4,21 +4,21 @@
  * (c) Boosteur.com - 2022
  */
 
-namespace Grcote7\Marriage\Models;
+namespace Grcote7\WinterLearning\Models;
 
 use Model;
 
 /**
- * Familly Model.
+ * Activity Model.
  */
-class Familly extends Model
+class Activity extends Model
 {
   use \Winter\Storm\Database\Traits\Validation;
 
   /**
    * @var string the database table used by the model
    */
-  public $table = 'grcote7_marriage_famillies';
+  public $table = 'grcote7_winterlearning_activities';
 
   /**
    * @var array Validation rules for attributes
@@ -28,17 +28,23 @@ class Familly extends Model
   /**
    * @var array Relations
    */
-  public $hasOne         = [];
-  public $hasMany        = ['guests' => Guest::class];
+  public $hasOne  = [];
+  public $hasMany = [
+  ];
   public $hasOneThrough  = [];
   public $hasManyThrough = [];
   public $belongsTo      = [];
-  public $belongsToMany  = [];
-  public $morphTo        = [];
-  public $morphOne       = [];
-  public $morphMany      = [];
-  public $attachOne      = [];
-  public $attachMany     = [];
+  public $belongsToMany  = [
+    'employees' => [
+      Employee::class,
+      ['table' => 'grcote7_winterlearning_employees'],
+    ],
+  ];
+  public $morphTo    = [];
+  public $morphOne   = [];
+  public $morphMany  = [];
+  public $attachOne  = [];
+  public $attachMany = [];
 
   /**
    * @var array Guarded fields
@@ -48,7 +54,16 @@ class Familly extends Model
   /**
    * @var array Fillable fields
    */
-  protected $fillable = ['name', 'user_id'];
+  protected $fillable = [
+    'name',
+    'description',
+    'color',
+    'activity_id',
+    'activity_type_id',
+    'activity_status_id',
+    'created_by_id',
+    'updated_by_id',
+  ];
 
   /**
    * @var array Attributes to be cast to native types

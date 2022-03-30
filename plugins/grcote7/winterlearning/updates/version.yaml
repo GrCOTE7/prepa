@@ -1,1 +1,20 @@
-1.0.1: First version of WinterLearning by GrCote7
+1.0.1:
+    - First version of WinterLearning by GrCote7
+    - According to Drenad's capture (Chat in Discord)
+    - ManyToMany → addMany()
+
+    - Create employees table
+    - 1.0.1/create_employees_table.php
+
+    - Populate employees table
+    - 1.0.1/seed_employees_table.php
+
+    - Create activities table
+    - 1.0.1/create_activities_table.php
+
+    - Create sub activities table
+    - 1.0.1/create_sub_activities_table.php
+    - Create pit activity employee table
+    - 1.0.1/create_activity_employee_table.php
+
+
