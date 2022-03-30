@@ -7,6 +7,7 @@
 namespace Grcote7\WinterLearning\Models;
 
 use Model;
+use Winter\User\Models\User;
 
 /**
  * Employee Model.
@@ -28,14 +29,18 @@ class Employee extends Model
   /**
    * @var array Relations
    */
-  public $hasOne         = [];
+  public $hasOne = [
+    'user' => User::class,
+  ];
   public $hasMany        = [];
   public $hasOneThrough  = [];
   public $hasManyThrough = [];
   public $belongsTo      = [];
   public $belongsToMany  = [
-    'activities',
-    ['table' => 'grcote7_winterlearning_activities'],
+    'activities' => [
+      Activity::class,
+      ['table' => 'grcote7_winterlearning_activities'],
+    ],
   ];
   public $morphTo    = [];
   public $morphOne   = [];
