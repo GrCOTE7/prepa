@@ -28,25 +28,40 @@ class Guests extends ComponentBase
 
   public function onRun()
   {
-    // Relation M-M
-    $gs     = Guest::find(2);
-    $data[] = $gs->mobile;
-    $data[] = str_repeat(' ', 45);
+    $letters = ['e', 'é'];
+    foreach ($letters as $letter) {
+      $data[] = $this->cpl('Length of " '.$letter.' " : '.\strlen($letter));
+    }
+    /**
+     *! How to have é is just one character ?
+     *
+     *@i See alignment of "Andrée" fails with thisstrange trouble
+     */
 
-    // $data[] = $gs->groups;
+    $data[] = str_repeat('-', 47);
+    // Relation M-M
+    $gs     = Guest::find(3);
+    $data[] = $this->cpl('ManyToMany relation');
+    $data[] = $this->cpl('');
+    $data[] = $this->cpl('Guest : '.$gs->user->name);
+    $data[] = $this->cpl('The group(s) (s)he belongs to :');
     foreach ($gs->groups as $g) {
-      $data[] = $g->name;
+      $data[] = $this->cpl('   - '.$g->name);
     }
 
-    $data[] = str_repeat('-', 45);
+    // $data[] = $this->cpl('-');
+    $data[] = str_repeat('-', 47);
 
     // reverse relation M-M
-
-    $gr     = Group::find(2);
-    $data[] = $gr->name;
-    // $data[] = $gr->guests;
-    foreach ($gr->guests as $g) {
-      $data[] = $g->user->name;
+    $data[] = $this->cpl('Reverse of ManyToMany relation');
+    $data[] = $this->cpl('');
+    for ($i = 1; $i < 4; ++$i) {
+      $gr     = Group::find($i);
+      $data[] = $this->cpl('Group : '.$gr->name);
+      foreach ($gr->guests as $g) {
+        $data[] = $this->cpl('   - '.$g->user->name);
+      }
+      $data[] = $this->cpl('');
     }
 
     return $data ?? '<p>$data est vide</p>';
@@ -56,5 +71,17 @@ class Guests extends ComponentBase
     // $data[] = str_repeat('-', 45);
 
     // $this->page['data'] = implode("\n<br>", $data);
+  }
+
+  /**
+   *  Complete line for good alignement of EOL ( ' " ' ).
+   *
+   * @param mixed $msg
+   */
+  public function cpl($msg)
+  {
+    $length = 46 - \strlen($msg);
+
+    return  ' '.$msg.str_repeat(' ', $length);
   }
 }
