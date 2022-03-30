@@ -30,13 +30,11 @@ class Guests extends ComponentBase
   {
     $letters = ['e', 'é'];
     foreach ($letters as $letter) {
-      $data[] = $this->cpl('Length of " '.$letter.' " : '.\strlen($letter));
+      $data[] = $this->cpl('Length of "'.$letter.'" : '.\strlen($letter));
     }
-    /**
-     *! How to have é is just one character ?
-     *
-     *@i See alignment of "Andrée" fails with thisstrange trouble
-     */
+
+    //@q How to have "é" is just 1 character ?
+    //@i See each alignment of "Andrée" fails with this strange trouble
 
     $data[] = str_repeat('-', 47);
     // Relation M-M
