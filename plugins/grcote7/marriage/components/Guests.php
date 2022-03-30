@@ -49,7 +49,7 @@ class Guests extends ComponentBase
     $data[] = str_repeat('-', 45);
 
     // reverse relation 1-1
-    $u = User::find(1);
+    $u = User::find(5);
 
     // $data[] = $g->groups;
 

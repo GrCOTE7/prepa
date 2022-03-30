@@ -48,7 +48,10 @@ class Plugin extends PluginBase
   public function boot()
   {
     User::extend(function ($user) {
-      $user->hasOne['guest'] = ['Grcote7\Marriage\Models\Guest'];
+      $user->hasOne['guest'] = [
+        'Grcote7\Marriage\Models\Guest',
+        'default' => ['mobile' => 'No phone'],
+      ];
     });
   }
 
