@@ -7,9 +7,9 @@
 namespace Grcote7\Marriage\Components;
 
 use Cms\Classes\ComponentBase;
-use Grcote7\Marriage\Models\Familly;
 use Grcote7\Marriage\Models\Group;
 use Grcote7\Marriage\Models\Guest;
+use Winter\User\Models\User;
 
 class Guests extends ComponentBase
 {
@@ -30,11 +30,12 @@ class Guests extends ComponentBase
   public function onRun()
   {
     // Relation has Many Trough
-    $fs = Familly::find(3);
-
-    // ok
-    $data[] = 'Famille : '.$fs->name;
-    $data[] = $fs->msgs;
+    // $u = User::find(3);
+    $u = User::find(3);
+    // dump($u);
+    $data[] = 'User    : '.$u->name;
+    $data[] = 'Guest   : '.$u->guest->mobile;
+    $data[] = 'Familly : '.$u->familly->name;
 
     // foreach ($grs as $gr) {
     //   $data[] = $gr->name;
