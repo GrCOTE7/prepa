@@ -21,7 +21,7 @@ class seed_guests_table extends Seeder
 
     Guest::create([
       'user_id'    => 2,
-      'familly_id' => 1,
+      'familly_id' => 5,
       'mobile'     => '06 17 82 09 27',
     ]);
 

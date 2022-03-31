@@ -30,9 +30,11 @@ class Guests extends ComponentBase
   public function onRun()
   {
     // Relation has Many Trough
-    $msgs = Familly::find(1)->msgs;
+    $fs = Familly::find(3);
+
     // ok
-    $data[] = $msgs;
+    $data[] = 'Famille : '.$fs->name;
+    $data[] = $fs->msgs;
 
     // foreach ($grs as $gr) {
     //   $data[] = $gr->name;

@@ -34,7 +34,14 @@ class seed_msgs_table extends Seeder
       'guest_id'    => 2,
       'to_guest_id' => 4,
       'subject'     => 'Hey, Mam !',
-      'content'     => 'Comment va ma Belle doche préférée ?',
+      'content'     => 'Comment va ma Belle Doche préférée ?',
+    ]);
+
+    Msg::create([
+      'guest_id'    => 3,
+      'to_guest_id' => 1,
+      'subject'     => 'Hey, Fiston !',
+      'content'     => 'Comment va mon meilleur fils ?',
     ]);
   }
 }

@@ -39,5 +39,11 @@ class seed_famillies_table extends Seeder
       'name'    => 'BIALLE',
       'guest_id' => 6,
     ]);
+
+    // 5 - MP
+    Familly::create([
+      'name'    => 'RAQUIN',
+      'guest_id' => 2,
+    ]);
   }
 }
