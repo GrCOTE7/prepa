@@ -16,7 +16,7 @@ class create_msgs_table extends Migration
       $table->increments('id');
       $table->integer('guest_id')->unsigned();
       $table->integer('to_guest_id')->unsigned();
-      $table->string('title');
+      $table->string('subject');
       $table->string('content');
 
       $table->timestamps();
