@@ -7,9 +7,7 @@
 namespace Grcote7\Marriage\Components;
 
 use Cms\Classes\ComponentBase;
-use Grcote7\Marriage\Models\Group;
 use Grcote7\Marriage\Models\Guest;
-use Winter\User\Models\User;
 
 class Guests extends ComponentBase
 {
@@ -29,56 +27,17 @@ class Guests extends ComponentBase
 
   public function onRun()
   {
-    // Relation has One Trough
-    // $u = User::find(3);
-    $u = User::find(3);
+    // Polymorphic Relation
 
-    $gs = ['LC', 'MPR', 'JC', 'AM',  'JP', 'AMB'];
-    foreach ($gs as $k => $g) {
-      $gu = Guest::find($k + 1);
-      if ($gu) {
-        $data[] = $g.'.png';
-        $data[] = $gu->user->id;
-        $data[] = 'Guest';
-      }
+    $id = 1;
 
-      //   Photo::create([
-    //     'path'           => 'LC.png',
-    //     'imageable_id'   => 1,
-    //     'imageable_type' => 'Guest',
-    //   ]);
-      //   $data[] = (isset(Guest::find($k + 1))) ? Guest::find($k + 1)->user->name : '';
+    $g = Guest::find($id);
+    if ($g) {
+      $data[] = $g->user->name;
+      $data[] = $g->photo;
+    } else {
+      $data[] = 'No user with id '.$id;
     }
-    // dump($u);
-    // $data[] = 'User    : '.$u->name;
-    // $data[] = 'Guest   : '.$u->guest->mobile;
-    // $data[] = 'Familly : '.$u->familly->name;
-
-    // foreach ($grs as $gr) {
-    //   $data[] = $gr->name;
-    // }
-    // $data[] = $this->cpl('ManyToMany relation');
-    // $data[] = $this->cpl('');
-    // $data[] = $this->cpl('Guest : '.$gs->user->name);
-    // $data[] = $this->cpl('The group(s) (s)he belongs to :');
-    // foreach ($gs->groups as $g) {
-    //   $data[] = $this->cpl('   - '.$g->name);
-    // }
-
-    // $data[] = $this->cpl('-');
-    // $data[] = str_repeat('-', 47);
-
-    // // reverse relation M-M
-    // $data[] = $this->cpl('Reverse of ManyToMany relation');
-    // $data[] = $this->cpl('');
-    // for ($i = 1; $i < 4; ++$i) {
-    //   $gr     = Group::find($i);
-    //   $data[] = $this->cpl('Group : '.$gr->name);
-    //   foreach ($gr->guests as $g) {
-    //     $data[] = $this->cpl('   - '.$g->user->name);
-    //   }
-    //   $data[] = $this->cpl('');
-    // }
 
     return $data ?? '<p>$data est vide</p>';
     //   ->dump()
