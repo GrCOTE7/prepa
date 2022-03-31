@@ -35,7 +35,7 @@ class Photo extends Model
   public $belongsTo      = [];
   public $belongsToMany  = [];
   public $morphTo        = [
-    'imageable' => ['default' => 'No image'],
+    'imageable' => [],
   ];
   public $morphOne   = [];
   public $morphMany  = [];
