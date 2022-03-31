@@ -29,7 +29,11 @@ class Guests extends ComponentBase
   public function onRun()
   {
     // Relation M-M
-    $data[] = Guest::find(3)->groups()->orderBy('name', 'desc')->get();
+    $grs = Guest::find(3)->groups()->orderBy('name', 'desc')->get();
+
+    foreach ($grs as $gr) {
+      $data[] = $gr->name;
+    }
     // $data[] = $this->cpl('ManyToMany relation');
     // $data[] = $this->cpl('');
     // $data[] = $this->cpl('Guest : '.$gs->user->name);
