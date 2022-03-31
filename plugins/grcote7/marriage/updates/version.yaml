@@ -26,3 +26,7 @@
     - Create and populate pivot table group_guest
     - v1.0.5/create_group_guest_table.php
     - v1.0.5/seed_group_guest_table.php
+1.0.6:
+    - Create Msg Model - To have a Many to Many Through relationship
+    - v1.0.6/create_msgs_table.php
+    
