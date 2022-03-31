@@ -29,7 +29,7 @@ class Guests extends ComponentBase
 
   public function onRun()
   {
-    // Relation has Many Trough
+    // Relation has One Trough
     // $u = User::find(3);
     $u = User::find(3);
     // dump($u);
