@@ -28,39 +28,35 @@ class Guests extends ComponentBase
 
   public function onRun()
   {
-    $letters = ['e', 'é'];
-    foreach ($letters as $letter) {
-      $data[] = $this->cpl('Length of "'.$letter.'" : '.\strlen($letter));
-    }
-
-    //@q How to have "é" is just 1 character ?
-    //@i See each alignment of "Andrée" fails with this strange trouble
-
-    $data[] = str_repeat('-', 47);
     // Relation M-M
-    $gs     = Guest::find(3);
-    $data[] = $this->cpl('ManyToMany relation');
-    $data[] = $this->cpl('');
-    $data[] = $this->cpl('Guest : '.$gs->user->name);
-    $data[] = $this->cpl('The group(s) (s)he belongs to :');
-    foreach ($gs->groups as $g) {
-      $data[] = $this->cpl('   - '.$g->name);
-    }
+    $g   = Guest::with('familly')->find(2);
+    $grs = $g->groups()->orderBy('name', 'desc');
+
+    $data[] = $g->get();
+    $data[] = $g->groups;
+    $data[] = $grs->get()[0]->name;
+    // $data[] = $this->cpl('ManyToMany relation');
+    // $data[] = $this->cpl('');
+    // $data[] = $this->cpl('Guest : '.$gs->user->name);
+    // $data[] = $this->cpl('The group(s) (s)he belongs to :');
+    // foreach ($gs->groups as $g) {
+    //   $data[] = $this->cpl('   - '.$g->name);
+    // }
 
     // $data[] = $this->cpl('-');
-    $data[] = str_repeat('-', 47);
+    // $data[] = str_repeat('-', 47);
 
-    // reverse relation M-M
-    $data[] = $this->cpl('Reverse of ManyToMany relation');
-    $data[] = $this->cpl('');
-    for ($i = 1; $i < 4; ++$i) {
-      $gr     = Group::find($i);
-      $data[] = $this->cpl('Group : '.$gr->name);
-      foreach ($gr->guests as $g) {
-        $data[] = $this->cpl('   - '.$g->user->name);
-      }
-      $data[] = $this->cpl('');
-    }
+    // // reverse relation M-M
+    // $data[] = $this->cpl('Reverse of ManyToMany relation');
+    // $data[] = $this->cpl('');
+    // for ($i = 1; $i < 4; ++$i) {
+    //   $gr     = Group::find($i);
+    //   $data[] = $this->cpl('Group : '.$gr->name);
+    //   foreach ($gr->guests as $g) {
+    //     $data[] = $this->cpl('   - '.$g->user->name);
+    //   }
+    //   $data[] = $this->cpl('');
+    // }
 
     return $data ?? '<p>$data est vide</p>';
     //   ->dump()
@@ -78,7 +74,11 @@ class Guests extends ComponentBase
    */
   public function cpl($msg)
   {
-    $length = 46 - \strlen($msg);
+    $goalLength = 46;
+    // foreach($msg as $letter){
+
+    // }
+    $length = 46 - \strlen(utf8_decode($msg));
 
     return  ' '.$msg.str_repeat(' ', $length);
   }
