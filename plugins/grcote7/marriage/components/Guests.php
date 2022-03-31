@@ -32,10 +32,27 @@ class Guests extends ComponentBase
     // Relation has One Trough
     // $u = User::find(3);
     $u = User::find(3);
+
+    $gs = ['LC', 'MPR', 'JC', 'AM',  'JP', 'AMB'];
+    foreach ($gs as $k => $g) {
+      $gu = Guest::find($k + 1);
+      if ($gu) {
+        $data[] = $g.'.png';
+        $data[] = $gu->user->id;
+        $data[] = 'Guest';
+      }
+
+      //   Photo::create([
+    //     'path'           => 'LC.png',
+    //     'imageable_id'   => 1,
+    //     'imageable_type' => 'Guest',
+    //   ]);
+      //   $data[] = (isset(Guest::find($k + 1))) ? Guest::find($k + 1)->user->name : '';
+    }
     // dump($u);
-    $data[] = 'User    : '.$u->name;
-    $data[] = 'Guest   : '.$u->guest->mobile;
-    $data[] = 'Familly : '.$u->familly->name;
+    // $data[] = 'User    : '.$u->name;
+    // $data[] = 'Guest   : '.$u->guest->mobile;
+    // $data[] = 'Familly : '.$u->familly->name;
 
     // foreach ($grs as $gr) {
     //   $data[] = $gr->name;

@@ -35,5 +35,15 @@ class seed_guests_table extends Seeder
       'familly_id' => 3,
       'mobile'     => '02 23 45 67 89',
     ]);
+    Guest::create([
+      'user_id'    => 6,
+      'familly_id' => 4,
+      'mobile'     => 'GSM JP',
+    ]);
+    Guest::create([
+      'user_id'    => 7,
+      'familly_id' => 4,
+      'mobile'     => 'GSMP AMB',
+    ]);
   }
 }

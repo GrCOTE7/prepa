@@ -32,6 +32,7 @@
     - v1.0.6/create_msgs_table.php
     - v1.0.6/seed_msgs_table.php
 1.0.7:
-    - Create Photo Model
+    - Create & populate Photo Model
     - v1.0.7/create_photos_table.php
+    - v1.0.7/seed_photos_table.php
 
