@@ -32,14 +32,19 @@ class Familly extends Model
   public $hasOne         = [];
   public $hasMany        = ['guests' => 'Grcote7\Marriage\Models\Guest'];
   public $hasOneThrough  = [];
-  public $hasManyThrough = [];
-  public $belongsTo      = [];
-  public $belongsToMany  = [];
-  public $morphTo        = [];
-  public $morphOne       = [];
-  public $morphMany      = [];
-  public $attachOne      = [];
-  public $attachMany     = [];
+  public $hasManyThrough = [
+    'msgs' => [
+      'Grcote7\Marriage\Models\Msg',
+      'through' => 'Grcote7\Marriage\Models\Guest',
+    ],
+];
+  public $belongsTo     = [];
+  public $belongsToMany = [];
+  public $morphTo       = [];
+  public $morphOne      = [];
+  public $morphMany     = [];
+  public $attachOne     = [];
+  public $attachMany    = [];
 
   /**
    * @var array Guarded fields
@@ -88,7 +93,7 @@ class Familly extends Model
   {
     return User::With('guest')->find(
       $this->guests->where('id', $this->guest_id)
-        // ->dump()
+      // ->dump()
         ->first()
         ->user_id
     )

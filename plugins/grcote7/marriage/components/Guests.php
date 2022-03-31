@@ -7,6 +7,7 @@
 namespace Grcote7\Marriage\Components;
 
 use Cms\Classes\ComponentBase;
+use Grcote7\Marriage\Models\Familly;
 use Grcote7\Marriage\Models\Group;
 use Grcote7\Marriage\Models\Guest;
 
@@ -28,12 +29,14 @@ class Guests extends ComponentBase
 
   public function onRun()
   {
-    // Relation M-M
-    $grs = Guest::find(3)->groups()->orderBy('name', 'desc')->get();
+    // Relation has Many Trough
+    $msgs = Familly::find(1)->msgs;
+    // ok
+    $data[] = $msgs;
 
-    foreach ($grs as $gr) {
-      $data[] = $gr->name;
-    }
+    // foreach ($grs as $gr) {
+    //   $data[] = $gr->name;
+    // }
     // $data[] = $this->cpl('ManyToMany relation');
     // $data[] = $this->cpl('');
     // $data[] = $this->cpl('Guest : '.$gs->user->name);
