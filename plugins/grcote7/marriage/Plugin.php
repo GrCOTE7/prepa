@@ -9,6 +9,7 @@ namespace Grcote7\Marriage;
 use Backend;
 use Backend\Models\UserRole;
 use System\Classes\PluginBase;
+use Winter\Storm\Database\Relations\Relation;
 use Winter\User\Models\User;
 
 /**
@@ -54,6 +55,11 @@ class Plugin extends PluginBase
         'through' => 'Grcote7\Marriage\Models\Guest',
       ];
     });
+
+    Relation::morphMap([
+      'guest'  => 'Grcote7\Marriage\Models\Guest',
+      'groupe' => 'Grcote7\Marriage\Models\Group',
+    ]);
   }
 
   /**
