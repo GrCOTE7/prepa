@@ -28,16 +28,31 @@ class Guests extends ComponentBase
 
   public function onRun()
   {
-    $gr2    = Group::find(2);
-    $gr3    = Group::find(3);
-    $data[] = $gr2->name;
-    $data[] = $gr3->name;
+    $g      = Guest::find(2);
+    $data[] = $g->id.' '.$g->user->name;
 
-    $g      = Guest::find(5);
-    $data[] = $g->user->name;
+    foreach ($g->groups as $key => $v) {
+      $data[] = $v->id.' '.$v->name;
+    }
 
-    $gr = $g->groups()->add($gr2);
-    $gr = $g->groups()->add($gr3);
+    $data[] = str_repeat('-', 45);
+
+    for ($i = 0; $i < 3; ++$i) {
+      $gr[$i] = Group::find($i + 1);
+      $data[] = ($i + 1).' '.$gr[$i]->name;
+    }
+
+    // print_r($gr);
+
+    $g->groups = [1, 3];
+    $g->save();
+
+    $data[] = str_repeat('-', 45);
+
+    $g = Guest::find(2);
+    foreach ($g->groups as $key => $v) {
+      $data[] = $v->id.' '.$v->name;
+    }
 
     return $data ?? '<p>$data est vide</p>';
     //   ->dump()
