@@ -36,23 +36,6 @@ class Guests extends ComponentBase
       }
     }
 
-    $data[] = str_repeat('-', 45);
-
-    $data[]        = $gs[2]->name;
-    $gs[2]->guests = [1, 2, 4];
-    $gs[2]->save();
-
-    $data[] = str_repeat('-', 45);
-
-    $gs = Group::all();
-
-    foreach ($gs as $v) {
-      $data[] = $v->id.' '.$v->name;
-      foreach ($v->guests as $g) {
-        $data[] = '   - '.$g->id.' '.$g->user->name;
-      }
-    }
-
     return $data ?? '<p>$data est vide</p>';
     //   ->dump()
     //   ->first()
