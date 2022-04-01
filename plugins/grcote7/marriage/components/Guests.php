@@ -8,7 +8,6 @@ namespace Grcote7\Marriage\Components;
 
 use Cms\Classes\ComponentBase;
 use Grcote7\Marriage\Models\Group;
-use Grcote7\Marriage\Models\Guest;
 
 class Guests extends ComponentBase
 {
@@ -28,30 +27,30 @@ class Guests extends ComponentBase
 
   public function onRun()
   {
-    $g      = Guest::find(2);
-    $data[] = $g->id.' '.$g->user->name;
+    $gs = Group::all();
 
-    foreach ($g->groups as $key => $v) {
+    foreach ($gs as $v) {
       $data[] = $v->id.' '.$v->name;
+      foreach ($v->guests as $g) {
+        $data[] = '   - '.$g->id.' '.$g->user->name;
+      }
     }
 
     $data[] = str_repeat('-', 45);
 
-    for ($i = 0; $i < 3; ++$i) {
-      $gr[$i] = Group::find($i + 1);
-      $data[] = ($i + 1).' '.$gr[$i]->name;
-    }
-
-    // print_r($gr);
-
-    $g->groups = [1, 3];
-    $g->save();
+    $data[]        = $gs[2]->name;
+    $gs[2]->guests = [1, 2, 4];
+    $gs[2]->save();
 
     $data[] = str_repeat('-', 45);
 
-    $g = Guest::find(2);
-    foreach ($g->groups as $key => $v) {
+    $gs = Group::all();
+
+    foreach ($gs as $v) {
       $data[] = $v->id.' '.$v->name;
+      foreach ($v->guests as $g) {
+        $data[] = '   - '.$g->id.' '.$g->user->name;
+      }
     }
 
     return $data ?? '<p>$data est vide</p>';
