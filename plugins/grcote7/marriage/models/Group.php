@@ -88,4 +88,9 @@ class Group extends Model
     'created_at',
     'updated_at',
   ];
+
+  /**
+   * All of the relationships to be touched.
+   */
+  protected $touches = ['guests'];
 }
