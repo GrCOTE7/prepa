@@ -30,6 +30,9 @@ class Guests extends ComponentBase
   {
     // Polymorphic Relation
 
+    $data[] = 'MorphTo relationship sample :';
+    $data[] = str_repeat('-', 45);
+
     $id = 2;
     $g  = Guest::find($id);
     if ($g) {
