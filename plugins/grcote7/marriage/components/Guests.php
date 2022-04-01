@@ -31,46 +31,49 @@ class Guests extends ComponentBase
   {
     // $g = new Group(['name' => 'LOISIR']);
     // $g->save();
-    $g = new Group(['name' => 'OTHER']);
-    $g->save();
-    // $g = new Group('OTHER');
-    /*
-        $d    = Guest::find(4);
-        $ctrl = $d->groups()->where('id', '>', 2);
-        if (null !== $ctrl) {
-          $data[] = 'Effacement';
-          $data[] = $ctrl->count();
-          $d->groups()->detach(4);
-        }
-        $d->save();
-        DB::flushDuplicateCache();
+    // $g = new Group(['name' => 'OTHER']);
+    // $g->save();
 
-        $data[] = $d->user->username;
+    // Remove 2 groups og ghest 4
+    $d    = Guest::find(4);
+    $ctrl = $d->groups()->where('id', '>', 2);
 
-        foreach ($d->groups as $v) {
-          $data[] = $v->id.' '.$v->name;
-        }
-        // ----------------------------------------------------------------------------------
-        $data[] = str_repeat('-', 45);
+    if (null !== $ctrl) {
+      $data[] = 'Detach 2 groups';
+      $data[] = $ctrl->count();
+      $d->groups()->detach(3);
+      $d->groups()->detach(4);
+    }
+    $d->save();
+    DB::flushDuplicateCache();
 
-        $d->groups()->find(3);
+    $data[] = $d->user->username;
 
-        if (null === $d->groups()->find(3)) {
-          $data[] = 'Creation';
-          $d->groups()->attach(3);
-          $d->groups()->attach(4);
-        }
-        // ----------------------------------------------------------------------------------
-        $data[] = str_repeat('-', 45);
-        DB::flushDuplicateCache();
+    foreach ($d->groups as $v) {
+      $data[] = $v->id.' '.$v->name;
+    }
+    // ----------------------------------------------------------------------------------
+    $data[] = str_repeat('-', 45);
 
-        $d      = Guest::find(4);
-        $data[] = $d->user->username;
+    // Add 2 groups of guest 4
+    $d->groups()->find(3);
 
-        foreach ($d->groups as $v) {
-          $data[] = $v->id.' '.$v->name;
-        }
-    */
+    if ((null === $d->groups()->find(3)) || (null === $d->groups()->find(4))) {
+      $data[] = 'Add 2 groups';
+      $d->groups()->attach(3);
+      $d->groups()->attach(4);
+    }
+    // ----------------------------------------------------------------------------------
+    $data[] = str_repeat('-', 45);
+    DB::flushDuplicateCache();
+
+    $d      = Guest::find(4);
+    $data[] = $d->user->username;
+
+    foreach ($d->groups as $v) {
+      $data[] = $v->id.' '.$v->name;
+    }
+
     return $data ?? '<p>$data est vide</p>';
     //   ->dump()
     //   ->first()
