@@ -14,11 +14,14 @@ class create_groups_table extends Migration
 {
   public function up()
   {
+    Schema::dropIfExists('grcote7_marriage_groups');
+
     Schema::create('grcote7_marriage_groups', function (Blueprint $table) {
       $table->engine = 'InnoDB';
       $table->increments('id');
-      $table->string('name');
+      $table->string('name')->index();
       $table->timestamps();
+      $table->unique('name');
     });
   }
 

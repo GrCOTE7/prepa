@@ -28,33 +28,14 @@ class Guests extends ComponentBase
 
   public function onRun()
   {
-    // Polymorphic Relation
+    $gr = Group::find(4);
 
-    $data[] = 'MorphTo relationship sample :';
-    $data[] = str_repeat('-', 45);
+    $data[] = $gr->name;
 
-    $id = 2;
-    $g  = Guest::find($id);
-    if ($g) {
-      $data[] = $g->user->name;
-      $data[] = $g->photo->path;
-    } else {
-      $data[] = 'No user with id '.$id;
-    }
+    $g      = Guest::find(5);
+    $data[] = $g->user->name;
 
-    $data[] = str_repeat('-', 45);
-
-    $id = 1;
-    $gr = Group::find($id);
-    if ($gr) {
-      $data[] = $gr->name;
-      $data[] = $gr->photo->path;
-    } else {
-      $data[] = 'No group with id '.$id;
-    }
-    // foreach ($d->groups as $k => $v) {
-    //   $data[] = $v->name;
-    // }
+    $gr = $g->groups()->add($gr);
 
     return $data ?? '<p>$data est vide</p>';
     //   ->dump()
