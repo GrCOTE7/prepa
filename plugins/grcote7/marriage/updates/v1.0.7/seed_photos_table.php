@@ -24,14 +24,14 @@ class seed_photos_table extends Seeder
         Photo::create([
           'path'           => $g.'.png',
           'imageable_id'   => $gu->user->id,
-          'imageable_type' => 'Grcote7\Marriage\Models\Guest',
+          'imageable_type' => 'guest',
         ]);
       }
     }
     Photo::create([
       'path'           => 'AMI.png',
       'imageable_id'   => 1,
-      'imageable_type' => 'Grcote7\Marriage\Models\Group',
+      'imageable_type' => 'group',
     ]);
   }
 }

@@ -57,8 +57,8 @@ class Plugin extends PluginBase
     });
 
     Relation::morphMap([
-      'guest'  => 'Grcote7\Marriage\Models\Guest',
-      'groupe' => 'Grcote7\Marriage\Models\Group',
+      'guest' => 'Grcote7\Marriage\Models\Guest',
+      'group' => 'Grcote7\Marriage\Models\Group',
     ]);
   }
 

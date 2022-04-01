@@ -7,7 +7,8 @@
 namespace Grcote7\Marriage\Components;
 
 use Cms\Classes\ComponentBase;
-use Grcote7\Marriage\Models\Photo;
+use Grcote7\Marriage\Models\Group;
+use Grcote7\Marriage\Models\Guest;
 
 class Guests extends ComponentBase
 {
@@ -32,15 +33,24 @@ class Guests extends ComponentBase
     $data[] = 'MorphTo relationship sample :';
     $data[] = str_repeat('-', 45);
 
-    // Reverse relationship morphTo
     $id = 2;
-    $d  = Photo::find($id);
-    if ($d) {
-      $data[] = $d->path;
-      //   $data[] = $d->guest->id;
-      $data[] = $d->imageable->user->name;
+    $g  = Guest::find($id);
+    if ($g) {
+      $data[] = $g->user->name;
+      $data[] = $g->photo->path;
     } else {
       $data[] = 'No user with id '.$id;
+    }
+
+    $data[] = str_repeat('-', 45);
+
+    $id = 1;
+    $gr = Group::find($id);
+    if ($gr) {
+      $data[] = $gr->name;
+      $data[] = $gr->photo->path;
+    } else {
+      $data[] = 'No group with id '.$id;
     }
     // foreach ($d->groups as $k => $v) {
     //   $data[] = $v->name;
