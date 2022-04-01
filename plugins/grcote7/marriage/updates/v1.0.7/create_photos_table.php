@@ -15,8 +15,7 @@ class create_photos_table extends Migration
       $table->engine = 'InnoDB';
       $table->increments('id');
       $table->string('path');
-      $table->string('imageable_id'); // Owner id
-      $table->string('imageable_type'); // Class name Owning Model
+      $table->morphs('imageable'); // Owner id & Type id
       $table->timestamps();
     });
   }

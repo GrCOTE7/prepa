@@ -29,22 +29,22 @@ class Guests extends ComponentBase
   {
     // Polymorphic Relation
 
-    $id = 1;
+    $id = 3;
 
-    $g = Guest::find($id);
+    $g = Guest::with('photo')->find($id);
     if ($g) {
-      $data[] = $g->user->name;
-      $data[] = $g->photo;
+      $data[] = 'Guest : '.$g->user->name;
+      $data[] = $g;
     } else {
-      $data[] = 'No user with id '.$id;
+      $data[] = 'No guest with this id '.$id;
     }
 
     return $data ?? '<p>$data est vide</p>';
     //   ->dump()
     //   ->first()
     //   ->get()
-    // $data[] = str_repeat('-', 45);
 
+    // $data[] = str_repeat('-', 45);
     // $this->page['data'] = implode("\n<br>", $data);
   }
 
