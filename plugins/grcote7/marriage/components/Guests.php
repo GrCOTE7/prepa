@@ -7,6 +7,7 @@
 namespace Grcote7\Marriage\Components;
 
 use Cms\Classes\ComponentBase;
+use Grcote7\Marriage\Models\Group;
 use Grcote7\Marriage\Models\Guest;
 
 class Guests extends ComponentBase
@@ -29,23 +30,33 @@ class Guests extends ComponentBase
   {
     // Polymorphic Relation
 
-    $id = 3;
-
-    $g = Guest::with('photo')->find($id);
+    $id = 2;
+    $g  = Guest::find($id);
     if ($g) {
-      $data[] = 'Guest : '.$g->user->name;
-      $data[] = $g;
+      $data[] = $g->user->name;
+      $data[] = $g->photo->path;
     } else {
-      $data[] = 'No guest with this id '.$id;
+      $data[] = 'No user with id '.$id;
+    }
+
+    $data[] = str_repeat('-', 45);
+
+    $id = 1;
+    $gr = Group::find($id);
+    if ($gr) {
+      $data[] = $gr->name;
+      $data[] = $gr->photo->path;
+    } else {
+      $data[] = 'No group with id '.$id;
     }
 
     return $data ?? '<p>$data est vide</p>';
     //   ->dump()
     //   ->first()
     //   ->get()
-
     // $data[] = str_repeat('-', 45);
-    // $this->page['data'] = implode("\n<br>", $data);
+
+    $this->page['data'] = implode("\n<br>", $data);
   }
 
   /**
