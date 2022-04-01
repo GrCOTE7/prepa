@@ -41,8 +41,7 @@ class Guests extends ComponentBase
     if (null !== $ctrl) {
       $data[] = 'Detach 2 groups';
       $data[] = $ctrl->count();
-      $d->groups()->detach(3);
-      $d->groups()->detach(4);
+      $d->groups()->detach([3, 4, 5]);
     }
     $d->save();
     DB::flushDuplicateCache();
@@ -60,8 +59,7 @@ class Guests extends ComponentBase
 
     if ((null === $d->groups()->find(3)) || (null === $d->groups()->find(4))) {
       $data[] = 'Add 2 groups';
-      $d->groups()->attach(3);
-      $d->groups()->attach(4);
+      $d->groups()->attach([3, 4, 5]);
     }
     // ----------------------------------------------------------------------------------
     $data[] = str_repeat('-', 45);
