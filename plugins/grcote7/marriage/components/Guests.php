@@ -8,6 +8,8 @@ namespace Grcote7\Marriage\Components;
 
 use Cms\Classes\ComponentBase;
 use Grcote7\Marriage\Models\Group;
+use Grcote7\Marriage\Models\Guest;
+use Illuminate\Support\Facades\DB;
 
 class Guests extends ComponentBase
 {
@@ -27,15 +29,48 @@ class Guests extends ComponentBase
 
   public function onRun()
   {
-    $gs = Group::all();
+    // $g = new Group(['name' => 'LOISIR']);
+    // $g->save();
+    $g = new Group(['name' => 'OTHER']);
+    $g->save();
+    // $g = new Group('OTHER');
+    /*
+        $d    = Guest::find(4);
+        $ctrl = $d->groups()->where('id', '>', 2);
+        if (null !== $ctrl) {
+          $data[] = 'Effacement';
+          $data[] = $ctrl->count();
+          $d->groups()->detach(4);
+        }
+        $d->save();
+        DB::flushDuplicateCache();
 
-    foreach ($gs as $v) {
-      $data[] = $v->id.' '.$v->name;
-      foreach ($v->guests as $g) {
-        $data[] = '   - '.$g->id.' '.$g->user->name;
-      }
-    }
+        $data[] = $d->user->username;
 
+        foreach ($d->groups as $v) {
+          $data[] = $v->id.' '.$v->name;
+        }
+        // ----------------------------------------------------------------------------------
+        $data[] = str_repeat('-', 45);
+
+        $d->groups()->find(3);
+
+        if (null === $d->groups()->find(3)) {
+          $data[] = 'Creation';
+          $d->groups()->attach(3);
+          $d->groups()->attach(4);
+        }
+        // ----------------------------------------------------------------------------------
+        $data[] = str_repeat('-', 45);
+        DB::flushDuplicateCache();
+
+        $d      = Guest::find(4);
+        $data[] = $d->user->username;
+
+        foreach ($d->groups as $v) {
+          $data[] = $v->id.' '.$v->name;
+        }
+    */
     return $data ?? '<p>$data est vide</p>';
     //   ->dump()
     //   ->first()
