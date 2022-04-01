@@ -49,6 +49,10 @@ class Plugin extends PluginBase
   {
     User::extend(function ($user) {
       $user->hasOne['guest'] = ['Grcote7\Marriage\Models\Guest'];
+      $user->hasOneThrough['familly'] = [
+        'Grcote7\Marriage\Models\Familly',
+        'through' => 'Grcote7\Marriage\Models\Guest',
+      ];
     });
   }
 

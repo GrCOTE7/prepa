@@ -7,19 +7,18 @@
 namespace Grcote7\Marriage\Models;
 
 use Model;
-use Winter\User\Models\User;
 
 /**
- * Familly Model.
+ * Photo Model.
  */
-class Familly extends Model
+class Photo extends Model
 {
   use \Winter\Storm\Database\Traits\Validation;
 
   /**
    * @var string the database table used by the model
    */
-  public $table = 'grcote7_marriage_famillies';
+  public $table = 'grcote7_marriage_photos';
 
   /**
    * @var array Validation rules for attributes
@@ -30,21 +29,18 @@ class Familly extends Model
    * @var array Relations
    */
   public $hasOne         = [];
-  public $hasMany        = ['guests' => 'Grcote7\Marriage\Models\Guest'];
+  public $hasMany        = [];
   public $hasOneThrough  = [];
-  public $hasManyThrough = [
-    'msgs' => [
-      'Grcote7\Marriage\Models\Msg',
-      'through' => 'Grcote7\Marriage\Models\Guest',
-    ],
-];
-  public $belongsTo     = [];
-  public $belongsToMany = [];
-  public $morphTo       = [];
-  public $morphOne      = [];
-  public $morphMany     = [];
-  public $attachOne     = [];
-  public $attachMany    = [];
+  public $hasManyThrough = [];
+  public $belongsTo      = [];
+  public $belongsToMany  = [];
+  public $morphTo        = [
+    'imageable' => [],
+  ];
+  public $morphOne   = [];
+  public $morphMany  = [];
+  public $attachOne  = [];
+  public $attachMany = [];
 
   /**
    * @var array Guarded fields
@@ -54,7 +50,7 @@ class Familly extends Model
   /**
    * @var array Fillable fields
    */
-  protected $fillable = ['name', 'user_id'];
+  protected $fillable = [];
 
   /**
    * @var array Attributes to be cast to native types
@@ -83,20 +79,4 @@ class Familly extends Model
     'created_at',
     'updated_at',
   ];
-
-  public function getThis()
-  {
-    return $this;
-  }
-
-  public function getEmailFamillyChief()
-  {
-    return User::With('guest')->find(
-      $this->guests->where('id', $this->guest_id)
-      // ->dump()
-        ->first()
-        ->user_id
-    )
-      ->email;
-  }
 }

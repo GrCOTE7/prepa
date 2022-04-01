@@ -7,7 +7,6 @@
 namespace Grcote7\Marriage\Components;
 
 use Cms\Classes\ComponentBase;
-use Grcote7\Marriage\Models\Group;
 use Grcote7\Marriage\Models\Guest;
 
 class Guests extends ComponentBase
@@ -28,35 +27,17 @@ class Guests extends ComponentBase
 
   public function onRun()
   {
-    // Relation M-M
-    $g   = Guest::with('familly')->find(2);
-    $grs = $g->groups()->orderBy('name', 'desc');
+    // Polymorphic Relation
 
-    $data[] = $g->get();
-    $data[] = $g->groups;
-    $data[] = $grs->get()[0]->name;
-    // $data[] = $this->cpl('ManyToMany relation');
-    // $data[] = $this->cpl('');
-    // $data[] = $this->cpl('Guest : '.$gs->user->name);
-    // $data[] = $this->cpl('The group(s) (s)he belongs to :');
-    // foreach ($gs->groups as $g) {
-    //   $data[] = $this->cpl('   - '.$g->name);
-    // }
+    $id = 1;
 
-    // $data[] = $this->cpl('-');
-    // $data[] = str_repeat('-', 47);
-
-    // // reverse relation M-M
-    // $data[] = $this->cpl('Reverse of ManyToMany relation');
-    // $data[] = $this->cpl('');
-    // for ($i = 1; $i < 4; ++$i) {
-    //   $gr     = Group::find($i);
-    //   $data[] = $this->cpl('Group : '.$gr->name);
-    //   foreach ($gr->guests as $g) {
-    //     $data[] = $this->cpl('   - '.$g->user->name);
-    //   }
-    //   $data[] = $this->cpl('');
-    // }
+    $g = Guest::find($id);
+    if ($g) {
+      $data[] = $g->user->name;
+      $data[] = $g->photo;
+    } else {
+      $data[] = 'No user with id '.$id;
+    }
 
     return $data ?? '<p>$data est vide</p>';
     //   ->dump()
