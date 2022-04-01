@@ -29,10 +29,10 @@ class Guests extends ComponentBase
 
   public function onRun()
   {
-    // $g = new Group(['name' => 'LOISIR']);
-    // $g->save();
-    // $g = new Group(['name' => 'OTHER']);
-    // $g->save();
+    $g = new Group(['name' => 'LOISIR']);
+    $g->save();
+    $g = new Group(['name' => 'OTHER']);
+    $g->save();
 
     // Remove 2 groups og ghest 4
     $d    = Guest::find(4);
