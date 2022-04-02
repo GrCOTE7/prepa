@@ -34,12 +34,12 @@ class Guests extends ComponentBase
     // $data[] = $imge;
     // $data[] = '<img src="'.$imge.'" />';
 
-    //@i Ope just 1 time
-    // $imgs = Img::where('imgable_type', 'avatar')->update(['imgable_type' => 'avatar'])->get();
+    // @i Ope just 1 time
+    // $imgs = Img::where('imgable_type', 'guest')->update(['imgable_type' => 'avatar'])->get();
 
-    // foreach ($imgs as $img) {
-    //   $data[] = $img->imgable_type;
-    // }
+    foreach (Img::all() as $img) {
+      $data[] = $img->imgable_type;
+    }
 
     return $data ?? '<p>$data est vide</p>';
     //   ->dump()
