@@ -7,6 +7,7 @@
 namespace Grcote7\Marriage\Components;
 
 use Cms\Classes\ComponentBase;
+use Grcote7\Marriage\Models\Guest;
 use Grcote7\Marriage\Models\Photo;
 use Illuminate\Support\Facades\DB;
 
@@ -28,9 +29,12 @@ class Guests extends ComponentBase
 
   public function onRun()
   {
-    $data[] = 'Ready.';
+    // $data[] = 'Ready.';
+    $img     = '/storage/app/media/Guests/'.Guest::find(2)->photo->path;
+    $data[]  = $img;
+    $data[]  = '<img src="'.$img.'" />';
 
-    return $data ?? '<p>$data est vide</p>';
+    // return $data ?? '<p>$data est vide</p>';
     //   ->dump()
     //   ->first()
     //   ->get()

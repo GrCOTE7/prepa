@@ -51,8 +51,10 @@ class Guest extends Model
       'table' => 'grcote7_marriage_photos',
     ],
 ];
-  public $morphMany  = [];
-  public $attachOne  = [];
+  public $morphMany = [];
+  public $attachOne = [
+    'photo' => 'System/Models/file',
+  ];
   public $attachMany = [];
 
   /**
