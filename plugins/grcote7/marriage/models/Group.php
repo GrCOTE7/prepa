@@ -42,9 +42,9 @@ class Group extends Model
   public $morphTo  = [];
   public $morphOne = [
     'photo' => [
-      'Grcote7\Marriage\Models\Photo',
-      'name'  => 'imageable',
-      'table' => 'grcote7_marriage_photos',
+      'Grcote7\Marriage\Models\Img',
+      'name'  => 'imgable',
+      'table' => 'grcote7_marriage_imgs',
     ],
 ];
   public $morphMany  = [];

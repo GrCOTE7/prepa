@@ -8,7 +8,7 @@ namespace Grcote7\Marriage\Components;
 
 use Cms\Classes\ComponentBase;
 use Grcote7\Marriage\Models\Guest;
-use Grcote7\Marriage\Models\Photo;
+use Grcote7\Marriage\Models\Img;
 use Illuminate\Support\Facades\DB;
 
 class Guests extends ComponentBase
@@ -30,9 +30,15 @@ class Guests extends ComponentBase
   public function onRun()
   {
     // $data[] = 'Ready.';
-    $img    = '/storage/app/media/Guests/'.Guest::find(2)->photo->path;
-    $data[] = $img;
-    $data[] = '<img src="'.$img.'" />';
+    // $imge   = '/storage/app/media/Guests/'.Guest::find(2)->img->path;
+    // $data[] = $imge;
+    // $data[] = '<img src="'.$imge.'" />';
+
+    $imgs = Img::select('filename')->get();
+    foreach ($imgs as $img) {
+      $data[] = $img->filename;
+    }
+
 
     return $data ?? '<p>$data est vide</p>';
     //   ->dump()
@@ -62,7 +68,7 @@ class Guests extends ComponentBase
   public function getAllPhotos()
   {
     DB::flushDuplicateCache();
-    $d = Photo::all();
+    $d = Img::all();
 
     foreach ($d as $v) {
       $data[] = $v->path;

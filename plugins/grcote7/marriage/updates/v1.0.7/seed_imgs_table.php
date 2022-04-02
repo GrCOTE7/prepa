@@ -7,11 +7,11 @@
 namespace Grcote7\Marriage\Updates;
 
 use Grcote7\Marriage\Models\Guest;
-use Grcote7\Marriage\Models\Photo;
+use Grcote7\Marriage\Models\Img;
 use Illuminate\Support\Facades\DB;
 use Winter\Storm\Database\Updates\Seeder;
 
-class seed_photos_table extends Seeder
+class seed_imgs_table extends Seeder
 {
   public function run()
   {
@@ -21,15 +21,15 @@ class seed_photos_table extends Seeder
     foreach ($gs as $k => $g) {
       $gu = Guest::find($k + 1);
       if ($gu && null !== $gs[$k]) {
-        Photo::create([
-          'path'           => $g.'.png',
+        Img::create([
+          'filename'       => $g.'.png',
           'imageable_id'   => $gu->user->id,
           'imageable_type' => 'guest',
         ]);
       }
     }
-    Photo::create([
-      'path'           => 'AMI.png',
+    Img::create([
+      'filename'       => 'AMI.png',
       'imageable_id'   => 1,
       'imageable_type' => 'group',
     ]);

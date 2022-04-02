@@ -11,14 +11,14 @@ use Model;
 /**
  * Photo Model.
  */
-class Photo extends Model
+class Img extends Model
 {
   use \Winter\Storm\Database\Traits\Validation;
 
   /**
    * @var string the database table used by the model
    */
-  public $table = 'grcote7_marriage_photos';
+  public $table = 'grcote7_marriage_imgs';
 
   /**
    * @var array Validation rules for attributes
@@ -35,7 +35,7 @@ class Photo extends Model
   public $belongsTo      = [];
   public $belongsToMany  = [];
   public $morphTo        = [
-    'imageable' => [],
+    'imgable' => [],
   ];
   public $morphOne   = [];
   public $morphMany  = [];
@@ -79,4 +79,5 @@ class Photo extends Model
     'created_at',
     'updated_at',
   ];
+
 }

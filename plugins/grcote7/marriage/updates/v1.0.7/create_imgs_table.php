@@ -7,22 +7,22 @@
 use Winter\Storm\Database\Schema\Blueprint;
 use Winter\Storm\Database\Updates\Migration;
 
-class create_photos_table extends Migration
+class create_imgs_table extends Migration
 {
   public function up()
   {
-    Schema::create('grcote7_marriage_photos', function (Blueprint $table) {
+    Schema::create('grcote7_marriage_imgs', function (Blueprint $table) {
       $table->engine = 'InnoDB';
       $table->increments('id');
-      $table->string('path');
+      $table->string('filename');
       $table->string('imageable_id'); // Owner id
-      $table->string('imageable_type'); // Class name Owning Model
+      $table->string('imageable_type'); // Class name Owning Model -guest - famille - img
       $table->timestamps();
     });
   }
 
   public function down()
   {
-    Schema::dropIfExists('grcote7_marriage_photos');
+    Schema::dropIfExists('grcote7_marriage_imgs');
   }
 }
