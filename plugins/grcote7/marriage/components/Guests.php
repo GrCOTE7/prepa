@@ -7,8 +7,8 @@
 namespace Grcote7\Marriage\Components;
 
 use Cms\Classes\ComponentBase;
-use Grcote7\Marriage\Models\Group;
 use Grcote7\Marriage\Models\Guest;
+use Grcote7\Marriage\Models\Photo;
 use Illuminate\Support\Facades\DB;
 
 class Guests extends ComponentBase
@@ -29,63 +29,35 @@ class Guests extends ComponentBase
 
   public function onRun()
   {
-    // $g = new Group(['name' => 'LOISIR']);
-    // $g->save();
-    // $g = new Group(['name' => 'OTHER']);
-    // $g->save();
-
-    // // Remove 2 groups og ghest 4
-    // $d    = Guest::find(4);
-    // $ctrl = $d->groups()->where('id', '>', 2);
-
-    // if (null !== $ctrl) {
-    //   $data[] = 'Detach 2 groups';
-    //   $data[] = $ctrl->count();
-    //   $d->groups()->detach([3, 4, 5]);
-    // }
-    // $d->save();
-    // DB::flushDuplicateCache();
-
-    // $data[] = $d->user->username;
-
-    // foreach ($d->groups as $v) {
-    //   $data[] = $v->id.' '.$v->name;
-    // }
-    // // ----------------------------------------------------------------------------------
-    // $data[] = str_repeat('-', 45);
-
-    // // Add 2 groups of guest 4
-    // $d->groups()->find(3);
-
-    // if ((null === $d->groups()->find(3)) || (null === $d->groups()->find(4))) {
-    //   $data[] = 'Add 2 groups';
-    //   $d->groups()->attach([3, 4, 5]);
-    // }
-
-    $d = Guest::find(4);
-    // ----------------------------------------------------------------------------------
-    $d->groups()->sync(range(1, 5));
+    // Deferred binding
+    $sessionKey = uniqid('session_key', true);
+    // $data[]     = $this->getAllPhotos();
     // ----------------------------------------------------------------------------------
 
-    $data[] = $d->user->username;
+    $newTof                 = new Photo();
+    $newTof->path           = 'SAM.png';
+    $newTof->imageable_id   = 7;
+    $newTof->imageable_type = 'guest';
+    $data[]                 = $newTof;
+    $newTof->save();
 
-    foreach ($d->groups as $v) {
-      $data[] = $v->id.' '.$v->name;
-    }
-    // ----------------------------------------------------------------------------------
+    // $newTof = Photo::find(8);
 
-    $d->groups()->sync([1, 2, 4]);
+    $newGuest             = new Guest();
+    $newGuest->user_id    = 5;
+    $newGuest->familly_id = 3;
+    $newGuest->mobile     = 'GSM Sam';
+    $data[]               = $newGuest;
 
-    // ----------------------------------------------------------------------------------
+    $data[] = str_repeat(' ', 45);
+    $newGuest->photo()->add($newTof, $sessionKey);
+    // $newGuest->photo()->add($newTof); // Doesn't work because guest not yet created
+    $newGuest->save();
+
+    $data[] = $newGuest;
     $data[] = str_repeat('-', 45);
-    DB::flushDuplicateCache();
-
-    $d      = Guest::find(4);
-    $data[] = $d->user->username;
-
-    foreach ($d->groups as $v) {
-      $data[] = $v->id.' '.$v->name;
-    }
+    ----------------------------------------------------------------------------------
+    $data[] = $this->getAllPhotos();
 
     return $data ?? '<p>$data est vide</p>';
     //   ->dump()
@@ -110,5 +82,18 @@ class Guests extends ComponentBase
     $length = 46 - \strlen(utf8_decode($msg));
 
     return  ' '.$msg.str_repeat(' ', $length);
+  }
+
+  public function getAllPhotos()
+  {
+    DB::flushDuplicateCache();
+    $d = Photo::all();
+
+    foreach ($d as $v) {
+      $data[] = $v->path;
+    }
+    $data[] = str_repeat('-', 41);
+
+    return $data;
   }
 }

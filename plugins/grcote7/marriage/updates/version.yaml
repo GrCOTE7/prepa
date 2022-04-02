@@ -20,11 +20,11 @@
     - v1.0.4/seed_famillies_table.php
 1.0.5:
     - Create Group Model - To have a Many to Many relationship
-    - Create and populate groups table
+    - Create groups & pivot group_guest tables
     - v1.0.5/create_groups_table.php
-    - v1.0.5/seed_groups_table.php
-    - Create and populate pivot table group_guest
     - v1.0.5/create_group_guest_table.php
+    - Populate groups & pivot group_guest tables
+    - v1.0.5/seed_groups_table.php
     - v1.0.5/seed_group_guest_table.php
 1.0.6:
     - Create & populate Msg Model
