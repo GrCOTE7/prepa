@@ -30,11 +30,11 @@ class Guests extends ComponentBase
   public function onRun()
   {
     // $data[] = 'Ready.';
-    $img     = '/storage/app/media/Guests/'.Guest::find(2)->photo->path;
-    $data[]  = $img;
-    $data[]  = '<img src="'.$img.'" />';
+    $img    = '/storage/app/media/Guests/'.Guest::find(2)->photo->path;
+    $data[] = $img;
+    $data[] = '<img src="'.$img.'" />';
 
-    // return $data ?? '<p>$data est vide</p>';
+    return $data ?? '<p>$data est vide</p>';
     //   ->dump()
     //   ->first()
     //   ->get()
