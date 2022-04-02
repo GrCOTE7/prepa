@@ -35,4 +35,8 @@
     - Create & populate Img Model
     - v1.0.7/create_imgs_table.php
     - v1.0.7/seed_imgs_table.php
+1.0.8:
+    - Create & populate Avatar Model - To test File Attachments
+    - v1.0.8/create_avatars_table.php
+    - v1.0.8/seed_avatars_table.php
 
