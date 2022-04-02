@@ -68,7 +68,7 @@ class Guests extends ComponentBase
     // $guest = Guest::find(7);
     // $guest->photo()->remove($tof, $sessionKey); // remove the deffered binding
 
-    DeferredBinding::cleanUp(1);Older than 1 day
+    DeferredBinding::cleanUp(1); // Older than 1 day - Default: 5 days when admin logs in
 
     return $data ?? '<p>$data est vide</p>';
     //   ->dump()
