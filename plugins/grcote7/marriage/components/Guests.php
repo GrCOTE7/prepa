@@ -56,7 +56,7 @@ class Guests extends ComponentBase
 
     $data[] = $newGuest;
     $data[] = str_repeat('-', 45);
-    ----------------------------------------------------------------------------------
+    // ----------------------------------------------------------------------------------
     $data[] = $this->getAllPhotos();
 
     return $data ?? '<p>$data est vide</p>';
