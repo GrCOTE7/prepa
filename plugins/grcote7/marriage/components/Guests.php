@@ -7,9 +7,11 @@
 namespace Grcote7\Marriage\Components;
 
 use Cms\Classes\ComponentBase;
+use Grcote7\Marriage\Models\Avatar;
 use Grcote7\Marriage\Models\Guest;
 use Grcote7\Marriage\Models\Img;
 use Illuminate\Support\Facades\DB;
+use Winter\Storm\Support\Facades\Input;
 
 class Guests extends ComponentBase
 {
@@ -29,17 +31,26 @@ class Guests extends ComponentBase
 
   public function onRun()
   {
-    // $data[] = 'Ready.';
-    // $imge   = '/storage/app/media/Guests/'.Guest::find(2)->img->path;
-    // $data[] = $imge;
-    // $data[] = '<img src="'.$imge.'" />';
+    $aaa = new Avatar();
+    // $g = Guest::find(1);
 
-    // @i Ope just 1 time
-    // $imgs = Img::where('imgable_type', 'guest')->update(['imgable_type' => 'avatar'])->get();
+    // $g->avatar = Input::file('file_input');
 
-    foreach (Img::all() as $img) {
-      $data[] = $img->imgable_type;
-    }
+    $file = new System\Models\File();
+    // $file->data         = Input::file('file_input');
+    // $file->disk_name    = 'LC.png';
+    // $file->file_name    = 'LC.png';
+    // $file->file_size    = 123;
+    // $file->content_type = 'Avatar de LC';
+    // $file->is_public    = true;
+    // $file->save();
+
+    $data[] = $file;
+    // $data[] = $g->avatar->getPath();
+
+    DB::flushDuplicateCache();
+    $g      = Guest::find(1);
+    $data[] = $g->avatar;
 
     return $data ?? '<p>$data est vide</p>';
     //   ->dump()

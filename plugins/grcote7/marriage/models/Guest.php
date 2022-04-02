@@ -53,7 +53,7 @@ class Guest extends Model
 ];
   public $morphMany = [];
   public $attachOne = [
-    // 'avatar' => 'System/Models/file',
+    'avatar' => 'System\Models\File',
   ];
   public $attachMany = [];
 
