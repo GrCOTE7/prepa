@@ -17,10 +17,10 @@ class seed_photos_table extends Seeder
   {
     // DB::table('grcote7_marriage_photos')->truncate();
 
-    $gs = ['LC', 'MPR', 'JC', 'AM',  'JP', 'AMB'];
+    $gs = ['LC', 'MPR', 'JC', 'AM',  'JP', null, 'AMB'];
     foreach ($gs as $k => $g) {
       $gu = Guest::find($k + 1);
-      if ($gu) {
+      if ($gu && null !== $gs[$k]) {
         Photo::create([
           'path'           => $g.'.png',
           'imageable_id'   => $gu->user->id,
