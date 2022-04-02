@@ -22,16 +22,16 @@ class seed_imgs_table extends Seeder
       $gu = Guest::find($k + 1);
       if ($gu && null !== $gs[$k]) {
         Img::create([
-          'filename'       => $g.'.png',
-          'imageable_id'   => $gu->user->id,
-          'imageable_type' => 'guest',
+          'filename'     => $g.'.png',
+          'imgable_id'   => $gu->user->id,
+          'imgable_type' => 'guest',
         ]);
       }
     }
     Img::create([
-      'filename'       => 'AMI.png',
-      'imageable_id'   => 1,
-      'imageable_type' => 'group',
+      'filename'     => 'AMI.png',
+      'imgable_id'   => 1,
+      'imgable_type' => 'group',
     ]);
   }
 }
