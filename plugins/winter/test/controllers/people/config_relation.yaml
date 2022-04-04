@@ -1,0 +1,8 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+phone:
+    label: Phone
+    form: ~/plugins/winter/test/models/phone/fields.yaml
+    list: ~/plugins/winter/test/models/phone/columns.yaml

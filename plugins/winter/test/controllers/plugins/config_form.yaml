@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Plugin
+
+# Model Form Field configuration
+form: $/winter/test/models/plugin/fields.yaml
+
+# Model Class name
+modelClass: Winter\Test\Models\Plugin
+
+# Default redirect location
+defaultRedirect: winter/test/plugins
+
+# Create page
+create:
+    title: Create Plugin
+    redirect: winter/test/plugins/update/:id
+    redirectClose: winter/test/plugins
+
+# Update page
+update:
+    title: Edit Plugin
+    redirect: winter/test/plugins
+    redirectClose: winter/test/plugins
+
+# Preview page
+preview:
+    title: Preview Plugin

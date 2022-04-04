@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Post
+
+# Model Form Field configuration
+form: ~/plugins/winter/test/models/post/fields.yaml
+
+# Model Class name
+modelClass: Winter\Test\Models\Post
+
+# Default redirect location
+defaultRedirect: winter/test/posts
+
+# Create page
+create:
+    title: Create Posts
+    redirect: winter/test/posts/update/:id
+    redirectClose: winter/test/posts
+
+# Update page
+update:
+    title: Edit Posts
+    redirect: winter/test/posts
+    redirectClose: winter/test/posts
+
+# Preview page
+preview:
+    title: Preview Posts

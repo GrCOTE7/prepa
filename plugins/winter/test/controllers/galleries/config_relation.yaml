@@ -1,0 +1,7 @@
+
+posts:
+    label: Posts
+    list: ~/plugins/winter/test/models/post/columns.yaml
+    form: ~/plugins/winter/test/models/post/fields_simple.yaml
+#    manage:
+#        context: relation

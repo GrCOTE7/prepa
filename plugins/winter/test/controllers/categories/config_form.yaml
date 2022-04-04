@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Category
+
+# Model Form Field configuration
+form: $/winter/test/models/category/fields.yaml
+
+# Model Class name
+modelClass: Winter\Test\Models\Category
+
+# Default redirect location
+defaultRedirect: winter/test/categories
+
+# Create page
+create:
+    title: Create Category
+    redirect: winter/test/categories/update/:id
+    redirectClose: winter/test/categories
+
+# Update page
+update:
+    title: Edit Category
+    redirect: winter/test/categories
+    redirectClose: winter/test/categories
+
+# Preview page
+preview:
+    title: Preview Category

@@ -1,0 +1,32 @@
+{
+    "name": "winter/wn-test-plugin",
+    "type": "winter-plugin",
+    "description": "Playground for Winter CMS",
+    "homepage": "https://github.com/wintercms/wn-test-plugin",
+    "keywords": ["winter", "wintercms", "laravel", "playground", "kitchen sink"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Samuel Georges",
+            "email": "hello@octobercms.com",
+            "role": "Original Author"
+        },
+        {
+            "name": "Winter CMS Maintainers",
+            "homepage": "https://wintercms.com",
+            "role": "Maintainer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/wintercms/wn-test-plugin/issues",
+        "discord": "https://discord.gg/D5MFSPH6Ux",
+        "source": "https://github.com/wintercms/wn-test-plugin"
+    },
+    "require": {
+        "php": ">=7.2",
+        "composer/installers": "~1.0"
+    },
+    "extra": {
+        "installer-name": "test"
+    }
+}

@@ -1,0 +1,43 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    content:
+        label: Content
+        type: textarea
+        size: small
+
+    is_positive:
+        label: Positive
+        type: checkbox
+
+    rating:
+        label: Rating
+        type: dropdown
+        options:
+            0: 0 stars
+            1: 1 star
+            2: 2 stars
+            3: 3 stars
+            4: 4 stars
+            5: 5 stars
+        span: left
+
+    _rating_display:
+        label: false
+        type: partial
+        path: $/winter/test/models/review/_rating_field.htm
+        dependsOn: rating
+        span: right
+
+    _internal_comments:
+        label: Internal comments
+        type: textarea
+        size: tiny
+        comment: This field is a black hole, the value will not be saved anywhere.
+
+    _check_time:
+        label: What time is it?
+        type: timecheckertest
+        commentAbove: Custom form widget with AJAX updating.

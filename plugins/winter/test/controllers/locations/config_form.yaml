@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Location
+
+# Model Form Field configuration
+form: $/winter/test/models/location/fields.yaml
+
+# Model Class name
+modelClass: Winter\Test\Models\Location
+
+# Default redirect location
+defaultRedirect: winter/test/locations
+
+# Create page
+create:
+    title: Create Location
+    redirect: winter/test/locations/update/:id
+    redirectClose: winter/test/locations
+
+# Update page
+update:
+    title: Edit Location
+    redirect: winter/test/locations
+    redirectClose: winter/test/locations
+
+# Preview page
+preview:
+    title: Preview Location

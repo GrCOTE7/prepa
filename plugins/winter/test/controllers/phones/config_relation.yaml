@@ -1,0 +1,8 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+person:
+    label: Person
+    list: ~/plugins/winter/test/models/person/columns.yaml
+    form: ~/plugins/winter/test/models/person/fields.yaml

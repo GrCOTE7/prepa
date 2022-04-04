@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Review
+
+# Model Form Field configuration
+form: $/winter/test/models/review/fields.yaml
+
+# Model Class name
+modelClass: Winter\Test\Models\Review
+
+# Default redirect location
+defaultRedirect: winter/test/reviews
+
+# Create page
+create:
+    title: Create Review
+    redirect: winter/test/reviews/update/:id
+    redirectClose: winter/test/reviews
+
+# Update page
+update:
+    title: Edit Review
+    redirect: winter/test/reviews
+    redirectClose: winter/test/reviews
+
+# Preview page
+preview:
+    title: Preview Review

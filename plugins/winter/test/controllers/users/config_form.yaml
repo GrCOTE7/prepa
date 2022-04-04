@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: User
+
+# Model Form Field configuration
+form: ~/plugins/winter/test/models/user/fields.yaml
+
+# Model Class name
+modelClass: Winter\Test\Models\User
+
+# Default redirect location
+defaultRedirect: winter/test/users
+
+# Create page
+create:
+    title: Create Users
+    redirect: winter/test/users/update/:id
+    redirectClose: winter/test/users
+
+# Update page
+update:
+    title: Edit Users
+    redirect: winter/test/users
+    redirectClose: winter/test/users
+
+# Preview page
+preview:
+    title: Preview Users

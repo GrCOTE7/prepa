@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Tag
+
+# Model Form Field configuration
+form: ~/plugins/winter/test/models/tag/fields_simple.yaml
+
+# Model Class name
+modelClass: Winter\Test\Models\Tag
+
+# Default redirect location
+defaultRedirect: winter/test/posts
+
+# Create page
+create:
+    title: Create Tags
+    redirect: winter/test/tags/update/:id
+    redirectClose: winter/test/tags
+
+# Update page
+update:
+    title: Edit Tags
+    redirect: winter/test/tags
+    redirectClose: winter/test/tags
+
+# Preview page
+preview:
+    title: Preview Tags
