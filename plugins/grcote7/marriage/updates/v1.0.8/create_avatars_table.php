@@ -15,7 +15,7 @@ class create_avatars_table extends Migration
       $table->engine = 'InnoDB';
       $table->increments('id');
       $table->string('name');
-      $table->integer('guest_id')->unsigned();
+      $table->integer('guest_id')->unsigned()->index();
       $table->timestamps();
     });
   }

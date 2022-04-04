@@ -14,8 +14,8 @@ class create_msgs_table extends Migration
     Schema::create('grcote7_marriage_msgs', function (Blueprint $table) {
       $table->engine = 'InnoDB';
       $table->increments('id');
-      $table->integer('guest_id')->unsigned();
-      $table->integer('to_guest_id')->unsigned();
+      $table->integer('guest_id')->unsigned()->index();
+      $table->integer('to_guest_id')->unsigned()->index();
       $table->string('subject');
       $table->string('content');
 

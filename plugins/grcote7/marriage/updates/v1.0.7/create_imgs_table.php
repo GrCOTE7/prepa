@@ -15,7 +15,7 @@ class create_imgs_table extends Migration
       $table->engine = 'InnoDB';
       $table->increments('id');
       $table->string('filename');
-      $table->string('imgable_id'); // Owner id
+      $table->string('imgable_id')->index(); // Owner id
       $table->string('imgable_type'); // Class name Owning Model -guest - famille - img
       $table->timestamps();
     });
