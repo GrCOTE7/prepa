@@ -11,6 +11,7 @@ use Grcote7\Marriage\Models\Avatar;
 use Grcote7\Marriage\Models\Guest;
 use Grcote7\Marriage\Models\Img;
 use Illuminate\Support\Facades\DB;
+use Winter\Storm\Support\Facades\File;
 use Winter\Storm\Support\Facades\Input;
 
 class Guests extends ComponentBase
@@ -36,7 +37,7 @@ class Guests extends ComponentBase
 
     // $g->avatar = Input::file('file_input');
 
-    $file = new System\Models\File();
+    // $file = new System\Models\File();
     // $file->data         = Input::file('file_input');
     // $file->disk_name    = 'LC.png';
     // $file->file_name    = 'LC.png';
@@ -45,7 +46,7 @@ class Guests extends ComponentBase
     // $file->is_public    = true;
     // $file->save();
 
-    $data[] = $file;
+    $data[] = $aaa;
     // $data[] = $g->avatar->getPath();
 
     DB::flushDuplicateCache();
