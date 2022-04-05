@@ -1,0 +1,14 @@
+fields:
+    name:
+        label: 'grcote7.movies::lang.plugin.name'
+        span: full
+        type: text
+    description:
+        label: 'grcote7.movies::lang.plugin.description'
+        size: ''
+        span: full
+        type: richeditor
+    year:
+        label: Year
+        span: auto
+        type: text

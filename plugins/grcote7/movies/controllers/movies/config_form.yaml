@@ -1,0 +1,10 @@
+name: Movies
+form: $/grcote7/movies/models/movie/fields.yaml
+modelClass: Grcote7\Movies\Models\Movie
+defaultRedirect: grcote7/movies/movies
+create:
+    redirect: 'grcote7/movies/movies/update/:id'
+    redirectClose: grcote7/movies/movies
+update:
+    redirect: grcote7/movies/movies
+    redirectClose: grcote7/movies/movies

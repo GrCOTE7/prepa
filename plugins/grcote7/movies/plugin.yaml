@@ -4,3 +4,8 @@ plugin:
     author: Grcote7
     icon: wn-icon-video-camera
     replaces: {  }
+navigation:
+    main-menu-item:
+        label: 'grcote7.movies::lang.plugin.name'
+        url: grcote7/movies/movies
+        icon: icon-video-camera
