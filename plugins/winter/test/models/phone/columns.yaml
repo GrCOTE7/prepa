@@ -14,3 +14,7 @@ columns:
     number:
         label: Number
         searchable: true
+
+    brand:
+        label: Brand
+        searchable: true
