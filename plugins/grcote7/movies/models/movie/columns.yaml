@@ -8,3 +8,7 @@ columns:
         label: Year
         type: number
         sortable: true
+    slug:
+        label: Slug
+        type: text
+        sortable: false

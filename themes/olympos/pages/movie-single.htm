@@ -1,12 +1,12 @@
 title = "Movie single"
-url = "/movie/:id"
+url = "/movie/:slug"
 layout = "default"
 is_hidden = 0
 
 [builderDetails]
 modelClass = "Grcote7\Movies\Models\Movie"
-identifierValue = "{{ :id }}"
-modelKeyColumn = "id"
+identifierValue = "{{ :slug }}"
+modelKeyColumn = "slug"
 displayColumn = "name"
 notFoundMessage = "Record not found"
 ==
@@ -15,7 +15,10 @@ notFoundMessage = "Record not found"
 {% set notFoundMessage = builderDetails.notFoundMessage %}
 
 {% if record %}
-    {{ attribute(record, displayColumn) }}
+   <h2>{{ record.name }}</h2>
+   <h4>{{ record.year }}</h4>
+   <h3>Description</h3>
+   <p>{{ record.description |raw }}</p>
 {% else %}
     {{ notFoundMessage }}
 {% endif %}
