@@ -1,5 +1,5 @@
 title = "Movies"
-url = "/movies"
+url = "/movies/:page?"
 layout = "default"
 is_hidden = 0
 
@@ -12,6 +12,7 @@ noRecordsMessage = "No records found"
 detailsPage = "movie-single"
 detailsKeyColumn = "slug"
 detailsUrlParameter = "slug"
+recordsPerPage = 1
 pageNumber = "{{ :page }}"
 ==
 {% set records = builderList.records %}
@@ -46,19 +47,21 @@ pageNumber = "{{ :page }}"
 </ul>
 
 {% if records.lastPage > 1 %}
+<nav aria-label="Page navigation example"></nav>
     <ul class="pagination">
         {% if records.currentPage > 1 %}
-            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (records.currentPage-1) }) }}">&larr; Prev</a></li>
+            <li class="page-item"><a class="page-link"  href="{{ this.page.baseFileName|page({ (pageParam): (records.currentPage-1) }) }}">&larr; Prev</a></li>
         {% endif %}
 
         {% for page in 1..records.lastPage %}
-            <li class="{{ records.currentPage == page ? 'active' : null }}">
-                <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+            <li class="page-item {{ records.currentPage == page ? 'active' : null }}">
+                <a  class="page-link" href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
             </li>
         {% endfor %}
 
         {% if records.lastPage > records.currentPage %}
-            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (records.currentPage+1) }) }}">Next &rarr;</a></li>
+            <li class="page-item"><a class="page-link" href="{{ this.page.baseFileName|page({ (pageParam): (records.currentPage+1) }) }}">Next &rarr;</a></li>
         {% endif %}
     </ul>
+</nav>
 {% endif %}
