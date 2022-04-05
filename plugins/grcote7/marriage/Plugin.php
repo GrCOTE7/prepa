@@ -81,12 +81,12 @@ class Plugin extends PluginBase
    */
   public function registerPermissions()
   {
-    return []; // Remove this line to activate
+    // return []; // Remove this line to activate
 
     return [
-      'grcote7.marriage.some_permission' => [
+      'grcote7.marriage.permissions' => [
         'tab'   => 'Marriage',
-        'label' => 'Some permission',
+        'label' => 'Allow access to the plugin',
         'roles' => [UserRole::CODE_DEVELOPER, UserRole::CODE_PUBLISHER],
             ],
         ];
@@ -99,14 +99,14 @@ class Plugin extends PluginBase
    */
   public function registerNavigation()
   {
-    return []; // Remove this line to activate
+    // return []; // Remove this line to activate
 
     return [
       'marriage' => [
         'label'       => 'Marriage',
-        'url'         => Backend::url('grcote7/marriage/mycontroller'),
-        'icon'        => 'icon-heart',
-        'permissions' => ['grcote7.marriage.*'],
+        'url'         => Backend::url('grcote7/marriage/guests'),
+        'icon'        => 'icon-venus-mars',
+        'permissions' => ['grcote7.marriage.permissions'],
         'order'       => 500,
       ],
         ];

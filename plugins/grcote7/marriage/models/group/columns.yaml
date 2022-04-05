@@ -1,8 +1,9 @@
-# ===================================
-#  List Column Definitions
-# ===================================
-
 columns:
     id:
         label: ID
+        type: number
+        searchable: true
+    name:
+        label: NAME
+        type: text
         searchable: true

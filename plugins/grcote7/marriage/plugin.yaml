@@ -2,5 +2,15 @@ plugin:
     name: 'grcote7.testbuilder::lang.plugin.name'
     description: 'grcote7.testbuilder::lang.plugin.description'
     author: Grcote7
-    icon: wn-icon-heart
+    icon: icon-venus-mars
     replaces: {  }
+navigation:
+    main-menu-item:
+        label: 'Menu Item'
+        url: /guests
+        icon: icon-venus-mars
+        sideMenu:
+            side-menu-item:
+                label: Guests
+                url: /guests
+                icon: icon-group

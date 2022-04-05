@@ -1,8 +1,18 @@
-# ===================================
-#  List Column Definitions
-# ===================================
-
 columns:
     id:
         label: ID
+        type: number
         searchable: true
+    user_id:
+        label: Name
+        type: number
+        searchable: true
+        relation: user
+    familly_id:
+        label: Familly
+        type: number
+        searchable: true
+        relation: familly
+    mobile:
+        label: Mobile
+        type: text
