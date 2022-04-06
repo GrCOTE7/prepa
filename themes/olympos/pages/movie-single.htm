@@ -24,7 +24,9 @@ notFoundMessage = "Record not found"
 <h3>Genres</h3>
 
 {%  for genre in record.genres %}
-{{ genre.genre_title }}<br>
+<a href="/genres/{{ genre.slug }}">
+    {{ genre.genre_title }}<br>
+</a>
 {% endfor %}
 
 <h3>Description</h3>

@@ -4,3 +4,6 @@ columns:
         type: text
         searchable: true
         sortable: true
+    slug:
+        label: Slug
+        type: text
