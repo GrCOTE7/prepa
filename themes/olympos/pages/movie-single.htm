@@ -15,10 +15,25 @@ notFoundMessage = "Record not found"
 {% set notFoundMessage = builderDetails.notFoundMessage %}
 
 {% if record %}
-   <h2>{{ record.name }}</h2>
-   <h4>{{ record.year }}</h4>
-   <h3>Description</h3>
-   <p>{{ record.description |raw }}</p>
+<h2>{{ record.name }}</h2>
+
+<img src="{{ record.poster.thumb(200,auto) }}" alt="" />
+
+<h4>{{ record.year }}</h4>
+<h3>Description</h3>
+<p>{{ record.description |raw }}</p>
+
+<h3>Gallery</h3>
+<ul class="list-group list-group-horizontal">
+    {% for image in record.movie_gallery %}
+    <li>
+        <a href="{{  image.path }}">
+            <img src="{{ image.thumb(80,80, {'mode':'crop'}) }}" class="img-thumbnail"  alt="" />
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+
 {% else %}
-    {{ notFoundMessage }}
+{{ notFoundMessage }}
 {% endif %}
