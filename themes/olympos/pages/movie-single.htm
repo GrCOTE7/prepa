@@ -20,6 +20,13 @@ notFoundMessage = "Record not found"
 <img src="{{ record.poster.thumb(200,auto) }}" alt="" />
 
 <h4>{{ record.year }}</h4>
+
+<h3>Genres</h3>
+
+{%  for genre in record.genres %}
+{{ genre.genre_title }}<br>
+{% endfor %}
+
 <h3>Description</h3>
 <p>{{ record.description |raw }}</p>
 
@@ -27,8 +34,9 @@ notFoundMessage = "Record not found"
 <ul class="list-group list-group-horizontal">
     {% for image in record.movie_gallery %}
     <li>
-        <a href="{{  image.path }}">
-            <img src="{{ image.thumb(80,80, {'mode':'crop'}) }}" class="img-thumbnail"  alt="" />
+        <a href="{{ image.path }}">
+            <img src="{{ image.thumb(80,80, {'mode':'crop'}) }}"
+                class="img-thumbnail" alt="" />
         </a>
     </li>
     {% endfor %}

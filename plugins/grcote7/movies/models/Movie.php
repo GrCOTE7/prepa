@@ -24,6 +24,14 @@ class Movie extends Model
   /**
    * Relations.
    */
+  public $belongsToMany = [
+    'genres' => [
+      'Grcote7\Movies\Models\Genre',
+      'table' => 'grcote7_movies_genres_movies',
+      'order' => 'genre_title',
+    ],
+];
+
   public $attachOne = [
     'poster' => 'System\Models\File',
   ];

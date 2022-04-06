@@ -1,0 +1,10 @@
+name: Genres
+form: $/grcote7/movies/models/genre/fields.yaml
+modelClass: Grcote7\Movies\Models\Genre
+defaultRedirect: grcote7/movies/genres
+create:
+    redirect: 'grcote7/movies/genres/update/:id'
+    redirectClose: grcote7/movies/genres
+update:
+    redirect: grcote7/movies/genres
+    redirectClose: grcote7/movies/genres

@@ -1,0 +1,15 @@
+tabs:
+    fields:
+        genre_title:
+            label: Title
+            span: left
+            type: text
+            tab: 'Tab 1'
+        slug:
+            label: Slug
+            span: right
+            preset:
+                field: genre_title
+                type: slug
+            type: text
+            tab: 'Tab 1'

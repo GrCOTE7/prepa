@@ -9,3 +9,8 @@ navigation:
         label: 'grcote7.movies::lang.plugin.name'
         url: grcote7/movies/movies
         icon: icon-video-camera
+        sideMenu:
+            side-menu-item:
+                label: Genres
+                url: grcote7/movies/genres
+                icon: icon-tag
