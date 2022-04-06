@@ -21,6 +21,8 @@ class Movie extends Model
    */
   public $timestamps = false;
 
+protected $jsonable = ['actors'];
+
   /**
    * Relations.
    */
