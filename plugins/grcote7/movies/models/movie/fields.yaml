@@ -3,6 +3,10 @@ fields:
         label: 'grcote7.movies::lang.plugin.name'
         span: full
         type: text
+    actors:
+        label: Actors
+        span: left
+        type: actorbox
     description:
         label: 'grcote7.movies::lang.plugin.description'
         size: ''
@@ -47,19 +51,3 @@ fields:
         descriptionFrom: description
         span: auto
         type: relation
-    actors:
-        label: Actors
-        prompt: 'Add new item'
-        style: default
-        span: auto
-        type: repeater
-        form:
-            fields:
-                actor_name:
-                    label: 'Actor name'
-                    span: auto
-                    type: text
-                actor_age:
-                    label: 'Actor Age'
-                    span: auto
-                    type: text
