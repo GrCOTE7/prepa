@@ -36,7 +36,7 @@ class Actors extends ComponentBase
   {
     $this->actors = $this->loadActors();
     // $this->page['actors'] = $this->actors;
-    return $this->actors;
+    // return $this->actors;
   }
 
   protected function loadActors()
