@@ -1,0 +1,10 @@
+name: Actors
+form: $/grcote7/movies/models/actor/fields.yaml
+modelClass: Grcote7\Movies\Models\Actor
+defaultRedirect: grcote7/movies/actors
+create:
+    redirect: 'grcote7/movies/actors/update/:id'
+    redirectClose: grcote7/movies/actors
+update:
+    redirect: grcote7/movies/actors
+    redirectClose: grcote7/movies/actors

@@ -1,18 +1,30 @@
 <style type="text/css">
     .select2-container{
         width: 100% !important;
-        display: block;
+        height:50%;
+    }
+    .select2-selection--multiple{
+        display: inline-block !important;
     }
     .select2-container--default .select2-selection--multiple .select2-search--inline .select2-search__field{
         width: 100% !important;
     }
+    .select2-container--default .select2-selection--multiple .select2-selection__choice__remove{
+        border-right: 0 !important;
+    }
+    li.select2-selection__choice{
+        padding-left: 30px !important;
+       padding-right: 10px !important;
+    }
 </style>
+<div class="d-flex align-items-center">
 
-<select name="" id="" class="s2" multiple>
-    <option value="1">Leonardo Di Caprio</option>
-    <option value="2">Al Pacino</option>
-    <option value="3">Robert De Niro</option>
-</select>
+    <select class="s2 d-flex align-items-center" name="<?= $name ?>" multiple>
+        <?php foreach($actors as $k=>$v): ?>
+        <option class="align-self-center" value="<?= $k ?>" <?php echo in_array($k, $selectedValues) ? 'selected="selected"': '' ?> > <?= $v ?></option>
+        <?php endforeach ?>
+    </select>
+</div>
 
 <script type="text/javascript">
     $(document).on('render', function () {
