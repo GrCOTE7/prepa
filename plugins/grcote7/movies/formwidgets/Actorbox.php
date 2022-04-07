@@ -53,13 +53,16 @@ class Actorbox extends FormWidgetBase
 
     // dd($actors);
     foreach ($actors as $actorId) {
+      // Compare values
       if (!is_numeric($actorId)) {
         $newActor     = new Actor();
         $nameLastname = explode(' ', $actorId);
         // dd($nameLastname);
         $newActor->name     = ucfirst($nameLastname[0]);
         $newActor->lastname = ucfirst($nameLastname[1]);
+        // Save to model
         $newActor->save();
+        // Create new array
         $newArray[] = $newActor->id;
       } else {
         $newArray[] = $actorId;
@@ -69,12 +72,6 @@ class Actorbox extends FormWidgetBase
 
     return $newArray;
   }
-
-  // Compare values
-
-  // Save to mode
-
-  // Create new array
 
   public function loadAssets()
   {
