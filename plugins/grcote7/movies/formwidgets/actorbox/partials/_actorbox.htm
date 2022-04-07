@@ -3,6 +3,9 @@
         width: 100% !important;
         display: block;
     }
+    .select2-container--default .select2-selection--multiple .select2-search--inline .select2-search__field{
+        width: 100% !important;
+    }
 </style>
 
 
@@ -15,7 +18,7 @@
 <script type="text/javascript">
     $(document).on('render', function () {
         $('.s2').select2({
-            placeholder: 'Add actors',
+            placeholder: "Add actors",
             tags: true
         })
     });
