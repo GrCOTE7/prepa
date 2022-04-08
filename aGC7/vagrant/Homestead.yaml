@@ -23,6 +23,9 @@ sites:
     - map: prepa
       to: /home/vagrant/code/prepa
       type: apache
+    - map: l8
+      to: /home/vagrant/code/l8
+      type: apache
     - map: wcmsdoc
       to: /home/vagrant/code/wcmsdoc
     - map: bootstrap
@@ -39,6 +42,7 @@ databases:
     - prepa
     - cai
     - rsx
+    - l8
 
 # folders:
 #    - map: ~/code
