@@ -43,7 +43,7 @@ class ContactForm extends ComponentBase
     // dump($vars);
 
     Mail::send('grcote7.contact::mail.message', $vars, function ($message) {
-      $message->to('myemaill@gmail.com', 'Admin Person');
+      $message->to('myemail@gmail.com', 'Admin Person');
       $message->subject('New message from contact form');
     });
   }
