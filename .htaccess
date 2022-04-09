@@ -11,6 +11,8 @@
 
     RewriteEngine On
 
+RewriteRule ^(aGC7|b)($|/) - [L,NC]
+
     ##
     ## You may need to uncomment the following line for some hosting environments,
     ## if you have installed to a subdirectory, enter the name here also.

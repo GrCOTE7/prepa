@@ -6,14 +6,17 @@
 
 <form data-request="onSave">
 
-    <label for="">Actor name</label>
-    <input type="text" name="name" value="Gérard"><br>
-    {{  errors.first('name') }}<br>
+    <div class="form-group">
+        <label for="">Actor name</label>
+        <input type="text" name="name" value="Gérard" class="form-control">
+    </div><br>
 
-    <label for="">Actor lastname</label>
-    <input type="text" name="lastname" value="Depardieu"><br>
-    {{  errors.first('lastname') }}<br>
+    <div class="form-group">
+        <label for="">Actor lastname</label>
+        <input type="text" name="lastname" value="Depardieu" class="form-control">
+    </div><br>
 
-    <button type="submit">Save Actor</button>
+    <button type="submit" class="btn btn-primary">Save Actor</button>
 
 </form>
+<br>
