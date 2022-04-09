@@ -9,6 +9,8 @@ namespace Grcote7\Contact\Components;
 use Cms\Classes\ComponentBase;
 use Input;
 use Mail;
+use Redirect;
+use Validator;
 
 class ContactForm extends ComponentBase
 {
@@ -33,6 +35,17 @@ class ContactForm extends ComponentBase
 
   public function onSend()
   {
+    $validator = Validator::make(
+      [
+        'name'  => Input::get('name'),
+        'email' => Input::get('email'),
+      ],
+      [
+        'name'  => 'required|min:3',
+        'email' => 'required|email',
+      ]
+    );
+
     // These variables are available inside the message as Twig
     $vars = [
       'name'    => trim(Input::get('name')),
@@ -40,8 +53,9 @@ class ContactForm extends ComponentBase
       'content' => trim(Input::get('content')),
     ];
 
-    // dump($vars);
-
+    if ($validator->fails()) {
+      return Redirect::back()->withErrors($validator);
+    }
     Mail::send('grcote7.contact::mail.message', $vars, function ($message) {
       $message->to('myemail@gmail.com', 'Admin Person');
       $message->subject('New message from contact form');

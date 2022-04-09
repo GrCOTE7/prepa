@@ -2,16 +2,23 @@
 
 <form data-request="onSend">
 
-<label for="">Your name</label>
-<input type="text" name="name" value="Name"><br>
+    <label for="">Your name</label>
+    <input type="text" name="name" value="Name"><br>
+    {{  errors.first('name') }}<br>
 
-<label for="">Your email</label>
-<input type="email" name="email" value="email@gmail.com"><br>
+    <label for="">Your email</label>
+    <input type="email" name="email" value="email@gmail.com"><br>
+    {{  errors.first('email') }}<br>
 
-<label for="">Your message</label>
-<textarea name="content">Tatati...</textarea><br>
+    <label for="">Your message</label>
+    <textarea name="content">Tatati...</textarea><br>
 
-<button type="submit">Send</button>
+    <button type="submit">Send</button>
+
+    <ul class="list-unstyled">
+        {% for error in errors.all() %}
+        <li>{{ error }}</li>
+        {% endfor %}
+    </ul>
 
 </form>
-
