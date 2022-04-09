@@ -9,7 +9,6 @@ namespace Grcote7\Contact\Components;
 use Cms\Classes\ComponentBase;
 use Input;
 use Mail;
-use Redirect;
 use Validator;
 
 class ContactForm extends ComponentBase
@@ -54,8 +53,14 @@ class ContactForm extends ComponentBase
     ];
 
     if ($validator->fails()) {
-      return Redirect::back()->withErrors($validator);
+      return [
+        '#result' => $this->renderPartial(
+          'contactform::messages',
+          ['errorMsgs' => $validator->messages()->all()],
+        ),
+      ];
     }
+
     Mail::send('grcote7.contact::mail.message', $vars, function ($message) {
       $message->to('myemail@gmail.com', 'Admin Person');
       $message->subject('New message from contact form');
