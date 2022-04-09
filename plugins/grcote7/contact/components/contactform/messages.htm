@@ -1,3 +1,11 @@
 {% for message in errorMsgs %}
 <div class="">{{ message }}</div>
 {% endfor%}
+
+
+<script type="text/javascript">
+
+var errors = {{ errorMsgs|json_encode()|raw }};
+
+console.log(errors);
+</script>
