@@ -1,0 +1,19 @@
+{%  flash success %}
+<p>{{ message }}</p>
+{% endflash %}
+
+<h3>Actor</h3>
+
+<form data-request="onSave">
+
+    <label for="">Actor name</label>
+    <input type="text" name="name" value="Gérard"><br>
+    {{  errors.first('name') }}<br>
+
+    <label for="">Actor lastname</label>
+    <input type="text" name="lastname" value="Depardieu"><br>
+    {{  errors.first('lastname') }}<br>
+
+    <button type="submit">Save Actor</button>
+
+</form>
