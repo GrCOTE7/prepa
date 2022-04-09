@@ -56,7 +56,8 @@ class ContactForm extends ComponentBase
       return [
         '#result' => $this->renderPartial(
           'contactform::messages',
-          ['errorMsgs' => $validator->messages()->all()],
+          ['fieldMsgs' => $validator->messages()],
+        //   ['errorMsgs' => $validator->messages()->all()],
         ),
       ];
     }
