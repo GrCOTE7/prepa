@@ -21,13 +21,14 @@
                         href="{{ 'contact' |page }}">Contact</a>
                 </li>
 
+                {% if not user %}
                 <li class="nav-item">
                     <a class="nav-link {% if this.page.id == 'login' %}active {% endif %}"
                         href="{{ 'login' |page }}">Login</a>
                 </li>
-
+                {% else %}
                 <a data-request="onLogout" data-request-data="redirect: '/'">Sign out</a>
-
+                {% endif %}
             </div>
         </ul>
     </nav>
