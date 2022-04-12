@@ -7,9 +7,10 @@
 namespace Grcote7\Contact\Components;
 
 use Cms\Classes\ComponentBase;
-use Input;
 use Mail;
-use Validator;
+use Winter\Storm\Exception\ValidationException;
+use Winter\Storm\Support\Facades\Input;
+use Winter\Storm\Support\Facades\Validator;
 
 class ContactForm extends ComponentBase
 {
@@ -34,33 +35,23 @@ class ContactForm extends ComponentBase
 
   public function onSend()
   {
-    $validator = Validator::make(
-      [
-        'name'  => Input::get('name'),
-        'email' => Input::get('email'),
-      ],
-      [
-        'name'  => 'required|min:3',
-        'email' => 'required|email',
-      ]
-    );
+    $data = post();
 
-    // These variables are available inside the message as Twig
-    $vars = [
-      'name'    => trim(Input::get('name')),
-      'email'   => trim(Input::get('email')),
-      'content' => trim(Input::get('content')),
+    $rules = [
+      'name'  => 'required|min:3',
+      'email' => 'required|email',
     ];
 
+    $validator = Validator::make($data, $rules);
+
     if ($validator->fails()) {
-      return [
-        '#result' => $this->renderPartial(
-          'contactform::messages',
-          ['fieldMsgs' => $validator->messages()],
-        //   ['errorMsgs' => $validator->messages()->all()],
-        ),
-      ];
+      throw new ValidationException($validator);
     }
+    $vars = [
+      'name'    => Input::get('name'),
+      'email'   => Input::get('email'),
+      'content' => Input::get('content'),
+    ];
 
     Mail::send('grcote7.contact::mail.message', $vars, function ($message) {
       $message->to('myemail@gmail.com', 'Admin Person');

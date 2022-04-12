@@ -1,22 +1,20 @@
-<form data-request="contactform::onSend" class="group">
+<form data-request="contactform::onSend" data-request-validate data-request-flash class="group">
 
     <label for="" class="form-label">Your name</label>
     <input type="text" name="name" value="Ne" class="form-control">
-    {{ errors.first('name') }}<br>
+    <div data-validate-for="name"></div>
 
     <label for="" class="form-label">Your email</label>
     <input type="email" name="email" value="" class="form-control">
-    {{ errors.first('email') }}<br>
+    <div data-validate-for="email"></div>
 
     <label for="" class="form-label">Your message</label>
     <textarea name="content" class="form-control">Tatati...</textarea><br>
 
-    <button type="submit" class="btn btn-primary">Send</button>
+    <button type="submit" class="btn btn-primary" data-attach-loading>Send</button>
 
-    <ul class="list-unstyled">
-        {% for error in errors.all() %}
-        <li>{{ error }}</li>
-        {% endfor %}
-    </ul>
-    <div id="result"></div>
+    <div class="alert alert-danger" data-validate-error>
+        <p data-message></p>
+    </div>
+    
 </form>
