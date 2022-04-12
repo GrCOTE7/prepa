@@ -1,0 +1,6 @@
+plugin:
+    name: 'grcote7.profile::lang.plugin.name'
+    description: 'grcote7.profile::lang.plugin.description'
+    author: Grcote7
+    icon: wn-icon-user-md
+    replaces: {  }
