@@ -30,3 +30,6 @@
 1.0.11:
     - 'Created table grcote7_movies_actors_movies'
     - builder_table_create_grcote7_movies_actors_movies.php
+1.0.12:
+    - 'Seed movies'
+    - seed_all_tables.php
