@@ -27,7 +27,7 @@ requirePassword = 0
 
     {% partial account ~ '::activation_check' %}
 
-    {% partial account ~ '::update' %}
+    {% partial 'user_update' %}
 
     {% partial account ~ '::deactivate_link' %}
 

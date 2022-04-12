@@ -8,6 +8,7 @@ namespace Grcote7\Profile;
 
 use System\Classes\PluginBase;
 use Winter\User\Controllers\Users as UsersController;
+use Winter\User\Models\User as UserModel;
 
 class Plugin extends PluginBase
 {
@@ -21,6 +22,12 @@ class Plugin extends PluginBase
 
   public function boot()
   {
+    UserModel::extend(function ($model) {
+      $model->addFillable([
+        'facebook',
+        'bio',
+      ]);
+    });
     UsersController::extendFormFields(function ($form, $model, $content) {
       $form->addTabFields([
         'facebook' => [
