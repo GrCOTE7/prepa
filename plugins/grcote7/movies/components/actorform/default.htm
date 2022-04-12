@@ -4,7 +4,12 @@
 
 <h3>Actor</h3>
 
-<form data-request="onSave">
+<form method="POST" action="{{ url('add-actors') }}" accept-charset="UTF8" enctype="multipart/form-data">
+
+<input type="hidden" name="_handler" value="onSave">
+
+{{ form_token() }}
+{{ form_sessionKey() }}
 
     <div class="form-group">
         <label for="">Actor name</label>
@@ -14,6 +19,11 @@
     <div class="form-group">
         <label for="">Actor lastname</label>
         <input type="text" name="lastname" value="Depardieu" class="form-control">
+    </div><br>
+
+    <div class="form-group">
+        <label for="">Actor Image</label>
+        <input type="file" name="actorimage" class="form-control">
     </div><br>
 
     <button type="submit" class="btn btn-primary">Save Actor</button>
