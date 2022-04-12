@@ -15,6 +15,11 @@ class Actor extends Model
 {
   use \Winter\Storm\Database\Traits\Validation;
 
+  /**
+   * @var string the database table used by the model
+   */
+  public $table = 'grcote7_movies_actors';
+
   /*
    * Disable timestamps by default.
    * Remove this line if timestamps are defined in the database table.
@@ -27,12 +32,11 @@ class Actor extends Model
       'table' => 'grcote7_movies_actors_movies',
       'order' => 'name',
     ],
-    ];
-  /**
-   * @var string the database table used by the model
-   */
-  public $table = 'grcote7_movies_actors';
+  ];
 
+  public $attachOne = [
+    'actorimage' => 'System\Models\File',
+  ];
   /**
    * @var array Validation rules
    */

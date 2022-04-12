@@ -9,3 +9,7 @@ columns:
         type: text
         searchable: true
         sortable: true
+    actorimage:
+        label: Photo
+        type: image
+        relation: actorimage
