@@ -7,7 +7,6 @@
 namespace Grcote7\Movies\Components;
 
 use Cms\Classes\ComponentBase;
-use Faker;
 
 class Tests extends ComponentBase
 {
@@ -34,8 +33,6 @@ class Tests extends ComponentBase
 
   public function onRun()
   {
-    $faker = Faker\Factory::create();
-
-    $this->data = $faker->name();
+    $this->data = 123;
   }
 }
