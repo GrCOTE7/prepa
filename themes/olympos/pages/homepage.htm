@@ -9,8 +9,15 @@ results = 3
 sortOrder = "lastname desc"
 
 [tests]
+
+[siteSearchInclude]
 ==
 <h1>Homepage</h1>
+
+<form action="{{ 'search' | page }}" method="get">
+    <input name="q" type="text" placeholder="What are you looking for?" autocomplete="off">
+    <button type="submit">Search</button>
+</form>
 
 {% component 'tests' %}
 
