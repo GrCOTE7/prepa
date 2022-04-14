@@ -9,6 +9,8 @@ navigation:
         label: 'grcote7.movies::lang.plugin.name'
         url: grcote7/movies/movies
         icon: icon-video-camera
+        permissions:
+            - manage_movies
         sideMenu:
             side-menu-item2:
                 label: Actors
@@ -18,3 +20,15 @@ navigation:
                 label: Genres
                 url: grcote7/movies/genres
                 icon: icon-tag
+                permissions:
+                    - manage_genres
+permissions:
+    manage_movies:
+        tab: 'grcote7.movies::lang.plugin.name'
+        label: Movies
+    manage_genres:
+        tab: 'grcote7.movies::lang.plugin.name'
+        label: Genres
+    delete_movies:
+        tab: 'grcote7.movies::lang.plugin.name'
+        label: 'Delete Movies'
