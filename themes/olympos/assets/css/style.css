@@ -1,5 +1,25 @@
-.active{
-    color:rgb(24, 1, 154);
+.active {
+    color: rgb(24, 1, 154);
     font-weight: bold;
 }
 
+.flash {
+    color: white;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 7px;
+    text-align: center;
+    display: none;
+}
+
+.flash.active{
+    display: block;
+}
+
+.flash.error {
+    background-color: red;
+}
+
+.flash.success {
+    background-color: rgb(70, 115, 1);
+}
