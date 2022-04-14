@@ -40,7 +40,8 @@ class Plugin extends PluginBase
       $controller = \Cms\Classes\Controller::getController() ?? new \Cms\Classes\Controller();
 
       // Search your plugin's contents
-      $items = \Grcote7\Movies\Models\Movie::where('name', 'like', "%${query}%")
+      $items = \Grcote7\Movies\Models\Movie::
+      where('name', 'like', "%${query}%")
         ->orWhere('description', 'like', "%${query}%")
         ->get();
 

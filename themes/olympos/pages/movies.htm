@@ -2,12 +2,15 @@ title = "Movies"
 url = "/movies/:page?"
 layout = "default"
 is_hidden = 0
-
 ==
 <?
 use Grcote7\Movies\Models\Movie;
 function onStart(){
-    $this['movies']=Movie::get();
+    $this['movies']=Movie::orderby('year', 'desc')->paginate(5);
+    $this['name']=Input::get('name');
+    if ($this['name']){
+        $this['movies']=Movie::where('name', Input::get('name'))->get();
+    }
 }
 ?>
 ==
@@ -18,9 +21,8 @@ function onStart(){
 <ul class="list-group list-group-flush">
     {% for movie in movies %}
     <li class="list-group-item">
-        {# Use spaceless tag to remove spaces inside the A tag. #}
         <h3>
-            <a href="/movie/{{ movie.slug }}">{{movie.name}}</a>
+            <a href="/movie/{{ movie.slug }}">{{movie.name}} - {{movie.year}}</a>
         </h3>
         {{ html_limit(movie.description, 150) |raw }}
     </li>
@@ -28,3 +30,6 @@ function onStart(){
     <li class="no-data">{{ noRecordsMessage }}</li>
     {% endfor %}
 </ul>
+<div>
+    {{  movies.render|raw }}
+</div>

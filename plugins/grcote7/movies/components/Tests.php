@@ -7,6 +7,7 @@
 namespace Grcote7\Movies\Components;
 
 use Cms\Classes\ComponentBase;
+use Grcote7\Movies\Models\Actor;
 
 class Tests extends ComponentBase
 {
@@ -33,6 +34,13 @@ class Tests extends ComponentBase
 
   public function onRun()
   {
-    $this->data = 123;
+    // $actors = Actor::all();
+    // foreach ($actors as $actor) {
+    //   $list[]['name']     = '"name" => '.$actor->name.',<br>';
+    //   $list[]['lastname'] = '"lastname" => '.$actor->lastname.',<br>';
+    //   //   $list['lastname'] = $actor->lastname;
+    // }
+    // // $this->data = print_r($list, 1);
+    // return print_r($list, 1);
   }
 }
