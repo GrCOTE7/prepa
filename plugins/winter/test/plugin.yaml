@@ -1,6 +1,0 @@
-plugin:
-    name: 'grcote7.testbuilder::lang.plugin.name'
-    description: 'grcote7.testbuilder::lang.plugin.description'
-    author: Grcote7
-    icon: wn-icon-heart
-    replaces: {  }

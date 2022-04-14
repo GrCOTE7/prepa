@@ -42,6 +42,7 @@ fields:
         label: Robot follow
         type: dropdown
         default: follow
+        default: index
         span: right
         options:
             follow: Follow
