@@ -12,3 +12,13 @@ columns:
         label: Slug
         type: text
         sortable: false
+    poster:
+        label: Poster
+        type: partial
+        path: ~/plugins/grcote7/movies/models/movie/_poster_column.htm
+    genres:
+        label: Genres
+        type: text
+        searchable: true
+        select: genre_title
+        relation: genres
