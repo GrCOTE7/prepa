@@ -42,6 +42,10 @@ class Actor extends Model
    */
   public $rules = [
   ];
+  protected $fillable = [
+    'name',
+    'lastname',
+  ];
 
   public function getFullNameAttribute()
   {

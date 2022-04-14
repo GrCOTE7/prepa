@@ -50,13 +50,14 @@ class Movie extends Model
    */
   public $table = 'grcote7_movies_movies';
 
-//   public $fillable = ['name', 'slug', 'description', 'year'];
-
   /**
    * @var array Validation rules
    */
   public $rules = [
   ];
+
+//   protected $fillable = ['name', 'slug', 'description', 'year'];
+  protected $fillable = ['name'];
 
   // protected $jsonable = ['actors'];
 }
