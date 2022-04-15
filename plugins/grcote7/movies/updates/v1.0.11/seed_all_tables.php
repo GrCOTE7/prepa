@@ -24,6 +24,7 @@ class seed_all_tables extends Seeder
       'slug'        => str_slug('Inception'),
       'description' => $faker->paragraph($nbWords = 3, $variableNbSentences = true),
       'year'        => 2023,
+      //   'created_at'  => timestamps(),
     ]);
 
     for ($i = 0; $i < 99; ++$i) {
@@ -33,6 +34,7 @@ class seed_all_tables extends Seeder
         'slug'        => str_slug($name),
         'description' => $faker->paragraph($nbWords = 3, $variableNbSentences = true),
         'year'        => $faker->year($max = 'now'),
+        // 'created_at'  => timestamps(),
       ]);
     }
 

@@ -1,35 +1,38 @@
-1.0.1:
+1.0.01:
     - 'Initialize plugin.'
-1.0.2:
     - 'Created table grcote7_movies_'
-    - builder_table_create_grcote7_movies_.php
-1.0.3:
+    - v1.0.01/builder_table_create_grcote7_movies_.php
+1.0.02:
     - 'Updated table grcote7_movies_'
-    - builder_table_update_grcote7_movies_movies.php
-1.0.4:
+    - v1.0.02/builder_table_update_grcote7_movies_movies.php
+1.0.03:
     - 'Updated table grcote7_movies_movies'
-    - builder_table_update_grcote7_movies_movies_2.php
-1.0.5:
+    - v1.0.03/builder_table_update_grcote7_movies_movies_2.php
+1.0.04:
     - 'Created table grcote7_movies_genres'
-    - builder_table_create_grcote7_movies_genres.php
-1.0.6:
+    - v1.0.04/builder_table_create_grcote7_movies_genres.php
+1.0.05:
     - 'Created table grcote7_movies_genre_movie'
-    - builder_table_create_grcote7_movies_genre_movie.php
-1.0.7:
+    - v1.0.05/builder_table_create_grcote7_movies_genre_movie.php
+1.0.06:
     - 'Updated table grcote7_movies_genre_movie'
-    - builder_table_update_grcote7_movies_genres_movies.php
-1.0.8:
+    - v1.0.06/builder_table_update_grcote7_movies_genres_movies.php
+1.0.07:
     - 'Updated table grcote7_movies_movies'
-    - builder_table_update_grcote7_movies_movies_3.php
-1.0.9:
+    - v1.0.07/builder_table_update_grcote7_movies_movies_3.php
+1.0.08:
     - 'Created table grcote7_movies_actors'
-    - builder_table_create_grcote7_movies_actors.php
-1.0.10:
+    - v1.0.08/builder_table_create_grcote7_movies_actors.php
+1.0.09:
     - 'Updated table grcote7_movies_movies'
-    - builder_table_update_grcote7_movies_movies_4.php
-1.0.11:
+    - v1.0.09/builder_table_update_grcote7_movies_movies_4.php
+1.0.10:
     - 'Created table grcote7_movies_actors_movies'
-    - builder_table_create_grcote7_movies_actors_movies.php
-1.0.12:
+    - v1.0.10/builder_table_create_grcote7_movies_actors_movies.php
+1.0.11:
     - 'Seed movies'
-    - seed_all_tables.php
+    - v1.0.11/seed_all_tables.php
+1.0.12:
+    - 'Updated table grcote7_movies_movies'
+    - v1.0.12/builder_table_update_grcote7_movies_movies_5.php
+    - v1.0.12/seed_new_fields_table_movies.php

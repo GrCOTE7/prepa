@@ -15,6 +15,7 @@ columns:
     poster:
         label: Poster
         type: partial
+        sortable: false
         path: ~/plugins/grcote7/movies/models/movie/_poster_column.htm
     genres:
         label: Genres
@@ -22,3 +23,9 @@ columns:
         searchable: true
         select: genre_title
         relation: genres
+    created_at:
+        label: 'Created at'
+        type: datetime
+    published:
+        label: Published
+        type: switch
