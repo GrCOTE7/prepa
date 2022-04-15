@@ -46,6 +46,6 @@ class Tests extends ComponentBase
     // }
     // $genres = $genres->count();
     // $this->data = $genres;
-    $this->data = $genres;    // return print_r($list, 1);
+    $this->data = 123;    // return print_r($list, 1);
   }
 }
