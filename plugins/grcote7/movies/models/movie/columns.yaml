@@ -17,6 +17,12 @@ columns:
         type: partial
         sortable: false
         path: ~/plugins/grcote7/movies/models/movie/_poster_column.htm
+    actors:
+        label: Actors
+        type: text
+        searchable: true
+        select: 'concat(name, '' '', lastname)'
+        relation: actors
     genres:
         label: Genres
         type: text

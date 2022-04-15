@@ -33,6 +33,7 @@
     - 'Seed movies'
     - v1.0.11/seed_all_tables.php
 1.0.12:
-    - 'Updated table grcote7_movies_movies'
+    - 'Updated table grcote7_movies_movies and seed its new fiels'
+    - 'Updated tablse genres and actors too'
     - v1.0.12/builder_table_update_grcote7_movies_movies_5.php
-    - v1.0.12/seed_new_fields_table_movies.php
+    - v1.0.12/seed_tables_movies_genres_and_actors.php

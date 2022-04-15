@@ -67,6 +67,12 @@ class seed_all_tables extends Seeder
         'lastname' => 'Wayne',
       ],
     ];
+    for ($i = 0; $i < 93; ++$i) {
+      $actors[] = [
+        'name'     => $faker->firstname(),
+        'lastname' => $faker->lastname(),
+      ];
+    }
     foreach ($actors as $actor) {
       Actor::create([
         'name'     => $actor['name'],
@@ -74,7 +80,9 @@ class seed_all_tables extends Seeder
       ]);
     }
 
-    $genres = ['Action', 'Comedy', 'Science Fiction', 'Drama'];
+    $genres = ['Action', 'Comedy', 'Science Fiction', 'Drama', 'Adult', 'Romance', 'Documentary'];
+    sort($genres);
+
     foreach ($genres as $genre) {
       Genre::create([
         'slug'        => str_slug($genre),
