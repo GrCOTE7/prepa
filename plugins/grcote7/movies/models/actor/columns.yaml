@@ -8,4 +8,5 @@ columns:
     actorimage:
         label: Photo
         type: image
+        sortable: false
         relation: actorimage
