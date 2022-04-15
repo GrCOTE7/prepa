@@ -3,7 +3,7 @@ modelClass: Grcote7\Movies\Models\Movie
 list: $/grcote7/movies/models/movie/columns.yaml
 recordUrl: 'grcote7/movies/movies/update/:id'
 noRecordsMessage: 'backend::lang.list.no_records'
-recordsPerPage: 20
+recordsPerPage: 5
 showSetup: true
 showCheckboxes: true
 filter: config_filter.yaml

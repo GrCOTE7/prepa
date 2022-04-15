@@ -4,3 +4,7 @@ scopes:
         modelClass: Grcote7\Movies\Models\Genre
         conditions: id in (select movie_id from grcote7_movies_genres_movies where genre_id in (:filtered))
         nameFrom: genre_title
+    created_at:
+        label: 'Date range'
+        type: daterange
+        conditions: created_at >= ':after' AND created_at <= ':before'
