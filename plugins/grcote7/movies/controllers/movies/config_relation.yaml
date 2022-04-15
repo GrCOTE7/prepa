@@ -1,0 +1,8 @@
+genres:
+    label: "Genre"
+    view:
+        list: $/grcote7/movies/models/genre/columns.yaml
+        toolbarButtons: add|remove
+    manage:
+        form: $/grcote7/movies/models/genre/fields.yaml
+        showCheckboxes: true

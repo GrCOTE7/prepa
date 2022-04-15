@@ -33,5 +33,10 @@ class seed_tables_movies_genres_and_actors extends Seeder
       $movie->published  = $faker->boolean($chanceOfGettingTrue = 50);
       $movie->save();
     }
+
+    $movie         = Movie::where('name', 'like', 'Inception')->first();
+    $movie->actors = [1, 2];
+    $movie->genres = [1, 7];
+    $movie->save();
   }
 }

@@ -50,4 +50,5 @@ fields:
         nameFrom: genre_title
         descriptionFrom: description
         span: auto
-        type: relation
+        type: partial
+        path: field_genre
