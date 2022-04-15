@@ -39,9 +39,11 @@ class Actorbox extends FormWidgetBase
     $this->vars['id']     = $this->model->id;
     $this->vars['actors'] = Actor::all()->lists('full_name', 'id');
     $this->vars['name']   = $this->formField->getName().'[]';
+    // dd($this->vars);
     if (!empty($this->getLoadValue())) {
       $this->vars['selectedValues'] = $this->getLoadValue();
     } else {
+      // dd($this->vars);
       $this->vars['selectedValues'] = [];
     }
   }
@@ -51,21 +53,23 @@ class Actorbox extends FormWidgetBase
     // Get values
     $newArray = [];
 
-    // dd($actors);
-    foreach ($actors as $actorId) {
-      // Compare values
-      if (!is_numeric($actorId)) {
-        $newActor     = new Actor();
-        $nameLastname = explode(' ', $actorId);
-        // dd($nameLastname);
-        $newActor->name     = ucfirst($nameLastname[0]);
-        $newActor->lastname = ucfirst($nameLastname[1]);
-        // Save to model
-        $newActor->save();
-        // Create new array
-        $newArray[] = $newActor->id;
-      } else {
-        $newArray[] = $actorId;
+    // var_dump($actors);
+    if (!empty($actors)) {
+      foreach ($actors as $actorId) {
+        // Compare values
+        if (!is_numeric($actorId)) {
+          $newActor     = new Actor();
+          $nameLastname = explode(' ', $actorId);
+          //   dd($nameLastname);
+          $newActor->name     = ucfirst($nameLastname[0]);
+          $newActor->lastname = ucfirst($nameLastname[1]);
+          // Save to model
+          $newActor->save();
+          // Create new array
+          $newArray[] = $newActor->id;
+        } else {
+          $newArray[] = $actorId;
+        }
       }
     }
     // dd($newArray);
