@@ -6,7 +6,15 @@ fields:
     actors:
         label: Actors
         span: left
-        type: actorbox
+        type: partial
+        path: field_actor
+    genres:
+        label: Genres
+        nameFrom: genre_title
+        descriptionFrom: description
+        span: auto
+        type: partial
+        path: field_genre
     description:
         label: 'grcote7.movies::lang.plugin.description'
         size: ''
@@ -45,10 +53,3 @@ fields:
         imageWidth: '80'
         imageHeight: '80'
         type: fileupload
-    genres:
-        label: Genres
-        nameFrom: genre_title
-        descriptionFrom: description
-        span: auto
-        type: partial
-        path: field_genre

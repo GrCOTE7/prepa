@@ -6,3 +6,12 @@ genres:
     manage:
         form: $/grcote7/movies/models/genre/fields.yaml
         showCheckboxes: true
+actors:
+    label: Actors
+    view:
+        list: $/grcote7/movies/models/actor/columns.yaml
+        toolbarButtons: create|add|remove
+    manage:
+        form: $/grcote7/movies/models/actor/fields.yaml
+        showSearch: true
+        recordsPerPage: 10
