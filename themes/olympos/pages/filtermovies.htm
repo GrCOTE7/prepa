@@ -6,6 +6,8 @@ is_hidden = 0
 [filtermovies]
 
 ==
-<h2>Filter Movies</h2>
+Req: Year: {{ year | default('-') }} | Genre: {{ genre| capitalize | default('-') }}
+<h2>
+<a href="/filter-movies">Filter Movies</a></h2>
 
 {% component 'filtermovies' %}

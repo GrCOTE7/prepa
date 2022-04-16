@@ -40,12 +40,26 @@ class Filtermovies extends ComponentBase
 
   protected function filterMovies()
   {
-    $year = Input::get('year');
-
-    $q = Movie::all();
+    $year  = Input::get('year');
+    $genre = Input::get('genre');
 
     if ($year) {
-      $q = Movie::where('year', $year)->get();
+      $this->page['year'] = $year;
+      $q                  = Movie::where('year', $year)->get();
+    }
+    if ($genre) {
+      $this->page['genre'] = $genre;
+      if ('unknow' === $genre) {
+        $q = Movie::has('genres', '<', 1)->get();
+      } else {
+        $q = Movie::whereHas('genres', function ($filter) use ($genre) {
+          $filter->where('slug', $genre);
+        })->get();
+      }
+    }
+
+    if (!$year && !$genre) {
+      $q = Movie::all();
     }
 
     return $q;
