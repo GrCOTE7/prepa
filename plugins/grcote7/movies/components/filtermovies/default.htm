@@ -1,0 +1,19 @@
+{% set movies = __SELF__.movies %}
+
+<h1>Movies</h1>
+
+<ul class="list-group list-group-flush">
+    {% for movie in movies %}
+    <li class="list-group-item">
+        <h3>
+            <a href="/movie/{{ movie.slug }}">{{movie.name}} - {{movie.year}}</a>
+        </h3>
+        <h6>
+            {{ movie.genres|map(g=> g.genre_title)|join(', ') }}
+        </h6>
+        {{ html_limit(movie.description, 150) |raw }}
+    </li>
+    {% else %}
+    <li class="no-data">{{ noRecordsMessage }}</li>
+    {% endfor %}
+</ul>

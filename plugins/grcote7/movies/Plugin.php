@@ -13,9 +13,10 @@ class Plugin extends PluginBase
   public function registerComponents()
   {
     return [
-      'Grcote7\Movies\Components\Tests'     => 'tests',
-      'Grcote7\Movies\Components\Actors'    => 'actors',
-      'Grcote7\Movies\Components\ActorForm' => 'actorform',
+      'Grcote7\Movies\Components\Tests'        => 'tests',
+      'Grcote7\Movies\Components\FilterMovies' => 'filtermovies',
+      'Grcote7\Movies\Components\Actors'       => 'actors',
+      'Grcote7\Movies\Components\ActorForm'    => 'actorform',
     ];
   }
 
