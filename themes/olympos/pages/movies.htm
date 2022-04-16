@@ -19,6 +19,10 @@ function onStart(){
 <a href="search">Search Page</a>
 <hr>
 
+<div class="card">
+  <div class="card-header">
+   Movies list
+  </div>
 <ul class="list-group list-group-flush">
     {% for movie in movies %}
     <li class="list-group-item">
@@ -31,6 +35,24 @@ function onStart(){
     <li class="no-data">{{ noRecordsMessage }}</li>
     {% endfor %}
 </ul>
-<div>
-    {{  movies.render|raw }}
 </div>
+
+{% if movies.lastPage > 1 %}
+<nav aria-label="Page navigation example"></nav>
+    <ul class="pagination">
+        {% if movies.currentPage > 1 %}
+            <li class="page-item"><a class="page-link"  href="{{ movies.previousPageUrl }}">&larr;</a></li>
+        {% endif %}
+
+        {% for page in 1..movies.lastPage %}
+            <li class="page-item {{ movies.currentPage == page ? 'active' : null }}">
+                <a  class="page-link" href="{{ movies.url(page) }}">{{ page }}</a>
+            </li>
+        {% endfor %}
+
+        {% if movies.lastPage > movies.currentPage %}
+            <li class="page-item"><a class="page-link" href="{{  movies.nextPageUrl }}">&rarr;</a></li>
+        {% endif %}
+    </ul>
+</nav>
+{% endif %}
