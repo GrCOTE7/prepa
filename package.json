@@ -36,5 +36,8 @@
   },
   "version": "1.0.0",
   "main": "index.js",
-  "author": "Grcote7"
+  "author": "Grcote7",
+  "dependencies": {
+    "semantic-ui-css": "^2.4.1"
+  }
 }
