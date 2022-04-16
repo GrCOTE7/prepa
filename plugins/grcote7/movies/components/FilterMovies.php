@@ -58,6 +58,18 @@ class Filtermovies extends ComponentBase
       }
     }
 
+    if ($year && $genre) {
+      $this->page['genre'] = $genre;
+      if ('unknow' === $genre) {
+        $q = Movie::has('genres', '<', 1);
+      } else {
+        $q = Movie::whereHas('genres', function ($filter) use ($genre) {
+          $filter->where('slug', $genre);
+        });
+      }
+      $q = $q->where('year', $year)->get();
+    }
+
     if (!$year && !$genre) {
       $q = Movie::all();
     }

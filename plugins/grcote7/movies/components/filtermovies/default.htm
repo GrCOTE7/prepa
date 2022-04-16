@@ -3,24 +3,27 @@
 <h1>Movies</h1>
 
 <form action="{{ url('filter-movies') }}" method="get">
-<div>
-    <label for="year">Year</label>
-    <select name="year">
-        <option value="">Any</option>
-        <option value="2014">2014</option>
-        <option value="2015">2015</option>
-    </select>
-    <button type="submit">Filter Year</button>
+    <div>
+        <label for="year">Year</label>
+        <select name="year">
+            <option value="">Any</option>
+            <option value="2014">2014</option>
+            <option value="2015">2015</option>
+            <option value="2022">2022</option>
+        </select>
 
-    <label for="genre">Genre</label>
-    <select name="genre">
-        <option value="">Any</option>
-        <option value="unknow">Unknow</option>
-        <option value="action">Action</option>
-        <option value="comedy">Comedy</option>
-    </select>
-    <button type="submit">Filter Genre</button>
-</div>
+        <label for="genre">Genre</label>
+        <select name="genre">
+            <option value="">Any</option>
+            <option value="unknow">Unknow</option>
+            <option value="action">Action</option>
+            <option value="comedy">Comedy</option>
+            <option value="drama">Drama</option>
+        </select>
+        
+        <button type="submit">Filter</button>
+    </div>
+
 
 </form>
 
@@ -28,7 +31,7 @@
     {% for movie in movies %}
     <li class="list-group-item">
         <h3>
-            <a href="/movie/{{ movie.slug }}">{{movie.name}} - {{movie.year}}</a>
+            <a href="/movie/{{ movie.slug }}">{{ movie.name }} - {{ movie.year }}</a>
         </h3>
         <h6>
             {{ movie.genres|map(g=> g.genre_title)|join(', ') }}
