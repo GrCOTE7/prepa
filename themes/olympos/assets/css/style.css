@@ -26,3 +26,7 @@
 .pagination li .active{
     color:black;
 }
+
+.page-link {
+    padding: 0.2rem;
+}

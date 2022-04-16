@@ -11,7 +11,6 @@ function onStart(){
     if ($this['name']){
         $this['movies']=Movie::where('name', Input::get('name'))->get();
     }
-    $this['movies.lastPage'] =7;
 }
 ?>
 ==
@@ -31,36 +30,23 @@ function onStart(){
     <li class="no-data">{{ noRecordsMessage }}</li>
     {% endfor %}
 </div>
-<div>
-    {{  movies.render|raw }}
-</div>
 
-{{ movies.lastPage }}
-<hr>
-{% if movies.hasPages %}
-    <div class="pagination">
-        <div class="item">
-            {% if movies.currentPage > 1 %}
-                <a href="{{ movies.previousPageUrl }}" rel="prev">«</a>
-            {% else %}
-                <span class="disabled">«</span>
-            {% endif %}
-        </div>
+{% if movies.lastPage > 1 %}
+<nav aria-label="Page navigation example"></nav>
+    <ul class="pagination">
+        {% if movies.currentPage > 1 %}
+            <li class="page-item"><a class="page-link"  href="{{ movies.previousPageUrl }}">&larr; Prev</a></li>
+        {% endif %}
 
-        {% for page in range(1, movies.lastPage) %}
-            {% if (page<4) or (page>17)  %}
-                <div class="item">
-                    <a href="{{ movies.url(page) }}">{{ page }}</a>
-                </div>
-            {% endif %}
+        {% for page in 1..movies.lastPage %}
+            <li class="page-item {{ movies.currentPage == page ? 'active' : null }}">
+                <a  class="page-link" href="{{ movies.url(page) }}">{{ page }}</a>
+            </li>
         {% endfor %}
 
-        <div class="item">
-            {% if movies.hasMorePages %}
-                <a href="{{ movies.nextPageUrl }}" rel="next">»</a>
-            {% else %}
-                <span class="disabled">»</span>
-            {% endif %}
-        </div>
-    </div>
+        {% if movies.lastPage > movies.currentPage %}
+            <li class="page-item"><a class="page-link" href="{{  movies.nextPageUrl }}">Next &rarr;</a></li>
+        {% endif %}
+    </ul>
+</nav>
 {% endif %}
