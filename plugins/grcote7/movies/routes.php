@@ -5,6 +5,9 @@
  */
 
 use Grcote7\Movies\Models\Actor;
+use Grcote7\Movies\Models\Genre;
+use Grcote7\Movies\Models\Movie;
+use Illuminate\Support\Facades\Response;
 
 // (c) Boosteur.com - 2022
 
@@ -56,4 +59,11 @@ Route::get('/seed-actors', function () {
   }
 
   return 'Actors created';
+});
+
+Route::get('sitemap.xml', function () {
+  $movies = Movie::all();
+  $genres = Genre::all();
+
+  return Response::view('grcote7.movies::sitemap', ['movies' => $movies, 'genres' => $genres])->header('Content-type', 'text/xml');
 });
