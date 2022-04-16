@@ -23,10 +23,10 @@
 .flash.success {
     background-color: rgb(70, 115, 1);
 }
+
 .pagination li .active{
     color:black;
 }
-
 .page-link {
     padding: 0.2rem;
 }
