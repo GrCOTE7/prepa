@@ -62,6 +62,8 @@ class Filtermovies extends ComponentBase
       $q = Movie::all();
     }
 
+    $this->page['nbRep'] = $q->count();
+
     return $q;
   }
 }
