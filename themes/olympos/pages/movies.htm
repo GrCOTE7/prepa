@@ -35,7 +35,7 @@ function onStart(){
 <nav aria-label="Page navigation example"></nav>
     <ul class="pagination">
         {% if movies.currentPage > 1 %}
-            <li class="page-item"><a class="page-link"  href="{{ movies.previousPageUrl }}">&larr; Prev</a></li>
+            <li class="page-item"><a class="page-link"  href="{{ movies.previousPageUrl }}">&larr;</a></li>
         {% endif %}
 
         {% for page in 1..movies.lastPage %}
@@ -45,7 +45,7 @@ function onStart(){
         {% endfor %}
 
         {% if movies.lastPage > movies.currentPage %}
-            <li class="page-item"><a class="page-link" href="{{  movies.nextPageUrl }}">Next &rarr;</a></li>
+            <li class="page-item"><a class="page-link" href="{{  movies.nextPageUrl }}">&rarr;</a></li>
         {% endif %}
     </ul>
 </nav>
