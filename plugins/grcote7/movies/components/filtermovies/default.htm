@@ -2,6 +2,18 @@
 
 <h1>Movies</h1>
 
+<form action="{{ url('filter-movies') }}" method="get">
+<div>
+    <label for="year">Year</label>
+    <select name="year">
+        <option value="2014">2014</option>
+        <option value="2015">2015</option>
+    </select>
+    <button type="submit">Filter</button>
+</div>
+
+</form>
+
 <ul class="list-group list-group-flush">
     {% for movie in movies %}
     <li class="list-group-item">

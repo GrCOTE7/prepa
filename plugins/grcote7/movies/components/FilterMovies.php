@@ -8,6 +8,7 @@ namespace Grcote7\Movies\Components;
 
 use Cms\Classes\ComponentBase;
 use Grcote7\Movies\Models\Movie;
+use Winter\Storm\Support\Facades\Input;
 
 class Filtermovies extends ComponentBase
 {
@@ -39,6 +40,14 @@ class Filtermovies extends ComponentBase
 
   protected function filterMovies()
   {
-    return Movie::all();
+    $year = Input::get('year');
+
+    $q = Movie::all();
+
+    if ($year) {
+      $q = Movie::where('year', $year)->get();
+    }
+
+    return $q;
   }
 }
