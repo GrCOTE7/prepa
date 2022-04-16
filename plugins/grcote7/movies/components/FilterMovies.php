@@ -7,12 +7,15 @@
 namespace Grcote7\Movies\Components;
 
 use Cms\Classes\ComponentBase;
+use Grcote7\Movies\Models\Genre;
 use Grcote7\Movies\Models\Movie;
 use Winter\Storm\Support\Facades\Input;
 
 class Filtermovies extends ComponentBase
 {
   public $movies;
+  public $genres;
+  public $years;
 
   /**
    * Gets the details for the component.
@@ -36,6 +39,16 @@ class Filtermovies extends ComponentBase
   public function onRun()
   {
     $this->movies = $this->filterMovies();
+    $this->genres = Genre::all();
+    $this->years  = $this->filterYears();
+    rsort($this->years);
+
+    // return $this->years;
+  }
+
+  public function filterYears()
+  {
+    return array_unique(Movie::all()->lists('year'));
   }
 
   protected function filterMovies()
