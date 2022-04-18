@@ -17,14 +17,26 @@ security = "all"
     <link rel="icon" type="image/png" href="{{ 'assets/images/logo.png'|theme }}">
 
     <link rel="stylesheet" href="/aGC7/src/bootstrap513.min.css">
+    <link rel="stylesheet" href="/aGC7/src/bootstrap-icons-1.8.1/bootstrap-icons.css">
+{# <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"> #}
+    <script src="/aGC7/src/fontawesome.js"></script>
+
+
+    <link rel="stylesheet" href="/aGC7/src/flags-icons.min.css">
+
+
+
+
     <link rel="stylesheet" href="/aGC7/src/semantic.min.css">
+
     <link href="{{ ['assets/css/style.css']|theme }}" rel="stylesheet">
     {% styles %}
 </head>
 
 <body>
-
     {% partial 'header' %}
+
+
 
     <!-- Content -->
     <section id="layout-content" class="container clearfix">
@@ -33,26 +45,26 @@ security = "all"
 
     <!-- Scripts -->
 
-    <script src="aGC7/src/bootstrap513.bundle.min.js"></script>
-    <script src="aGC7/src/semantic.min.js"></script>
+    <script src="/aGC7/src/bootstrap513.bundle.min.js"></script>
 
     <script src="{{ [
         'assets/js/jquery.js',
         'assets/js/app.js'
         ]|theme  }}"></script>
 
-<script type="text/javascript">
+<script type="text/javascript" src="/aGC7/src/semantic.min.js"></script>
 
-jQuery(document).ready(function($){
-$('.contact-form').on('ajaxError', function(event, message){
-    $('.flash').removeClass('active');
-    $('.flash.error').addClass('active');
-})
-$('.contact-form').on('ajaxSuccess', function(event, message){
-    $('.flash').removeClass('active');
-    $('.flash.success').addClass('active');
-})
-});
+<script type="text/javascript">
+    jQuery(document).ready(function($){
+        $('.contact-form').on('ajaxError', function(event, message){
+            $('.flash').removeClass('active');
+            $('.flash.error').addClass('active');
+        })
+        $('.contact-form').on('ajaxSuccess', function(event, message){
+            $('.flash').removeClass('active');
+            $('.flash.success').addClass('active');
+        })
+    });
 
 </script>
 

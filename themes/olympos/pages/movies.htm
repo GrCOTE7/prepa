@@ -11,13 +11,41 @@ function onStart(){
     if ($this['name']){
         $this['movies']=Movie::where('name', Input::get('name'))->get();
     }
-    $this['subMenus'] = [        'Add actors', 'Filter Movies'        ];
+    $this['subMenus'] = [
+        ['Add actors'=>'person-plus'],
+        ['Filter Movies'=>'filter']
+    ];
 }
 ?>
 ==
-{% for item in subMenus %}
-<a href="/{{item|slug}}"><button type="button" class="btn btn-outline-primary btn-sm">{{ item }}</button></a>
+{# {% for page, icon in subMenus %}
+    <a href="/{{key.page|slug}}"><button type="button" class="btn btn-outline-primary btn-sm"><i class="bi-{{ icon }}" style="font-size: 1rem; color: cornflowerblue; margin-right:5px;"></i> {{ key.page }}</button></a>
+{% endfor %} #}
+
+{% for page, icon in subMenus %}
+{{ dump(icon) }}
 {% endfor %}
+
+
+<span class="fi fi-gr"></span> <span class="fi fi-gr fis"></span>
+sss
+
+<i class="ae flag"></i>
+<i class="france flag"></i>
+<i class="myanmar flag"></i>
+
+bi
+{# <svg class="bi" width="32" height="32" fill="currentColor">
+  <use xlink:href="bootstrap-icons.svg#person-plus"/>
+</svg> #}
+
+<i class="bi-person-plus"></i>
+<i class="bi-alarm" style="font-size: 1rem; color: cornflowerblue;"></i>
+
+<!-- alt="..." on <img> element -->
+{# <img src="/assets/img/bootstrap.svg" alt="Bootstrap" ...> #}
+
+
 
 <div class="ui list">
     {% for movie in movies %}
