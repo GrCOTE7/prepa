@@ -8,7 +8,8 @@ function onStart()
 {
   // Way 1
   $this['friends_1'] = [
-    ['name'      => 'Pierre',
+    [
+      'name'     => 'Pierre',
       'lastname' => 'DUPONT',
     ],
     [
@@ -19,7 +20,11 @@ function onStart()
 
   // Way 2
   $this['friends_2'] = [
-    ['Pierre' => 'DUPONT'],
-    ['Paul' => 'MARTIN'],
+    [
+      'Pierre' => 'DUPONT',
+    ],
+    [
+      'Paul' => 'MARTIN',
+    ],
   ];
 }

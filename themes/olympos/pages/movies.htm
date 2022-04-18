@@ -12,18 +12,16 @@ function onStart(){
         $this['movies']=Movie::where('name', Input::get('name'))->get();
     }
     $this['subMenus'] = [
-        ['Add actors'=>'person-plus'],
-        ['Filter Movies'=>'filter']
+        ['Add actors'   => 'person-plus'],
+        ['Filter Movies'=> 'filter']
     ];
 }
 ?>
 ==
-{# {% for page, icon in subMenus %}
-    <a href="/{{key.page|slug}}"><button type="button" class="btn btn-outline-primary btn-sm"><i class="bi-{{ icon }}" style="font-size: 1rem; color: cornflowerblue; margin-right:5px;"></i> {{ key.page }}</button></a>
-{% endfor %} #}
-
-{% for page, icon in subMenus %}
-{{ dump(icon) }}
+{% for key, item in subMenus %}
+    {% for title, icon in subMenus[key] %}
+        <a href="/{{title|slug}}"><button type="button" class="btn btn-outline-primary btn-sm"><i class="bi-{{ icon }}" style="font-size: 1rem; color: cornflowerblue; margin-right:5px;"></i> {{ title }}</button></a>
+    {% endfor %}
 {% endfor %}
 
 
