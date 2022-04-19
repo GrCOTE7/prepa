@@ -1,4 +1,6 @@
-@import url("https://prepa/aGC7/src/bootstrap-icons.css");
+@import url("../../../../aGC7/src//bootstrap513.min.css");
+@import url("../../../../aGC7/src/semantic.min.css");
+@import url("../../../../aGC7/src/bootstrap-icons-1.8.1/bootstrap-icons.css");
 
 .active {
     color: rgb(24, 1, 154);

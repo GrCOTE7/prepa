@@ -1,35 +1,36 @@
 <header>
-    <nav class="nav navbar navbar-expand-lg navbar-light bg-light">
-        <ul class="nav navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="/">Winter Movies</a>
+        <nav class="nav navbar navbar-expand-lg navbar-light bg-light">
+            <ul class="nav navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="/">Winter Movies</a>
 
-                <h2 class="logo"></h2>
+                    <h2 class="logo"></h2>
 
-                <li class="nav-item">
-                    <a class="nav-link {% if this.page.id == 'homepage' %}active {% endif %}"
-                        href="{{ 'homepage' |page }}">Home</a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if this.page.id == 'homepage' %}active {% endif %}"
+                            href="{{ 'homepage' |page }}">Home</a>
+                    </li>
 
-                <li class="nav-item">
-                    <a class="nav-link {% if this.page.id == 'movies' or this.page.id=='movie-single' %}active {% endif %}"
-                        href="{{ 'movies' |page }}">Movies</a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if this.page.id == 'movies' or this.page.id=='movie-single' %}active {% endif %}"
+                            href="{{ 'movies' |page }}">Movies</a>
+                    </li>
 
-                <li class="nav-item">
-                    <a class="nav-link {% if this.page.id == 'contact' %}active {% endif %}"
-                        href="{{ 'contact' |page }}">Contact</a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if this.page.id == 'contact' %}active {% endif %}"
+                            href="{{ 'contact' |page }}">Contact</a>
+                    </li>
 
-                {% if not user %}
-                <li class="nav-item">
-                    <a class="nav-link {% if this.page.id == 'login' %}active {% endif %}"
-                        href="{{ 'login' |page }}">Login</a>
-                </li>
-                {% else %}
-                <a data-request="onLogout" data-request-data="redirect: '/'">Sign out</a>
-                {% endif %}
-            </div>
-        </ul>
-    </nav>
-</header>
+                    {% if not user %}
+                    <li class="nav-item">
+                        <a class="nav-link {% if this.page.id == 'login' %}active {% endif %}"
+                            href="{{ 'login' |page }}">Login</a>
+                    </li>
+                    {% else %}
+                    <a data-request="onLogout" data-request-data="redirect: '/'">Sign out</a>
+                    {% endif %}
+                    
+                </div>
+            </ul>
+        </nav>
+    </header>
