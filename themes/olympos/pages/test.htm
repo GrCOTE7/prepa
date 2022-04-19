@@ -1,14 +1,23 @@
 title = "Tests"
-url = "/t"
+url = "/t/:test?"
 layout = "default"
 is_hidden = 0
 ==
 <?php
 function onStart()
 {
-    // $data =  '<a href = "/tests/twig-lists">Twig Lists</a>';
-    // require 'themes/olympos/pages/tests/extract.php';
-    require 'themes/olympos/pages/tests/test.php';
+    if ($this->param('test')) require 'themes/olympos/pages/tests/extract.php';
+
+
+
+
+
+    $data['-------------------------------------------']='';
+    $data['Twig Lists'] =  'http://prepa/tests/twig-lists'; // page
+    $data['Extract'] =  'http://prepa/t/test=extract'; // code PHP
+    // require 'themes/olympos/pages/tests/test.php';
+
+    $data['Retour']='http://prepa/movies';
     return $data ?? '$data empty.';
 }
 ?>
