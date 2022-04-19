@@ -6,16 +6,13 @@ is_hidden = 0
 <?php
 function onStart()
 {
-    if ($this->param('test')) require 'themes/olympos/pages/tests/extract.php';
-
-
-
+    if ($this->param('test')) require 'themes/olympos/pages/tests/'.$this->param('test').'.php';
 
 
     $data['-------------------------------------------']='';
     $data['Twig Lists'] =  'http://prepa/tests/twig-lists'; // page
-    $data['Extract'] =  'http://prepa/t/test=extract'; // code PHP
-    // require 'themes/olympos/pages/tests/test.php';
+    $data['Extract'] =  'http://prepa/t/extract'; // code PHP
+    $data['Test'] =  'http://prepa/t/test'; // code PHP
 
     $data['Retour']='http://prepa/movies';
     return $data ?? '$data empty.';
