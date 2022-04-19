@@ -6,7 +6,7 @@
 
 namespace Grcote7\Movies\Models;
 
-use Model;
+use Winter\Storm\Database\Model;
 
 /**
  * Model.

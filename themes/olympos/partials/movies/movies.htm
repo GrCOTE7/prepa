@@ -1,0 +1,46 @@
+{% if movies|length %}
+
+{% for movie in movies %}
+<div class="ui segment vertical">
+    <h3 class="ui header"><a href="/movie/{{ movie.slug }}">{{ movie.name }}</h3>
+    <div class="ui"> {{ movie.year }}</a> </div>
+    <div class="ui segment">
+
+        <ul class="ui list bulletd horizontal">
+
+            {% for genre in movie.genres %}
+            <li class="item">{{ genre.genre_title }}</li>
+            {% endfor %}
+
+        </ul>
+
+    </div>
+</div>
+{% endfor %}
+
+
+{% if movies.lastPage > 1 %}
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        {% if movies.currentPage > 1 %}
+
+        <li class="page-item"><a class="page-link" href="{{ movies.previousPageUrl }}">&larr;</a></li>
+        {% endif %}
+
+        {% for page in 1..movies.lastPage %}
+        <li class="page-item {{ movies.currentPage == page ? 'active' : null }}">
+            <a class="page-link" href="{{ movies.url(page) }}">{{ page }}</a></li>
+        {% endfor %}
+
+        {% if movies.lastPage > movies.currentPage %}
+        <li class="page-item"><a class="page-link" href="{{ movies.nextPageUrl }}">&rarr;</a></li>
+        {% endif %}
+
+    </ul>
+</nav>
+{% endif %}
+
+{% else %}
+<div class="ui message text-center">There are no movies that match the criteria</div>
+{% endif %}

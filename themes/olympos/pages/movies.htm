@@ -21,47 +21,49 @@ function onStart(){
 ?>
 ==
 {% for key, item in subMenus %}
-    {% for title, icon in subMenus[key] %}
-        <a href="/{{title|slug}}"><button type="button" class="btn btn-outline-primary btn-sm"><i class="bi-{{ icon }}" style="font-size: 1rem; color: cornflowerblue; margin-right:5px;"></i> {{ title }}</button></a>
-    {% endfor %}
+{% for title, icon in subMenus[key] %}
+<a href="/{{ title|slug }}"><button type="button" class="btn btn-outline-primary btn-sm"><i class="bi-{{ icon }}"
+            style="font-size: 1rem; color: cornflowerblue; margin-right:5px;"></i> {{ title }}</button></a>
+{% endfor %}
 {% endfor %}
 
-    <i class="france flag"></i> <i class="gb flag"></i>
+<i class="france flag"></i> <i class="gb flag"></i>
 
-    <i class="venus mars icon"></i>
+<i class="venus mars icon"></i>
 
-    <div class="ui list">
-        {% for movie in movies %}
-        <div class="ui segment stacked">
-            <h3>
-                <a href="/movie/{{ movie.slug }}">{{movie.name}} - {{movie.year}}</a>
-            </h3>
-            {{ html_limit(movie.description, 150) |raw }}
-        </div>
-        {% else %}
-        <li class="no-data">{{ noRecordsMessage }}</li>
+<div class="ui list">
+    {% for movie in movies %}
+    <div class="ui segment stacked">
+        <h3>
+            <a href="/movie/{{ movie.slug }}">{{ movie.name }} - {{ movie.year }}</a>
+        </h3>
+        {{ html_limit(movie.description, 150) |raw }}
+    </div>
+    {% else %}
+    <li class="no-data">{{ noRecordsMessage }}</li>
+    {% endfor %}
+
+</div>
+
+{% if movies.lastPage > 1 %}
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        {% if movies.currentPage > 1 %}
+
+        <li class="page-item"><a class="page-link" href="{{ movies.previousPageUrl }}">&larr;</a></li>
+        {% endif %}
+
+        {% for page in 1..movies.lastPage %}
+        <li class="page-item {{ movies.currentPage == page ? 'active' : null }}">
+            <a class="page-link" href="{{ movies.url(page) }}">{{ page }}</a></li>
         {% endfor %}
 
-    </div>
+        {% if movies.lastPage > movies.currentPage %}
+        <li class="page-item"><a class="page-link" href="{{ movies.nextPageUrl }}">&rarr;</a></li>
+        {% endif %}
 
-    {% if movies.lastPage > 1 %}
+    </ul>
+</nav>
 
-    <nav aria-label="Page navigation example">
-        <ul class="pagination">
-            {% if movies.currentPage > 1 %}
-
-<li class="page-item"><a class="page-link"  href="{{ movies.previousPageUrl }}">&larr;</a></li>
-            {% endif %}
-
-            {% for page in 1..movies.lastPage %}
-<li class="page-item {{ movies.currentPage == page ? 'active' : null }}"><a  class="page-link" href="{{ movies.url(page) }}">{{ page }}</a></li>
-            {% endfor %}
-
-            {% if movies.lastPage > movies.currentPage %}
-<li class="page-item"><a class="page-link" href="{{  movies.nextPageUrl }}">&rarr;</a></li>
-            {% endif %}
-
-        </ul>
-    </nav>
-
-    {% endif %}
+{% endif %}

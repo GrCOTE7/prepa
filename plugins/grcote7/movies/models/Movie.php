@@ -6,7 +6,7 @@
 
 namespace Grcote7\Movies\Models;
 
-use Model;
+use Winter\Storm\Database\Model;
 
 /**
  * Model.
@@ -56,7 +56,7 @@ class Movie extends Model
   public $rules = [
   ];
 
-//   protected $fillable = ['name', 'slug', 'description', 'year'];
+  //   protected $fillable = ['name', 'slug', 'description', 'year'];
   protected $fillable = ['name'];
 
   // protected $jsonable = ['actors'];
