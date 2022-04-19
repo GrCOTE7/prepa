@@ -1,44 +1,17 @@
-title = "Test"
+title = "Tests"
 url = "/t"
-layout = "Uuu"
+layout = "default"
 is_hidden = 0
 ==
 <?php
 function onStart()
 {
-  // Way 1
-  $this['friends_1'] = [
-    [ 'name'     => 'Pierre',
-      'lastname' => 'DUPONT',
-    ],
-    [
-      'name'     => 'Paul',
-      'lastname' => 'MARTIN',
-    ],
-  ];
-
-  // Way 2
-  $this['friends_2'] = [
-    ['Pierre' => 'DUPONT'],
-    ['Paul' => 'MARTIN'],
-  ];
+    // $data =  '<a href = "/tests/twig-lists">Twig Lists</a>';
+    // require 'themes/olympos/pages/tests/extract.php';
+    require 'themes/olympos/pages/tests/test.php';
+    return $data ?? '$data empty.';
 }
 ?>
 ==
-<h2>Way 1</h2>
-<ul>
-{% for friend in friends_1 %}
-    <li>{{ friend.name }} {{ friend.lastname }}</li>
-{% endfor %}
-</ul>
-
-<hr>
-
-<h2>Way 2</h2>
-<ul>
-{% for key, friend in friends_2 %}
-    {% for name, lastname in friends_2[key] %}
-    <li>{{ name }} {{ lastname }}</li>
-    {% endfor %}
-{% endfor %}
-</ul>
+<h1>Test</h1>
+{{ data }}

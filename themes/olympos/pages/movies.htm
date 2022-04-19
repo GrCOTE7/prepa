@@ -13,7 +13,9 @@ function onStart(){
     }
     $this['subMenus'] = [
         ['Add actors'   => 'person-plus'],
-        ['Filter Movies'=> 'filter']
+        ['Filter Movies'=> 'filter-square-fill'],
+        ['Ajax Filter'  => 'filter-square'],
+        ['T'            => 'wrench-adjustable']
     ];
 }
 ?>
@@ -43,7 +45,7 @@ function onStart(){
     </div>
 
     {% if movies.lastPage > 1 %}
-    
+
     <nav aria-label="Page navigation example">
         <ul class="pagination">
             {% if movies.currentPage > 1 %}
@@ -54,7 +56,7 @@ function onStart(){
             {% for page in 1..movies.lastPage %}
 <li class="page-item {{ movies.currentPage == page ? 'active' : null }}"><a  class="page-link" href="{{ movies.url(page) }}">{{ page }}</a></li>
             {% endfor %}
-            
+
             {% if movies.lastPage > movies.currentPage %}
 <li class="page-item"><a class="page-link" href="{{  movies.nextPageUrl }}">&rarr;</a></li>
             {% endif %}

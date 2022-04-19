@@ -60,4 +60,17 @@ class Movie extends Model
   protected $fillable = ['name'];
 
   // protected $jsonable = ['actors'];
+
+  public function scopeListFrontEnd($query, $options = [])
+  {
+    extract(array_merge([
+      'page'    => 1,
+      'perPage' => 5,
+      'sort'    => 'created_at desc',
+      'genres'  => null,
+      'year'    => '',
+    ], $options));
+
+    return $query->paginate($perPage, $page);
+  }
 }
