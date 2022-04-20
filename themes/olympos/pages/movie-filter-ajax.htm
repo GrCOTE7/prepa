@@ -9,6 +9,7 @@ use Grcote7\Movies\Models\Movie;
 
 function onStart() {
     $this->prepareVars();
+    $this->prepareYears();
 }
 function onFilterMovies() {
     $this->prepareVars();
@@ -17,8 +18,14 @@ function prepareVars(){
     $options = post('Filter', []);
     $this['movies']=Movie::listFrontEnd($options);
     $this['genres']=Genre::all();
-    $this['years']=array_unique(Movie::all()->lists('year'));
+
+    $this['sortOptions']=Movie::$allowedSortingOptions;
+
+    // $this['years']=array_unique(Movie::all()->lists('year'));
     // $this['nbRep']=$this->nbRep;
+}
+function prepareYears(){
+    $this['years']=array_unique(Movie::all()->lists('year'));
 }
 ?>
 ==
@@ -47,6 +54,15 @@ function prepareVars(){
                             <option value="">Select Year</option>
                             {% for year in years|sort|reverse %}
                                 <option value="{{ year }}">{{ year }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="sorting">Sorting</label>
+                        <select class="ui fluid dropdown" name="Filter[sort]">
+                            {% for code, option in sortOptions %}
+                                <option value="{{ code }}">{{ option }}</option>
                             {% endfor %}
                         </select>
                     </div>

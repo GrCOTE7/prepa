@@ -56,10 +56,16 @@ class Movie extends Model
   public $rules = [
   ];
 
+  // protected $jsonable = ['actors'];
+  public static $allowedSortingOptions = [
+    'name'      => 'Name - desc',
+    'name asc'  => 'Name - asc',
+    'year desc' => 'Year - desc',
+    'year asc'  => 'Year - asc',
+  ];
+
   //   protected $fillable = ['name', 'slug', 'description', 'year'];
   protected $fillable = ['name'];
-
-  // protected $jsonable = ['actors'];
 
   public function scopeListFrontEnd($query, $options = [])
   {
@@ -70,6 +76,21 @@ class Movie extends Model
       'genres'  => null,
       'year'    => '',
     ], $options));
+
+    if (!\is_array($sort)) {
+      $sort = [$sort];
+    }
+    foreach ($sort as $_sort) {
+      if (\in_array($_sort, array_keys(self::$allowedSortingOptions), true)) {
+        $parts = explode(' ', $_sort);
+        if (\count($parts) < 2) {
+          array_push($parts, 'desc');
+        }
+        list($sortField, $sortDirection) = $parts;
+
+        $query->orderBy($sortField, $sortDirection);
+      }
+    }
 
     if (null !== $genres) {
       if (!\is_array($genres)) {
