@@ -4,15 +4,6 @@
  * (c) Boosteur.com - 2022
  */
 
-/*
-|--------------------------------------------------------------------------
-| Register composer
-|--------------------------------------------------------------------------
-|
-| Composer provides a generated class loader for the application.
-|
-*/
-
 require __DIR__.'/bootstrap/autoload.php';
 
 /*

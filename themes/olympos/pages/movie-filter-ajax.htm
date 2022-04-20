@@ -4,24 +4,61 @@ layout = "default"
 is_hidden = 0
 ==
 <?
+use Grcote7\Movies\Models\Genre;
 use Grcote7\Movies\Models\Movie;
+
 function onStart() {
-$this->prepareVars();
+    $this->prepareVars();
+}
+function onFilterMovies() {
+    $this->prepareVars();
 }
 function prepareVars(){
-    $this['movies']=Movie::all();
+    $options = post('Filter', []);
+    $this['movies']=Movie::listFrontEnd($options);
+    $this['genres']=Genre::all();
+    $this['years']=array_unique(Movie::all()->lists('year'));
+    // $this['nbRep']=$this->nbRep;
 }
 ?>
 ==
 {# Req: Year: {{ year | default('-') }} | Genre: {{ genre| capitalize | default('-') }} Nombre: {{ nbRep }} #}
 <h2 class="ui header" style="margin-top: 20px;">Ajax Filter Movies</h2>
 <div class="ui grid" style="margin-bottom: 5px;">
+
     <div class="five wide column">
-        Filters
+        {{ form_ajax('onFilterMovies', {update: {'movies/movies': '#partialMovies'} })}}
+
+            <div id="MoviesFilter" class="movies-filter ui form">
+                <div class="ui segment vertical">
+                    <label for="genres">Genres</label>
+                    {% for genre in genres %}
+                        <div class="field">
+                            <div class="ui checkbox">
+                                <input type="checkbox" name="Filter[genres][]" value="{{ genre.id }}" />
+                                <label>{{ genre.genre_title }}</label>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                    <div class="field">
+                        <label for="year">Year</label>
+                        <select class="ui fluid dropdown" name="Filter[year]">
+                            <option value="">Select Year</option>
+                            {% for year in years|sort|reverse %}
+                                <option value="{{ year }}">{{ year }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+            </div>
+        {{ form_close() }}
     </div>
+
     <div class="eleven wide column">
         <div id="partialMovies">
             {% partial 'movies/movies' %}
         </div>
     </div>
+
 </div>

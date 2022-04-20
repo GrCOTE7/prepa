@@ -20,7 +20,7 @@ class Movie extends Model
    * Remove this line if timestamps are defined in the database table.
    */
   public $timestamps = false;
-
+  public $nbRep;
   /**
    * Relations.
    */
@@ -65,11 +65,29 @@ class Movie extends Model
   {
     extract(array_merge([
       'page'    => 1,
-      'perPage' => 5,
+      'perPage' => 3,
       'sort'    => 'created_at desc',
       'genres'  => null,
       'year'    => '',
     ], $options));
+
+    if (null !== $genres) {
+      if (!\is_array($genres)) {
+        $genres = [$genres];
+      }
+      foreach ($genres as $genre) {
+        $query->whereHas('genres', function ($q) use ($genre) {
+          $q->where('id', $genre);
+        });
+      }
+    }
+
+    if ($year) {
+      //   $this->page['year'] = $year;
+      $query->where('year', $year);
+    }
+    // $this->nbRep = $query->count();
+    // echo $this->nbRep;
 
     return $query->paginate($perPage, $page);
   }
