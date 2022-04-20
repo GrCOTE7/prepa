@@ -21,8 +21,16 @@ function prepareVars(){
 
     $this['sortOptions']=Movie::$allowedSortingOptions;
 
+    $this['pages']=$this['movies']->lastPage();
+    // dd($this['pages']);
+    $this['page']=$this['movies']->currentPage();
+
+
+
     // $this['years']=array_unique(Movie::all()->lists('year'));
     // $this['nbRep']=$this->nbRep;
+
+
 }
 function prepareYears(){
     $this['years']=array_unique(Movie::all()->lists('year'));
@@ -34,7 +42,11 @@ function prepareYears(){
 <div class="ui grid" style="margin-bottom: 5px;">
 
     <div class="five wide column">
-        {{ form_ajax('onFilterMovies', {update: {'movies/movies': '#partialMovies'} })}}
+        {{ form_ajax('onFilterMovies', {update: {
+        'movies/movies': '#partialMovies',
+        'movies/paginate': '#partialPaginate',
+        'movies/paginate0': '#partialPaginate0'
+        } })}}
 
             <div id="MoviesFilter" class="movies-filter ui form">
                 <div class="ui segment vertical">
@@ -66,8 +78,14 @@ function prepareYears(){
                             {% endfor %}
                         </select>
                     </div>
+
+                    <div class="field" id="partialPaginate0">
+                        {% partial 'movies/paginate0' %}
+                    </div>
+
                 </div>
             </div>
+
         {{ form_close() }}
     </div>
 
