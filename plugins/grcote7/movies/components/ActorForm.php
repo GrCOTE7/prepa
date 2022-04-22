@@ -1,8 +1,6 @@
 <?php
 
-/*
- * (c) Boosteur.com - 2022
- */
+// (c) Boosteur.com - 2022
 
 namespace Grcote7\Movies\Components;
 
@@ -10,7 +8,6 @@ use Cms\Classes\ComponentBase;
 use Flash;
 use Grcote7\Movies\Models\Actor;
 use Input;
-use Redirect;
 
 class ActorForm extends ComponentBase
 {
@@ -33,8 +30,20 @@ class ActorForm extends ComponentBase
     return [];
   }
 
-  public function onSave()
+  public function onSubmit()
   {
+    $validator = Validator::make(
+      $form = Input::all(),
+      [
+        'name'     => 'required',
+        'lastname' => 'required',
+      ]
+    );
+
+    if ($validator->fails()) {
+      throw new ValidationException($validator);
+    }
+
     $actor             = new Actor();
     $actor->name       = Input::get('name');
     $actor->lastname   = Input::get('lastname');
@@ -42,7 +51,5 @@ class ActorForm extends ComponentBase
 
     $actor->save();
     Flash::success('Actor added !');
-
-    return Redirect::back();
   }
 }

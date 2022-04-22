@@ -1,10 +1,6 @@
-{%  flash success %}
-<p>{{ message }}</p>
-{% endflash %}
-
 <h3>Actor</h3>
 
-<form method="POST" action="{{ url('add-actors') }}" accept-charset="UTF8" enctype="multipart/form-data">
+<form data-request="onSubmit" data-request-files data-request-flash>
 
 <input type="hidden" name="_handler" value="onSave">
 
