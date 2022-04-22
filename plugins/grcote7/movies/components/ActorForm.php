@@ -8,6 +8,9 @@ use Cms\Classes\ComponentBase;
 use Flash;
 use Grcote7\Movies\Models\Actor;
 use Input;
+use System\Models\File;
+use Winter\Storm\Exception\ValidationException;
+use Winter\Storm\Support\Facades\Validator;
 
 class ActorForm extends ComponentBase
 {
@@ -51,5 +54,15 @@ class ActorForm extends ComponentBase
 
     $actor->save();
     Flash::success('Actor added !');
+  }
+
+  public function onImageUpload()
+  {
+    $image = Input::all();
+    $file  = (new File())->fromPost($image['actorimage']);
+
+    return [
+      '#imageResult' => '<img src="'.$file->getThumb(200, 200, ['mode' => 'crop']).'" />',
+    ];
   }
 }

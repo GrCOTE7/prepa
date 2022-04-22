@@ -1,28 +1,45 @@
-<h3>Actor</h3>
+<h3>
+    Actor
+</h3>
 
 <form data-request="onSubmit" data-request-files data-request-flash>
 
-<input type="hidden" name="_handler" value="onSave">
+    <input type="hidden" name="_handler" value="onSave">
 
-{{ form_token() }}
-{{ form_sessionKey() }}
+    {{ form_token() }}
+    {{ form_sessionKey() }}
 
     <div class="form-group">
-        <label for="">Actor name</label>
+        <label for="">
+            Actor name
+        </label>
         <input type="text" name="name" value="Gérard" class="form-control">
-    </div><br>
+    </div>
+    <br>
 
     <div class="form-group">
-        <label for="">Actor lastname</label>
+        <label for="">
+            Actor lastname
+        </label>
         <input type="text" name="lastname" value="Depardieu" class="form-control">
-    </div><br>
+    </div>
+    <br>
 
     <div class="form-group">
-        <label for="">Actor Image</label>
-        <input type="file" name="actorimage" class="form-control">
+        <label for="">
+            Actor Image
+        </label>
+        <input type="file" name="actorimage" class="form-control" accept="image/*" data-request="onImageUpload"
+            data-request-files data-request-flash>
     </div><br>
 
-    <button type="submit" class="btn btn-primary">Save Actor</button>
+    <div id="imageResult">
+        No image to preview
+    </div><br>
+
+    <button type="submit" class="btn btn-primary">
+        Save Actor
+    </button>
 
 </form>
 <br>
