@@ -15,7 +15,7 @@ sortOrder = "lastname desc"
 <?
 use Grcote7\Movies\Models\Movie;
 function onStart(){
-    $this['movies']=Movie::take(4)->get();
+    $this['movies']=Movie::take(4)->with('genres')->get();
 }
 ?>
 ==
@@ -32,8 +32,14 @@ function onStart(){
     {% for movie in movies %}
     <li class="list-group-item">
         <h3>
-            <a href="/movie/{{ movie.slug }}">{{movie.name}} - {{movie.year}}</a>
+            <a href="{{ 'movie-single'|page({ slug: movie.slug }) }}">{{movie.name}} - {{movie.year}}</a>
         </h3>
+        <ul class="ui list bulleted horizontal">
+            {% for genre in movie.genres %}
+            <li class="item"><strong>{{ genre.genre_title }}</strong></li>
+            {% endfor %}
+        </ul>
+        <br>
         {{ html_limit(movie.description, 150) |raw }}
     </li>
     {% else %}
@@ -41,7 +47,7 @@ function onStart(){
     {% endfor %}
 </ul>
 <div>
-    {{  movies.render|raw }}
+    {{ movies.render|raw }}
 </div>
 
 

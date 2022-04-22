@@ -2,7 +2,7 @@
 
 {% for movie in movies %}
 <div class="ui segment vertical">
-    <h3 class="ui header"><a href="/movie/{{ movie.slug }}">{{ movie.name }}</h3>
+    <h3 class="ui header"><a href="{{ 'movie-single'|page({ slug: movie.slug }) }}">{{ movie.name }}</h3>
     <div class="ui"> {{ movie.year }}</a> </div>
     <div class="ui segment">
 
