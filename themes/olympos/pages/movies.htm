@@ -37,6 +37,12 @@ function onStart(){
         <h3>
             <a href="/movie/{{ movie.slug }}">{{ movie.name }} - {{ movie.year }}</a>
         </h3>
+        <ul class="ui list bulleted horizontal">
+            {% for genre in movie.genres %}
+            <li class="item"><strong>{{ genre.genre_title }}</strong></li>
+            {% endfor %}
+        </ul>
+        <br>
         {{ html_limit(movie.description, 150) |raw }}
     </div>
     {% else %}
@@ -56,7 +62,8 @@ function onStart(){
 
         {% for page in 1..movies.lastPage %}
         <li class="page-item {{ movies.currentPage == page ? 'active' : null }}">
-            <a class="page-link" href="{{ movies.url(page) }}">{{ page }}</a></li>
+            <a class="page-link" href="{{ movies.url(page) }}">{{ page }}</a>
+        </li>
         {% endfor %}
 
         {% if movies.lastPage > movies.currentPage %}

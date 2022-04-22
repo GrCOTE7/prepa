@@ -1,8 +1,6 @@
 <?php
 
-/*
- * (c) Boosteur.com - 2022
- */
+// (c) Boosteur.com - 2022
 
 namespace Grcote7\Movies\Components;
 
@@ -46,6 +44,6 @@ class Tests extends ComponentBase
     // }
     // $genres = $genres->count();
     // $this->data = $genres;
-    $this->data = 123;    // return print_r($list, 1);
+    // $this->data = 123;    // return print_r($list, 1);
   }
 }
