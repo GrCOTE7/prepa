@@ -1,0 +1,105 @@
+{
+    "root": {
+        "data": {
+            "id": "cjft67yyppc0",
+            "created": 1650533155542,
+            "text": "Prepa"
+        },
+        "children": [
+            {
+                "data": {
+                    "id": "cjftzjyezxc0",
+                    "created": 1650535454191,
+                    "text": "OS",
+                    "expandState": "expand"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cjft69kv1q00",
+                            "created": 1650533159043,
+                            "text": "Valet"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cjft6hn0lts0",
+                                    "created": 1650533176587,
+                                    "text": "PowerShell administrateur → Install PHP8.1 :"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cjft6cmo51k0",
+                                    "created": 1650533165682,
+                                    "text": "Set-ExecutionPolicy RemoteSigned -Scope Process; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12; Invoke-WebRequest -Uri \"https://github.com/cretueusebiu/valet-windows/raw/master/bin/php.ps1\" -OutFile $env:temp\\php.ps1; .$env:temp\\php.ps1 \"8.1\""
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cjftu7r5lm00",
+                                    "created": 1650535035810,
+                                    "text": "composer global update"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cjftu9rwt480",
+                                    "created": 1650535040209,
+                                    "text": "valet install"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cjftyc35unk0",
+                                    "created": 1650535358699,
+                                    "text": "Ressources",
+                                    "expandState": "expand"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cjftv3wa4600",
+                                            "created": 1650535105777,
+                                            "text": "GH valet 4 Win",
+                                            "hyperlink": "https://github.com/cretueusebiu/valet-windows",
+                                            "hyperlinkTitle": "GH"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "cjftxogq61s0",
+                                            "created": 1650535307277,
+                                            "text": "Doc Laravel Valet",
+                                            "hyperlink": "https://laravel.com/docs/9.x/valet",
+                                            "hyperlinkTitle": "Laravel Valet"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cjfu902m8n40",
+                                    "created": 1650536194551,
+                                    "text": "MySQL Server",
+                                    "hyperlink": "https://dev.mysql.com/doc/refman/5.7/en/windows-installation.html#windows-installation-simple",
+                                    "hyperlinkTitle": "Win MySQL Server"
+                                },
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "template": "default",
+    "theme": "fresh-blue",
+    "version": "1.4.43"
+}
