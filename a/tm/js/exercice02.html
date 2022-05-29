@@ -1,0 +1,55 @@
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Exercice JS</title>
+</head>
+<style>
+  body {
+    font-family: arial, serif;
+    background-color: cornsilk;
+    color: maroon;
+  }
+
+  #result {
+    text-align: center;
+  }
+
+  .footer {
+    position: fixed;
+    right: 50px;
+    bottom: 5px;
+  }
+</style>
+
+<body>
+
+  <h1>Exercice 01</h1>
+  <p id="result">Ici la sortie de JS...</p>
+  <p class="footer">Rappel: Visible à : http://c57/a/tm/js</p>
+
+  <script>
+
+    /*show("Voyons voir si le STRING s'affiche avec des guillements qui entourent une phrase qui n'est pas stockée dans une variable");
+
+    show("Voici un première ligne\nEt maintenant la seconde.");
+
+    show("Un caractère de saut de ligne est écrit ainsi \"\\n\".");
+    show("con" + "cat" + "é" + "ner");
+    show("Itchy" != "Scratchy");
+    show("5e2" == 500);
+    show(4 >= 6 || "herbe" != "verte") &&
+   !(12 * 2 == 144 && true);
+   alert("Au feu");
+   alert(Math.max(2, 4));*/
+   alert(Math.min(2, 4) + 100);
+
+
+    function show(str) {
+      document.getElementById("result").innerHTML = str;
+    }
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "grcote7/c57/menu",
+  "description": "Test pour menu illimité. ",
+  "keywords": [
+    "PHP",
+    "Bootstrap"
+  ],
+  "type": "library",
+  "homepage": "https://gitlab.com/c57fr/c57",
+  "authors": [
+    {
+      "name": "GcCOTE7",
+      "email": "GrCOTE7@GMail.com"
+    }
+  ],
+  "license": "BSD-3-Clause",
+  "require": {
+    "php": ">=7.1.7"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}

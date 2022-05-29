@@ -1,0 +1,16 @@
+body {
+  background-color: cornsilk !important;
+  color: maroon !important;
+  margin: 10px 20px !important;
+  width: 97% !important;
+  margin: 0 auto !important;
+}
+
+a:hover {
+  color: orange;
+}
+
+li a:hover {
+  color: red !important;
+}
+/*# sourceMappingURL=menu.css.map */

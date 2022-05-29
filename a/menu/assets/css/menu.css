@@ -1,0 +1,17 @@
+body {
+  background-color: cornsilk !important;
+  color: maroon !important;
+  margin: 10px 20px !important;
+  width: 97% !important;
+  margin: 0 auto !important;
+}
+
+a:hover {
+  color: orange;
+}
+
+li a:hover {
+  color: red !important;
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNhc3MvbWVudS5zY3NzIl0sInNvdXJjZXNDb250ZW50IjpbImJvZHkge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiBjb3Juc2lsayAhaW1wb3J0YW50O1xuICBjb2xvcjogbWFyb29uICFpbXBvcnRhbnQ7XG4gIG1hcmdpbjogMTBweCAyMHB4ICFpbXBvcnRhbnQ7XG4gIHdpZHRoOiA5NyUgIWltcG9ydGFudDtcbiAgbWFyZ2luOiAwIGF1dG8gIWltcG9ydGFudDtcbn1cblxuYTpob3ZlciB7XG4gICAgY29sb3I6b3JhbmdlO1xufVxuXG5saSBhOmhvdmVyIHtcbiAgY29sb3I6IHJlZCFpbXBvcnRhbnQ7XG59Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLEFBQUEsSUFBSSxDQUFDO0VBQ0gsZ0JBQWdCLEVBQUUsbUJBQW1CO0VBQ3JDLEtBQUssRUFBRSxpQkFBaUI7RUFDeEIsTUFBTSxFQUFFLG9CQUFvQjtFQUM1QixLQUFLLEVBQUUsY0FBYztFQUNyQixNQUFNLEVBQUUsaUJBQWlCO0NBQzFCOztBQUVELEFBQUEsQ0FBQyxBQUFBLE1BQU0sQ0FBQztFQUNKLEtBQUssRUFBQyxNQUFNO0NBQ2Y7O0FBRUQsQUFBQSxFQUFFLENBQUMsQ0FBQyxBQUFBLE1BQU0sQ0FBQztFQUNULEtBQUssRUFBRSxHQUFHLENBQUEsVUFBVTtDQUNyQiJ9 */

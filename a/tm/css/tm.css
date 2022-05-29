@@ -1,0 +1,11 @@
+body {
+  font-family: arial, serif;
+  background-color: cornsilk;
+  color: maroon;
+}
+
+.footer {
+  position: fixed;
+  right: 50px;
+  bottom: 5px;
+}

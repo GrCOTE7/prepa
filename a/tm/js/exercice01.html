@@ -1,0 +1,43 @@
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Exercice JS</title>
+</head>
+<style>
+  body {
+    font-family: arial, serif;
+    background-color: cornsilk;
+    color: maroon;
+  }
+
+  #result {
+    text-align: center;
+  }
+
+  .footer {
+    position: fixed;
+    right: 50px;
+    bottom: 5px;
+  }
+</style>
+
+<body>
+
+  <h1>Exercice 01</h1>
+  <p id="result">Ici la sortie de JS...</p>
+  <p class="footer">Rappel: Visible à : http://c57/a/tm/js</p>
+
+  <script>
+
+    var maVar = "Ma première variable en JS";
+    show(maVar + ' (' + maVar.length + ' caractères)');
+
+    function show(str) {
+      document.getElementById("result").innerHTML = str;
+    }
+
+  </script>
+</body>
+
+</html>

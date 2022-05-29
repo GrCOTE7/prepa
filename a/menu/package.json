@@ -1,0 +1,35 @@
+{
+  "name": "menu",
+  "version": "1.0.0",
+  "description": "php menu",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "mime": "^1.4.1",
+    "gulp-connect-php": "^1.0.1",
+    "hoek": "^4.2.1",
+    "npm": "^6.4.1"
+  },
+  "devDependencies": {
+    "laravel-elixir": "^5.0.0",
+    "laravel-elixir-livereload": "^1.1.6",
+    "laravel-mix": "^0.10.0",
+    "node-sass": "^4.9.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "dev": "NODE_ENV=development webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "cross-env NODE_ENV=development webpack --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "hot": "cross-env NODE_ENV=development webpack-dev-server --inline --hot",
+    "prod": "cross-env NODE_ENV=production webpack --watch --progress --hide-modules",
+    "windows": "NB Pour Win, précéder ces commandes par cross-env"
+  },
+  "keywords": [
+    "PHP"
+  ],
+  "author": "GrCOTE7",
+  "license": "New BSD Licence",
+  "bugs": {
+    "url": "https://gitlab.com/c57fr/c57/issues/new?issue%5Bassignee_id%5D=&issue%5Bmilestone_id%5D="
+  },
+  "homepage": "https://gitlab.com/c57fr/c57/blob/master/README.md"
+}

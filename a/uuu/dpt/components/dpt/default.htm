@@ -1,0 +1,56 @@
+<div class="panel-body">
+    <label>Nom du Dpt selon son numéro</label>
+    <p>Sélectionner le numéro et obtenez le nom du département correspondant</p>
+    <!--  partial "scoop" items=items %} -->
+</div>
+
+<!--data-request-success="$('#input-item').val('')"-->
+
+<form
+        data-request="{{ __SELF__ }}::onGetName"
+        data-request-update="'{{ __SELF__ }}::dpt': '#result'"
+        id="numdpt">
+
+    <div class="panel panel-default">
+
+        <div class="panel-heading">
+            <h3 class="panel-title">Composant: Déclenchez l'Action !</h3>
+        </div>
+
+        <div class="panel-body" id="actionTrier">
+
+            <div class="input-group">
+                <label>Quel numéro de département ?</label>
+                <p><input type="number" name="dpt" min="1" max="3" value=2 id="dpt"></p>
+                <span class="input-group-btn">
+                    <!--<button type="submit" class="btn btn btn-primary" id="nomdpt">Maintenant !</button>-->
+                </span>
+            </div>
+        </div>
+
+        <div class="panel-body" id="resultat">
+            <label>Ce numéro correspond au département :</label>
+            <div class="dpt" id="result">
+            </div>
+        </div>
+
+    </div>
+</form>
+{% put scripts %}
+<script>
+    $(document).ready(function () {
+        $('#resultat').hide();
+        $(document).ajaxSuccess(function (event, xhr, settings) {
+            $('.panel-title').hide();
+//            $('#actionTrier').hide();
+            $('#resultat').show();
+        });
+        $('#nomdpt').click();
+        $('#dpt').change(function () {
+//            $('#nomdpt').click()
+            $('#numdpt').submit();
+        });
+
+    })
+</script>
+{% endput %}

@@ -1,0 +1,54 @@
+{
+    "files.autoSave": "afterDelay",
+    "liveServer.settings.donotVerifyTags": true,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "explorer.confirmDelete": false,
+    "git.enableSmartCommit": true,
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "gitProjectManager.baseProjectsFolders": [
+        "/opt/lampp/htdocs"
+    ],
+    "editor.wordWrap": "on",
+    "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}${separator}${appName}",
+    "todo-tree.defaultHighlight": {
+        "foreground": "green",
+        "type": "none"
+    },
+    "todo-tree.customHighlight": {
+        "TODO": {},
+        "FIXME": {},
+        "2do": {}
+    },
+      // List of tags
+    "todo-tree.tags": [
+        "2do"
+        ],
+    "beautify.config":{
+        "indent_size": 2,
+        "indent_char": " ",
+        "css": {
+        "indent_size": 2
+        },
+    },
+    "explorer.confirmDragAndDrop": false,
+    "phpformatter.phpPath" : "/usr/local/bin/php-cs-fixer",
+    "phpfmt.enable_auto_align": true,
+    "phpformatter.composer": false,
+    "phpfmt.passes": [
+        "PSR2KeywordsLowerCase",
+        "PSR2LnAfterNamespace",
+        "PSR2CurlyOpenNextLine",
+        "PSR2ModifierVisibilityStaticOrder",
+        "PSR2SingleEmptyLineAndStripClosingTag",
+        "ReindentSwitchBlocks"
+    ],
+  "phpfmt.exclude": [
+    "ReindentComments",
+    "StripNewlineWithinClassBody"
+  ],
+"phpfmt.psr2": false,
+"material-icon-theme.showWelcomeMessage": false,
+"codestream.email": "lio181@yahoo.fr",
+"guides.enabled": false
+}

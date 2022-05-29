@@ -1,0 +1,53 @@
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Exemple JS</title>
+</head>
+<style>
+  body {
+    font-family: arial, serif;
+    background-color: cornsilk;
+    color: maroon;
+  }
+
+  #result {
+    text-align: center;
+  }
+</style>
+
+<body>
+
+  <h1>Un triangle en JS</h1>
+  <p id="result">Ici la sortie de JS...</p>
+
+  <script>
+
+    var result = document.getElementById("result");
+
+    function dessineTriangle() {
+      var res = '/\\',
+        i = 0; str = '', blanc = '';
+      while (i < 9) {
+        str += res + '<br>';
+        blanc += '&nbsp;&nbsp;&nbsp;&nbsp;';
+        res = '/' + blanc + '\\';
+        i++;
+      }
+      for (i = 0; i < 30; i++)
+        str += '-';
+      //console.log(str);
+      show(str);
+    }
+
+
+    function show(str) {
+      result.innerHTML = str;
+    }
+
+    dessineTriangle();
+
+  </script>
+</body>
+
+</html>

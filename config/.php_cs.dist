@@ -1,7 +1,19 @@
 <?php
 
 $header = <<<'EOF'
-(c) Boosteur.com - 2022
+Ce fichier est la propriété de C57.fr
+
+(c) Membre@c57.fr - 2019-2021
+
+Et C57... C'est à VOUS !
+
+Sérieusement, ce fichier source est sujet à la license MIT*.
+Mais je compte sur vous pour toujours chercher à l'améliorer et à votre tour, en faire profiter
+un max de monde grâce aux techniques offertes dans c57.fr.
+
+@Bi1tô, & Bon code !
+
+ *: En gros...: Vous en faites ce que vous voulez !!!
 EOF;
 
 $finder = PhpCsFixer\Finder::create()
